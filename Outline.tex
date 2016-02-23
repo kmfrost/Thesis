@@ -1,0 +1,52 @@
+
+
+\documentclass[12pt,dvips]{report}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\evensidemargin}{0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{0in}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.1in}
+
+% Uncomment for double-spaced document.
+\renewcommand{\baselinestretch}{2}
+
+% \usepackage{epsf}
+
+\begin{document}
+\section*{Kayla Straub Thesis Outline}
+\begin{enumerate}
+\item Introduction \\
+Build up context for the report.  Describe the problem and challenges associated with it.  Why is this important?  Briefly cover the process/solution I have implemented (data collection, developed features, machine learning algorithm).  Touch on potential applications of this work.
+\newline
+\item Literature Review \newline
+Cover background works in similar studies.  Show other applications of email analysis (mostly using Enron).  Also cover the graph theory fundamental papers.  Finally, discuss the most similar research studies and highlight how few have been performed as well as their lack of quantifiable results.
+\newline
+\item Data Collection \\
+Section: Enron issues\\
+Discuss the need for a modern, clean dataset with known labels.  Intimate knowledge of the environment that produced this data is to our advantage.  \\
+Section: Data collection process \\ Describe the steps taken to collect, anonymize, and store the data properly.  \\
+Section: Dataset statistics\\ Provide detailed descriptions/statistics of the dataset.
+\item Feature Analysis\\
+Go into depth explaining all features used.  Cover all math behind graph-based metrics. \\
+Section: Graph-based features\\
+Section: Social-based features\\
+Section: Feature selection (using mutual information anlaysis)\\
+\item Algorithm Design \\
+Discuss model selection.  Go into the math behind algorithms used (random forest for now).  Describe and justify all choices made (max depth, splitting metric, etc. - selected via cross-validation) \\
+\item Implementation \\
+Cover the actual process by which everything was calculated and implemented.  Talk about the software packages used and any special techniques. \\
+\item Testing and Results \\
+Talk about all evaluations.  What did and did not work.  Describe results and what they mean.\\
+Section: Demonstrate that behavior is constant in time\\
+Section: Classification results\\
+Section: Hierarchy analysis\\
+\item Conclusions\\
+Summarize the results.  Discuss the inferences that can be drawn from this work.
+Section: Applications
+Corporate espionage and alternative communication networks (call records, text message metadata, social networks, etc.).
+\end{enumerate}
+\end{document}

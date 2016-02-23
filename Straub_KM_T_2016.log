@@ -1,0 +1,128 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.22)  22 FEB 2016 12:48
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Straub_KM_T_2016.tex
+(./Straub_KM_T_2016.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 4 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+
+LaTeX Warning: Unused global option(s):
+    [dvips].
+
+(./Straub_KM_T_2016.aux)
+\openout1 = `Straub_KM_T_2016.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3
+
+] [4
+
+] (./Straub_KM_T_2016.toc)
+\tf@toc=\write3
+\openout3 = `Straub_KM_T_2016.toc'.
+
+ [5
+
+] (./Straub_KM_T_2016.lof)
+\tf@lof=\write4
+\openout4 = `Straub_KM_T_2016.lof'.
+
+ [6
+
+]
+(./Straub_KM_T_2016.lot)
+\tf@lot=\write5
+\openout5 = `Straub_KM_T_2016.lot'.
+
+ [7
+
+]
+Chapter 1.
+[1
+
+]
+Chapter 2.
+[2
+
+]
+Chapter 3.
+[3
+
+]
+Chapter 4.
+[4
+
+]
+Chapter 5.
+[5
+
+]
+Chapter 6.
+[6
+
+]
+Chapter 7.
+[7
+
+]
+Chapter 8.
+[8
+
+]
+Chapter 9.
+[9
+
+] [10
+
+] (./Straub_KM_T_2016.aux) ) 
+Here is how much of TeX's memory you used:
+ 241 strings out of 494985
+ 2701 string characters out of 6180356
+ 49544 words of memory out of 5000000
+ 3532 multiletter control sequences out of 15000+600000
+ 5448 words of font info for 20 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 22i,4n,19p,293b,115s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r17.pfb>
+Output written on Straub_KM_T_2016.pdf (17 pages, 55082 bytes).
+PDF statistics:
+ 71 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
