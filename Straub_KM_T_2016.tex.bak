@@ -53,7 +53,7 @@ Electrical Engineering
 
 Robert W. McGwier, Chair \\
 Aloysius A. Beex\\
-Michael Buehrer\\
+Michael M. Buehrer\\
 Bert Huang
 
 \vfill
@@ -123,11 +123,11 @@ The result is a much fuller understanding of the center's internal structure tha
 \pagestyle{myheadings}
 
 \chapter{Introduction}
-Build up context for the report.  Describe the problem and challenges associated with it.  Why is this important?  Brifely cover the process/solution I have implemented.  Touch on potential applications of this work.
+Build up context for the report.  Describe the problem and challenges associated with it.  List the completed objectives.  This project is important because it shows the amount of information that can be gleaned from just one form of communication.  Briefly cover the process/solution I have implemented.  Mention the software tools used.  Write 1-2 sentences for each of the chapters. 
 
 
 \chapter{Literature Review}
-Cover background works in similar studies, other email analyses [mostly Enron], and graph theory fundamentals.  Highlight how few studies have been performed before in this domain as well as their lack of quantifiable results.  Show the limitations of the Enron dataset.
+Cover background works in similar studies, other emai l analyses [mostly Enron], and graph theory fundamentals.  Highlight how few studies have been performed before in this domain as well as their lack of quantifiable results.  Show the limitations of the Enron dataset.
 
 
 \chapter{Data Collection}
@@ -162,7 +162,9 @@ Subchapter: Hierarchy analysis
 \chapter{Conclusions}
 Summarize the results.  Discuss the inferences that can be drawn from this result. 
 
-Subchapter: discuss future work/what you could do with a larger dataset.
+\chapter{Future Work}
+Discuss future work/what you could do with a larger dataset.
+\\If I had more data I could cluster but it would be rough.  If I could label a few from each class, take 2 layers of neurons (greedily train).  Use Boltzman's and backprop to get an awesome classifier!  Write 3-4 pages on what more, higher-dimensional data + deep learning could improve.  Show that I know how it works.
 
 \chapter{Applications}
 Go into detail about what the applications are of this result.  Cover: corporate espionage and alternative communication networks (call records, text message metadata, social networks, etc.).
