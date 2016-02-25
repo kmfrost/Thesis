@@ -1,9 +1,12 @@
-\contentsline {chapter}{\numberline {1}Introduction}{1}
-\contentsline {chapter}{\numberline {2}Literature Review}{2}
-\contentsline {chapter}{\numberline {3}Data Collection}{3}
-\contentsline {chapter}{\numberline {4}Feature Analysis}{4}
-\contentsline {chapter}{\numberline {5}Algorithm Design}{5}
-\contentsline {chapter}{\numberline {6}Implementation}{6}
-\contentsline {chapter}{\numberline {7}Testing and Results}{7}
-\contentsline {chapter}{\numberline {8}Conclusions}{8}
-\contentsline {chapter}{\numberline {9}Applications}{9}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Literature Review}{3}{chapter.2}
+\contentsline {chapter}{\numberline {3}Data Collection}{6}{chapter.3}
+\contentsline {chapter}{\numberline {4}Feature Analysis}{9}{chapter.4}
+\contentsline {subsection}{\numberline {4.0.1}Traffic-Based Features}{9}{subsection.4.0.1}
+\contentsline {subsection}{\numberline {4.0.2}Social Network Features}{12}{subsection.4.0.2}
+\contentsline {chapter}{\numberline {5}Algorithm Design}{16}{chapter.5}
+\contentsline {chapter}{\numberline {6}Testing and Results}{20}{chapter.6}
+\contentsline {subsection}{\numberline {6.0.3}Classification Results}{20}{subsection.6.0.3}
+\contentsline {subsection}{\numberline {6.0.4}Hierarchy Analysis}{23}{subsection.6.0.4}
+\contentsline {chapter}{\numberline {7}Conclusions}{24}{chapter.7}
+\contentsline {chapter}{\numberline {8}Future Work}{26}{chapter.8}

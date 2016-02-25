@@ -1,28 +1,95 @@
 \relax 
-\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}}
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Literature Review}{2}}
+\newlabel{Introduction}{{1}{1}{Introduction}{chapter.1}{}}
+\citation{radicati_emails_2015}
+\citation{fisher_revisiting_2006}
+\citation{klimt_introducing_2004}
+\citation{martin_analyzing_2005}
+\citation{he_novel_2014}
+\citation{sofershtein_predicting_2015}
+\citation{nordbo_data_2014}
+\citation{waterman_big_2014}
+\citation{shetty_enron_2004}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Literature Review}{3}{chapter.2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Data Collection}{3}}
+\newlabel{LitReview}{{2}{3}{Literature Review}{chapter.2}{}}
+\citation{tang_email_2013}
+\citation{yelupula_social_2008}
+\citation{martin_analyzing_2005}
+\citation{wasserman_social_1994}
+\citation{freeman_set_1977}
+\citation{tyler_email_2003}
+\citation{wilson_discovery_2009}
+\citation{rowe_automated_2007}
+\citation{shetty_status_2004}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Data Collection}{6}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Feature Analysis}{4}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces A comparison between the internal dataset and the Enron email corpus.\relax }}{7}{table.3.1}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:db_stats}{{3.1}{7}{A comparison between the internal dataset and the Enron email corpus.\relax }{table.3.1}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Feature Analysis}{9}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Algorithm Design}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.0.1}Traffic-Based Features}{9}{subsection.4.0.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Histogram of unique subjects received by job title. The feature value for this plot has been normalized so that all values fall between 0 and 1. Note that by using different thresholds, meaningful splits in the data can be made. For example, all but two graduate students have a value less than $0.1$.\relax }}{11}{figure.caption.6}}
+\newlabel{fig:traffic_ex_hist}{{4.1}{11}{Histogram of unique subjects received by job title. The feature value for this plot has been normalized so that all values fall between 0 and 1. Note that by using different thresholds, meaningful splits in the data can be made. For example, all but two graduate students have a value less than $0.1$.\relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.0.2}Social Network Features}{12}{subsection.4.0.2}}
+\citation{kleinberg_hubs_1999}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces The adjacency matrix representing the social connections of the center. This graph is very well connected with just one component. Nonetheless, there are groups who never exchanged a single email.\relax }}{13}{figure.caption.7}}
+\newlabel{fig:adj_matrix}{{4.2}{13}{The adjacency matrix representing the social connections of the center. This graph is very well connected with just one component. Nonetheless, there are groups who never exchanged a single email.\relax }{figure.caption.7}{}}
+\citation{page_pagerank_1999}
+\citation{lind_cycles_2005}
+\citation{saramaki_generalizations_2007}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Histogram of hubs from social graph by job title. Note that directors on average have the highest hub score and graduate students have the lowest. In fact, three out of eight directors can be identified by filtering samples on full graph hubs values $>0.6$. \relax }}{14}{figure.caption.8}}
+\newlabel{fig:social_ex_hist}{{4.3}{14}{Histogram of hubs from social graph by job title. Note that directors on average have the highest hub score and graduate students have the lowest. In fact, three out of eight directors can be identified by filtering samples on full graph hubs values $>0.6$. \relax }{figure.caption.8}{}}
+\citation{borgatti2011analyzing}
+\citation{brandes2005centrality}
+\citation{estrada2008communicability}
+\citation{newman2001scientific}
+\citation{Breiman2001}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Algorithm Design}{16}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Implementation}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Example random tree of depth 3 to demonstrate how a few rules can be used to find significant class divisions.\relax }}{17}{figure.caption.9}}
+\newlabel{fig:ex_tree}{{5.1}{17}{Example random tree of depth 3 to demonstrate how a few rules can be used to find significant class divisions.\relax }{figure.caption.9}{}}
+\newlabel{eq:info_gained}{{5}{18}{Algorithm Design}{equation.5.0.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Top 20 features ranked by the information gain.\relax }}{19}{table.5.1}}
+\newlabel{tab:ranked_feats}{{5.1}{19}{Top 20 features ranked by the information gain.\relax }{table.5.1}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Testing and Results}{20}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Testing and Results}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.0.3}Classification Results}{20}{subsection.6.0.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces The Random Forest algorithm was extremely accurate even for very uneven class sizes. Note that all members of 4 classes were labelled perfectly. There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.\relax }}{21}{figure.caption.10}}
+\newlabel{fig:result_hist}{{6.1}{21}{The Random Forest algorithm was extremely accurate even for very uneven class sizes. Note that all members of 4 classes were labelled perfectly. There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.\relax }{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Prediction accuracy compared to number of features used for analysis. Note that the accuracy is still very high, 95.6\%, when only twenty features are used. The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. \relax }}{22}{figure.caption.11}}
+\newlabel{fig:feat_analysis}{{6.2}{22}{Prediction accuracy compared to number of features used for analysis. Note that the accuracy is still very high, 95.6\%, when only twenty features are used. The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. \relax }{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.0.4}Hierarchy Analysis}{23}{subsection.6.0.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{24}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Conclusions}{8}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {9}Applications}{9}}
+\bibdata{bib}
+\bibstyle{ieeetr}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Future Work}{26}{chapter.8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}

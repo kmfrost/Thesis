@@ -19,34 +19,74 @@
 \begin{document}
 \section*{Kayla Straub Thesis Outline}
 \begin{enumerate}
-\item Introduction \\
-Build up context for the report.  Describe the problem and challenges associated with it.  Why is this important?  Briefly cover the process/solution I have implemented (data collection, developed features, machine learning algorithm).  Touch on potential applications of this work.
-\newline
-\item Literature Review \newline
-Cover background works in similar studies.  Show other applications of email analysis (mostly using Enron).  Also cover the graph theory fundamental papers.  Finally, discuss the most similar research studies and highlight how few have been performed as well as their lack of quantifiable results.
-\newline
-\item Data Collection \\
-Section: Enron issues\\
-Discuss the need for a modern, clean dataset with known labels.  Intimate knowledge of the environment that produced this data is to our advantage.  \\
-Section: Data collection process \\ Describe the steps taken to collect, anonymize, and store the data properly.  \\
-Section: Dataset statistics\\ Provide detailed descriptions/statistics of the dataset.
+\item Introduction 
+\begin{enumerate}
+\item Build up context for the report.  Cite email statistics.  
+\item Describe the problem of email analysis and challenges associated with it (privacy concerns, accurate labels, etc.).  
+\item Briefly cover the process/solution I have implemented (data collection, developed features, machine learning algorithm).
+\item My contributions: new dataset from raw material, combining features not used before, and the job-classification problem in general 
+\item This project is important because it shows the amount of information that can be gleaned from a single form of communication. 
+\item Touch on potential applications of this work.
+\item Describe structure of the rest of the thesis
+\end{enumerate}
+
+\item Literature Review - very similar to paper
+\begin{enumerate}
+\item Show other applications of email analysis (mostly using Enron).  
+\item Cover the graph theory fundamental papers.  
+\item Discuss the most similar research studies and highlight how few have been performed as well as their lack of quantifiable results.
+\end{enumerate}
+
+\item Data Collection - very similar to paper, but with more detail
+\begin{enumerate}
+\item Section: Enron issues\\
+Discuss the need for a modern dataset with known labels.  Intimate knowledge of the environment that produced our data is a big advantage.  
+\item Section: Data collection process \\ Describe the steps taken to collect, anonymize, and store the data properly.  
+\item Section: Dataset statistics\\ Provide detailed descriptions/statistics of the dataset.  Use Table 1 from the paper here.
+\end{enumerate}
+
 \item Feature Analysis\\
-Go into depth explaining all features used.  Cover all math behind graph-based metrics. \\
-Section: Graph-based features\\
-Section: Social-based features\\
-Section: Feature selection (using mutual information anlaysis)\\
-\item Algorithm Design \\
-Discuss model selection.  Go into the math behind algorithms used (random forest for now).  Describe and justify all choices made (max depth, splitting metric, etc. - selected via cross-validation) \\
-\item Implementation \\
-Cover the actual process by which everything was calculated and implemented.  Talk about the software packages used and any special techniques. \\
+Go into depth explaining all features used.  Cover all math behind all metrics.  This will all be very similar to the paper but in more detail.
+\begin{enumerate}
+\item Section: Graph-based features\\
+Use Figure 1 from the paper here.
+\item Section: Social-based features\\
+Use Figures 2 and 3 from the paper here.
+\item Section: Feature selection (using mutual information anlaysis)
+\end{enumerate}
+
+\item Algorithm Design\\
+Again, this section will be very similar to the paper but with more detail.
+\begin{enumerate}
+\item Discuss model selection.  Use Figure 4 from the paper here.  Go into the math behind how random forests work and what they are used for.  Cover their advantages and disadvantages.  
+\item Describe and justify all choices made (max depth, splitting metric, etc. - selected via cross-validation).  Use Table 2 from the paper here.
+\end{enumerate}
+
 \item Testing and Results \\
-Talk about all evaluations.  What did and did not work.  Describe results and what they mean.\\
-Section: Demonstrate that behavior is constant in time\\
-Section: Classification results\\
-Section: Hierarchy analysis\\
-\item Conclusions\\
-Summarize the results.  Discuss the inferences that can be drawn from this work.
-Section: Applications
-Corporate espionage and alternative communication networks (call records, text message metadata, social networks, etc.).
+Talk about all evaluations.  What did and did not work.  Describe results and what they mean.
+\begin{enumerate}
+\item Section: Classification results - very similar to paper\\
+Cover the classification results from the paper.  Use Figure 5 from the paper here.  Add that LOOCV performed worse, with only about 61.194\% correct.  Make a similar graph to Figure 5 for this result.  Report the results of the feature analysis, and use the graph from Figure 6 in the paper here.
+\item Section: Demonstrate that behavior is constant in time\\
+Compare email statistics for a person over time.  Measure distance from the centroid for each person.  Compare these statistics between classes.  Make a chart comparing these distances.
+\item Section: Hierarchy analysis\\
+Compared which directors and PM's employees interacted with the most, and compared with the official hierarchy.  Use the statistics from the paper here.
+
+\end{enumerate}
+
+\item Conclusions
+\begin{enumerate}
+\item Summarize the results.  We successfully categorized people using part of their email accounts.  This worked for first- and second-ring employees.  We learned and proved that over time a person's email behavior is constant.  We uncovered some of the official hierarchy, but were incorrect on other parts.
+\item Discuss the assumptions inherent to this analysis and potential sources of bias.  For example, the fact that we are training and testing on the same people.  For the basic classification analysis, we assumed that behavior was constant in time.
+\item Discuss the inferences that can be drawn from this work.  Official hierarchies do not always reflect the day-to-day office relationships.  Behavior patterns can be inferred from second-hand data.
+\item Explain applications: corporate espionage might give access to 1 email account - what could we uncover?  These methods are not limited to email, and can be applied to other communication systems (call records, text message metadata, social networks, etc.)
+\end{enumerate}
+
+\item Future Work
+\begin{enumerate}
+\item Describe what we could do if we had a bigger dataset.  How big would that dataset need to be?
+\item Discuss applying deep learning to this problem and the math behind how that would work.
+\end{enumerate}
+
 \end{enumerate}
 \end{document}
