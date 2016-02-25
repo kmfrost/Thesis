@@ -45,16 +45,18 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Data Collection}{6}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{DataCollection}{{3}{6}{Data Collection}{chapter.3}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces A comparison between the internal dataset and the Enron email corpus.\relax }}{7}{table.3.1}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{tab:db_stats}{{3.1}{7}{A comparison between the internal dataset and the Enron email corpus.\relax }{table.3.1}{}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Feature Analysis}{9}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.0.1}Traffic-Based Features}{9}{subsection.4.0.1}}
+\newlabel{Features}{{4}{9}{Feature Analysis}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Traffic-Based Features}{9}{section.4.1}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Histogram of unique subjects received by job title. The feature value for this plot has been normalized so that all values fall between 0 and 1. Note that by using different thresholds, meaningful splits in the data can be made. For example, all but two graduate students have a value less than $0.1$.\relax }}{11}{figure.caption.6}}
 \newlabel{fig:traffic_ex_hist}{{4.1}{11}{Histogram of unique subjects received by job title. The feature value for this plot has been normalized so that all values fall between 0 and 1. Note that by using different thresholds, meaningful splits in the data can be made. For example, all but two graduate students have a value less than $0.1$.\relax }{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.0.2}Social Network Features}{12}{subsection.4.0.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Social Network Features}{12}{section.4.2}}
 \citation{kleinberg_hubs_1999}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces The adjacency matrix representing the social connections of the center. This graph is very well connected with just one component. Nonetheless, there are groups who never exchanged a single email.\relax }}{13}{figure.caption.7}}
 \newlabel{fig:adj_matrix}{{4.2}{13}{The adjacency matrix representing the social connections of the center. This graph is very well connected with just one component. Nonetheless, there are groups who never exchanged a single email.\relax }{figure.caption.7}{}}
@@ -71,6 +73,7 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {5}Algorithm Design}{16}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{Algorithm}{{5}{16}{Algorithm Design}{chapter.5}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Example random tree of depth 3 to demonstrate how a few rules can be used to find significant class divisions.\relax }}{17}{figure.caption.9}}
 \newlabel{fig:ex_tree}{{5.1}{17}{Example random tree of depth 3 to demonstrate how a few rules can be used to find significant class divisions.\relax }{figure.caption.9}{}}
 \newlabel{eq:info_gained}{{5}{18}{Algorithm Design}{equation.5.0.1}{}}
@@ -79,17 +82,46 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {6}Testing and Results}{20}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.0.3}Classification Results}{20}{subsection.6.0.3}}
+\newlabel{TestingResults}{{6}{20}{Testing and Results}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Classification Results}{20}{section.6.1}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces The Random Forest algorithm was extremely accurate even for very uneven class sizes. Note that all members of 4 classes were labelled perfectly. There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.\relax }}{21}{figure.caption.10}}
 \newlabel{fig:result_hist}{{6.1}{21}{The Random Forest algorithm was extremely accurate even for very uneven class sizes. Note that all members of 4 classes were labelled perfectly. There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.\relax }{figure.caption.10}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Prediction accuracy compared to number of features used for analysis. Note that the accuracy is still very high, 95.6\%, when only twenty features are used. The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. \relax }}{22}{figure.caption.11}}
 \newlabel{fig:feat_analysis}{{6.2}{22}{Prediction accuracy compared to number of features used for analysis. Note that the accuracy is still very high, 95.6\%, when only twenty features are used. The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. \relax }{figure.caption.11}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.0.4}Hierarchy Analysis}{23}{subsection.6.0.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Hierarchy Analysis}{23}{section.6.2}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{24}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\bibdata{bib}
-\bibstyle{ieeetr}
+\newlabel{Conclusions}{{7}{24}{Conclusions}{chapter.7}{}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {8}Future Work}{26}{chapter.8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{FutureWork}{{8}{26}{Future Work}{chapter.8}{}}
+\bibstyle{ieeetr}
+\bibdata{bib}
+\bibcite{radicati_emails_2015}{1}
+\bibcite{fisher_revisiting_2006}{2}
+\bibcite{klimt_introducing_2004}{3}
+\bibcite{martin_analyzing_2005}{4}
+\bibcite{he_novel_2014}{5}
+\bibcite{sofershtein_predicting_2015}{6}
+\bibcite{nordbo_data_2014}{7}
+\bibcite{waterman_big_2014}{8}
+\bibcite{shetty_enron_2004}{9}
+\bibcite{tang_email_2013}{10}
+\bibcite{yelupula_social_2008}{11}
+\bibcite{wasserman_social_1994}{12}
+\bibcite{freeman_set_1977}{13}
+\bibcite{tyler_email_2003}{14}
+\bibcite{wilson_discovery_2009}{15}
+\bibcite{rowe_automated_2007}{16}
+\bibcite{shetty_status_2004}{17}
+\bibcite{kleinberg_hubs_1999}{18}
+\bibcite{page_pagerank_1999}{19}
+\bibcite{lind_cycles_2005}{20}
+\bibcite{saramaki_generalizations_2007}{21}
+\bibcite{borgatti2011analyzing}{22}
+\bibcite{brandes2005centrality}{23}
+\bibcite{estrada2008communicability}{24}
+\bibcite{newman2001scientific}{25}
+\bibcite{Breiman2001}{26}

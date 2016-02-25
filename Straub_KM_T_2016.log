@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.22)  25 FEB 2016 16:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.22)  25 FEB 2016 17:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -526,133 +526,35 @@ Chapter 1.
 [1
 
 ]
-
-LaTeX Warning: Reference `Related Works' on page 2 undefined on input line 165.
-
-
-
-LaTeX Warning: Reference `Data Collection' on page 2 undefined on input line 16
-5.
-
-
-LaTeX Warning: Reference `Features' on page 2 undefined on input line 165.
-
-
-LaTeX Warning: Reference `Analysis' on page 2 undefined on input line 165.
-
-
-LaTeX Warning: Reference `Results' on page 2 undefined on input line 165.
-
-
-LaTeX Warning: Reference `Conclusions' on page 2 undefined on input line 165.
-
-
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
 [2]
 Chapter 2.
-
-LaTeX Warning: Citation `radicati_emails_2015' on page 3 undefined on input lin
-e 169.
-
-
-LaTeX Warning: Citation `fisher_revisiting_2006' on page 3 undefined on input l
-ine 169.
-
-
-LaTeX Warning: Citation `klimt_introducing_2004' on page 3 undefined on input l
-ine 171.
-
-
-LaTeX Warning: Citation `martin_analyzing_2005' on page 3 undefined on input li
-ne 171.
-
-
-LaTeX Warning: Citation `he_novel_2014' on page 3 undefined on input line 171.
-
-
-LaTeX Warning: Citation `sofershtein_predicting_2015' on page 3 undefined on in
-put line 171.
-
-
-LaTeX Warning: Citation `nordbo_data_2014' on page 3 undefined on input line 17
-1.
-
-
-LaTeX Warning: Citation `waterman_big_2014' on page 3 undefined on input line 1
-71.
-
-
-LaTeX Warning: Citation `shetty_enron_2004' on page 3 undefined on input line 1
-71.
-
 [3
 
 ]
-
-LaTeX Warning: Citation `tang_email_2013' on page 4 undefined on input line 173
-.
-
-
-LaTeX Warning: Citation `yelupula_social_2008' on page 4 undefined on input lin
-e 175.
-
-
-LaTeX Warning: Citation `martin_analyzing_2005' on page 4 undefined on input li
-ne 175.
-
-
-LaTeX Warning: Citation `wasserman_social_1994' on page 4 undefined on input li
-ne 177.
-
-
-LaTeX Warning: Citation `freeman_set_1977' on page 4 undefined on input line 17
-7.
-
-
-LaTeX Warning: Citation `tyler_email_2003' on page 4 undefined on input line 17
-7.
-
-
-LaTeX Warning: Citation `wilson_discovery_2009' on page 4 undefined on input li
-ne 177.
-
-
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
 [4]
-
-LaTeX Warning: Citation `rowe_automated_2007' on page 5 undefined on input line
- 179.
-
-
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
 [5]
 Chapter 3.
-
-LaTeX Warning: Citation `shetty_status_2004' on page 6 undefined on input line 
-183.
-
-
-LaTeX Warning: Reference `Related Works' on page 6 undefined on input line 183.
-
-
 [6
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 188.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 230.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 188.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 230.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 200.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 242.
 
 Overfull \vbox (8.01599pt too high) has occurred while \output is active []
 
@@ -663,24 +565,21 @@ Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 [8]
 Chapter 4.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 223.
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 223.
-
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 272.
 [9
 
 ]
 
-LaTeX Warning: Reference `Analysis' on page 10 undefined on input line 230.
+LaTeX Warning: Reference `AlgorithmDesign' on page 10 undefined on input line 2
+96.
 
-<Pictures/Unique_subjects_rec_hist.png, id=183, 571.8966pt x 369.0588pt>
+<Pictures/Unique_subjects_rec_hist.png, id=225, 571.8966pt x 369.0588pt>
 File: Pictures/Unique_subjects_rec_hist.png Graphic file (type png)
 
 <use Pictures/Unique_subjects_rec_hist.png>
 Package pdftex.def Info: Pictures/Unique_subjects_rec_hist.png used on input li
-ne 233.
+ne 305.
 (pdftex.def)             Requested size: 469.75499pt x 254.26117pt.
 
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
@@ -691,79 +590,42 @@ Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
 [11 <./Pictures/Unique_subjects_rec_hist.png>]
-<Pictures/adj_matrix.png, id=200, 878.3214pt x 539.616pt>
+<Pictures/adj_matrix.png, id=242, 878.3214pt x 539.616pt>
 File: Pictures/adj_matrix.png Graphic file (type png)
 
 <use Pictures/adj_matrix.png>
-Package pdftex.def Info: Pictures/adj_matrix.png used on input line 246.
+Package pdftex.def Info: Pictures/adj_matrix.png used on input line 331.
 (pdftex.def)             Requested size: 469.75499pt x 283.91339pt.
 
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
 [12]
+Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
-LaTeX Warning: Citation `kleinberg_hubs_1999' on page 13 undefined on input lin
-e 259.
 
-<Pictures/Hubs_hist.png, id=207, 649.9482pt x 367.1316pt>
+[13 <./Pictures/adj_matrix.png>]
+<Pictures/Hubs_hist.png, id=261, 649.9482pt x 367.1316pt>
 File: Pictures/Hubs_hist.png Graphic file (type png)
 
 <use Pictures/Hubs_hist.png>
-Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 262.
+Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 362.
 (pdftex.def)             Requested size: 469.75499pt x 256.4071pt.
 
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
-[13 <./Pictures/adj_matrix.png>]
-
-LaTeX Warning: Citation `page_pagerank_1999' on page 14 undefined on input line
- 269.
-
-
-LaTeX Warning: Citation `lind_cycles_2005' on page 14 undefined on input line 2
-69.
-
-
-LaTeX Warning: Citation `saramaki_generalizations_2007' on page 14 undefined on
- input line 269.
-
-
-Overfull \vbox (8.18385pt too high) has occurred while \output is active []
-
-
 [14 <./Pictures/Hubs_hist.png>]
-
-LaTeX Warning: Citation `borgatti2011analyzing' on page 15 undefined on input l
-ine 271.
-
-
-LaTeX Warning: Citation `brandes2005centrality' on page 15 undefined on input l
-ine 271.
-
-
-LaTeX Warning: Citation `estrada2008communicability' on page 15 undefined on in
-put line 271.
-
-
-LaTeX Warning: Citation `newman2001scientific' on page 15 undefined on input li
-ne 271.
-
-
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
 [15]
 Chapter 5.
-
-LaTeX Warning: Citation `Breiman2001' on page 16 undefined on input line 277.
-
-<Pictures/3_level_tree.png, id=231, 918.7926pt x 345.9324pt>
+<Pictures/3_level_tree.png, id=290, 918.7926pt x 345.9324pt>
 File: Pictures/3_level_tree.png Graphic file (type png)
 
 <use Pictures/3_level_tree.png>
-Package pdftex.def Info: Pictures/3_level_tree.png used on input line 282.
+Package pdftex.def Info: Pictures/3_level_tree.png used on input line 397.
 (pdftex.def)             Requested size: 469.75499pt x 170.32037pt.
  [16
 
@@ -781,23 +643,13 @@ Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 [19]
 Chapter 6.
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 337.
-
-
-LaTeX Warning: Reference `Features' on page 20 undefined on input line 338.
-
-
-LaTeX Warning: Reference `Analysis' on page 20 undefined on input line 338.
-
 [20
 
-] <Pictures/Prediction_50_50_RF.png, id=259, 577.1964pt x 308.352pt>
+] <Pictures/Prediction_50_50_RF.png, id=322, 577.1964pt x 308.352pt>
 File: Pictures/Prediction_50_50_RF.png Graphic file (type png)
 
 <use Pictures/Prediction_50_50_RF.png>
-Package pdftex.def Info: Pictures/Prediction_50_50_RF.png used on input line 34
+Package pdftex.def Info: Pictures/Prediction_50_50_RF.png used on input line 48
 2.
 (pdftex.def)             Requested size: 469.75499pt x 241.75908pt.
 
@@ -805,11 +657,11 @@ Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
 [21 <./Pictures/Prediction_50_50_RF.png>]
-<Pictures/FeatureAnalysis.png, id=269, 441.14813pt x 251.43938pt>
+<Pictures/FeatureAnalysis.png, id=332, 441.14813pt x 251.43938pt>
 File: Pictures/FeatureAnalysis.png Graphic file (type png)
 
 <use Pictures/FeatureAnalysis.png>
-Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 353.
+Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 505.
 (pdftex.def)             Requested size: 422.77661pt x 217.8822pt.
 
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
@@ -829,31 +681,70 @@ Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 [25]
 Chapter 8.
-(./Straub_KM_T_2016.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 411.
- [26
+[26
+
+] (./Straub_KM_T_2016.bbl [27
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 411.
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no ¸ in font ptmr7t!
+ [28
+
+]
+Overfull \vbox (8.18385pt too high) has occurred while \output is active []
+
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 81--86
+\OT1/ptm/m/n/12 Enron / Enron[]Employee[]Status . xls$[]]. []Internet Archive[]
+.[[]$https : / / web . archive . org / web /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--86
+\OT1/ptm/m/n/12 20131126121206 / http : / / www . isi . edu / []adibi / Enron /
+ Enron[]Employee[]Status . xls$[]], Ac-cessed
+ []
+
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no ¡ in font ptmr7t!
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no ¤ in font ptmr7t!
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no ¤ in font ptmr7t!
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+
+Overfull \vbox (8.18385pt too high) has occurred while \output is active []
+
+
+[30])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 575.
+
+Overfull \vbox (8.18385pt too high) has occurred while \output is active []
+
+
+[31]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 575.
  (./Straub_KM_T_2016.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 411.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 411.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 575.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 575.
 Package rerunfilecheck Info: File `Straub_KM_T_2016.out' has not changed.
-(rerunfilecheck)             Checksum: 60688B924A076DEDF4560D137E0D0358;703.
+(rerunfilecheck)             Checksum: B38478F0F0482F154BF8BCE563A59FF5;669.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 411.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 575.
  ) 
 Here is how much of TeX's memory you used:
- 9585 strings out of 494985
- 140575 string characters out of 6180356
- 236463 words of memory out of 5000000
- 12580 multiletter control sequences out of 15000+600000
- 26777 words of font info for 64 fonts, out of 8000000 for 9000
+ 9623 strings out of 494985
+ 141294 string characters out of 6180356
+ 237784 words of memory out of 5000000
+ 12583 multiletter control sequences out of 15000+600000
+ 28461 words of font info for 66 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 36i,9n,38p,1412b,406s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,9n,38p,450b,427s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -864,11 +755,12 @@ amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Straub_KM_T_2016.pdf (35 pages, 488852 bytes).
+xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Straub_KM_T_2016.pdf (40 pages, 512561 bytes).
 PDF statistics:
- 348 PDF objects out of 1000 (max. 8388607)
- 279 compressed objects within 3 object streams
- 63 named destinations out of 1000 (max. 500000)
+ 450 PDF objects out of 1000 (max. 8388607)
+ 374 compressed objects within 4 object streams
+ 96 named destinations out of 1000 (max. 500000)
  163 words of extra memory for PDF output out of 10000 (max. 10000000)
 
