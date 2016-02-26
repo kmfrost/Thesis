@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.22)  25 FEB 2016 17:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.22)  26 FEB 2016 11:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -488,17 +488,17 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
 ] (./Straub_KM_T_2016.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-LaTeX Font Info:    Try loading font information for U+msa on input line 5.
+LaTeX Font Info:    Try loading font information for U+msa on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 5.
+LaTeX Font Info:    Try loading font information for U+msb on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 5.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -523,6 +523,8 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 ]
 Chapter 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 159.
 [1
 
 ]
@@ -530,171 +532,173 @@ Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
 [2]
-Chapter 2.
-[3
-
-]
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
-[4]
+[3]
+Chapter 2.
+[4
+
+]
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
 [5]
+Overfull \vbox (8.18385pt too high) has occurred while \output is active []
+
+
+[6]
 Chapter 3.
-[6
+[7
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 230.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 232.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 230.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 232.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 242.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 244.
 
-Overfull \vbox (8.01599pt too high) has occurred while \output is active []
-
-
-[7]
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
 [8]
+Overfull \vbox (8.18385pt too high) has occurred while \output is active []
+
+
+[9]
 Chapter 4.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 272.
-[9
+[10
 
 ]
 
-LaTeX Warning: Reference `AlgorithmDesign' on page 10 undefined on input line 2
-96.
+LaTeX Warning: Reference `AlgorithmDesign' on page 11 undefined on input line 2
+98.
 
-<Pictures/Unique_subjects_rec_hist.png, id=225, 571.8966pt x 369.0588pt>
+<Pictures/Unique_subjects_rec_hist.png, id=255, 571.8966pt x 369.0588pt>
 File: Pictures/Unique_subjects_rec_hist.png Graphic file (type png)
 
 <use Pictures/Unique_subjects_rec_hist.png>
 Package pdftex.def Info: Pictures/Unique_subjects_rec_hist.png used on input li
-ne 305.
+ne 307.
 (pdftex.def)             Requested size: 469.75499pt x 254.26117pt.
 
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
-[10]
+[11]
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
-[11 <./Pictures/Unique_subjects_rec_hist.png>]
-<Pictures/adj_matrix.png, id=242, 878.3214pt x 539.616pt>
+[12 <./Pictures/Unique_subjects_rec_hist.png>]
+<Pictures/adj_matrix.png, id=271, 878.3214pt x 539.616pt>
 File: Pictures/adj_matrix.png Graphic file (type png)
 
 <use Pictures/adj_matrix.png>
-Package pdftex.def Info: Pictures/adj_matrix.png used on input line 331.
+Package pdftex.def Info: Pictures/adj_matrix.png used on input line 333.
 (pdftex.def)             Requested size: 469.75499pt x 283.91339pt.
 
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
-[12]
+[13]
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
-[13 <./Pictures/adj_matrix.png>]
-<Pictures/Hubs_hist.png, id=261, 649.9482pt x 367.1316pt>
+[14 <./Pictures/adj_matrix.png>]
+<Pictures/Hubs_hist.png, id=290, 649.9482pt x 367.1316pt>
 File: Pictures/Hubs_hist.png Graphic file (type png)
 
 <use Pictures/Hubs_hist.png>
-Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 362.
+Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 364.
 (pdftex.def)             Requested size: 469.75499pt x 256.4071pt.
 
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
-[14 <./Pictures/Hubs_hist.png>]
+[15 <./Pictures/Hubs_hist.png>]
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
-[15]
+[16]
 Chapter 5.
-<Pictures/3_level_tree.png, id=290, 918.7926pt x 345.9324pt>
+<Pictures/3_level_tree.png, id=321, 918.7926pt x 345.9324pt>
 File: Pictures/3_level_tree.png Graphic file (type png)
 
 <use Pictures/3_level_tree.png>
-Package pdftex.def Info: Pictures/3_level_tree.png used on input line 397.
+Package pdftex.def Info: Pictures/3_level_tree.png used on input line 399.
 (pdftex.def)             Requested size: 469.75499pt x 170.32037pt.
- [16
+ [17
 
 ]
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
-[17 <./Pictures/3_level_tree.png>]
-Overfull \vbox (8.18385pt too high) has occurred while \output is active []
-
-
-[18]
+[18 <./Pictures/3_level_tree.png>]
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
 [19]
-Chapter 6.
-[20
+Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
-] <Pictures/Prediction_50_50_RF.png, id=322, 577.1964pt x 308.352pt>
+
+[20]
+Chapter 6.
+[21
+
+] <Pictures/Prediction_50_50_RF.png, id=351, 577.1964pt x 308.352pt>
 File: Pictures/Prediction_50_50_RF.png Graphic file (type png)
 
 <use Pictures/Prediction_50_50_RF.png>
 Package pdftex.def Info: Pictures/Prediction_50_50_RF.png used on input line 48
-2.
+4.
 (pdftex.def)             Requested size: 469.75499pt x 241.75908pt.
 
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
-[21 <./Pictures/Prediction_50_50_RF.png>]
-<Pictures/FeatureAnalysis.png, id=332, 441.14813pt x 251.43938pt>
+[22 <./Pictures/Prediction_50_50_RF.png>]
+<Pictures/FeatureAnalysis.png, id=362, 441.14813pt x 251.43938pt>
 File: Pictures/FeatureAnalysis.png Graphic file (type png)
 
 <use Pictures/FeatureAnalysis.png>
-Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 505.
+Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 507.
 (pdftex.def)             Requested size: 422.77661pt x 217.8822pt.
 
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
-[22 <./Pictures/FeatureAnalysis.png>]
+[23 <./Pictures/FeatureAnalysis.png>]
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
-[23]
+[24]
 Chapter 7.
-[24
+[25
 
 ]
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
-[25]
+[26]
 Chapter 8.
-[26
+[27
 
-] (./Straub_KM_T_2016.bbl [27
+] (./Straub_KM_T_2016.bbl [28
 
 ]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¸ in font ptmr7t!
- [28
+ [29
 
 ]
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
-[29]
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 81--86
 \OT1/ptm/m/n/12 Enron / Enron[]Employee[]Status . xls$[]]. []Internet Archive[]
 .[[]$https : / / web . archive . org / web /
@@ -718,30 +722,30 @@ Missing character: There is no © in font ptmr7t!
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
-[30])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 575.
+[31])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 577.
 
 Overfull \vbox (8.18385pt too high) has occurred while \output is active []
 
 
-[31]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 575.
+[32]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 577.
  (./Straub_KM_T_2016.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 575.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 575.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 577.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 577.
 Package rerunfilecheck Info: File `Straub_KM_T_2016.out' has not changed.
-(rerunfilecheck)             Checksum: B38478F0F0482F154BF8BCE563A59FF5;669.
+(rerunfilecheck)             Checksum: 4FF878911A2D39CED076584AE8A2CD75;958.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 575.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 577.
  ) 
 Here is how much of TeX's memory you used:
- 9623 strings out of 494985
- 141294 string characters out of 6180356
- 237784 words of memory out of 5000000
- 12583 multiletter control sequences out of 15000+600000
+ 9634 strings out of 494985
+ 141421 string characters out of 6180356
+ 237785 words of memory out of 5000000
+ 12588 multiletter control sequences out of 15000+600000
  28461 words of font info for 66 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  36i,9n,38p,450b,427s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -757,10 +761,10 @@ y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Straub_KM_T_2016.pdf (40 pages, 512561 bytes).
+Output written on Straub_KM_T_2016.pdf (41 pages, 514264 bytes).
 PDF statistics:
- 450 PDF objects out of 1000 (max. 8388607)
- 374 compressed objects within 4 object streams
- 96 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 481 PDF objects out of 1000 (max. 8388607)
+ 403 compressed objects within 5 object streams
+ 102 named destinations out of 1000 (max. 500000)
+ 203 words of extra memory for PDF output out of 10000 (max. 10000000)
 

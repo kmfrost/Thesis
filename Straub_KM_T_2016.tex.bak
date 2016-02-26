@@ -156,22 +156,24 @@ The result is a much fuller understanding of the center's internal structure tha
 \pagestyle{myheadings}
 
 \chapter{Introduction} \label{Introduction}
+\section{Motivation}
 A reorganization of a business can be very costly and has great effects once implemented, either for better or for worse.
 While this official hierarchy is important, there is an equally important organic organization of any business, which may or may not be reflected in the official organization chart.
 Understanding this unofficial structure is important, but due to its informal nature, it can be difficult to determine.
 One massive source of electronically searchable information that could be used to better understand this hidden structure is the business's emails.
 However, privacy concerns inhibit most research thrusts into email analysis.  
-
+\section{Problem Overview}
 The study presented in this paper collected an appropriately anonymized email metadata dataset to demonstrate to what extent this metadata can be used to determine this organic organizational chart.
 Furthermore, this research measured how well this organic organizational chart matches the official organizational chart.
 The study utilized email metadata from 37 voluntary participants.
 This metadata is used not only to analyze the voluntary participants, but also to what extent the non-participant members of the organization can be characterized.
-
+\section{Approach}
 The 98 features used in this study can be grouped into two common areas in email analytics: traffic-based and social-based.
 Using random forests, these features are used to predict each employee's job title.
 The ability to accurately determine job title using as few as three features is demonstrated.
 Finally, a comparison between relationships displayed in the data with the formal organizational chart is presented.  
-
+\section{Contributions}
+\section{Outline}
 This paper continues by discussing the related works in Section~\ref{LitReview}.  
 Section~\ref{DataCollection} describes the process of data collection and some statistics of the dataset.
 The features extracted from the data are described in Section~\ref{Features}, and the methods investigated using these features are covered in Section~\ref{Algorithm}.
@@ -468,7 +470,7 @@ The results section first shows the algorithm's ability to correctly classify bo
 The second part of the results section assumes perfect labeling of the employees and analyzes interactions between employees of different job titles.
 The ultimate goal of this research was to determine what additional information can be gained by analyzing the organic organizational chart when compared with the official organizational chart.
 
-\subsection{Classification Results}
+\section{Classification Results}
 Data was split by randomly assigning each email to either the training or testing set with equal probability.
 Then, all of the metrics described in Section~\ref{Features} were calculated for both groups separately.
 The training data was used as input to the random forest algorithm as described in Section~\ref{Algorithm}, and predictions were generated for the test data.
@@ -508,7 +510,7 @@ Therefore, a very good classifier can be built using much fewer features if the 
         \label{fig:feat_analysis}
 \end{figure}
 
-\subsection{Hierarchy Analysis}
+\section{Hierarchy Analysis}
 Most of the employees at the center are organized under a director and work with a program manager (unless for example they are a director or program manager).
 To generate a metric of how well emails can be used to predict the center's organizational chart, the director and project manager for each applicable employee is predicted from the email metadata. 
 
