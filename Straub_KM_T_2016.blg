@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Straub_KM_T_2016.aux
 The style file: ieeetr.bst
@@ -8,45 +8,45 @@ Warning--entry type for "shetty_status_2004" isn't style-file defined
 Warning--empty booktitle in sofershtein_predicting_2015
 Warning--empty journal in nordbo_data_2014
 Warning--empty journal in page_pagerank_1999
-You've used 26 entries,
+You've used 30 entries,
             1876 wiz_defined-function locations,
-            618 strings with 7609 characters,
-and the built_in function-call counts, 6361 in all, are:
-= -- 618
-> -- 236
+            644 strings with 8337 characters,
+and the built_in function-call counts, 7814 in all, are:
+= -- 766
+> -- 283
 < -- 0
-+ -- 89
-- -- 63
-* -- 421
-:= -- 893
-add.period$ -- 31
-call.type$ -- 26
-change.case$ -- 23
++ -- 106
+- -- 76
+* -- 525
+:= -- 1077
+add.period$ -- 35
+call.type$ -- 30
+change.case$ -- 27
 chr.to.int$ -- 0
-cite$ -- 29
-duplicate$ -- 359
-empty$ -- 643
-format.name$ -- 63
-if$ -- 1564
+cite$ -- 33
+duplicate$ -- 437
+empty$ -- 786
+format.name$ -- 76
+if$ -- 1925
 int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 28
-newline$ -- 86
-num.names$ -- 26
-pop$ -- 113
+int.to.str$ -- 30
+missing$ -- 32
+newline$ -- 98
+num.names$ -- 30
+pop$ -- 132
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 218
+skip$ -- 280
 stack$ -- 0
-substring$ -- 340
-swap$ -- 126
+substring$ -- 468
+swap$ -- 162
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 61
-width$ -- 28
-write$ -- 247
+while$ -- 77
+width$ -- 32
+write$ -- 287
 (There were 4 warnings)

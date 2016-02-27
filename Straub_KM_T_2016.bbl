@@ -14,18 +14,33 @@ D.~Fisher, A.~J. Brush, E.~Gleave, and M.~A. Smith, ``Revisiting {Whittaker} \&
 B.~Klimt and Y.~Yang, ``Introducing the {Enron} {Corpus}.,'' in {\em {CEAS}},
   2004.
 
-\bibitem{martin_analyzing_2005}
-S.~Martin, B.~Nelson, A.~Sewani, K.~Chen, and A.~D. Joseph, ``Analyzing
-  {Behavioral} {Features} for {Email} {Classification}.,'' in {\em {CEAS}},
-  2005.
+\bibitem{gaber_e-mail_2016}
+E.~M. Bahgat, S.~Rady, and W.~Gad, ``An {E}-mail {Filtering} {Approach} {Using}
+  {Classification} {Techniques},'' in {\em {AISI}2015, {November} 28-30, 2015,
+  {Beni} {Suef}, {Egypt}}, vol.~407, pp.~321--331, Cham: Springer International
+  Publishing, 2016.
+
+\bibitem{shams_classifying_2013}
+R.~Shams and R.~Mercer, ``Classifying {Spam} {Emails} {Using} {Text} and
+  {Readability} {Features},'' in {\em {ICDM} 2013}, pp.~657--666, Dec. 2013.
 
 \bibitem{he_novel_2014}
 B.~He, Z.~Li, and N.~Yang, ``A {Novel} {Approach} for {Email} {Clustering}
   {Based} on {Semantics},'' in {\em {WISA}, 2014}, pp.~269--272, Sept. 2014.
 
+\bibitem{keila_structure_2005}
+P.~S. Keila and D.~B. Skillicorn, ``Structure in the {Enron} email dataset,''
+  {\em Computational \& Mathematical Organization Theory}, vol.~11, no.~3,
+  pp.~183--199, 2005.
+
 \bibitem{sofershtein_predicting_2015}
 Z.~Sofershtein and S.~Cohen, ``Predicting {Email} {Recipients},'' pp.~761--764,
   ACM Press, 2015.
+
+\bibitem{hu_towards_2012}
+Q.~Hu, S.~Bao, J.~Xu, W.~Zhou, M.~Li, and H.~Huang, ``Towards building
+  effective email recipient recommendation service,'' in {\em {SOLI} 2012},
+  pp.~398--403, July 2012.
 
 \bibitem{nordbo_data_2014}
 A.~Nordbø, ``Data {Visualization} for {Discovery} of {Digital} {Evidence} in
@@ -50,6 +65,11 @@ G.~Tang, J.~Pei, and W.-S. Luk, ``Email mining: tasks, common techniques, and
 K.~Yelupula and S.~Ramaswamy, ``Social network analysis for email
   classification,'' in {\em Proceedings of the 46th {Annual} {Southeast}
   {Regional} {Conference} on {XX}}, pp.~469--474, ACM, 2008.
+
+\bibitem{martin_analyzing_2005}
+S.~Martin, B.~Nelson, A.~Sewani, K.~Chen, and A.~D. Joseph, ``Analyzing
+  {Behavioral} {Features} for {Email} {Classification}.,'' in {\em {CEAS}},
+  2005.
 
 \bibitem{wasserman_social_1994}
 S.~Wasserman and K.~Faust, {\em Social {Network} {Analysis}: {Methods} and
