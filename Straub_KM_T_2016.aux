@@ -62,57 +62,59 @@
 \@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces A comparison between the internal dataset and the Enron email corpus.\relax }}{8}{table.caption.6}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{tab:db_stats}{{3.1}{8}{A comparison between the internal dataset and the Enron email corpus.\relax }{table.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Pie chart showing the distribution of classes in the dataset.\relax }}{9}{figure.caption.7}}
+\newlabel{fig:class_breakdown}{{3.1}{9}{Pie chart showing the distribution of classes in the dataset.\relax }{figure.caption.7}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Dataset Description and Statistics}{9}{section.3.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Features}{9}{section.3.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Features}{10}{section.3.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Traffic-Based Features}{10}{subsection.3.3.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Histogram of unique subjects received by job title. The feature value for this plot has been normalized so that all values fall between 0 and 1. Note that by using different thresholds, meaningful splits in the data can be made. For example, all but two graduate students have a value less than $0.1$.\relax }}{12}{figure.caption.7}}
-\newlabel{fig:traffic_ex_hist}{{3.1}{12}{Histogram of unique subjects received by job title. The feature value for this plot has been normalized so that all values fall between 0 and 1. Note that by using different thresholds, meaningful splits in the data can be made. For example, all but two graduate students have a value less than $0.1$.\relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Social Network Features}{12}{subsection.3.3.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces The adjacency matrix representing the social connections of the center. This graph is very well connected with just one component. Nonetheless, there are groups who never exchanged a single email.\relax }}{13}{figure.caption.8}}
-\newlabel{fig:adj_matrix}{{3.2}{13}{The adjacency matrix representing the social connections of the center. This graph is very well connected with just one component. Nonetheless, there are groups who never exchanged a single email.\relax }{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Histogram of unique subjects received by job title. The feature value for this plot has been normalized so that all values fall between 0 and 1. Note that by using different thresholds, meaningful splits in the data can be made. For example, all but two graduate students have a value less than $0.1$.\relax }}{12}{figure.caption.8}}
+\newlabel{fig:traffic_ex_hist}{{3.2}{12}{Histogram of unique subjects received by job title. The feature value for this plot has been normalized so that all values fall between 0 and 1. Note that by using different thresholds, meaningful splits in the data can be made. For example, all but two graduate students have a value less than $0.1$.\relax }{figure.caption.8}{}}
 \citation{kleinberg_hubs_1999}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Social Network Features}{13}{subsection.3.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces The adjacency matrix representing the social connections of the center. This graph is very well connected with just one component. Nonetheless, there are groups who never exchanged a single email.\relax }}{14}{figure.caption.9}}
+\newlabel{fig:adj_matrix}{{3.3}{14}{The adjacency matrix representing the social connections of the center. This graph is very well connected with just one component. Nonetheless, there are groups who never exchanged a single email.\relax }{figure.caption.9}{}}
 \citation{page_pagerank_1999}
 \citation{lind_cycles_2005}
 \citation{saramaki_generalizations_2007}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Histogram of hubs from social graph by job title. Note that directors on average have the highest hub score and graduate students have the lowest. In fact, three out of eight directors can be identified by filtering samples on full graph hubs values $>0.6$. \relax }}{15}{figure.caption.10}}
+\newlabel{fig:social_ex_hist}{{3.4}{15}{Histogram of hubs from social graph by job title. Note that directors on average have the highest hub score and graduate students have the lowest. In fact, three out of eight directors can be identified by filtering samples on full graph hubs values $>0.6$. \relax }{figure.caption.10}{}}
 \citation{borgatti2011analyzing}
 \citation{brandes2005centrality}
 \citation{estrada2008communicability}
 \citation{newman2001scientific}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Histogram of hubs from social graph by job title. Note that directors on average have the highest hub score and graduate students have the lowest. In fact, three out of eight directors can be identified by filtering samples on full graph hubs values $>0.6$. \relax }}{15}{figure.caption.9}}
-\newlabel{fig:social_ex_hist}{{3.3}{15}{Histogram of hubs from social graph by job title. Note that directors on average have the highest hub score and graduate students have the lowest. In fact, three out of eight directors can be identified by filtering samples on full graph hubs values $>0.6$. \relax }{figure.caption.9}{}}
 \citation{Breiman2001}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Algorithm Design}{16}{chapter.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Algorithm Design}{17}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{Algorithm}{{4}{16}{Algorithm Design}{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Tools}{16}{section.4.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Model Selection}{16}{section.4.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Example random tree of depth 3 to demonstrate how a few rules can be used to find significant class divisions.\relax }}{17}{figure.caption.10}}
-\newlabel{fig:ex_tree}{{4.1}{17}{Example random tree of depth 3 to demonstrate how a few rules can be used to find significant class divisions.\relax }{figure.caption.10}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Feature Selection}{18}{section.4.3}}
-\newlabel{eq:info_gained}{{4.3}{18}{Feature Selection}{equation.4.3.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Top 20 features ranked by the information gain.\relax }}{20}{table.caption.11}}
-\newlabel{tab:ranked_feats}{{4.1}{20}{Top 20 features ranked by the information gain.\relax }{table.caption.11}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Performance Analysis}{21}{chapter.5}}
+\newlabel{Algorithm}{{4}{17}{Algorithm Design}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Tools}{17}{section.4.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Model Selection}{17}{section.4.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Example random tree of depth 3 to demonstrate how a few rules can be used to find significant class divisions.\relax }}{18}{figure.caption.11}}
+\newlabel{fig:ex_tree}{{4.1}{18}{Example random tree of depth 3 to demonstrate how a few rules can be used to find significant class divisions.\relax }{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Feature Selection}{19}{section.4.3}}
+\newlabel{eq:info_gained}{{4.3}{19}{Feature Selection}{equation.4.3.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Top 20 features ranked by the information gain.\relax }}{21}{table.caption.12}}
+\newlabel{tab:ranked_feats}{{4.1}{21}{Top 20 features ranked by the information gain.\relax }{table.caption.12}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Performance Analysis}{22}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{Performance}{{5}{21}{Performance Analysis}{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Classification Results}{21}{section.5.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces The Random Forest algorithm was extremely accurate even for very uneven class sizes. Note that all members of 4 classes were labelled perfectly. There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.\relax }}{22}{figure.caption.12}}
-\newlabel{fig:result_hist}{{5.1}{22}{The Random Forest algorithm was extremely accurate even for very uneven class sizes. Note that all members of 4 classes were labelled perfectly. There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.\relax }{figure.caption.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Prediction accuracy compared to number of features used for analysis. Note that the accuracy is still very high, 95.6\%, when only twenty features are used. The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. \relax }}{23}{figure.caption.13}}
-\newlabel{fig:feat_analysis}{{5.2}{23}{Prediction accuracy compared to number of features used for analysis. Note that the accuracy is still very high, 95.6\%, when only twenty features are used. The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. \relax }{figure.caption.13}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Hierarchy Analysis}{24}{section.5.2}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Future Work}{25}{chapter.6}}
+\newlabel{Performance}{{5}{22}{Performance Analysis}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Classification Results}{22}{section.5.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces The Random Forest algorithm was extremely accurate even for very uneven class sizes. Note that all members of 4 classes were labelled perfectly. There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.\relax }}{23}{figure.caption.13}}
+\newlabel{fig:result_hist}{{5.1}{23}{The Random Forest algorithm was extremely accurate even for very uneven class sizes. Note that all members of 4 classes were labelled perfectly. There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.\relax }{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Prediction accuracy compared to number of features used for analysis. Note that the accuracy is still very high, 95.6\%, when only twenty features are used. The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. \relax }}{24}{figure.caption.14}}
+\newlabel{fig:feat_analysis}{{5.2}{24}{Prediction accuracy compared to number of features used for analysis. Note that the accuracy is still very high, 95.6\%, when only twenty features are used. The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. \relax }{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Hierarchy Analysis}{25}{section.5.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Future Work}{26}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{FutureWork}{{6}{25}{Future Work}{chapter.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Generalization}{25}{section.6.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Deep Learning}{25}{section.6.2}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{26}{chapter.7}}
+\newlabel{FutureWork}{{6}{26}{Future Work}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Generalization}{26}{section.6.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Deep Learning}{26}{section.6.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{27}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{Conclusions}{{7}{26}{Conclusions}{chapter.7}{}}
+\newlabel{Conclusions}{{7}{27}{Conclusions}{chapter.7}{}}
 \bibstyle{ieeetr}
 \bibdata{bib}
 \bibcite{radicati_emails_2015}{1}
