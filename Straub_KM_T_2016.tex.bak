@@ -196,9 +196,9 @@ Out of 600 employees at a high-tech company, the average employee had 28,660 ema
 This is a considerable amount of untapped information that could be leveraged to characterize employee roles within an organization.
 \section{Commonly Used Datasets}
 Since the Enron email dataset was released in 2004 \cite{klimt_introducing_2004}, it has been extensively researched on topics including spam classification~\cite{gaber_e-mail_2016}, \cite{shams_classifying_2013}; email categorization \cite{he_novel_2014}, \cite{keila_structure_2005}; and recipient prediction \cite{sofershtein_predicting_2015}, \cite{hu_towards_2012}.
-However, there are known flaws and discrepancies with even the most recent versions of this dataset\textemdash{}ranging from misspelled email addresses~\cite{nordbo_data_2014} to duplicate emails~\cite{waterman_big_2014}.
+However, there are known flaws and discrepancies with even the most recent versions of this dataset\textemdash{}ranging from misspelled email addresses~\cite{nordbo_data_2014} to duplicate email addresses~\cite{waterman_big_2014}, and misfiled emails~\cite{namata_inferring_2006}.
 In one of the most popular forms of the dataset~\cite{shetty_enron_2004}, the database includes 253,735 emails sent as ``CC'' and  253,713 emails sent as ``BCC''.
-Further inspection reveals that emails sent as one type or the other were almost always mistakenly recorded as both.
+Further inspection reveals that emails sent as one type or the other were almost always mistakenly recorded as both.  In addition to all of these issues, no comprehensive or accurate list of job title labels is available.
 \section{Prior Analysis}
 The existing literature on analyzing social email behavior is mainly divided into two categories: traffic-based and social-based~\cite{tang_email_2013}.
 Traffic-based methods calculate statistics based only on email patterns.
@@ -271,7 +271,7 @@ These additional employees were included in the study when ground truth for thei
 This provides 69 total employees in the study.
 
 \section{Features}
-The study includes 98 features that were extracted from the email data: 67 traffic-based and 31 social-based.
+The study includes 111 features that were extracted from the email data: 80 traffic-based and 31 social-based.
 The traffic-based features are those calculated purely from the collected email metadata.
 The social features, on the other hand, first model the email patterns in a graphical network and then calculate statistics from this model.
 In the following sections, all features from each of the two categories are described. 
