@@ -260,7 +260,14 @@ Distinct Emails    & 585,096         & 252,759       \\ \bottomrule
 \end{table}
 
 \section{Dataset Description and Statistics}
-The center divides its employees into six main areas: directors, graduate students, operations, outreach, project management (PM), and research.
+The center divides its employees into six main areas: directors, graduate students, operations, outreach, project management (PM), and research. 
+A chart showing the distribution of classes is shown below in Figure \ref{fig:class_breakdown}
+\begin{figure}[t]
+    \centering
+        \includegraphics[width=\columnwidth,trim={1mm 8mm 1mm 2mm},clip]{class_breakdown}
+        \caption{Pie chart showing the distribution of classes in the dataset.}
+        \label{fig:class_breakdown}
+\end{figure}
 
 Table~\ref{tab:db_stats} compares statistics between this internal dataset and the Enron corpus.
 This internal database is more modern, contains more emails, and covers a longer time period.
@@ -300,7 +307,7 @@ To normalize some of the features, metrics were additionally calculated as a per
 Examples include the percentage of emails that were sent after hours and the percentage of all received emails with unique subjects out of all received emails.
 
 The best traffic-based feature for predicting employee status was the number of unique subjects received.
-This is because it produces the highest information gain in the feature ranker described in Section~\ref{AlgorithmDesign}.
+This is because it produces the highest information gain in the feature ranker described in Section~\ref{Algorithm}.
 This number represents the number of distinct conversations in which an individual was involved.
 It is intuitive that people who are involved in more conversations are higher in an organization.
 This feature is shown in the histogram in Figure~\ref{fig:traffic_ex_hist}.
@@ -575,7 +582,6 @@ Future work will attempt to gain more insight into an organization's organic hie
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter*{Bibliography}
 \bibliographystyle{ieeetr}
 \bibliography{bib}
 
