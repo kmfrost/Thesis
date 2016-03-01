@@ -33,6 +33,9 @@
 \usepackage{floatrow}
 \floatsetup[table]{capposition=top}
 \usepackage[font=small,labelfont=bf]{caption}
+\usepackage{fancyhdr} % Used for header
+\usepackage[headsep=0.5cm,headheight=0.5cm]{geometry}
+
 
 \hypersetup{breaklinks=true}
 \urlstyle{same}
@@ -53,7 +56,7 @@
 % Uncomment for double-spaced document.
 \renewcommand{\baselinestretch}{2}
 
-% \usepackage{epsf}
+\usepackage{epsf}
 
 \begin{document}
 
@@ -63,7 +66,7 @@
 
 % TITLE
 {\Large 
-Data Mining Academic Emails to Model Employee Behaviors and Analyze Organizaitonal Structure
+Data Mining Academic Emails to Model Employee Behaviors and Analyze Organizational Structure
 }
 
 \vfill
@@ -486,7 +489,7 @@ The ultimate goal of this research was to determine what additional information 
 
 \section{Classification Results}
 Data was split by randomly assigning each email to either the training or testing set with equal probability.
-Then, all of the metrics described in Section~\ref{Features} were calculated for both groups separately.
+Then, all of the metrics described in Section~\ref{Data} were calculated for both groups separately.
 The training data was used as input to the random forest algorithm as described in Section~\ref{Algorithm}, and predictions were generated for the test data.
 The number of correct and incorrect classifications for each class are shown below in Figure~\ref{fig:result_hist}.
 Note that only two predictions were wrong: one person each in research and outreach were misclassified as graduate students.
@@ -582,6 +585,7 @@ Future work will attempt to gain more insight into an organization's organic hie
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\chapter*{Bibliography}
 \bibliographystyle{ieeetr}
 \bibliography{bib}
 
