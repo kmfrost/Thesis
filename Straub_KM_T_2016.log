@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  29 FEB 2016 21:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  2 MAR 2016 15:46
 entering extended mode
 **Straub_KM_T_2016.tex
 (Straub_KM_T_2016.tex
@@ -688,13 +688,11 @@ Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 524.
 Chapter 6.
 [26
 
-]
+] [27]
 Chapter 7.
-[27
+[28
 
-] [28] (Straub_KM_T_2016.bbl [29
-
-] [30
+] (Straub_KM_T_2016.bbl [29] [30
 
 ]
 Missing character: There is no Ã in font ptmr7t!
@@ -721,19 +719,19 @@ Missing character: There is no ¤ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 598.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 613.
  [33]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 598.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 613.
  (Straub_KM_T_2016.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 598.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 598.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 613.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 613.
 Package rerunfilecheck Info: File `Straub_KM_T_2016.out' has not changed.
 (rerunfilecheck)             Checksum: 62F22D81A96FA228BAA71E1A826239F6;1642.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 598.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 613.
  ) 
 Here is how much of TeX's memory you used:
- 10674 strings out of 493673
- 156296 string characters out of 3141530
+ 10673 strings out of 493673
+ 156285 string characters out of 3141530
  266675 words of memory out of 3000000
  13735 multiletter control sequences out of 15000+200000
  30087 words of font info for 68 fonts, out of 3000000 for 9000
@@ -752,9 +750,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files (x86)/MiKTeX
 /fonts/type1/urw/times/utmb8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/urw/times/utmr8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on Straub_KM_T_2016.pdf (42 pages, 597288 bytes).
+Output written on Straub_KM_T_2016.pdf (42 pages, 598113 bytes).
 PDF statistics:
- 550 PDF objects out of 1000 (max. 8388607)
- 119 named destinations out of 1000 (max. 500000)
+ 549 PDF objects out of 1000 (max. 8388607)
+ 118 named destinations out of 1000 (max. 500000)
  294 words of extra memory for PDF output out of 10000 (max. 10000000)
 

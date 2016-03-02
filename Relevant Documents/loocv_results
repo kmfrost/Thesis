@@ -1,0 +1,49 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.RandomForest -I 1500 -K 20 -S 100
+Relation:     trai_norm_email_features_100_0_0-weka.filters.unsupervised.attribute.Remove-R109-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    67
+Attributes:   112
+[list of attributes omitted]
+Test mode:67-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Random forest of 1500 trees, each constructed while considering 20 random features.
+Out of bag error: 0.3731
+
+
+
+Time taken to build model: 1.48 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          45               67.1642 %
+Incorrectly Classified Instances        22               32.8358 %
+Kappa statistic                          0.5126
+Mean absolute error                      0.1958
+Root mean squared error                  0.3153
+Relative absolute error                 67.9047 %
+Root relative squared error             82.8096 %
+Total Number of Instances               67     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.9       0.216      0.771     0.9       0.831      0.945    GradStudent
+                 0.529     0.2        0.474     0.529     0.5        0.711    Research
+                 0.5       0.051      0.571     0.5       0.533      0.756    Director
+                 0.6       0          1         0.6       0.75       0.9      PM
+                 0.286     0.017      0.667     0.286     0.4        0.679    Operations
+Weighted Avg.    0.672     0.155      0.678     0.672     0.66       0.832
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e   <-- classified as
+ 27  3  0  0  0 |  a = GradStudent
+  6  9  2  0  0 |  b = Research
+  1  2  4  0  1 |  c = Director
+  0  1  1  3  0 |  d = PM
+  1  4  0  0  2 |  e = Operations
+
