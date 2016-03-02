@@ -1,3 +1,5 @@
 *.gz
 Straub_KM_T_2016.log
 *.blg
+Straub_KM_T_2016.tex.bak
+*.bak
