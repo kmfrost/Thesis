@@ -250,12 +250,12 @@ The following is the metadata provided from each email:
 \centering
 \caption{A comparison between the internal dataset and the Enron email corpus.}
 \label{tab:db_stats}
-\resizebox{0.5\textwidth}{!}{%
+\resizebox{0.6\textwidth}{!}{%
 \begin{tabular}{@{}lrr@{}}
 \toprule
                    & Center          & Enron         \\ \midrule
 Time               & 11/2012-11/2015 & 1/2000-9/2002 \\
-Distinct Addresses & 32,118          & 75,406        \\
+Distinct Email Addresses & 32,118          & 75,406        \\
 Participants       & 32              & 249           \\
 Distinct Emails    & 585,096         & 252,759       \\ \bottomrule
 \end{tabular}
@@ -268,7 +268,7 @@ A chart showing the distribution of classes is shown below in Figure \ref{fig:cl
 \begin{figure}[t]
     \centering
         \includegraphics[width=\columnwidth,trim={1mm 8mm 1mm 2mm},clip]{class_breakdown}
-        \caption{Pie chart showing the distribution of classes in the dataset.}
+        \caption[Dataset class distribution pie chart]{Pie chart showing the distribution of classes in the dataset.  Note that the classes are far from being uniformly distributed.}
         \label{fig:class_breakdown}
 \end{figure}
 
@@ -319,8 +319,8 @@ Researchers generated more emails on average, but fewer than the Program Manager
 The directors of the center participate in the most email conversations. 
 \begin{figure}[t]
     \centering
-        \includegraphics[width=\columnwidth,trim={1mm 20mm 1mm 2mm},clip]{Unique_subjects_rec_hist}
-        \caption{Histogram of unique subjects received by job title.  The feature value for this plot has been normalized so that all values fall between 0 and 1.  Note that by using different thresholds, meaningful splits in the data can be made.  For example, all but two graduate students have a value less than $0.1$.}
+        \includegraphics[width=\columnwidth,trim={1mm 17mm 1mm 2mm},clip]{Unique_subjects_rec_hist}
+        \caption[Unique subjects received histogram]{Histogram of unique subjects received by job title.  The feature value for this plot has been normalized so that all values fall between 0 and 1.  Note that by using different thresholds, meaningful splits in the data can be made.  For example, all but two graduate students have a value less than $0.1$.}
         \label{fig:traffic_ex_hist}
 \end{figure}
 
@@ -347,7 +347,7 @@ Some employees never exchanged any emails, while others exchanged many.
     \centering
     \includegraphics[width=\columnwidth,trim={4mm .5mm 0mm 5mm},clip]{adj_matrix}
     \vspace{-17pt}
-    \caption{The adjacency matrix representing the social connections of the center.  This graph is very well connected with just one component.  Nonetheless, there are groups who never exchanged a single email.}
+    \caption[The dataset represented as an adjacency matrix]{The adjacency matrix representing the social connections of the center.  This graph is very well connected with just one component.  Nonetheless, there are many pairs of individuals who never exchanged a single email.}
     \label{fig:adj_matrix}
 \end{figure}
 
@@ -378,7 +378,7 @@ The histogram of hub values in the full graph broken down by class is shown in F
     \centering
         \includegraphics[width=\columnwidth,trim={.6mm 2mm 0.6mm 3mm},clip]{Hubs_hist}
         \vspace{-17pt}
-        \caption{Histogram of hubs from social graph by job title.  Note that directors on average have the highest hub score and graduate students have the lowest.  In fact, three out of eight directors can be identified by filtering samples on full graph hubs values $>0.6$. }
+        \caption[Full graph hubs histogram]{Histogram of hubs from social graph by job title.  Note that directors on average have the highest hub score and graduate students have the lowest.  In fact, three out of eight directors can be identified by filtering samples on full graph hubs values $>0.6$. }
         \label{fig:social_ex_hist}
 \end{figure}
 
@@ -414,7 +414,7 @@ An example random tree with depth three is shown in Figure~\ref{fig:ex_tree}.
     \centering
     \includegraphics[width=\columnwidth,trim={0mm 2.5mm 0mm 2mm},clip]{3_level_tree}
     \vspace{-15pt}
-    \caption{Example random tree of depth 3 to demonstrate how a few rules can be used to find significant class divisions.}
+    \caption[Example random tree]{Example random tree of depth 3 to demonstrate how a few rules can be used to find significant class divisions.}
     \label{fig:ex_tree}
 \end{figure}
 
@@ -500,7 +500,7 @@ Therefore, the classification accuracy for the study participants is 100\%, corr
     \centering
     \includegraphics[width=\columnwidth,trim={1mm 2mm 1mm 3mm},clip]{Prediction_50_50_RF}
     \vspace{-20pt}
-    \caption{The Random Forest algorithm was extremely accurate even for very uneven class sizes.  Note that all members of 4 classes were labelled perfectly.  There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.}
+    \caption[Classification results]{The Random Forest algorithm was extremely accurate even for very uneven class sizes.  Note that all members of 4 classes were labelled perfectly.  There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.}
     \label{fig:result_hist}
 \end{figure}
 
@@ -523,9 +523,19 @@ Therefore, a very good classifier can be built using much fewer features if the 
     \centering
         \includegraphics[width=.9\columnwidth,trim={1mm 6mm 1mm 3.5mm},clip]{FeatureAnalysis}
         \vspace{-7pt}
-        \caption{Prediction accuracy compared to number of features used for analysis.  Note that the accuracy is still very high, 95.6\%, when only twenty features are used.  The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. }
+        \caption[Prediction accuracy compared to number of features]{Prediction accuracy compared to number of features used for analysis.  Note that the accuracy is still very high, 95.6\%, when only twenty features are used.  The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. }
         \label{fig:feat_analysis}
 \end{figure}
+
+\section{Leave-One Out Cross Validation}
+So I tried LOOCV which gave, \ref{fig:loocv_conf_plot}.
+%\begin{figure}[t]
+%    \centering
+%        \includegraphics[width=.9\columnwidth,trim={1mm 4mm 1mm 3.5mm},clip]{confusion_plot}
+%        \vspace{-7pt}
+%        \caption[Leave one out cross validation results]{Prediction accuracy was higher for graduate students, who have more uniform behaviors and more training data.  However, for each category, the majority of the people classified were true members of that group, save for research.  Note that even for those classified as research, there were more true researchers than any other class.}
+%        \label{fig:loocv_conf_plot}
+%\end{figure}
 
 \section{Hierarchy Analysis}
 Most of the employees at the center are organized under a director and work with a program manager (unless for example they are a director or program manager).
@@ -543,25 +553,45 @@ Many of the errors in this classification are due to employees who work with mul
 \chapter{Future Work} \label{FutureWork}
 \section{Generalization}
 \begin{itemize}
-\item Confusion matrix - how to make more diagonal?
-\item Standard supervised learning - how much more data is needed
-\item What would I expect the results to be?
-\item Analysis that proves with extra stuff and time it could be better
+\item As discussed above, the accuracy of the leave-one-out cross-validation test was low because of the limited number of data points.  The confusion matrix in Figure \ref{fig:loocv_conf_plot} shows that about one third of the predictions were incorrect.  
+\begin{figure}[t]
+    \centering
+        \includegraphics[width=.9\columnwidth,trim={1mm 4mm 1mm 3.5mm},clip]{confusion_plot}
+        \vspace{-7pt}
+        \caption[Leave one out cross validation results]{Prediction accuracy was higher for graduate students, who have more uniform behaviors and more training data.  However, for each category, the majority of the people classified were true members of that group, save for research.  Note that even for those classified as research, there were more true researchers than any other class.}
+        \label{fig:loocv_conf_plot}
+\end{figure}
+\item These results can typically be improved by increasing the number of training data. In the case of leave-one-out cross-validation, this translates to more labeled employees.
+\item How good would the results be for different amounts of data?  [not sure how to determine]
+\item Analysis that proves with more data and time it could be better [not sure how to prove]
 \end{itemize}
 \section{Deep Learning}
 \begin{itemize}
-\item How to implement deep learning on a very large scale (1,000's of dimensions, terabytes of data)?  Find an analogous paper for comparison.
-\item Unsupervised learning with deep belief network
-\item Backpropogation with some labels to refine weights
+\item Techniques such as random forests work well for small, low-dimensional data.  However, if the size of the dataset were greatly increased to billions of people a more sophisticated model would be necessary for accurate classification.  This is required to accurately learn the complicated structure inherent to such large real-world datasets.
+\item Describe deep belief networks: A deep belief network is a generative graph with nodes that represent stochastic variables.
+There are several layers of these nodes, some of which are visible and some are hidden.
+Typically, the top two layers of nodes have undirected connections.
+Therefore, these layers are actually Restricted Boltzman machines (RBMs).
+The rest of the layers use directed edges, forming a Bayesian network.
+For each node, there exists a probability of activation, $p(s_i=1)$, which is represented by the nonlinear sigmoid function applied to a weighted input from the layer above.
+Specifically,
+\begin{equation}
+p(s_i=1) = \frac{1}{1+\exp(-b_i-\sum_j s_j w_{ij}}
+\end{equation}
+where $j$ represents the ancestors of node $i$, $w_{ij}$ are the weights on the connections between $i$ and $j$, and $b_i$ is the bias associated with node $i$.  
+Described in \cite{hinton_fast_2006} is a fast, greedy method to train these networks one layer at a time ...
+\item  The challenge with very deep networks is that they are very difficult to train \cite{bengio_learning_2009}. Testing on the MNIST dataset of handwritten digits, unsupervised pre-training is shown to improve classification results over only supervised training  \cite{erhan_why_2010}. Pre-training identifies a set of initial weights for the network that can ultimately lead to better classification results.  An advantage of unsupervised pre-training is that, with small enough layers, it acts as a regularizer by decreasing variance and increasing the bias.  
+\item Imagine a representative sample of volunteers from the dataset self-identifies themselves.  This produces a set of labeled training data that can be used for backpropagation.  In conjunction with greedy pre-training, backpropagation has been shown to improve both the optimization and generalization of a DBN.
+\item Find an analogous paper for comparison.
 \end{itemize}
 
 
 
-If I had more data I could cluster but it would be rough.
-If I could label a few from each class, take 2 layers of neurons (greedily train).
-Use Boltzman's and backprop to get an awesome classifier!
-Write 3-4 pages on what more, higher-dimensional data + deep learning could improve.
-Show that I know how it works.
+%If I had more data I could cluster but it would be rough.
+%If I could label a few from each class, take 2 layers of neurons (greedily train).
+%Use Boltzman's and backprop to get an awesome classifier!
+%Write 3-4 pages on what more, higher-dimensional data + deep learning could improve.
+%Show that I know how it works.
 
 
 
