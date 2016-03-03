@@ -567,7 +567,9 @@ Many of the errors in this classification are due to employees who work with mul
 \end{itemize}
 \section{Deep Learning}
 \begin{itemize}
-\item Techniques such as random forests work well for small, low-dimensional data.  However, if the size of the dataset were greatly increased to billions of people a more sophisticated model would be necessary for accurate classification.  This is required to accurately learn the complicated structure inherent to such large real-world datasets.
+\item Techniques such as random forests work well for small, low-dimensional data.  However, imagine if the size of the dataset were greatly increased to billions of people without labels.  In this case, a more sophisticated model would be necessary for successful classification.  This is required to accurately learn the complicated structure inherent to such large real-world datasets.
+Suppose a representative sample of volunteers from the dataset self-identifies themselves.
+This would produce a set of labeled training data, transforming the problem space to semi-supervised learning. 
 \item Describe deep belief networks: A deep belief network is a generative graph with nodes that represent stochastic variables.
 There are several layers of these nodes, some of which are visible and some are hidden.
 Typically, the top two layers of nodes have undirected connections.
@@ -581,7 +583,8 @@ p(s_i=1) = \frac{1}{1+\exp(-b_i-\sum_j s_j w_{ij}}
 where $j$ represents the ancestors of node $i$, $w_{ij}$ are the weights on the connections between $i$ and $j$, and $b_i$ is the bias associated with node $i$.  
 Described in \cite{hinton_fast_2006} is a fast, greedy method to train these networks one layer at a time ...
 \item  The challenge with very deep networks is that they are very difficult to train \cite{bengio_learning_2009}. Testing on the MNIST dataset of handwritten digits, unsupervised pre-training is shown to improve classification results over only supervised training  \cite{erhan_why_2010}. Pre-training identifies a set of initial weights for the network that can ultimately lead to better classification results.  An advantage of unsupervised pre-training is that, with small enough layers, it acts as a regularizer by decreasing variance and increasing the bias.  
-\item Imagine a representative sample of volunteers from the dataset self-identifies themselves.  This produces a set of labeled training data that can be used for backpropagation.  In conjunction with greedy pre-training, backpropagation has been shown to improve both the optimization and generalization of a DBN.
+\item This labeled data can be used for backpropagation.  In conjunction with greedy pre-training, backpropagation has been shown to improve both the optimization and generalization of a DBN. 
+Hinton et al. showed that unsupervised pre-training followed by backpropagation of a DBN outperformed traditional feed forward neural networks on the MNIST dataset \cite{hinton_fast_2006}.
 \item Find an analogous paper for comparison.
 \end{itemize}
 
