@@ -561,9 +561,15 @@ Many of the errors in this classification are due to employees who work with mul
         \caption[Leave one out cross validation results]{Prediction accuracy was higher for graduate students, who have more uniform behaviors and more training data.  However, for each category, the majority of the people classified were true members of that group, save for research.  Note that even for those classified as research, there were more true researchers than any other class.}
         \label{fig:loocv_conf_plot}
 \end{figure}
-\item These results can typically be improved by increasing the number of training data. In the case of leave-one-out cross-validation, this translates to more labeled employees.
-\item How good would the results be for different amounts of data?  [not sure how to determine]
-\item Analysis that proves with more data and time it could be better [not sure how to prove]
+\item These results can typically be improved by increasing the number of training data. 
+\item Performed experiment to gauge how the amount of training data affects the accuracy of the LOOCV test.  This is shown below in Figure  \ref{fig:loocv_generalization}.
+\begin{figure}[t]
+    \centering
+        \includegraphics[width=.7\columnwidth,trim={1mm 2mm 1mm 3.5mm},clip]{generalization}
+        \vspace{-7pt}
+        \caption[Effects of more data on accuracy]{Effects of using more data for leave-one-out cross-validation.  [Still working on generating this, but I expect it to exponentially decrease.  From this data, I can fit a curve to the data that I do have to estimate how well the algorithm will perform with more data.]}
+        \label{fig:loocv_generalization}
+\end{figure}
 \end{itemize}
 \section{Deep Learning}
 \begin{itemize}
@@ -582,8 +588,15 @@ p(s_i=1) = \frac{1}{1+\exp(-b_i-\sum_j s_j w_{ij}}
 \end{equation}
 where $j$ represents the ancestors of node $i$, $w_{ij}$ are the weights on the connections between $i$ and $j$, and $b_i$ is the bias associated with node $i$.  
 Described in \cite{hinton_fast_2006} is a fast, greedy method to train these networks one layer at a time ...
-\item  The challenge with very deep networks is that they are very difficult to train \cite{bengio_learning_2009}. Testing on the MNIST dataset of handwritten digits, unsupervised pre-training is shown to improve classification results over only supervised training  \cite{erhan_why_2010}. Pre-training identifies a set of initial weights for the network that can ultimately lead to better classification results.  An advantage of unsupervised pre-training is that, with small enough layers, it acts as a regularizer by decreasing variance and increasing the bias.  
-\item This labeled data can be used for backpropagation.  In conjunction with greedy pre-training, backpropagation has been shown to improve both the optimization and generalization of a DBN. 
+\item  The challenge with very deep networks is that they are very difficult to train \cite{bengio_learning_2009}. 
+\item Unsupervised pre-training can improve the efficency of training deep belief networks, as first described in \cite{hinton_recognize_2007}.
+Describe the process of unsupervised pre-training.
+\item Testing on the MNIST dataset of handwritten digits, unsupervised pre-training is shown to improve classification results over only supervised training  \cite{erhan_why_2010}. 
+Pre-training identifies a set of initial weights for the network that can ultimately lead to better classification results.  
+An advantage of unsupervised pre-training is that, with small enough layers, it acts as a regularizer by decreasing variance and increasing the bias \cite{hinton_recognize_2007}.  
+\item This labeled data can be used for backpropagation to fine-tune the network.
+Describe the process backpropagation with the small set of labeled data.
+\item In conjunction with greedy pre-training, backpropagation has been shown to improve both the optimization and generalization of a DBN. 
 Hinton et al. showed that unsupervised pre-training followed by backpropagation of a DBN outperformed traditional feed forward neural networks on the MNIST dataset \cite{hinton_fast_2006}.
 \item Find an analogous paper for comparison.
 \end{itemize}

@@ -156,6 +156,10 @@ G.~E. Hinton, S.~Osindero, and Y.-W. Teh, ``A fast learning algorithm for deep
 Y.~Bengio, ``Learning {Deep} {Architectures} for {AI},'' {\em Foundations and
   Trends® in Machine Learning}, vol.~2, no.~1, pp.~1--127, 2009.
 
+\bibitem{hinton_recognize_2007}
+G.~E. Hinton, ``To recognize shapes, first learn to generate images,'' {\em
+  Progress in brain research}, vol.~165, pp.~535--547, 2007.
+
 \bibitem{erhan_why_2010}
 D.~Erhan, Y.~Bengio, A.~Courville, P.-A. Manzagol, P.~Vincent, and S.~Bengio,
   ``Why does unsupervised pre-training help deep learning?,'' {\em The Journal
