@@ -23,16 +23,16 @@
 \contentsline {subsubsection}{Adapting Search Engine Algorithms}{18}{section*.17}
 \contentsline {subsubsection}{Clustering Metrics}{19}{section*.18}
 \contentsline {subsubsection}{Centrality Measures}{20}{section*.19}
-\contentsline {subsubsection}{Most Useful Social Network Features}{21}{section*.20}
-\contentsline {chapter}{\numberline {4}Algorithm Design}{23}{chapter.4}
-\contentsline {section}{\numberline {4.1}Tools}{23}{section.4.1}
-\contentsline {section}{\numberline {4.2}Model Selection}{23}{section.4.2}
-\contentsline {section}{\numberline {4.3}Feature Selection}{25}{section.4.3}
-\contentsline {chapter}{\numberline {5}Performance Analysis}{28}{chapter.5}
-\contentsline {section}{\numberline {5.1}Classification Results}{28}{section.5.1}
-\contentsline {section}{\numberline {5.2}Leave-One Out Cross Validation}{31}{section.5.2}
-\contentsline {section}{\numberline {5.3}Hierarchy Analysis}{31}{section.5.3}
-\contentsline {chapter}{\numberline {6}Future Work}{33}{chapter.6}
-\contentsline {section}{\numberline {6.1}Generalization}{33}{section.6.1}
-\contentsline {section}{\numberline {6.2}Deep Learning}{34}{section.6.2}
-\contentsline {chapter}{\numberline {7}Conclusions}{37}{chapter.7}
+\contentsline {subsubsection}{Most Useful Social Network Features}{22}{section*.20}
+\contentsline {chapter}{\numberline {4}Algorithm Design}{24}{chapter.4}
+\contentsline {section}{\numberline {4.1}Tools}{24}{section.4.1}
+\contentsline {section}{\numberline {4.2}Model Selection}{24}{section.4.2}
+\contentsline {section}{\numberline {4.3}Feature Selection}{26}{section.4.3}
+\contentsline {chapter}{\numberline {5}Performance Analysis}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}Classification Results}{29}{section.5.1}
+\contentsline {section}{\numberline {5.2}Leave-One Out Cross Validation}{32}{section.5.2}
+\contentsline {section}{\numberline {5.3}Hierarchy Analysis}{32}{section.5.3}
+\contentsline {chapter}{\numberline {6}Future Work}{34}{chapter.6}
+\contentsline {section}{\numberline {6.1}Generalization}{34}{section.6.1}
+\contentsline {section}{\numberline {6.2}Deep Learning}{35}{section.6.2}
+\contentsline {chapter}{\numberline {7}Conclusions}{38}{chapter.7}

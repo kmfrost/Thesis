@@ -372,6 +372,7 @@ A social network is composed of nodes, which represent people, and edges, which 
 For this analysis, two different graphs were generated for analysis.
 In the full graph, an edge exists between any two individuals that exchanged at least one email.
 Each edge was given a weight equal to the total number of emails exchanged between the two employees.
+The edges are undirected for this analysis.
 A second graph only produces the same weighted edge between two nodes but only if at least 10 emails were exchanged.
 The purpose of this second graph is to filter out stray single-email relationships between coworkers that do not constitute meaningful communication.
 The full graph including only the study volunteers is plotted in Figure~\ref{fig:social_net}.  Note that graduate students are found on the fringes of the network and are generally the least connected.  However, there is a clear core group of employees that communicate very frequently.
@@ -493,11 +494,38 @@ It is calculated:
 C_B(i) = \sum_{s,t\in \mathcal{V}}\frac{\sigma(s,t|i}{\sigma(s,t)}
 \end{equation}
 
-where $\mathcal{V}$ is the set of all nodes in $\mathcal{G}$, $\sigma(s,t)$ is the number of shortest paths between $s$ and $t$, and $\sigma(s,t|i)$ is the number of those paths that pass through $i$.  It is further defined that if $s=t$, then $\sigma(s,t)=1$ and if $i\in s,t$, then $\sigma(s,t|i) = 0$.
+where $\mathcal{V}$ is the set of all nodes in $\mathcal{G}$, $\sigma(s,t)$ is the number of shortest paths between $s$ and $t$, and $\sigma(s,t|i)$ is the number of those paths that pass through $i$.
+It is further defined that if $s=t$, then $\sigma(s,t)=1$ and if $i\in s,t$, then $\sigma(s,t|i) = 0$.
 
+Degree centrality of a node $i$, $C_{d,i}$ is simply the percentage of nodes within the graph that are connected to node $i$~\cite{borgatti2011analyzing}:
+\begin{equation}
+C_{d,i} = \frac{k_i}{(n-1)}
+\end{equation}
 
+where $k_i$ is the degree of node $i$ and $n$ is the number of nodes in graph $\mathcal{G}$.
 
-This includes degree centrality~\cite{borgatti2011analyzing}, current flow closeness centrality, current flow betweenness centrality~\cite{brandes2005centrality}, communicability centrality, communicability betweenness centrality~\cite{estrada2008communicability}, and load centrality~\cite{newman2001scientific}.
+Current flow betweenness centrality, also known as information centrality, is measured for each node.
+In general, metrics related to betweenness centrality differs from the previous centrality measures in that they consider all paths between nodes instead of exclusively shortest paths.
+Current flow betweenness centrality in particular was modeled after how current flows in electrical networks~\cite{brandes2005centrality}.
+In circuits, current is distributed over the possible paths; in this metric a similar approach is taken to determine the information content of each path between two nodes.
+For a graph $\mathcal{G}$ where all nodes are reachable, it is possible to construct a matrix $B$ such that:
+\begin{gather}
+b_{ii} = 1 + \text{sum of weights of all edges connected to node } i \\
+b_{ij} = 1- w_{ij}
+\end{gather}
+
+where $w_{ij}$ is the weight of the edge connecting nodes $i$ and $j$.
+If $i$ and $j$ are not neighbors, $w_{ij}$ is defined to be $0$.
+Denote $B^{-1} = C$.
+From this matrix, the current flow betweenness centrality of node $i$, $I_i$, is calculated as:
+\begin{equation}
+I_i = \frac{n}{nc_{ii}+T-2R}
+\end{equation}
+
+where $n$ is the number of nodes in $\mathcal{G}$, $T$ is the sum of the diagonal elements, $T = \sum_{j=1}^nc_{jj}$, and $R$ is the sum of any row in $C$, $R = \sum_{j=1}^nc_{ij}$.
+Note that because the matrix is symmetric, all rows of $C$ will have the same sum, therefore $R$ is not dependent on $i$~\cite{stephenson1989rethinking}.
+
+This includes current flow closeness centrality, current flow betweenness centrality, communicability centrality, communicability betweenness centrality~\cite{estrada2008communicability}, and load centrality~\cite{newman2001scientific}.
 
 All of these different graph statistics were used as inputs into the random forest algorithm to characterize each node's importance in the social graph.
 
