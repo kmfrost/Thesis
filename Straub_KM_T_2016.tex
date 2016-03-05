@@ -123,6 +123,7 @@ Kayla M. Straub
 
 \end{center}
 
+[This is just the paper abstract - I plan to rewrite this near the end].
 Email correspondence has become the predominant method of communication for businesses.
 If not for the inherent privacy concerns, this electronically searchable data could be used to better understand how employees interact. 
 For example, after the Enron dataset was made available, researchers were able to provide great insight into employee behaviors based on the available data despite the many challenges with that dataset.  
@@ -222,7 +223,7 @@ The features used in that study were: degree, the number of edges connected to a
 Instead of considering only traffic-based or social-based analytics, these can be be used jointly.
 An example of this approach~\cite{rowe_automated_2007}, which combined features such as number of emails, response time, cliques, and degree centrality into a ``Social Score'', was used to rank Enron employees.  
 
-\chapter{Email Dataset Feature Extraction} \label{Data}
+\chapter{Email Dataset and Feature Extraction} \label{Data}
 
 Over the past decade, the Enron dataset has been widely used to study email behaviors because it is one of the only datasets available comprised of real-world corporate emails.
 A list of ground truth job titles was compiled by~\cite{shetty_status_2004}.  However, there are known issues with these labels.
@@ -232,9 +233,12 @@ Due to difficulties with the Enron dataset, as described in Section~\ref{PriorWo
 Due to the inherent privacy concerns, researchers worked with the Internal Review Board (IRB) to approve a dataset which maintains participants' privacy.
 This dataset is meant to be representative of metadata which any company could use without violating the privacy of their employees.
 Special care was taken to protect the privacy of those involved in the study.
-During the collection process, all subject and body text was hashed, and all email metadata was stored in a database using scripts without any researchers observing any email text.
+During the collection process, all subject and body text was hashed, and all email metadata was stored in a MySQL database using scripts without any researchers observing any email text.
 Furthermore, any identifying information has been omitted from this publication.
-The following is the metadata provided from each email:
+
+The center's email server offers the ability to both digitally sign and encrypt emails.  Sending an email with either or both of these options appears as a special type of attachment in the raw email file.  Therefore, during the data collection process, information about if an email was signed or encrypted was recorded.  This process was part of the comprehensive parser script developed for extracting information from each email.
+
+The following is the metadata parsed from each email:
 \begin{compactitem}
 \item Destination and source email address
 \item Email time stamp
@@ -244,7 +248,17 @@ The following is the metadata provided from each email:
 \item Length of subject in characters
 \item Length of body text in characters
 \item Number of attachments
+\begin{compactitem}
+\item Indicator if email was digitally signed
+\item Indicator if email was encryped
 \end{compactitem}
+\end{compactitem}
+
+
+\section{Dataset Description and Statistics}
+Table~\ref{tab:db_stats} compares statistics between this internal dataset and the Enron corpus.
+This internal database is more modern, contains more emails, and covers a longer time period.
+However, it is comprised of fewer people than the Enron dataset.
 
 \begin{table}[t]
 \centering
@@ -256,13 +270,12 @@ The following is the metadata provided from each email:
                    & Center          & Enron         \\ \midrule
 Time               & 11/2012-11/2015 & 1/2000-9/2002 \\
 Distinct Email Addresses & 32,118          & 75,406        \\
-Participants       & 32              & 249           \\
+Participants       & 37              & 249           \\
 Distinct Emails    & 585,096         & 252,759       \\ \bottomrule
 \end{tabular}
 }
 \end{table}
 
-\section{Dataset Description and Statistics}
 The center divides its employees into six main areas: directors, graduate students, operations, outreach, project management (PM), and research. 
 A chart showing the distribution of classes is shown below in Figure \ref{fig:class_breakdown}
 \begin{figure}[t]
@@ -272,9 +285,6 @@ A chart showing the distribution of classes is shown below in Figure \ref{fig:cl
         \label{fig:class_breakdown}
 \end{figure}
 
-Table~\ref{tab:db_stats} compares statistics between this internal dataset and the Enron corpus.
-This internal database is more modern, contains more emails, and covers a longer time period.
-However, it is comprised of fewer people than the Enron dataset.
 
 While the study includes only 37 volunteers, the email metadata from these volunteers identified 32 additional employees of the center.
 These additional employees were included in the study when ground truth for their job was available and when they were identified in at least 100 email metadata records.
@@ -287,33 +297,56 @@ The social features, on the other hand, first model the email patterns in a grap
 In the following sections, all features from each of the two categories are described. 
 
 \subsection{Traffic-Based Features}
-Traffic-based features include total number of emails, total sent, and total received.
-Other features are based on whether recipients were the primary recipient of the email or were copied on the email.
+\subsubsection{Email Counts and Email Types}
+The simplest traffic-based features involve counting how many and what kinds of emails each participant sends and receives.
+First, the total number of emails, total sent, and total received give a measure of how active an email user is on average.
+These features can also indicate the direction tendencies of an employee's communication. 
+Do they send more emails than they receive, or vice versa?  All of the traffic-based features detailed below consider direction.
+Specifically, each metric is calculated three times: considering only sent emails, only received emails, and both sent and received emails.
+
+Some traffic-based features focus on the different types of emails.
+Two examples of these types of features are the number of emails sent directly to each employee and the number of emails where they were carbon copied on the email.
+The opposite direction of this was inspected as well, that is, the number of emails the employees sent directly to others and the number of carbon copies sent out.
+The average number of recipients on emails sent and received for each participant were also calculated.
 Similarly, the number of emails sent and received as replies or forwards were used.
-Features also included the number of unique email address connections and the number of unique email subjects, sent and received.
-The average number of recipients on emails sent and received for each participant were calculated.
-It was hypothesized that staff members had more external communications than graduate students.
-To test this, the number of emails sent and received from within the center and the university were calculated.  
+These measures give a sense of how the employee communicates with others in the organization and their connectedness.
 
-Other useful information collected from emails included the time stamp, the character counts of the subject and body, and the presence of any attachments.
+Several features were calculated from just the subset of emails that were digitally signed.  These features were the total number of emails sent and received, number of unique email addresses, and the number of unique subjects.
+These same metrics were also calculated for encrypted emails.
+
+\subsubsection{Metadata Statistics}
+The metadata of the emails contains extremely useful information.  This includes the email addresses involved, time stamp, the subject and body hashes and character counts, and the presence of any attachments.
 From the time stamp, the time of day for each email was available.
-The total number of emails sent and received after hours and the number of emails sent and received after hours within the center were also used as metrics.
+The total number of emails with timestamps after hours were used as a metric.
 For this purpose, after hours was defined as between 6pm and 7am EST on weekdays or anytime on weekends.
+The timestamps were also used to calcualate the average number of emails per day for each employee.
 The mean and variance of the number of characters in the subject and body were calculated.
-These metrics were also broken down between emails sent and received.
-The number of attachments sent and received were computed as well as the average number of attachments sent and received per email.
-Digitally signing an email is a type of attachment.
-Additional features were calculated from the total number of signed emails sent and received, unique email addresses and subjects with signed emails.
+The total number of attachments sent and received were computed as well as the average number of attachments per email.
 
-The features above in general involved raw email counts.
-To normalize some of the features, metrics were additionally calculated as a percentage.
-Examples include the percentage of emails that were sent after hours and the percentage of all received emails with unique subjects out of all received emails.
+Some of the most interesting information came from email addresses and subject hashes of the emails.
+The number of unique email address connections, both sent and received, was used as a feature.
+By counting the number of identical hashed subjects, it was determined how many unique subjects were both sent and received from each employee.
+The motivation behind these features is that employees with particular job titles may be more likely to be associated with long email chains, which would have the same subject.
+It was hypothesized that staff members had more external communications than graduate students.
+To test this, the number of emails sent and received from within the center and the university were calculated.
+Email addresses with a Virginia Tech domain were considered to be affiliated with the university.
+Email addresses with accounts on the internal mail server were labeled to be within the center.
+Note that all employee email addresses of the center have a Virginia Tech domain, and are therefore also considered to be part of the university.
 
+
+Most of the features described above involved raw email counts.
+However, this could skew data by giving more importance to employees who have been associated with the center longer.
+In order to normalize these values, corresponding percentage values were also fed into the learning algorithm.
+Examples include the percentage of  sent emails that were sent after hours and the percentage of received emails with unique subjects out of all received emails.
+
+
+
+\subsubsection{Most Useful Traffic-Based Features}
 The best traffic-based feature for predicting employee status was the number of unique subjects received.
-This is because it produces the highest information gain in the feature ranker described in Section~\ref{Algorithm}.
-This number represents the number of distinct conversations in which an individual was involved.
-It is intuitive that people who are involved in more conversations are higher in an organization.
-This feature is shown in the histogram in Figure~\ref{fig:traffic_ex_hist}.
+The metric used to evaluate features is information gain.  This was used because it is integral to the machine learning algorithm described in Section~\ref{Algorithm}; details on the feature ranking analysis are provided in that section.
+This number of unique subjects received represents how many distinct conversations involve each individual.
+It is intuitive that people who are involved in more conversations hold a higher position in an organization because their input is requested more often.
+A histogram showing the different values for this metric over the different job classes is shown in Figure~\ref{fig:traffic_ex_hist}.
 It is clear from the figure that GradStudents participated in far fewer email conversations than any other group.
 Researchers generated more emails on average, but fewer than the Program Managers.
 The directors of the center participate in the most email conversations. 
@@ -333,12 +366,26 @@ Notice that there are intuitive explanations behind all of the features selected
 
 
 \subsection{Social Network Features}
+\subsubsection{Social Network Representation}
 In addition to tracking metadata statistics, features are also derived from modeling the emails as a social network.
 A social network is composed of nodes, which represent people, and edges, which represent the emails between people.
-For this analysis, two different graphs were generated.
+For this analysis, two different graphs were generated for analysis.
 In the full graph, an edge exists between any two individuals that exchanged at least one email.
-A second graph only produces an edge between two nodes if at least 10 emails were exchanged.
-A representation of the full graph is shown as an adjacency matrix in Figure~\ref{fig:adj_matrix}.
+Each edge was given a weight equal to the total number of emails exchanged between the two employees.
+A second graph only produces the same weighted edge between two nodes but only if at least 10 emails were exchanged.
+The purpose of this second graph is to filter out stray single-email relationships between coworkers that do not constitute meaningful communication.
+The full graph including only the study volunteers is plotted in Figure~\ref{fig:social_net}.  Note that graduate students are found on the fringes of the network and are generally the least connected.  However, there is a clear core group of employees that communicate very frequently.
+
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth,trim={4mm .5mm 0mm 5mm},clip]{HumeGraph2}
+    \vspace{-17pt}
+    \caption[The social network of the center]{A social graph representation of the center.  Nodes represent employees, and the thickness of the edges between nodes represent how many emails were exchanged.}
+    \label{fig:social_net}
+\end{figure}
+
+Another representation of the full graph is shown as an adjacency matrix in Figure~\ref{fig:adj_matrix}.
 Each of the two axes represent the employees of the center.
 The color at each coordinate indicates how much communication existed between the two employees.
 Some employees never exchanged any emails, while others exchanged many.
@@ -351,27 +398,110 @@ Some employees never exchanged any emails, while others exchanged many.
     \label{fig:adj_matrix}
 \end{figure}
 
-With this representation, statistics can be calculated about the people in the graph.
-The average neighbor degree was calculated for both the partial and full graph.
-The degree of a node $i$ is the number of other nodes connected to node $i$.
-Therefore for a node $i$, this metric averages the degree of each node in the neighborhood of $i$, that is all nodes connected to $i$.
+Using this model, another suite of statistics can be calculated about the people in the graph.
+
+\subsubsection{Degree Measures}
+The degree of each node, from both the full and partial graph, was used as a feature.  
+The degree of a node $i$ is simply the number of other edges connected to node $i$.
+All graph features were calculated once for the full graph and again for the partial graph.
+The average neighbor degree was calculated used as another feature.
+The neighborhood of node $i$ is comprised of all nodes that are connected to $i$ via edges.
+Therefore for node $i$, this metric averages the degree of each node in the neighborhood of $i$.
 Mathematically, this is:
 \begin{equation}
 k_{\text{avg},i} = \frac{1}{|N(i)|}\sum_{j \in N(i)}k_j
 \end{equation}
 where $N(i)$ are the neighbors of node $i$ and $k_j$ is the degree of node $j$.
-The distances between nodes were also used to generate some features.
-The average shortest path metric calculates the length of the shortest paths between node $i$ and all other nodes in the graph $G$, and it returns the average of these path lengths.
-Similarly, the maximum shortest path length, or eccentricity, was used as a feature in the learning algorithm.  
+The distance between nodes were also used to generate some features.
+In graph theory, distance is measured by the length of the path between two nodes.
+Between node $i$ and any other node $j$ in graph $\mathcal{G}$, there exists a shortest path, $d(i,j)$.
+The average shortest path between node $i$ and all other nodes in the graph, $d_avg,i$, was used as a metric for the learning algorithm.
+That is,
+\begin{equation}
+d_{avg,i} = \frac{1}{n-1}\sum_{j \in \mathcal{V}, j\neq i}d(i,j)
+\end{equation}
+where $n$ is the number of nodes in graph $\mathcal{G}$ and $\mathcal{V}$ is the set of nodes in $\mathcal{G}$.
+Similarly, the maximum shortest path length, or eccentricity, was used as a feature in the learning algorithm.
+All of these measures can be interpreted to represent the centrality of a node.
+If a node has many neighbors with large degrees or if it has very short maximum shortest paths it is probably representative of a person well-connected within the center.
 
+\subsubsection{Cliques}
 Some of the social features were based on existing graph theory concepts and algorithms.
-If a subgraph of a graph $G$ is maximally connected, that is all nodes are connected directly to each other, then this is called a clique.
+For example, cliques.
+If a subgraph of a graph $\mathcal{G}$ is maximally connected, that is all nodes are connected directly to each other, then this is called a maximal clique.
 The number of cliques to which a node belongs was used as a feature.
+The motivation behind using this metric is that it should mirror working groups within the center.
+Therefore, the more groups an employee belongs to or communicates with, the more important they are assumed to be.
+
+\subsubsection{Adapting Search Engine Algorithms}
+
 The hubs and authorities of each node in both graphs were calculated.
 The terms hubs and authorities come from the Hyperlink-Induced Topic Search (HITS algorithm) developed by~\cite{kleinberg_hubs_1999}.
 This algorithm was originally designed to rate web pages, but has since been applied to social networks.
 A node's authority is just that\textemdash{}a measure of its importance over other nodes.
 A node's hub score is a measure of how well-connected it is to other nodes.
+
+Another algorithm used to generate features was the pagerank algorithm, developed by Google \cite{page_pagerank_1999} also to rank webpages for search results.
+The assumption is that the most important webpages will be linked to frequently by other pages.
+Therefore, the ranking is determined by estimating the quality and quantity of links to a node.
+Both of these algorithms were shown to predict expertise within an online social network in \cite{zhang_expertise_2007}.
+
+\subsubsection{Clustering Metrics}
+The triangle clustering coefficient, $C_3$ was also used as a metric.
+Say there exists a node $i$ with neighbors $m$ and $n$.
+This value, developed by~\cite{saramaki_generalizations_2007}, measures the probability that $m$ and $n$ are also connected.
+This is calculated by comparing the number of triangles within the graph to the maximum number of possible triangles in the graph.  If node $i$ has degree $k_i$, there can be at most $\frac{k_i(k_i-1)}{2}$ triangles formed in this subgraph.  Recall that the social networks are weighted graphs.  The weights of the graph are incorporated to this metric by finding the geometric mean \cite{zhang_expertise_2007}.   Therefore, triangle clustering coefficient for node $i$, $C_{3,i}$, is:
+\begin{equation}
+C_{3,i} = \frac{2}{k_i(k_i-1)}\sum_{m,n}(\tilde{w}_{i,m}\tilde{w}_{m,n}\tilde{w}_{n,i})^\frac{1}{3}
+\end{equation}
+
+The edge weights in this calculation must be normalized compared to the maximum weight in the subgraph, i.e. $\tilde{w}_{i,m} = \frac{w_{i,m}}{max(w_{i,m})}$.
+
+The square clustering coefficient is very similar and was also used in the algorithm.
+This metric, developed by~\cite{lind_cycles_2005}, measures the probability that $m$ and $n$ are also neighbors to a fourth node, $p$.
+This configuration would form a square.
+To simplify the calculations, the graph for this metric is viewed without edge weights.
+Therefore, the square clustering coefficient for node $i$, $C_{4,i}$, is the proportion of actual squares within a subgraph centered around node $i$ to the maximum number of possible squares in the same subgraph.
+This is calculated as:
+\begin{equation}
+C_{4,i} = \frac{\sum_{m=1}^{k_i}\sum_{n=m+1}^{k_i}q_i(m,n)}{\sum_{m=1}^{k_i} \sum_{n=m+1}^{k_i}\left[a_i(m,n)+q_i(m,n) \right]}
+\end{equation}
+
+where $q_i(m,n)$ is the number of neighbors shared by $m$ and $n$, excluding $i$ and 
+\begin{equation}
+a_i(m,n) = (k_m-\eta_i(m,n))(k_n-\eta_i(m_n)) 
+\end{equation}
+
+where $\eta_i(m,n) = 1+q_i(m,n)+\theta_{mn}$.  
+It is defined that $\theta_{mn}$ is an indicator function that takes on a value of 1 if $m$ and $n$ are neighbors and 0 otherwise.
+In theory, the higher the clustering coefficient, the more connected the node is within its neighborhood.
+
+\subsubsection{Centrality Measures}
+The majority of the social-based features were variations on centrality measures.
+First is closeness centrality.
+Closeness centrality, $C(i)$ is the normalized inverse of the sum of shortest path distances from node $i$ to all other nodes in the graph \cite{freeman_centrality_1978}.  It is calculated as follows:
+\begin{equation}
+C(i) = \frac{n-1}{\sum_{j=1}^{n-1}d(i,j)}
+\end{equation}
+
+where $n$ is the number of nodes in graph $\mathcal{G}$ and $d(i,j)$ is the minimum shortest path distance between node $i$ and node $j$.
+
+Next is betweenness centrality.
+In a graph, there exists a shortest path between any node $s$ and any other node $t$.  Betweenness centrality of a node $i$, $C_B(i)$, is the percentage of all shortest paths in graph $\mathcal{G}$ that traverse node $i$ \cite{freeman_set_1977}.
+It is calculated:
+\begin{equation}
+C_B(i) = \sum_{s,t\in \mathcal{V}}\frac{\sigma(s,t|i}{\sigma(s,t)}
+\end{equation}
+
+where $\mathcal{V}$ is the set of all nodes in $\mathcal{G}$, $\sigma(s,t)$ is the number of shortest paths between $s$ and $t$, and $\sigma(s,t|i)$ is the number of those paths that pass through $i$.  It is further defined that if $s=t$, then $\sigma(s,t)=1$ and if $i\in s,t$, then $\sigma(s,t|i) = 0$.
+
+
+
+This includes degree centrality~\cite{borgatti2011analyzing}, current flow closeness centrality, current flow betweenness centrality~\cite{brandes2005centrality}, communicability centrality, communicability betweenness centrality~\cite{estrada2008communicability}, and load centrality~\cite{newman2001scientific}.
+
+All of these different graph statistics were used as inputs into the random forest algorithm to characterize each node's importance in the social graph.
+
+\subsubsection{Most Useful Social Network Features}
 The histogram of hub values in the full graph broken down by class is shown in Figure~\ref{fig:social_ex_hist}.
 
 \begin{figure}[t]
@@ -381,22 +511,6 @@ The histogram of hub values in the full graph broken down by class is shown in F
         \caption[Full graph hubs histogram]{Histogram of hubs from social graph by job title.  Note that directors on average have the highest hub score and graduate students have the lowest.  In fact, three out of eight directors can be identified by filtering samples on full graph hubs values $>0.6$. }
         \label{fig:social_ex_hist}
 \end{figure}
-
-Another algorithm used to generate features was the pagerank algorithm, developed by Google \cite{page_pagerank_1999} also to rank webpages for search results.
-The assumption is that the most important webpages will be linked to frequently by other pages.
-Therefore, the ranking is determined by estimating the quality and quantity of links to a node.
-The square clustering coefficient for each node was used as a feature.
-Say there exists a node $i$ with neighbors $j$ and $k$.
-This metric, developed by~\cite{lind_cycles_2005}, measures the probability that $j$ and $k$ are also neighbors to a fourth node, $l$.
-The higher the clustering coefficient, the more connected the node is within its neighborhood.
-The triangle clustering coefficient was also used as a metric.
-This value, developed by~\cite{saramaki_generalizations_2007}, is the same as the square clustering coefficient but instead determines the probability of connected triangles involving each node.
-
-The majority of the social-based features were centrality measures.
-This includes closeness centrality, betweenness centrality, degree centrality~\cite{borgatti2011analyzing}, current flow closeness centrality, current flow betweenness centrality~\cite{brandes2005centrality}, communicability centrality, communicability betweenness centrality~\cite{estrada2008communicability}, and load centrality~\cite{newman2001scientific}.
-
-All of these different graph statistics were used as inputs into the random forest algorithm to characterize each node's importance in the social graph.
-
 \chapter{Algorithm Design} \label{Algorithm}
 \section{Tools}
 \section{Model Selection}
@@ -529,13 +643,13 @@ Therefore, a very good classifier can be built using much fewer features if the 
 
 \section{Leave-One Out Cross Validation}
 So I tried LOOCV which gave, \ref{fig:loocv_conf_plot}.
-%\begin{figure}[t]
-%    \centering
-%        \includegraphics[width=.9\columnwidth,trim={1mm 4mm 1mm 3.5mm},clip]{confusion_plot}
-%        \vspace{-7pt}
-%        \caption[Leave one out cross validation results]{Prediction accuracy was higher for graduate students, who have more uniform behaviors and more training data.  However, for each category, the majority of the people classified were true members of that group, save for research.  Note that even for those classified as research, there were more true researchers than any other class.}
-%        \label{fig:loocv_conf_plot}
-%\end{figure}
+\begin{figure}[t]
+    \centering
+        \includegraphics[width=.9\columnwidth,trim={1mm 4mm 1mm 3.5mm},clip]{confusion_plot}
+        \vspace{-7pt}
+        \caption[Leave one out cross validation results]{Prediction accuracy was higher for graduate students, who have more uniform behaviors and more training data.  However, for each category, the majority of the people classified were true members of that group, save for research.  Note that even for those classified as research, there were more true researchers than any other class.}
+        \label{fig:loocv_conf_plot}
+\end{figure}
 
 \section{Hierarchy Analysis}
 Most of the employees at the center are organized under a director and work with a program manager (unless for example they are a director or program manager).
@@ -554,14 +668,7 @@ Many of the errors in this classification are due to employees who work with mul
 \section{Generalization}
 \begin{itemize}
 \item As discussed above, the accuracy of the leave-one-out cross-validation test was low because of the limited number of data points.  The confusion matrix in Figure \ref{fig:loocv_conf_plot} shows that about one third of the predictions were incorrect.  
-\begin{figure}[t]
-    \centering
-        \includegraphics[width=.9\columnwidth,trim={1mm 4mm 1mm 3.5mm},clip]{confusion_plot}
-        \vspace{-7pt}
-        \caption[Leave one out cross validation results]{Prediction accuracy was higher for graduate students, who have more uniform behaviors and more training data.  However, for each category, the majority of the people classified were true members of that group, save for research.  Note that even for those classified as research, there were more true researchers than any other class.}
-        \label{fig:loocv_conf_plot}
-\end{figure}
-\item These results can typically be improved by increasing the number of training data. 
+\item These results can typically be improved by increasing the amount of training data. 
 \item Performed experiment to gauge how the amount of training data affects the accuracy of the LOOCV test.  This is shown below in Figure  \ref{fig:loocv_generalization}.
 \begin{figure}[t]
     \centering
@@ -584,12 +691,13 @@ The rest of the layers use directed edges, forming a Bayesian network.
 For each node, there exists a probability of activation, $p(s_i=1)$, which is represented by the nonlinear sigmoid function applied to a weighted input from the layer above.
 Specifically,
 \begin{equation}
-p(s_i=1) = \frac{1}{1+\exp(-b_i-\sum_j s_j w_{ij}}
+p(s_i=1) = \frac{1}{1+\exp \left(-b_i-\sum_j s_j w_{ij}\right)}
 \end{equation}
-where $j$ represents the ancestors of node $i$, $w_{ij}$ are the weights on the connections between $i$ and $j$, and $b_i$ is the bias associated with node $i$.  
-Described in \cite{hinton_fast_2006} is a fast, greedy method to train these networks one layer at a time ...
-\item  The challenge with very deep networks is that they are very difficult to train \cite{bengio_learning_2009}. 
-\item Unsupervised pre-training can improve the efficency of training deep belief networks, as first described in \cite{hinton_recognize_2007}.
+where $j$ represents the ancestors of node $i$, $w_{ij}$ are the weights on the connections between $i$ and $j$, and $b_i$ is the bias associated with node $i$...
+\item The challenge with very deep networks is that they are very difficult to train \cite{bengio_learning_2009}.
+Unsupervised pre-training can improve the efficency of training deep belief networks, as first described in \cite{hinton_recognize_2007}.
+In that work, Hinton describes a fast, greedy method to train these networks one layer at a time.  
+\item 
 Describe the process of unsupervised pre-training.
 \item Testing on the MNIST dataset of handwritten digits, unsupervised pre-training is shown to improve classification results over only supervised training  \cite{erhan_why_2010}. 
 Pre-training identifies a set of initial weights for the network that can ultimately lead to better classification results.  
@@ -598,7 +706,8 @@ An advantage of unsupervised pre-training is that, with small enough layers, it 
 Describe the process backpropagation with the small set of labeled data.
 \item In conjunction with greedy pre-training, backpropagation has been shown to improve both the optimization and generalization of a DBN. 
 Hinton et al. showed that unsupervised pre-training followed by backpropagation of a DBN outperformed traditional feed forward neural networks on the MNIST dataset \cite{hinton_fast_2006}.
-\item Find an analogous paper for comparison.
+\item Analogous paper for comparison:\\
+Much of the research in deep learning today is focused on image classification and analysis, such as the MNIST dataset.  However, DBNs have been applied to text analysis as well.  In \cite{ruangkanokmas_deep_2016}, a sophisticated version of a DBN was used to construct a sentiment classifier. The purpose of this research is to label online reviews as positive, negative, or neutral.  The difference between this method and other DBN approaches is that this work replaced some of the hidden layers of the network with a feature selection step.  Overall, this improves the training learning efficiency of the algorithm.  This method can classify sentiments more accurately and train more quickly than previous semi-supervised algorithms.
 \end{itemize}
 
 

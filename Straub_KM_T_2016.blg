@@ -3,7 +3,13 @@ The style file: ieeetr.bst
 Database file #1: bib.bib
 Warning--entry type for "shetty_status_2004" isn't style-file defined
 --line 363 of file bib.bib
+Repeated entry---line 569 of file bib.bib
+ : @inproceedings{zhang_expertise_2007
+ :                                    ,
+I'm skipping whatever remains of this entry
 Warning--empty booktitle in sofershtein_predicting_2015
 Warning--empty journal in nordbo_data_2014
 Warning--empty journal in page_pagerank_1999
-(There were 4 warnings)
+Warning--empty journal in ruangkanokmas_deep_2016
+Warning--empty year in ruangkanokmas_deep_2016
+(There was 1 error message)

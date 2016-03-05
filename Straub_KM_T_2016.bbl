@@ -117,14 +117,23 @@ J.~M. Kleinberg, ``Hubs, authorities, and communities,'' {\em ACM Computing
 L.~Page, S.~Brin, R.~Motwani, and T.~Winograd, ``The {PageRank} citation
   ranking: bringing order to the {Web}.,'' 1999.
 
-\bibitem{lind_cycles_2005}
-P.~G. Lind, M.~C. González, and H.~J. Herrmann, ``Cycles and clustering in
-  bipartite networks,'' {\em Physical Review E}, vol.~72, Nov. 2005.
+\bibitem{zhang_expertise_2007}
+J.~Zhang, M.~S. Ackerman, and L.~Adamic, ``Expertise networks in online
+  communities: structure and algorithms,'' in {\em Proceedings of the 16th
+  international conference on {World} {Wide} {Web}}, pp.~221--230, ACM, 2007.
 
 \bibitem{saramaki_generalizations_2007}
 J.~Saramäki, M.~Kivelä, J.-P. Onnela, K.~Kaski, and J.~Kertész,
   ``Generalizations of the clustering coefficient to weighted complex
   networks,'' {\em Physical Review E}, vol.~75, Feb. 2007.
+
+\bibitem{lind_cycles_2005}
+P.~G. Lind, M.~C. González, and H.~J. Herrmann, ``Cycles and clustering in
+  bipartite networks,'' {\em Physical Review E}, vol.~72, Nov. 2005.
+
+\bibitem{freeman_centrality_1978}
+L.~C. Freeman, ``Centrality in social networks conceptual clarification,'' {\em
+  Social networks}, vol.~1, no.~3, pp.~215--239, 1978.
 
 \bibitem{borgatti2011analyzing}
 S.~P. Borgatti and D.~S. Halgin, ``Analyzing affiliation networks,'' {\em The
@@ -147,11 +156,6 @@ M.~E. Newman, ``Scientific collaboration networks. ii. shortest paths, weighted
 L.~Breiman, ``Random forests,'' {\em Machine Learning}, vol.~45, no.~1,
   pp.~5--32, 2001.
 
-\bibitem{hinton_fast_2006}
-G.~E. Hinton, S.~Osindero, and Y.-W. Teh, ``A fast learning algorithm for deep
-  belief nets,'' {\em Neural computation}, vol.~18, no.~7, pp.~1527--1554,
-  2006.
-
 \bibitem{bengio_learning_2009}
 Y.~Bengio, ``Learning {Deep} {Architectures} for {AI},'' {\em Foundations and
   Trends® in Machine Learning}, vol.~2, no.~1, pp.~1--127, 2009.
@@ -164,5 +168,14 @@ G.~E. Hinton, ``To recognize shapes, first learn to generate images,'' {\em
 D.~Erhan, Y.~Bengio, A.~Courville, P.-A. Manzagol, P.~Vincent, and S.~Bengio,
   ``Why does unsupervised pre-training help deep learning?,'' {\em The Journal
   of Machine Learning Research}, vol.~11, pp.~625--660, 2010.
+
+\bibitem{hinton_fast_2006}
+G.~E. Hinton, S.~Osindero, and Y.-W. Teh, ``A fast learning algorithm for deep
+  belief nets,'' {\em Neural computation}, vol.~18, no.~7, pp.~1527--1554,
+  2006.
+
+\bibitem{ruangkanokmas_deep_2016}
+P.~Ruangkanokmas, T.~Achalakul, and K.~Akkarajitsakul, ``Deep {Belief}
+  {Networks} with {Feature} {Selection} for {Sentiment} {Classification},''
 
 \end{thebibliography}
