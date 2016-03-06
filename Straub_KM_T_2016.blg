@@ -7,9 +7,14 @@ Repeated entry---line 569 of file bib.bib
  : @inproceedings{zhang_expertise_2007
  :                                    ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 630 of file bib.bib
+ : @inproceedings{hagberg-2008-exploring
+ :                                      ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Estrada_2005"
 Warning--empty booktitle in sofershtein_predicting_2015
 Warning--empty journal in nordbo_data_2014
 Warning--empty journal in page_pagerank_1999
 Warning--empty journal in ruangkanokmas_deep_2016
 Warning--empty year in ruangkanokmas_deep_2016
-(There was 1 error message)
+(There were 2 error messages)

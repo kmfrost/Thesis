@@ -109,6 +109,12 @@ J.~Shetty and J.~Adibi, ``Ex employee status report.,'' 2004.
   Archive\_.[\url{https://web.archive.org/web/20131126121206/http://www.isi.edu/\~adibi/Enron/Enron\_Employee\_Status.xls}],
   Accessed 1/30/2016.
 
+\bibitem{hagberg-2008-exploring}
+A.~A. Hagberg, D.~A. Schult, and P.~J. Swart, ``Exploring network structure,
+  dynamics, and function using {NetworkX},'' in {\em Proceedings of the 7th
+  Python in Science Conference (SciPy2008)}, (Pasadena, CA USA), pp.~11--15,
+  Aug. 2008.
+
 \bibitem{kleinberg_hubs_1999}
 J.~M. Kleinberg, ``Hubs, authorities, and communities,'' {\em ACM Computing
   Surveys (CSUR)}, vol.~31, no.~4es, p.~5, 1999.
@@ -135,6 +141,10 @@ P.~G. Lind, M.~C. González, and H.~J. Herrmann, ``Cycles and clustering in
 L.~C. Freeman, ``Centrality in social networks conceptual clarification,'' {\em
   Social networks}, vol.~1, no.~3, pp.~215--239, 1978.
 
+\bibitem{dijkstra1959note}
+E.~W. Dijkstra, ``A note on two problems in connexion with graphs,'' {\em
+  Numerische mathematik}, vol.~1, no.~1, pp.~269--271, 1959.
+
 \bibitem{borgatti2011analyzing}
 S.~P. Borgatti and D.~S. Halgin, ``Analyzing affiliation networks,'' {\em The
   Sage handbook of social network analysis}, pp.~417--433, 2011.
@@ -143,14 +153,13 @@ S.~P. Borgatti and D.~S. Halgin, ``Analyzing affiliation networks,'' {\em The
 U.~Brandes and D.~Fleischer, {\em Centrality measures based on current flow}.
 \newblock Springer, 2005.
 
+\bibitem{stephenson1989rethinking}
+K.~Stephenson and M.~Zelen, ``Rethinking centrality: Methods and examples,''
+  {\em Social Networks}, vol.~11, no.~1, pp.~1--37, 1989.
+
 \bibitem{estrada2008communicability}
 E.~Estrada and N.~Hatano, ``Communicability in complex networks,'' {\em
   Physical Review E}, vol.~77, no.~3, p.~036111, 2008.
-
-\bibitem{newman2001scientific}
-M.~E. Newman, ``Scientific collaboration networks. ii. shortest paths, weighted
-  networks, and centrality,'' {\em Physical review E}, vol.~64, no.~1,
-  p.~016132, 2001.
 
 \bibitem{Breiman2001}
 L.~Breiman, ``Random forests,'' {\em Machine Learning}, vol.~45, no.~1,

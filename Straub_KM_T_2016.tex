@@ -51,7 +51,7 @@
 \setlength{\topmargin}{0in}
 
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0.1in}
+\setlength{\parskip}{0.25in}
 
 % Uncomment for double-spaced document.
 \renewcommand{\baselinestretch}{2}
@@ -399,7 +399,7 @@ Some employees never exchanged any emails, while others exchanged many.
     \label{fig:adj_matrix}
 \end{figure}
 
-Using this model, another suite of statistics can be calculated about the people in the graph.
+Using this model, another suite of statistics can be calculated about the people in the graph.  The gasphs were modeled in python.  The graph library networkx \cite{hagberg-2008-exploring} was used to calculate all graph features.
 
 \subsubsection{Degree Measures}
 The degree of each node, from both the full and partial graph, was used as a feature.  
@@ -455,7 +455,6 @@ This is calculated by comparing the number of triangles within the graph to the 
 \begin{equation}
 C_{3,i} = \frac{2}{k_i(k_i-1)}\sum_{m,n}(\tilde{w}_{i,m}\tilde{w}_{m,n}\tilde{w}_{n,i})^\frac{1}{3}
 \end{equation}
-
 The edge weights in this calculation must be normalized compared to the maximum weight in the subgraph, i.e. $\tilde{w}_{i,m} = \frac{w_{i,m}}{max(w_{i,m})}$.
 
 The square clustering coefficient is very similar and was also used in the algorithm.
@@ -467,12 +466,10 @@ This is calculated as:
 \begin{equation}
 C_{4,i} = \frac{\sum_{m=1}^{k_i}\sum_{n=m+1}^{k_i}q_i(m,n)}{\sum_{m=1}^{k_i} \sum_{n=m+1}^{k_i}\left[a_i(m,n)+q_i(m,n) \right]}
 \end{equation}
-
 where $q_i(m,n)$ is the number of neighbors shared by $m$ and $n$, excluding $i$ and 
 \begin{equation}
 a_i(m,n) = (k_m-\eta_i(m,n))(k_n-\eta_i(m_n)) 
 \end{equation}
-
 where $\eta_i(m,n) = 1+q_i(m,n)+\theta_{mn}$.  
 It is defined that $\theta_{mn}$ is an indicator function that takes on a value of 1 if $m$ and $n$ are neighbors and 0 otherwise.
 In theory, the higher the clustering coefficient, the more connected the node is within its neighborhood.
@@ -484,8 +481,9 @@ Closeness centrality, $C(i)$ is the normalized inverse of the sum of shortest pa
 \begin{equation}
 C(i) = \frac{n-1}{\sum_{j=1}^{n-1}d(i,j)}
 \end{equation}
-
 where $n$ is the number of nodes in graph $\mathcal{G}$ and $d(i,j)$ is the minimum shortest path distance between node $i$ and node $j$.
+Since for this application $\mathcal{G}$ is a weighted graph, shortest path distances are calculated using Djikstra's alogrithm~\cite{dijkstra1959note}.
+This is true for all of the following algorithms that consider shortest path.
 
 Next is betweenness centrality.
 In a graph, there exists a shortest path between any node $s$ and any other node $t$.  Betweenness centrality of a node $i$, $C_B(i)$, is the percentage of all shortest paths in graph $\mathcal{G}$ that traverse node $i$ \cite{freeman_set_1977}.
@@ -493,7 +491,6 @@ It is calculated:
 \begin{equation}
 C_B(i) = \sum_{s,t\in \mathcal{V}}\frac{\sigma(s,t|i}{\sigma(s,t)}
 \end{equation}
-
 where $\mathcal{V}$ is the set of all nodes in $\mathcal{G}$, $\sigma(s,t)$ is the number of shortest paths between $s$ and $t$, and $\sigma(s,t|i)$ is the number of those paths that pass through $i$.
 It is further defined that if $s=t$, then $\sigma(s,t)=1$ and if $i\in s,t$, then $\sigma(s,t|i) = 0$.
 
@@ -501,31 +498,59 @@ Degree centrality of a node $i$, $C_{d,i}$ is simply the percentage of nodes wit
 \begin{equation}
 C_{d,i} = \frac{k_i}{(n-1)}
 \end{equation}
-
 where $k_i$ is the degree of node $i$ and $n$ is the number of nodes in graph $\mathcal{G}$.
 
-Current flow betweenness centrality, also known as information centrality, is measured for each node.
-In general, metrics related to betweenness centrality differs from the previous centrality measures in that they consider all paths between nodes instead of exclusively shortest paths.
-Current flow betweenness centrality in particular was modeled after how current flows in electrical networks~\cite{brandes2005centrality}.
+Current flow closeness centrality, also known as information centrality, is measured for each node.
+In general, metrics related to current flow centrality differs from the previous centrality measures in that they consider all paths between nodes instead of exclusively shortest paths.
+Current flow closeness centrality in particular was modeled after how current flows in electrical networks~\cite{brandes2005centrality}.
 In circuits, current is distributed over the possible paths; in this metric a similar approach is taken to determine the information content of each path between two nodes.
-For a graph $\mathcal{G}$ where all nodes are reachable, it is possible to construct a matrix $B$ such that:
+For a graph $\mathcal{G}$ where all nodes are reachable, it is possible to construct a matrix $\boldsymbol{B}$ such that:
 \begin{gather}
 b_{ii} = 1 + \text{sum of weights of all edges connected to node } i \\
 b_{ij} = 1- w_{ij}
 \end{gather}
-
 where $w_{ij}$ is the weight of the edge connecting nodes $i$ and $j$.
 If $i$ and $j$ are not neighbors, $w_{ij}$ is defined to be $0$.
-Denote $B^{-1} = C$.
-From this matrix, the current flow betweenness centrality of node $i$, $I_i$, is calculated as:
+Denote $\boldsymbol{B}^{-1} = \boldsymbol{C}$.
+From this matrix, the current flow closeness centrality of node $i$, $I_i$, is calculated as:
 \begin{equation}
 I_i = \frac{n}{nc_{ii}+T-2R}
 \end{equation}
+where $n$ is the number of nodes in $\mathcal{G}$, $T$ is the sum of the diagonal elements, $T = \sum_{j=1}^nc_{jj}$, and $R$ is the sum of any row in $\boldsymbol{C}$, $R = \sum_{j=1}^nc_{ij}$.
+Note that because the matrix is symmetric, all rows of $\boldsymbol{C}$ will have the same sum, therefore $R$ is not dependent on $i$~\cite{stephenson1989rethinking}.
 
-where $n$ is the number of nodes in $\mathcal{G}$, $T$ is the sum of the diagonal elements, $T = \sum_{j=1}^nc_{jj}$, and $R$ is the sum of any row in $C$, $R = \sum_{j=1}^nc_{ij}$.
-Note that because the matrix is symmetric, all rows of $C$ will have the same sum, therefore $R$ is not dependent on $i$~\cite{stephenson1989rethinking}.
+Current flow betweenness centrality, as indicated by the name, also considers all possible paths between the source and target nodes.
+This measure is also known as random walk betweenness centrality.
+That is because it represents the expected number of times a random walk will cross node ${i}$ when it begins at node ${s}$ and ends at node ${t}$.
+This is calculated as:
+\begin{equation}
+b_i = \sum_{i\neq s\neq t} r_{st}
+\end{equation}
+where $r_{st}$ is the element of matrix $\boldsymbol{R}$ which represents the probability that a random walk from $s$ to $t$ passes through $i$.
 
-This includes current flow closeness centrality, current flow betweenness centrality, communicability centrality, communicability betweenness centrality~\cite{estrada2008communicability}, and load centrality~\cite{newman2001scientific}.
+Another feature used by the algorithm is communicability centrality, or subgraph centrality~\cite{Estrada_2005}.  
+To calculate this measure, consider all of the closed walks in graph $\mathcal{G}$, of length $k$ beginning on node $i$, denoted by $\mu_k$.
+A closed walk is any walk that begins and ends on the same node.
+Repetition of either the edges and vertices is allowed.
+The communicability centrality of node $i$, $SC(i)$ is computed as:
+\begin{equation}
+SC(i) = \sum_{k=1}^\infty \frac{\mu_k(i)}{k!}
+\end{equation}
+
+The final social network-based features is 
+communicability betweenness centrality.
+This metric combines combines the concepts of current flow betweenness centrality and communicability centrality~\cite{estrada2008communicability}.
+To compute the communicability betweenness centrality, consider the graph $\mathcal{G}$  with adjacency matrix $\boldsymbol{A}$.
+Now consider $\mathcal{G}(r)$ which is identical to $\mathcal{G}$ except with all edges connected to node $r$ removed.
+The adjacency matrix of $\mathcal{G}(r)$ can be written as $\boldsymbol{A}+\boldsymbol{E}(r)$.
+$\boldsymbol{E}(r)$ has zeros in all elements except for those in the row and column corresponding to node $r$.
+The values in these elements are the negative weights of the removed edges, i.e. $\boldsymbol{E}(r)_{ri} = -A_{ri}$.
+The communicability centrality for node $r$ is therefore:
+\begin{equation}
+\omega_r \propto \sum_{p}\sum_{q} \frac{\left(e^{\boldsymbol{A}} \right)_{pq} - \left(e^{\boldsymbol{A}+\boldsymbol{E}(r)} \right)_{pq}}{\left(e^{\boldsymbol{A}}\right)_{pq}}, p\neq q \neq r
+\end{equation}
+The normalizing constant is omitted for clarity.
+Note that all metrics used in the learning algorithm were normalized to be between 0 and 1.
 
 All of these different graph statistics were used as inputs into the random forest algorithm to characterize each node's importance in the social graph.
 

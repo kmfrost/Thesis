@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  5 MAR 2016 15:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  5 MAR 2016 20:59
 entering extended mode
 **Straub_KM_T_2016.tex
 (Straub_KM_T_2016.tex
@@ -590,13 +590,13 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ] [6])
 \tf@toc=\write6
 
-[7] (Straub_KM_T_2016.lof)
-\tf@lof=\write7
- [8
+[7] (Straub_KM_T_2016.lof [8
 
-] (Straub_KM_T_2016.lot)
+])
+\tf@lof=\write7
+ [9] (Straub_KM_T_2016.lot)
 \tf@lot=\write8
- [9
+ [10
 
 ]
 Chapter 1.
@@ -624,18 +624,18 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 265.
 
-<Pictures/class_breakdown.png, id=300, 362.3136pt x 217.7736pt>
+<Pictures/class_breakdown.png, id=304, 362.3136pt x 217.7736pt>
 File: Pictures/class_breakdown.png Graphic file (type png)
 
 <use Pictures/class_breakdown.png>
 Package pdftex.def Info: Pictures/class_breakdown.png used on input line 283.
 (pdftex.def)             Requested size: 469.75499pt x 249.39879pt.
- [9]
+ [9] [10 <./Pictures/class_breakdown.png>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 299.
- [10 <./Pictures/class_breakdown.png>]
+
 [11] [12]
-<Pictures/Unique_subjects_rec_hist.png, id=326, 571.8966pt x 369.0588pt>
+<Pictures/Unique_subjects_rec_hist.png, id=330, 571.8966pt x 369.0588pt>
 File: Pictures/Unique_subjects_rec_hist.png Graphic file (type png)
 
 <use Pictures/Unique_subjects_rec_hist.png>
@@ -643,88 +643,88 @@ Package pdftex.def Info: Pictures/Unique_subjects_rec_hist.png used on input li
 ne 355.
 (pdftex.def)             Requested size: 469.75499pt x 261.34305pt.
  [13] [14 <./Pictures/Unique_subjects_rec_hist.png>] <Pictures/HumeGraph2.png, 
-id=342, 1675.2186pt x 922.8879pt>
+id=346, 1675.2186pt x 922.8879pt>
 File: Pictures/HumeGraph2.png Graphic file (type png)
 
 <use Pictures/HumeGraph2.png>
 Package pdftex.def Info: Pictures/HumeGraph2.png used on input line 383.
 (pdftex.def)             Requested size: 469.75499pt x 256.14319pt.
-
-<Pictures/adj_matrix.png, id=345, 878.3214pt x 539.616pt>
+ [15]
+<Pictures/adj_matrix.png, id=355, 878.3214pt x 539.616pt>
 File: Pictures/adj_matrix.png Graphic file (type png)
 
 <use Pictures/adj_matrix.png>
 Package pdftex.def Info: Pictures/adj_matrix.png used on input line 396.
 (pdftex.def)             Requested size: 469.75499pt x 283.91339pt.
- [15] [16 <./Pictures/HumeGraph2.png>] [17 <./Pictures/adj_matrix.png>] [18] [1
-9] [20]
+ [16 <./Pictures/HumeGraph2.png>] [17 <./Pictures/adj_matrix.png>] [18] [19] [2
+0] [21] [22]
 
-LaTeX Warning: Citation `stephenson1989rethinking' on page 21 undefined on inpu
-t line 508.
+LaTeX Warning: Citation `Estrada_2005' on page 23 undefined on input line 531.
 
-[21] <Pictures/Hubs_hist.png, id=423, 649.9482pt x 367.1316pt>
+[23] <Pictures/Hubs_hist.png, id=447, 649.9482pt x 367.1316pt>
 File: Pictures/Hubs_hist.png Graphic file (type png)
 
 <use Pictures/Hubs_hist.png>
-Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 537.
+Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 562.
 (pdftex.def)             Requested size: 469.75499pt x 256.4071pt.
- [22] [23 <./Pictures/Hubs_hist.png>]
+ [24] [25 <./Pictures/Hubs_hist.png>]
 Chapter 4.
-[24
+[26
 
-] <Pictures/3_level_tree.png, id=448, 918.7926pt x 345.9324pt>
+] <Pictures/3_level_tree.png, id=469, 918.7926pt x 345.9324pt>
 File: Pictures/3_level_tree.png Graphic file (type png)
 
 <use Pictures/3_level_tree.png>
-Package pdftex.def Info: Pictures/3_level_tree.png used on input line 557.
+Package pdftex.def Info: Pictures/3_level_tree.png used on input line 582.
 (pdftex.def)             Requested size: 469.75499pt x 170.32037pt.
- [25 <./Pictures/3_level_tree.png>] [26]
-[27] [28]
+ [27 <./Pictures/3_level_tree.png>] [28]
+[29] [30]
 Chapter 5.
-[29
+[31
 
-] <Pictures/Prediction_50_50_RF.png, id=478, 577.1964pt x 308.352pt>
+] <Pictures/Prediction_50_50_RF.png, id=499, 577.1964pt x 308.352pt>
 File: Pictures/Prediction_50_50_RF.png Graphic file (type png)
 
 <use Pictures/Prediction_50_50_RF.png>
-Package pdftex.def Info: Pictures/Prediction_50_50_RF.png used on input line 64
-3.
+Package pdftex.def Info: Pictures/Prediction_50_50_RF.png used on input line 66
+8.
 (pdftex.def)             Requested size: 469.75499pt x 241.75908pt.
- [30 <./Pictures/Prediction_50_50_RF.png>] <Pictures/FeatureAnalysis.png, id=48
-8, 441.14813pt x 251.43938pt>
+ [32]
+<Pictures/FeatureAnalysis.png, id=507, 441.14813pt x 251.43938pt>
 File: Pictures/FeatureAnalysis.png Graphic file (type png)
 
 <use Pictures/FeatureAnalysis.png>
-Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 666.
+Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 691.
 (pdftex.def)             Requested size: 422.77661pt x 217.8822pt.
 
-<Pictures/confusion_plot.png, id=491, 606.76688pt x 374.90062pt>
+<Pictures/confusion_plot.png, id=510, 606.76688pt x 374.90062pt>
 File: Pictures/confusion_plot.png Graphic file (type png)
 
 <use Pictures/confusion_plot.png>
-Package pdftex.def Info: Pictures/confusion_plot.png used on input line 676.
+Package pdftex.def Info: Pictures/confusion_plot.png used on input line 701.
 (pdftex.def)             Requested size: 422.77661pt x 248.68335pt.
- [31 <./Pictures/FeatureAnalysis.png>]
-[32 <./Pictures/confusion_plot.png (PNG copy)>] [33]
+ [33 <./Pictures/Prediction_50_50_RF.png>]
+[34 <./Pictures/FeatureAnalysis.png>] [35 <./Pictures/confusion_plot.png (PNG c
+opy)>]
 Chapter 6.
-<Pictures/generalization.png, id=510, 421.575pt x 316.18124pt>
+<Pictures/generalization.png, id=532, 421.575pt x 316.18124pt>
 File: Pictures/generalization.png Graphic file (type png)
 
 <use Pictures/generalization.png>
-Package pdftex.def Info: Pictures/generalization.png used on input line 703.
+Package pdftex.def Info: Pictures/generalization.png used on input line 728.
 (pdftex.def)             Requested size: 328.82706pt x 237.62424pt.
- [34
+ [36
 
-] [35 <./Pictures/generalization.png (PNG copy)>] [36] [37]
+] [37 <./Pictures/generalization.png (PNG copy)>] [38] [39]
 Chapter 7.
-[38
+[40
 
-] (Straub_KM_T_2016.bbl [39] [40
+] (Straub_KM_T_2016.bbl [41] [42
 
 ]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¸ in font ptmr7t!
- [41]
+ [43]
 Underfull \hbox (badness 10000) in paragraph at lines 106--111
 $\OT1/ptm/m/n/12 Enron / Enron[]Employee[]Status . xls$[]]. []Internet Archive[
 ].[[]$https : / / web . archive . org / web /$
@@ -736,7 +736,7 @@ $\OT1/ptm/m/n/12 20131126121206 / http : / / www . isi . edu / []adibi / Enron
 / Enron[]Employee[]Status . xls$[]], Ac-cessed
  []
 
-[42]
+[44]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¤ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
@@ -745,29 +745,30 @@ Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¡ in font ptmr7t!
+ [45]
 Missing character: There is no Â in font ptmri7t!
 Missing character: There is no ® in font ptmri7t!
- [43])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 796.
- [44]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 796.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 821.
+ [46]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 821.
  (Straub_KM_T_2016.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 796.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 796.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 821.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 821.
 Package rerunfilecheck Info: File `Straub_KM_T_2016.out' has not changed.
 (rerunfilecheck)             Checksum: 52E1A6CEDD4880932ACD311B61CCA1C6;1724.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 796.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 821.
  ) 
 Here is how much of TeX's memory you used:
- 10743 strings out of 493673
- 157530 string characters out of 3141530
- 263925 words of memory out of 3000000
- 13759 multiletter control sequences out of 15000+200000
- 30087 words of font info for 68 fonts, out of 3000000 for 9000
+ 10771 strings out of 493673
+ 157864 string characters out of 3141530
+ 263013 words of memory out of 3000000
+ 13770 multiletter control sequences out of 15000+200000
+ 32856 words of font info for 77 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  37i,10n,43p,786b,489s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<D:/Progra
@@ -776,18 +777,20 @@ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Program Fi
 les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/urw/times/utmb8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/t
-imes/utmr8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8
-a.pfb>
-Output written on Straub_KM_T_2016.pdf (53 pages, 1246342 bytes).
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><D:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><D:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/urw/times/utmb8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw
+/times/utmr8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr
+i8a.pfb>
+Output written on Straub_KM_T_2016.pdf (56 pages, 1271479 bytes).
 PDF statistics:
- 659 PDF objects out of 1000 (max. 8388607)
- 161 named destinations out of 1000 (max. 500000)
+ 689 PDF objects out of 1000 (max. 8388607)
+ 169 named destinations out of 1000 (max. 500000)
  335 words of extra memory for PDF output out of 10000 (max. 10000000)
 
