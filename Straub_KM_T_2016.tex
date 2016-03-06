@@ -555,6 +555,11 @@ Note that all metrics used in the learning algorithm were normalized to be betwe
 All of these different graph statistics were used as inputs into the random forest algorithm to characterize each node's importance in the social graph.
 
 \subsubsection{Most Useful Social Network Features}
+The feature that was ranked the most useful social-network based feature by the feature ranker in Section~\ref{Algorithm} was the full graph hubs.
+Recall that a node's hubs value is an estimate of how well a node is connected to authorities.
+These scores are calculated in an iterative reinforcement algorithm.
+In the original website ranking context, a hub is a site that links to many sites that are determined to be relevant or important.
+This can be interpreted to mean that employees with a high hubs score more often communicate with many of the directors or other important employees within the center.
 The histogram of hub values in the full graph broken down by class is shown in Figure~\ref{fig:social_ex_hist}.
 
 \begin{figure}[t]
@@ -564,6 +569,12 @@ The histogram of hub values in the full graph broken down by class is shown in F
         \caption[Full graph hubs histogram]{Histogram of hubs from social graph by job title.  Note that directors on average have the highest hub score and graduate students have the lowest.  In fact, three out of eight directors can be identified by filtering samples on full graph hubs values $>0.6$. }
         \label{fig:social_ex_hist}
 \end{figure}
+
+The next two most useful measurements were the partial graph communicability centrality and the partial graph communicability betweenness centrality.
+These measures may seem to have less intuitive interpretations than the top-ranked traffic-based features.
+However, in general these centrality measures attempt to capture different aspects of how well a node is embedded within the graph.
+In terms of this application, it measures how the breadth and depth of an employee's email communications within the center.
+
 \chapter{Algorithm Design} \label{Algorithm}
 \section{Tools}
 \section{Model Selection}
@@ -630,12 +641,12 @@ Total signed emails received                 & Traffic      & 0.728  \\
 Number of emails received as forwards        & Traffic      & 0.719  \\
 Full graph hubs                              & Graph        & 0.589  \\
 Partial graph communicability centrality     & Graph        & 0.554  \\
-PG communicability betweenness centrality    & Graph        & 0.554  \\
+partial graph communicability betweenness centrality    & Graph        & 0.554  \\
 Number of emails received as CC              & Traffic      & 0.507  \\
 Percentage of emails received as forwards    & Traffic      & 0.503  \\
 Partial graph degree centrality              & Graph        & 0.492  \\
 Partial graph pagerank                       & Graph        & 0.492  \\
-PG current flow closeness centrality         & Graph        & 0.492  \\
+partial graph current flow closeness centrality         & Graph        & 0.492  \\
 Average number of emails received per day    & Traffic      & 0.489  \\
 Average total emails per day                 & Traffic      & 0.479  \\
 Partial graph average shortest paths         & Graph        & 0.476  \\
