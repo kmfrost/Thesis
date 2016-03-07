@@ -383,7 +383,7 @@ Each edge was given a weight equal to the total number of emails exchanged betwe
 The edges are undirected for this analysis.
 A second graph only produces the same weighted edge between two nodes but only if at least 10 emails were exchanged.
 The purpose of this second graph is to filter out stray single-email relationships between coworkers that do not constitute meaningful communication.
-The full graph including only the study volunteers is plotted in Figure~\ref{fig:social_net}.  Note that graduate students are found on the fringes of the network and are generally the least connected.  However, there is a clear core group of employees that communicate very frequently.
+The full graph including all of the center employees is shown in Figure~\ref{fig:social_net}.  Note that graduate students are found on the fringes of the network and are generally the least connected.  However, there is a clear core group of employees that communicate very frequently.
 
 
 \begin{figure}[t]
@@ -705,6 +705,8 @@ A plot of this analysis is shown below in Figure \ref{fig:feat_analysis}.
 Even using just the top thee features resulted in classification accuracy over 80\%.
 Therefore, a very good classifier can be built using much fewer features if the features are selected properly.
 
+Blah blah \ref{fig:conf_matrix}.
+
 \begin{figure}[t]
     \centering
         \includegraphics[width=.9\columnwidth,trim={1mm 6mm 1mm 3.5mm},clip]{FeatureAnalysis}
@@ -712,6 +714,15 @@ Therefore, a very good classifier can be built using much fewer features if the 
         \caption[Prediction accuracy compared to number of features]{Prediction accuracy compared to number of features used for analysis.  Note that the accuracy is still very high, 95.6\%, when only twenty features are used.  The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. }
         \label{fig:feat_analysis}
 \end{figure}
+
+\begin{figure}[t]
+    \centering
+        \includegraphics[width=.9\columnwidth,trim={1mm 6mm 1mm 3.5mm},clip]{class_confusion_mat}
+        \vspace{-7pt}
+        \caption[Job title prediction confusion matrix]{Confusion matrix for the job prediction test.  The only two classes that confused the classifier were graduate student and research, making a total of 3 errors.  These classes are very similar, so it is understandable that there would be errors.}
+        \label{fig:conf_matrix}
+\end{figure}
+
 
 \section{Leave-One Out Cross Validation}
 So I tried LOOCV which gave, \ref{fig:loocv_conf_plot}.
