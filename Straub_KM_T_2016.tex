@@ -236,23 +236,34 @@ Special care was taken to protect the privacy of those involved in the study.
 During the collection process, all subject and body text was hashed, and all email metadata was stored in a MySQL database using scripts without any researchers observing any email text.
 Furthermore, any identifying information has been omitted from this publication.
 
-The center's email server offers the ability to both digitally sign and encrypt emails.  Sending an email with either or both of these options appears as a special type of attachment in the raw email file.  Therefore, during the data collection process, information about if an email was signed or encrypted was recorded.  This process was part of the comprehensive parser script developed for extracting information from each email.
+Most of the collected data is information from the header of an email such as the sending and receiving email addresses and date and time.
+The number of characters in the subject and body text were extracted before the subject and body text was hashed.
+The prefix of the email was also recorded before hashing.
+The hashed body and subject were loaded into the database in order to discern between emails with the same text.
+For example, if an email is forwarded, it will have the same hashed subject once the prefix is removed, and it is therefore possible to count the number of times an email with the same subject has been received.
+The number of attachments to each email was also collected.
+The center's email server offers the ability to both digitally sign and encrypt emails.
+Sending an email with either or both of these options appears as a special type of attachment in the raw email file.
+Therefore, during the data collection process, information about if an email was signed or encrypted was recorded.  All of the metadata was collected by a comprehensive parser script.  The types of information extracted from each email is summarized in Table \ref{tab:db_metadata}.
 
-The following is the metadata parsed from each email:
-\begin{compactitem}
-\item Destination and source email address
-\item Email time stamp
-\item Subject prefix (e.g., Re:, Fwd:)
-\item Hash of subject after removing prefix
-\item Hash of body text
-\item Length of subject in characters
-\item Length of body text in characters
-\item Number of attachments
-\begin{compactitem}
-\item Indicator if email was digitally signed
-\item Indicator if email was encryped
-\end{compactitem}
-\end{compactitem}
+\begin{table}[t]
+\centering
+\caption{The list of all information collected from each email within the study.}
+\label{tab:db_metadata}
+\begin{tabular}{@{}l@{}}
+\toprule
+Destination and source email address    \\
+Email time stamp                        \\
+Subject prefix (e.g., Re:, Fwd:)        \\
+Hash of subject after removing prefix   \\
+Hash of body text                       \\
+Length of subject in characters         \\
+Length of body text in characters       \\
+Number of attachments                   \\
+Indicator if email was digitally signed \\
+Indicator if email was encrypted        \\ \bottomrule
+\end{tabular}
+\end{table}
 
 
 \section{Dataset Description and Statistics}
@@ -264,7 +275,7 @@ However, it is comprised of fewer people than the Enron dataset.
 \centering
 \caption{A comparison between the internal dataset and the Enron email corpus.}
 \label{tab:db_stats}
-\resizebox{0.6\textwidth}{!}{%
+\resizebox{0.7\textwidth}{!}{%
 \begin{tabular}{@{}lrr@{}}
 \toprule
                    & Center          & Enron         \\ \midrule
@@ -582,7 +593,7 @@ Due to the large number of features and relatively low number of participants, a
 While tree based classifiers can be susceptible to overfitting, the random forest is robust to overfitting issues and was therefore chosen for this study.
 The java-based software package Weka was used to generate the random forest based on the algorithm described in~\cite{Breiman2001}.
 
-Random forests are an ensemble method of machine learning, comprised of many random trees.
+Random forests are an ensemble method of machine learning comprised of many random trees.
 A random tree is a machine learning algorithm that uses training data to learn a series of rules for classification.
 These rules are constructed in a hierarchy that visually resembles a tree.
 Each decision is based on what rule will maximize the information gained.
