@@ -1,0 +1,163 @@
+=== Model information ===
+
+Filename:     35_30_35_classification.model
+Scheme:weka.classifiers.trees.RandomForest -I 750 -K 0 -S 1
+Relation:trai_norm_email_features_35_30_35
+Attributes:   117
+[list of attributes omitted]
+
+=== Classifier model ===
+
+Random forest of 750 trees, each constructed while considering 7 random features.
+Out of bag error: 0.3623
+
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     test_norm_email_features_35_30_35
+Instances:     unknown (yet). Reading incrementally
+Attributes:   117
+
+=== Summary ===
+
+Correctly Classified Instances          66               95.6522 %
+Incorrectly Classified Instances         3                4.3478 %
+Kappa statistic                          0.9394
+Mean absolute error                      0.1216
+Root mean squared error                  0.1964
+Total Number of Instances               69     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.967     0.051      0.935     0.967     0.951      0.998    GradStudent
+                 0.882     0.019      0.938     0.882     0.909      0.989    Research
+                 1         0          1         1         1          1        Director
+                 1         0          1         1         1          1        PM
+                 1         0          1         1         1          1        Operations
+                 1         0          1         1         1          1        Outreach
+Weighted Avg.    0.957     0.027      0.957     0.957     0.956      0.996
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f   <-- classified as
+ 29  1  0  0  0  0 |  a = GradStudent
+  2 15  0  0  0  0 |  b = Research
+  0  0  8  0  0  0 |  c = Director
+  0  0  0  5  0  0 |  d = PM
+  0  0  0  0  7  0 |  e = Operations
+  0  0  0  0  0  2 |  f = Outreach
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     test_norm_email_features_35_30_35
+Instances:     unknown (yet). Reading incrementally
+Attributes:   117
+
+=== Predictions on test set ===
+
+inst#,    actual, predicted, error, probability distribution
+     1 1:GradStud 1:GradStud         *0.876  0.048  0.029  0      0.028  0.019
+     2 2:Research 1:GradStud      +  *0.425  0.292  0.079  0.003  0.181  0.02 
+     3 3:Director 3:Director          0.284  0.236 *0.289  0.028  0.12   0.043
+     4 1:GradStud 1:GradStud         *0.908  0.036  0.023  0.001  0.016  0.016
+     5       4:PM       4:PM          0.015  0.12   0.151 *0.624  0.075  0.016
+     6 1:GradStud 1:GradStud         *0.695  0.196  0.025  0.008  0.057  0.019
+     7 1:GradStud 1:GradStud         *0.824  0.129  0.009  0      0.017  0.02 
+     8 1:GradStud 1:GradStud         *0.761  0.105  0.075  0.005  0.021  0.032
+     9 1:GradStud 1:GradStud         *0.779  0.147  0.017  0.008  0.035  0.015
+    10 3:Director 3:Director          0.003  0.119 *0.565  0.24   0.031  0.043
+    11 2:Research 2:Research          0.172 *0.695  0.024  0.032  0.068  0.009
+    12 1:GradStud 1:GradStud         *0.941  0.033  0.011  0      0.007  0.008
+    13 1:GradStud 1:GradStud         *0.655  0.212  0.029  0      0.091  0.013
+    14 1:GradStud 1:GradStud         *0.748  0.169  0.028  0.004  0.027  0.024
+    15 3:Director 3:Director          0.023  0.168 *0.457  0.14   0.151  0.061
+    16 1:GradStud 1:GradStud         *0.764  0.137  0.048  0      0.036  0.015
+    17 5:Operatio 5:Operatio          0.004  0.171  0.107  0.153 *0.515  0.051
+    18 2:Research 2:Research          0.244 *0.485  0.053  0.013  0.123  0.081
+    19 3:Director 3:Director          0.027  0.341 *0.369  0.12   0.079  0.064
+    20 1:GradStud 1:GradStud         *0.945  0.033  0.008  0      0.008  0.005
+    21 1:GradStud 1:GradStud         *0.883  0.073  0.007  0      0.02   0.017
+    22 1:GradStud 1:GradStud         *0.881  0.091  0.008  0      0.015  0.005
+    23 2:Research 2:Research          0.064 *0.563  0.14   0.032  0.14   0.061
+    24 1:GradStud 1:GradStud         *0.736  0.112  0.061  0.003  0.048  0.04 
+    25 1:GradStud 1:GradStud         *0.964  0.028  0.004  0      0.004  0    
+    26 1:GradStud 1:GradStud         *0.691  0.145  0.047  0.004  0.081  0.032
+    27 2:Research 1:GradStud      +  *0.565  0.319  0.035  0.001  0.056  0.024
+    28 1:GradStud 1:GradStud         *0.793  0.095  0.057  0.001  0.031  0.023
+    29 2:Research 2:Research          0.005 *0.611  0.123  0.167  0.075  0.02 
+    30 2:Research 2:Research          0.215 *0.585  0.049  0.008  0.068  0.075
+    31 1:GradStud 1:GradStud         *0.471  0.283  0.053  0.003  0.095  0.096
+    32 3:Director 3:Director          0.356  0.084 *0.439  0.001  0.095  0.025
+    33       4:PM       4:PM          0.017  0.169  0.232 *0.512  0.036  0.033
+    34 5:Operatio 5:Operatio          0.036  0.183  0.076  0.071 *0.54   0.095
+    35       4:PM       4:PM          0.04   0.276  0.16  *0.395  0.088  0.041
+    36 2:Research 2:Research          0.027 *0.404  0.233  0.251  0.044  0.041
+    37 2:Research 2:Research          0.051 *0.793  0.032  0.024  0.08   0.02 
+    38 1:GradStud 1:GradStud         *0.952  0.019  0.015  0.001  0.005  0.008
+    39 6:Outreach 6:Outreach          0.011  0.156  0.139  0.131  0.216 *0.348
+    40 2:Research 2:Research          0.045 *0.776  0.041  0.029  0.088  0.02 
+    41 6:Outreach 6:Outreach          0.343  0.177  0.045  0.007  0.077 *0.351
+    42 5:Operatio 5:Operatio          0.028  0.215  0.148  0.068 *0.489  0.052
+    43 1:GradStud 1:GradStud         *0.88   0.073  0.011  0      0.015  0.021
+    44 2:Research 2:Research          0.388 *0.493  0.039  0.009  0.048  0.023
+    45 1:GradStud 1:GradStud         *0.948  0.048  0.001  0      0.001  0.001
+    46 5:Operatio 5:Operatio          0.011  0.083  0.047  0.073 *0.729  0.057
+    47 2:Research 2:Research          0.223 *0.54   0.053  0.011  0.089  0.084
+    48 1:GradStud 1:GradStud         *0.772  0.133  0.016  0.003  0.057  0.019
+    49 5:Operatio 5:Operatio          0.108  0.359  0.037  0.008 *0.404  0.084
+    50 2:Research 2:Research          0.004 *0.444  0.159  0.208  0.144  0.041
+    51 1:GradStud 1:GradStud         *0.612  0.184  0.047  0.004  0.093  0.06 
+    52 1:GradStud 1:GradStud         *0.605  0.113  0.067  0.007  0.191  0.017
+    53 3:Director 3:Director          0.013  0.117 *0.604  0.152  0.061  0.052
+    54 1:GradStud 1:GradStud         *0.959  0.029  0.004  0      0.007  0.001
+    55       4:PM       4:PM          0.008  0.212  0.147 *0.48   0.116  0.037
+    56 2:Research 2:Research          0.016 *0.577  0.141  0.076  0.133  0.056
+    57 1:GradStud 1:GradStud         *0.895  0.079  0.007  0.003  0.013  0.004
+    58 5:Operatio 5:Operatio          0.185  0.217  0.067  0.015 *0.468  0.048
+    59 3:Director 3:Director          0.02   0.128 *0.664  0.111  0.067  0.011
+    60 1:GradStud 2:Research      +   0.431 *0.459  0.037  0.025  0.04   0.008
+    61       4:PM       4:PM          0.001  0.121  0.168 *0.495  0.151  0.064
+    62 1:GradStud 1:GradStud         *0.573  0.323  0.043  0.011  0.04   0.011
+    63 5:Operatio 5:Operatio          0.345  0.149  0.052  0.003 *0.439  0.012
+    64 2:Research 2:Research          0.304 *0.541  0.011  0.003  0.093  0.048
+    65 3:Director 3:Director          0.004  0.104 *0.701  0.147  0.032  0.012
+    66 2:Research 2:Research          0.211 *0.599  0.025  0.033  0.125  0.007
+    67 1:GradStud 1:GradStud         *0.777  0.091  0.052  0      0.056  0.024
+    68 1:GradStud 1:GradStud         *0.769  0.1    0.033  0      0.047  0.051
+    69 2:Research 2:Research          0.036 *0.74   0.076  0.039  0.093  0.016
+
+=== Summary ===
+
+Correctly Classified Instances          66               95.6522 %
+Incorrectly Classified Instances         3                4.3478 %
+Kappa statistic                          0.9394
+Mean absolute error                      0.1216
+Root mean squared error                  0.1964
+Total Number of Instances               69     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.967     0.051      0.935     0.967     0.951      0.998    GradStudent
+                 0.882     0.019      0.938     0.882     0.909      0.989    Research
+                 1         0          1         1         1          1        Director
+                 1         0          1         1         1          1        PM
+                 1         0          1         1         1          1        Operations
+                 1         0          1         1         1          1        Outreach
+Weighted Avg.    0.957     0.027      0.957     0.957     0.956      0.996
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f   <-- classified as
+ 29  1  0  0  0  0 |  a = GradStudent
+  2 15  0  0  0  0 |  b = Research
+  0  0  8  0  0  0 |  c = Director
+  0  0  0  5  0  0 |  d = PM
+  0  0  0  0  7  0 |  e = Operations
+  0  0  0  0  0  2 |  f = Outreach
+
