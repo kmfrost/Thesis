@@ -157,6 +157,10 @@ U.~Brandes and D.~Fleischer, {\em Centrality measures based on current flow}.
 K.~Stephenson and M.~Zelen, ``Rethinking centrality: Methods and examples,''
   {\em Social Networks}, vol.~11, no.~1, pp.~1--37, 1989.
 
+\bibitem{Estrada_2005}
+E.~Estrada and J.~A. Rodr\'{\i}guez-Vel\'azquez, ``Subgraph centrality in
+  asdf,'' {\em Phys. Rev. E}, vol.~71, p.~056103, May 2005.
+
 \bibitem{estrada2008communicability}
 E.~Estrada and N.~Hatano, ``Communicability in complex networks,'' {\em
   Physical Review E}, vol.~77, no.~3, p.~036111, 2008.
@@ -183,8 +187,8 @@ G.~E. Hinton, S.~Osindero, and Y.-W. Teh, ``A fast learning algorithm for deep
   belief nets,'' {\em Neural computation}, vol.~18, no.~7, pp.~1527--1554,
   2006.
 
-\bibitem{ruangkanokmas_deep_2016}
-P.~Ruangkanokmas, T.~Achalakul, and K.~Akkarajitsakul, ``Deep {Belief}
-  {Networks} with {Feature} {Selection} for {Sentiment} {Classification},''
+\bibitem{ruangkanokmas_deep}
+P.~Ruangkanokmas, T.~Achalakul, and K.~Akkarajitsakul, ``Deep belief networks
+  with feature selection for sentiment classification,''
 
 \end{thebibliography}
