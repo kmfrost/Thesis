@@ -25,14 +25,13 @@
 \contentsline {subsubsection}{Centrality Measures}{21}{section*.20}
 \contentsline {subsubsection}{Most Useful Social Network Features}{24}{section*.21}
 \contentsline {chapter}{\numberline {4}Algorithm Design}{27}{chapter.4}
-\contentsline {section}{\numberline {4.1}Tools}{27}{section.4.1}
-\contentsline {section}{\numberline {4.2}Model Selection}{27}{section.4.2}
-\contentsline {section}{\numberline {4.3}Feature Selection}{29}{section.4.3}
+\contentsline {section}{\numberline {4.1}Model Selection}{27}{section.4.1}
+\contentsline {section}{\numberline {4.2}Feature Selection}{29}{section.4.2}
 \contentsline {chapter}{\numberline {5}Performance Analysis}{32}{chapter.5}
 \contentsline {section}{\numberline {5.1}Classification Results}{33}{section.5.1}
 \contentsline {section}{\numberline {5.2}Leave-One Out Cross Validation}{35}{section.5.2}
-\contentsline {section}{\numberline {5.3}Hierarchy Analysis}{35}{section.5.3}
-\contentsline {chapter}{\numberline {6}Future Work}{38}{chapter.6}
-\contentsline {section}{\numberline {6.1}Generalization}{38}{section.6.1}
-\contentsline {section}{\numberline {6.2}Deep Learning}{39}{section.6.2}
-\contentsline {chapter}{\numberline {7}Conclusions}{42}{chapter.7}
+\contentsline {section}{\numberline {5.3}Hierarchy Analysis}{36}{section.5.3}
+\contentsline {chapter}{\numberline {6}Future Work}{39}{chapter.6}
+\contentsline {section}{\numberline {6.1}Generalization}{39}{section.6.1}
+\contentsline {section}{\numberline {6.2}Deep Learning}{40}{section.6.2}
+\contentsline {chapter}{\numberline {7}Conclusions}{43}{chapter.7}

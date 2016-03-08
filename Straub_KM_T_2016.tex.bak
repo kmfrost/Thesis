@@ -584,7 +584,6 @@ However, in general these centrality measures attempt to capture different aspec
 In terms of this application, it measures how the breadth and depth of an employee's email communications within the center.
 
 \chapter{Algorithm Design} \label{Algorithm}
-\section{Tools}
 \section{Model Selection}
 Due to the large number of features and relatively low number of participants, a classification method was carefully chosen to avoid overfitting the data.
 While tree based classifiers can be susceptible to overfitting, the random forest is robust to overfitting issues and was therefore chosen for this study.
@@ -604,16 +603,22 @@ An example random tree with depth three is shown in Figure~\ref{fig:ex_tree}.
     \label{fig:ex_tree}
 \end{figure}
 
-Random forests build deep random trees with slight random variations.
+The emails in the dataset were randomly assigned to one of three groups: 35\% for training, 30\% for cross-validation, and 35\% for testing.
+The training set was used to train the dataset by building the random trees.
+The cross-validation set was used to select the hyperparameters of the algorithm such as number of trees and number of features used for branch splits.
+The testing set was used only once on a model trained by the training set using these optimal parameters.
+
+Random forests build many deep random trees with slight random variations.
 Individually, these random trees overfit the data.
 However, these random trees are combined through a process of bootstrap aggregating, or bagging.
-The number of trees was chosen to be 750 based empirical analysis.
-The bagging process involves each random tree generating a new training data set by sampling observations from the input training set with replacement.
+From the cross-validation analysis, the number of trees was 750.
+The bagging process involves each random tree generating a new training dataset by sampling observations from the input training set with replacement.
 These subsamples are used to build the random trees.
 For this analysis, each tree selects $\frac{2N}{3}$ samples to train the trees where $N$ is the number of data points in the overall training set.
 Just as the samples were subsampled, so were the features.
 Only this subset of features can be used as rules for that tree.
-In this implementation, each tree used a subsample of 15 random features.
+In this implementation, each tree used a subsample of 7 random features.
+This value represents approximately 6\% of the total avaliable features, and this parameter was selected through cross-validation.
 
 After all the trees are built, the test data is run through all the random trees in the forest.
 Each tree outputs a prediction label for each data point, and the majority vote on each sample is the final predicted label.
@@ -628,7 +633,7 @@ Information gain is calculated as follows:
 \begin{equation}
 I(\text{Class}; \text{Attribute}) = H(\text{Class}) - H(\text{Class} | \text{Attribute})
 \end{equation} \label{eq:info_gained}
-where $I(\text{Class}; \text{Attribute})$ represents the mutual information between the class and the attribute, $H(Class)$ is the entropy of the class variable, and  $H(\text{Class} | \text{Attribute})$ represents the conditional entropy of the Class given the Attribute value.  
+where $I(\text{Class}; \text{Attribute})$ represents the mutual information between the class and the attribute, $H(\text{Class})$ is the entropy of the class variable, and  $H(\text{Class} | \text{Attribute})$ represents the conditional entropy of the Class given the Attribute value.  
 
 Mutual information represents how well knowledge of the attribute informs the prediction of the class.
 In this model, both the attribute and the class are treated as random variables.
@@ -646,23 +651,24 @@ Table~\ref{tab:ranked_feats} shows the top twenty features from this analysis an
 Feature                                      & Type         & Ranker \\ \midrule
 Unique subjects received                     & Traffic      & 0.728  \\
 Total signed emails received                 & Traffic      & 0.728  \\
-Number of emails received as forwards        & Traffic      & 0.719  \\
-Full graph hubs                              & Graph        & 0.589  \\
-Partial graph communicability centrality     & Graph        & 0.554  \\
-partial graph communicability betweenness centrality    & Graph        & 0.554  \\
-Number of emails received as CC              & Traffic      & 0.507  \\
-Percentage of emails received as forwards    & Traffic      & 0.503  \\
-Partial graph degree centrality              & Graph        & 0.492  \\
-Partial graph pagerank                       & Graph        & 0.492  \\
-partial graph current flow closeness centrality         & Graph        & 0.492  \\
-Average number of emails received per day    & Traffic      & 0.489  \\
-Average total emails per day                 & Traffic      & 0.479  \\
-Partial graph average shortest paths         & Graph        & 0.476  \\
-Partial graph closeness centrality           & Graph        & 0.476  \\
-Unique email addresses from signed emails    & Traffic      & 0.457  \\
-Number of emails sent as CC                  & Traffic      & 0.43   \\
-Number of emails received as replies         & Traffic      & 0.43   \\
-Average emails sent per day                  & Traffic      & 0.404  \\ \bottomrule
+Partial graph hubs                           & Graph        & 0.589  \\
+Full graph authorities                       & Graph        & 0.554  \\
+Number of emails received as forwards        & Traffic      & 0.0.519  \\
+Partial graph current flow closeness centrality & Graph     & 0.0.512  \\
+Partial graph pagerank                       & Graph        & 0.512    \\
+Percentage of emails sent with unique addresses & Traffic   & 0.51  \\
+Number of emails received as carbon copies   & Traffic      & 0.5      \\
+Full graph pagerank                          & Graph        & 0.492    \\
+Average number of emails received per day    & Traffic      & 0.489    \\
+Partial graph communicability betweenness centrality & Graph & 0.486  \\
+Partial graph communicability centrality     & Graph        & 0.486    \\
+Total number of emails per day               & Traffic      & 0.479    \\
+Partial graph number of cliques              & Graph        & 0.47 \\
+Percentage of emails received as forwards    & Traffic      & 0.451 \\
+Number of emails sent as carbon copies       & Traffic      & 0.43 \\
+Partial graph degree centrality              & Graph        & 0.429 \\
+Partial graph closeness centrality           & Graph        & 0.429 \\
+Partial graph average shortest paths         & Graph        & 0.429 \\ \bottomrule
 \end{tabular}
 }
 \end{table}
@@ -674,11 +680,12 @@ The second part of the results section assumes perfect labeling of the employees
 The ultimate goal of this research was to determine what additional information can be gained by analyzing the organic organizational chart when compared with the official organizational chart.
 
 \section{Classification Results}
-Data was split by randomly assigning each email to either the training or testing set with equal probability.
+As described in Section~\ref{Algorithm}, data was split by randomly assigning each email to training or testing sets with equal probability, $0.35$.
+The remaining 30\% of the data was used as a cross-validation set.
 Then, all of the metrics described in Section~\ref{Data} were calculated for both groups separately.
-The training data was used as input to the random forest algorithm as described in Section~\ref{Algorithm}, and predictions were generated for the test data.
+The training data was used as input to the random forest algorithm as described in Section~\ref{Algorithm}, cross-validation was performed, and predictions were generated for the test data.
 The number of correct and incorrect classifications for each class are shown below in Figure~\ref{fig:result_hist}.
-Note that only two predictions were wrong: one person each in research and outreach were misclassified as graduate students.
+Note that only three predictions were wrong: two people in research and outreach were misclassified as graduate students.
 It is important to note that both  misclassifications are for employees who did not provide their emails for the study.
 Therefore, the classification accuracy for the study participants is 100\%, correctly classified inferred employees is 93.75\%, and the overall accuracy of this method using all features is 97.1\%.
 
@@ -709,7 +716,7 @@ Blah blah \ref{fig:conf_matrix}.
 
 \begin{figure}[t]
     \centering
-        \includegraphics[width=.9\columnwidth,trim={1mm 6mm 1mm 3.5mm},clip]{FeatureAnalysis}
+        \includegraphics[width=.8\columnwidth,trim={1mm 6mm 1mm 3.5mm},clip]{FeatureAnalysis}
         \vspace{-7pt}
         \caption[Prediction accuracy compared to number of features]{Prediction accuracy compared to number of features used for analysis.  Note that the accuracy is still very high, 95.6\%, when only twenty features are used.  The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. }
         \label{fig:feat_analysis}
