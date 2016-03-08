@@ -29,9 +29,9 @@
 \contentsline {section}{\numberline {4.2}Feature Selection}{29}{section.4.2}
 \contentsline {chapter}{\numberline {5}Performance Analysis}{32}{chapter.5}
 \contentsline {section}{\numberline {5.1}Classification Results}{33}{section.5.1}
-\contentsline {section}{\numberline {5.2}Leave-One Out Cross Validation}{35}{section.5.2}
-\contentsline {section}{\numberline {5.3}Hierarchy Analysis}{36}{section.5.3}
-\contentsline {chapter}{\numberline {6}Future Work}{39}{chapter.6}
-\contentsline {section}{\numberline {6.1}Generalization}{39}{section.6.1}
-\contentsline {section}{\numberline {6.2}Deep Learning}{40}{section.6.2}
-\contentsline {chapter}{\numberline {7}Conclusions}{43}{chapter.7}
+\contentsline {section}{\numberline {5.2}Leave-One-Out Cross-Validation}{37}{section.5.2}
+\contentsline {section}{\numberline {5.3}Hierarchy Analysis}{39}{section.5.3}
+\contentsline {chapter}{\numberline {6}Future Work}{41}{chapter.6}
+\contentsline {section}{\numberline {6.1}Generalization}{41}{section.6.1}
+\contentsline {section}{\numberline {6.2}Deep Learning}{42}{section.6.2}
+\contentsline {chapter}{\numberline {7}Conclusions}{45}{chapter.7}

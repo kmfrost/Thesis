@@ -299,7 +299,7 @@ These additional employees were included in the study when ground truth for thei
 This provides 69 total employees in the study.
 
 \section{Features}
-The study includes 111 features that were extracted from the email data: 80 traffic-based and 31 social-based.
+The study includes 114 features that were extracted from the email data: 84 traffic-based and 30 social-based.
 The traffic-based features are those calculated purely from the collected email metadata.
 The social features, on the other hand, first model the email patterns in a graphical network and then calculate statistics from this model.
 In the following sections, all features from each of the two categories are described. 
@@ -645,14 +645,13 @@ Table~\ref{tab:ranked_feats} shows the top twenty features from this analysis an
 \caption{Top 20 features ranked by the information gain.}
 \centering
 \label{tab:ranked_feats}
-\resizebox{0.6\columnwidth}{!}{%
+\resizebox{0.75\columnwidth}{!}{%
 \begin{tabular}{@{}lrr@{}}
 \toprule
 Feature                                      & Type         & Ranker \\ \midrule
 Unique subjects received                     & Traffic      & 0.728  \\
 Total signed emails received                 & Traffic      & 0.728  \\
 Partial graph hubs                           & Graph        & 0.589  \\
-Full graph authorities                       & Graph        & 0.554  \\
 Number of emails received as forwards        & Traffic      & 0.0.519  \\
 Partial graph current flow closeness centrality & Graph     & 0.0.512  \\
 Partial graph pagerank                       & Graph        & 0.512    \\
@@ -662,13 +661,15 @@ Full graph pagerank                          & Graph        & 0.492    \\
 Average number of emails received per day    & Traffic      & 0.489    \\
 Partial graph communicability betweenness centrality & Graph & 0.486  \\
 Partial graph communicability centrality     & Graph        & 0.486    \\
-Total number of emails per day               & Traffic      & 0.479    \\
+Average number of emails per day (both sent and received) & Traffic & 0.479    \\
 Partial graph number of cliques              & Graph        & 0.47 \\
 Percentage of emails received as forwards    & Traffic      & 0.451 \\
 Number of emails sent as carbon copies       & Traffic      & 0.43 \\
 Partial graph degree centrality              & Graph        & 0.429 \\
 Partial graph closeness centrality           & Graph        & 0.429 \\
-Partial graph average shortest paths         & Graph        & 0.429 \\ \bottomrule
+Partial graph average shortest paths         & Graph        & 0.429 \\ 
+Percentage of signed emails received with unique addresses & Traffic & 0.418\\ \bottomrule
+
 \end{tabular}
 }
 \end{table}
@@ -686,13 +687,9 @@ Then, all of the metrics described in Section~\ref{Data} were calculated for bot
 The training data was used as input to the random forest algorithm as described in Section~\ref{Algorithm}, cross-validation was performed, and predictions were generated for the test data.
 The number of correct and incorrect classifications for each class are shown below in Figure~\ref{fig:result_hist}.
 Note that only three predictions were wrong: two people in research were classified as graduate students and one graduate student was misclassified as research.
-It is important to note that two out of the three  misclassifications are for employees who did not provide their emails for the study.
-Furthermore, the distinction between graudate students and research faculty is likley the lest clear.
-This can be interpreted for two primary reasons.
-
-Therefore, the classification accuracy for the study participants is 100\%, correctly classified inferred employees is 93.75\%, and the overall accuracy of this method using all features is 97.1\%.
-Some phD students have been at the center as long or longer than some research faculty.
-Some research faculty also take classes as they work towards higher degrees.
+It is important to note that two out of the three misclassification are for employees who did not provide their emails for the study.
+Therefore, the classification accuracy for the study participants is 97.3\%, correctly classified inferred employees is 93.8\%, and the overall accuracy of this method using all features is 95.7\%
+The confusion matrix for this analysis is another way to visualize the results, as shown in Figure~\ref{fig:conf_matrix}.
 
 \begin{figure}[t]
     \centering
@@ -702,30 +699,6 @@ Some research faculty also take classes as they work towards higher degrees.
     \label{fig:result_hist}
 \end{figure}
 
-Note that this method relies on some assumptions.
-One is that employees with the same title exhibit similar email behavior.
-Overall, based on the success of the algorithm and the distributions of the histograms, this seems to prove true.
-Another premise underlying this analysis is that peoples' email behaviors are consistent over time.
-This seems to be true for the time range in this study.
-
-To determine which features were necessary to the analysis, the algorithm was run several times with a subset of the features.
-The first subset used only the top 20 features from Table~\ref{tab:ranked_feats}.
-Using only these features resulted in 3 classification errors, or 95.6\% accuracy.
-This is only one more error than was found using all 98 features.
-For each subsequent run, the least useful feature according to the feature analysis was removed from the input to the system until only one feature remained.
-A plot of this analysis is shown below in Figure \ref{fig:feat_analysis}.
-Even using just the top thee features resulted in classification accuracy over 80\%.
-Therefore, a very good classifier can be built using much fewer features if the features are selected properly.
-
-Blah blah \ref{fig:conf_matrix}.
-
-\begin{figure}[t]
-    \centering
-        \includegraphics[width=.8\columnwidth,trim={1mm 6mm 1mm 3.5mm},clip]{FeatureAnalysis}
-        \vspace{-7pt}
-        \caption[Prediction accuracy compared to number of features]{Prediction accuracy compared to number of features used for analysis.  Note that the accuracy is still very high, 95.6\%, when only twenty features are used.  The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. }
-        \label{fig:feat_analysis}
-\end{figure}
 
 \begin{figure}[t]
     \centering
@@ -736,8 +709,67 @@ Blah blah \ref{fig:conf_matrix}.
 \end{figure}
 
 
-\section{Leave-One Out Cross Validation}
-So I tried LOOCV which gave, \ref{fig:loocv_conf_plot}.
+
+On further inspection, the errors made by the learning algorithm can be explained by understanding center operations.
+The distinction between graduate students and research faculty is likely the lest clear for two primary reasons.
+First, some PhD students have been at the center as long or longer than some research faculty.
+This leads to older PhD students having larger email counts than some of the newer research staff, which could trick the algorithm.
+Some research faculty also take classes, which may cause their email communication patterns to more closely resemble graduate students. 
+To further complicate matters, some graduate students joined the center as staff after they graduated.
+
+
+Note that this method relies on some assumptions.
+One is that employees with the same title exhibit similar email behavior.
+Overall, based on the success of the algorithm and the distributions of the histograms, this seems to prove true.
+Another premise underlying this analysis is that peoples' email behaviors are consistent over time.
+
+An experiment was performed to evaluate this second assumption.
+All employees with less than ten months of consistent email behavior were removed from this experiment.
+Consistent email behavior was defined as sending or receiving at least one email per month.
+One month of email data per person was set aside to act as a training set.
+The random forest algorithm with the parameters described in Section~\ref{Algorithm} was trained using the first month's data.
+Each of the nine subsequent months became a separate test set.
+The features were calculated for each of these months, and the accuracy of the model on the test sets was calculated.
+The result is a test that evaluates how the average email behavior of the center changes over time, as depicted in Figure~\ref{fig:time_analysis}.
+As the figure shows, there is a decrease in algorithm performance as the time between the training data and the test data increases, but this decrease occurs at a slow rate.
+Note that with six months separating the training data from the test data, the algorithm still performed with 63.4\% accuracy.
+This is a decrease of less than 6\% from when the test data is from the month immediately following the training data.
+
+
+\begin{figure}[t]
+    \centering
+        \includegraphics[width=.8\columnwidth,trim={1mm 6mm 1mm 3.5mm},clip]{TimeGapsAnalysis}
+        \vspace{-7pt}
+        \caption[Accuracy of classification over time]{As time between the training data and the testing data increases, the accuracy of the prediciton algorithm slowly decreases.  This reinforces the assumption that the email behavior of the center employees is relatively constant in time.}
+        \label{fig:time_analysis}
+\end{figure}
+
+To determine which features were necessary to the analysis, the algorithm was run several times with a subset of the features.
+The first subset used only the top twenty features from Table~\ref{tab:ranked_feats}.
+For each subsequent run, the least useful feature according to the feature analysis was removed from the input to the system until only one feature remained.
+A plot of this analysis is shown below in Figure \ref{fig:feat_analysis}.
+The maximum accuracy using twenty or fewer features was achieved when either the top fifteen or sixteen were used.
+For this scenario, there were only 6 errors, resulting in 89.86\% accuracy.
+This is only three more errors than was found using all 114 features.
+Even using just the top two features resulted in classification accuracy over 86\%.
+Therefore, a very good classifier can be built using much fewer features if the features are selected properly.
+
+\begin{figure}[t]
+    \centering
+        \includegraphics[width=.8\columnwidth,trim={1mm 6mm 1mm 3.5mm},clip]{FeatureAnalysis}
+        \vspace{-7pt}
+        \caption[Prediction accuracy compared to number of features]{Prediction accuracy compared to number of features used for analysis.  Note that the accuracy is still very high, 89.86\%, when only fifteen features are used.  The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. }
+        \label{fig:feat_analysis}
+\end{figure}
+
+\section{Leave-One-Out Cross-Validation}
+Leave-one-out cross-validation (LOOCV) was used as an alternative evaluation method because it removes the time-based assumption.
+For LOOCV, all of the data is used to calculate the features.
+Then, all but one person is used as training and the left-out person is used as a single test point.
+For this experiment, the 2 people of the outreach class were removed, because that would result in only one training point for that class.
+By testing each point this way, it is possible to evaluate the classification algorithm without having data from all employees in both the training and test sets.
+This ensures that the algorithm is not learning each person's behaviors individually.
+The results of this test are reported below in Figure~\ref{fig:loocv_conf_plot}.
 \begin{figure}[t]
     \centering
         \includegraphics[width=.9\columnwidth,trim={1mm 4mm 1mm 3.5mm},clip]{confusion_plot}
@@ -745,6 +777,19 @@ So I tried LOOCV which gave, \ref{fig:loocv_conf_plot}.
         \caption[Leave one out cross validation results]{Prediction accuracy was higher for graduate students, who have more uniform behaviors and more training data.  However, for each category, the majority of the people classified were true members of that group, save for research.  Note that even for those classified as research, there were more true researchers than any other class.}
         \label{fig:loocv_conf_plot}
 \end{figure}
+
+This analysis resulted in a lower accuracy than the previous experiment.
+In total, only 67.2\% were correct.
+The category of graduate student was the easiest to predict.
+However, note that for each category the majority of the people classified were true members of each group, except for the research category.
+Even out of those classified as research, there were more true researchers than any other class.
+
+In~\cite{namata_inferring_2006}, Namata et al. performed the same analysis was performed on the Enron email corpus.
+Compared to the dataset used in this analysis the Enron data involved many more people.
+The Enron dataset has employees distributed more evenly into six classes, one more than used in the analysis above.
+Even with these advantages, \cite{namata_inferring_2006} was only able to achieve 62.09\% LOOCV accuracy.
+The difference between that analysis and the work described in this thesis is that Namata et al. only used traffic-based features.
+This analysis shows that integrating social-based features with the trafic-based statistics can improve job classification results.
 
 \section{Hierarchy Analysis}
 Most of the employees at the center are organized under a director and work with a program manager (unless for example they are a director or program manager).
