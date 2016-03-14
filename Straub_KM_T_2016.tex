@@ -35,11 +35,15 @@
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{fancyhdr} % Used for header
 \usepackage[headsep=0.5cm,headheight=0.5cm]{geometry}
-
+\usepackage{tocloft}
 \hypersetup{breaklinks=true}
 \urlstyle{same}
 
 \graphicspath{{Pictures/}}
+
+\setlength\cftparskip{-2pt}
+\setlength\cftbeforesecskip{1pt}
+\setlength\cftaftertoctitleskip{2pt}
 
 \setlength{\textwidth}{6.5in}
 \setlength{\textheight}{8.5in}
@@ -85,7 +89,7 @@ Electrical Engineering
 
 Robert W. McGwier, Chair \\
 Aloysius A. Beex\\
-Michael M. Buehrer\\
+R. Michael Buehrer\\
 Bert Huang
 
 \vfill
@@ -140,9 +144,14 @@ The result is a much fuller understanding of the center's internal structure tha
 \pagebreak
 
 % Dedication and Acknowledgments are both optional
-\chapter*{Dedication}
 \chapter*{Acknowledgments}
+I would like to acknowledge the many people who helped me with my graduate work at Virginia Tech and made this work possible.  Thank you to the members of my committee: Dr. Robert W. McGwier, Dr. Louis Beex, Dr. Michael Buehrer, and Dr. Bert Huang for your guidance.  In particular, I would like to sincerely thank Dr. McGwier for his vision and support throughout this research.  
 
+I want to express my gratitude to the faculty, staff, and students of the Hume Center for all of your help and for providing me with the opportunities to work on such interesting research.  I am especially thankful for Dr. Joseph Ernst for his invaluable insight and assistance.
+
+I would also like to thank my family and friends for their support throughout my college career.  I want to specifically thank my husband Ben for his unwavering support and for always pushing me to be my best.
+
+Finally, I thank God for all the blessings in my life and for getting me to where I am today.
 \tableofcontents
 \pagebreak
 
@@ -163,11 +172,15 @@ Understanding this unofficial structure is important, but due to its informal na
 One massive source of electronically searchable information that could be used to better understand this hidden structure is the business's emails.
 However, privacy concerns inhibit most research thrusts into email analysis.  
 
-If access was given to email metadata, there could be several potential applications to this information beyond gaining a better understanding of the organizational structure.  It could be possible ot identify people of influence or potential leaders.  By recognizing changing behavior, potential insider treats could be identified.
+Email metadata, can be used for several potential applications to this information beyond gaining a better understanding of the organizational structure.  It could be possible ot identify people of influence or potential leaders.  By recognizing changing behavior, potential insider treats could be identified.
 
 \section{Problem Overview}
-The study presented in this paper collected an appropriately anonymized email metadata dataset to demonstrate to what extent this metadata can be used to determine an organic organizational chart.
-Furthermore, this research measured how well this organic organizational chart matches the official organizational chart.
+The purpose of this research is to investigate the email behaviors of employees belonging to an academic research organization with the goal of understanding to what extent metadata can be used to determine this organic organizational chart.
+The study presented in this thesis documents how an email metadata dataset was collected and appropriately anonymized.
+This is done in two parts.
+The first section of the analysis aims to accurately classify the employees of the center by their job title.
+Then, this research measured how well this organic organizational chart matches the official organizational chart.
+
 The study utilized email metadata from 37 voluntary participants.
 This metadata is used not only to analyze the voluntary participants, but also to what extent the non-participant members of the organization can be characterized.
 \section{Approach}

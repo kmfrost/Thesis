@@ -1,6 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: Straub_KM_T_2016.aux
+This is BibTeX, Version 0.99dThe top-level auxiliary file: Straub_KM_T_2016.aux
 The style file: ieeetr.bst
 Database file #1: bib.bib
 Warning--entry type for "shetty_status_2004" isn't style-file defined
@@ -10,45 +8,4 @@ Warning--empty journal in nordbo_data_2014
 Warning--empty journal in page_pagerank_1999
 Warning--empty journal in ruangkanokmas_deep
 Warning--empty year in ruangkanokmas_deep
-You've used 41 entries,
-            1876 wiz_defined-function locations,
-            706 strings with 10133 characters,
-and the built_in function-call counts, 11081 in all, are:
-= -- 1104
-> -- 386
-< -- 0
-+ -- 145
-- -- 104
-* -- 762
-:= -- 1515
-add.period$ -- 45
-call.type$ -- 41
-change.case$ -- 38
-chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 611
-empty$ -- 1100
-format.name$ -- 104
-if$ -- 2725
-int.to.chr$ -- 0
-int.to.str$ -- 41
-missing$ -- 43
-newline$ -- 131
-num.names$ -- 41
-pop$ -- 168
-preamble$ -- 1
-purify$ -- 0
-quote$ -- 0
-skip$ -- 403
-stack$ -- 0
-substring$ -- 733
-swap$ -- 236
-text.length$ -- 0
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
-warning$ -- 5
-while$ -- 115
-width$ -- 43
-write$ -- 395
 (There were 6 warnings)
