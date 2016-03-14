@@ -169,6 +169,11 @@ E.~Estrada and N.~Hatano, ``Communicability in complex networks,'' {\em
 L.~Breiman, ``Random forests,'' {\em Machine Learning}, vol.~45, no.~1,
   pp.~5--32, 2001.
 
+\bibitem{hinton_fast_2006}
+G.~E. Hinton, S.~Osindero, and Y.-W. Teh, ``A fast learning algorithm for deep
+  belief nets,'' {\em Neural computation}, vol.~18, no.~7, pp.~1527--1554,
+  2006.
+
 \bibitem{bengio_learning_2009}
 Y.~Bengio, ``Learning {Deep} {Architectures} for {AI},'' {\em Foundations and
   Trends® in Machine Learning}, vol.~2, no.~1, pp.~1--127, 2009.
@@ -181,11 +186,6 @@ G.~E. Hinton, ``To recognize shapes, first learn to generate images,'' {\em
 D.~Erhan, Y.~Bengio, A.~Courville, P.-A. Manzagol, P.~Vincent, and S.~Bengio,
   ``Why does unsupervised pre-training help deep learning?,'' {\em The Journal
   of Machine Learning Research}, vol.~11, pp.~625--660, 2010.
-
-\bibitem{hinton_fast_2006}
-G.~E. Hinton, S.~Osindero, and Y.-W. Teh, ``A fast learning algorithm for deep
-  belief nets,'' {\em Neural computation}, vol.~18, no.~7, pp.~1527--1554,
-  2006.
 
 \bibitem{ruangkanokmas_deep}
 P.~Ruangkanokmas, T.~Achalakul, and K.~Akkarajitsakul, ``Deep belief networks

@@ -920,45 +920,44 @@ In this case, a more sophisticated model would be necessary for successful class
 Suppose a representative sample of volunteers from the dataset self-identifies themselves.
 This would produce a set of labeled training data, transforming an unsupervised problem into to a semi-supervised one. 
 
-A deep belief network (DBN) is one model used to solve these types a problems. 
+A deep belief network (DBN) is one model used to solve these types of problems. 
 A DBN is a generative graph with nodes that represent stochastic variables.
-There are several layers of these nodes, some of which are visible and some are hidden.
-Typically, the layers of nodes have undirected connections.
+There are several layers of these nodes, some of which are visible and some of which are hidden.
+Typically, the top two layers of nodes have undirected connections.
 Therefore, these layers are actually Restricted Boltzman machines (RBMs).
 The rest of the layers use directed edges, forming a Bayesian network.
-A DBN is shown in Figure~\ref{fig:DBN}.
+An example DBN is shown in Figure~\ref{fig:DBN}.
 
 \begin{figure}[t]
     \centering
-        \includegraphics[width=.7\columnwidth,trim={1mm 2mm 1mm 3.5mm},clip]{dbn}
+        \includegraphics[width=.7\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{dbn}
         \vspace{-7pt}
-        \caption[Deep Belief Network]{A deep belief network is a graphical network constructed by layering Restricted Boltzman machines on top of Sigmoid Belief Networks.}
+        \caption[Deep Belief Network]{A deep belief network is a graphical network constructed by layering Restricted Boltzman machines on top of a Bayesian network. \cite{hinton_fast_2006}}
         \label{fig:DBN}
 \end{figure}
 
-For the nodes in the rest of these layers, there exists a probability of activation, $p(s_i=1)$, which is represented by the nonlinear sigmoid function applied to a weighted input from the layer above.
+For the nodes in the Bayesian network layers, there exists a probability of activation, $p(s_i=1)$, which is represented by the nonlinear sigmoid function applied to a weighted input from the layer above.
 Specifically,
 \begin{equation}
 p(s_i=1) = \frac{1}{1+\exp \left(-b_i-\sum_j s_j w_{ij}\right)}
 \end{equation}
 where $j$ represents the ancestors of node $i$, $w_{ij}$ are the weights on the connections between $i$ and $j$, and $b_i$ is the bias associated with node $i$.
 
-Thereore, the DBN with $l$ hidden layers is able to model the join distribution between inputs $x$ and those hidden layers:
+The full DBN with $l$ hidden layers is able to model the joint distribution between inputs $x$ and those hidden layers:
 \begin{equation}
-P(x, h^1, ..., h^l) = \left(\prod_{k=0}^{l-2}P(h^k|h^{k+1} \right) P(h^{l-1},h^l)
+P(x, h^1, ..., h^l) = \underbrace{\left(\prod_{k=0}^{l-2}P(h^k|h^{k+1}) \right)}_{\text{Bayesian network}} \underbrace{P(h^{l-1},h^l)}_{\text{RBM}}
 \end{equation}
 
-Therefore $P(h^{l-1},h^l)$ represents the joint distribution of the top two layers, which form the RBM.
+where $P(h^{l-1},h^l)$ represents the joint distribution of the top two layers, which form the RBM, and $x = h_0$.
 
 The challenge with very deep networks is that training is very difficult and very time consuming \cite{bengio_learning_2009}.
 Unsupervised pre-training can improve the efficency of training deep belief networks, as first described in \cite{hinton_recognize_2007}.
 In that work, Hinton describes a fast, greedy method to train these networks one layer at a time.  This process is as follows:
 \begin{enumerate}
-\item Train an RBM on the input, $x$, as the bottom layer of the network.
-\item Use the RBM to transform $x$ by sampling $p(h^{(1)}|h^{(0)})$ or by finding the mean activations, $p(h^{(1)}=1|h^{(0)})$.
+\item Train an RBM on the input layer, $x$, and the first hidden layer, $h^1$.
+\item Use the RBM to transform $x$ by sampling $p(h^1|h^0)$ or by finding the mean activations,\\ $p(h^1=1|h^0)$.
 \item Repeat these steps up through the network until the top layer is reached.
-\item Add a linear classifier
-\item Fine-tune all the parameters of the deep network using a supervised training method
+\item Fine-tune all parameters of the deep network
 \end{enumerate}
 
  
@@ -971,11 +970,11 @@ Hinton et al. showed that unsupervised pre-training followed by backpropagation 
 
 Much of the research in deep learning today is focused on image classification and analysis, such as the MNIST dataset.  However, DBNs have been applied to text analysis as well.
 In \cite{ruangkanokmas_deep}, a sophisticated version of a DBN was used to construct a sentiment classifier.
-The purpose of this research is to label online reviews as positive, negative, or neutral.
+The purpose of that research was to label online reviews as positive, negative, or neutral.
 The difference between this method and other DBN approaches is that this work replaced some of the hidden layers of the network with a feature selection step.
-Overall, this improves the training learning efficiency of the algorithm.
+Overall, this improves the training efficiency of the algorithm.
 This method can classify sentiments more accurately and train more quickly than previous semi-supervised algorithms.
-It is a classifier such as this that could be used to powerfully learn with extremely large email datasets, particularly those without hashed text.
+A classifier such as this could be used to powerfully learn with extremely large email datasets, particularly those without hashed text.
 
 
 \chapter{Conclusions} \label{Conclusions}
