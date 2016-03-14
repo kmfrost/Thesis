@@ -1,19 +1,19 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Dataset class distribution pie chart}}{12}{figure.caption.4}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Unique subjects received histogram}}{16}{figure.caption.8}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces The social network of the center}}{17}{figure.caption.10}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces The dataset represented as an adjacency matrix}}{18}{figure.caption.11}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Full graph hubs histogram}}{26}{figure.caption.18}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Dataset class distribution pie chart}}{13}{figure.caption.4}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Unique subjects received histogram}}{17}{figure.caption.8}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces The social network of the center}}{19}{figure.caption.10}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces The dataset represented as an adjacency matrix}}{20}{figure.caption.11}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Full graph hubs histogram}}{28}{figure.caption.18}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Example random tree}}{29}{figure.caption.19}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Example random tree}}{30}{figure.caption.19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Classification results}}{35}{figure.caption.21}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Job title prediction confusion matrix}}{36}{figure.caption.22}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Accuracy of classification over time}}{37}{figure.caption.23}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Prediction accuracy compared to number of features}}{38}{figure.caption.24}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Leave one out cross validation results}}{39}{figure.caption.25}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Classification results}}{36}{figure.caption.21}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Job title prediction confusion matrix}}{37}{figure.caption.22}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Accuracy of classification over time}}{38}{figure.caption.23}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Prediction accuracy compared to number of features}}{39}{figure.caption.24}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Leave one out cross validation results}}{40}{figure.caption.25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Effects of more data on accuracy}}{43}{figure.caption.26}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Effects of more data on accuracy}}{44}{figure.caption.26}
 \addvspace {10\p@ }

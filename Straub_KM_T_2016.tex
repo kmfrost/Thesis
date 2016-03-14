@@ -124,7 +124,6 @@ Kayla M. Straub
 
 \end{center}
 
-[This is just the paper abstract - I plan to rewrite this near the end].
 Email correspondence has become the predominant method of communication for businesses.
 If not for the inherent privacy concerns, this electronically searchable data could be used to better understand how employees interact. 
 For example, after the Enron dataset was made available, researchers were able to provide great insight into employee behaviors based on the available data despite the many challenges with that dataset.  
@@ -145,9 +144,9 @@ The result is a much fuller understanding of the center's internal structure tha
 
 % Dedication and Acknowledgments are both optional
 \chapter*{Acknowledgments}
-I would like to acknowledge the many people who helped me with my graduate work at Virginia Tech and made this work possible.  Thank you to the members of my committee: Dr. Robert W. McGwier, Dr. Louis Beex, Dr. Michael Buehrer, and Dr. Bert Huang for your guidance.  In particular, I would like to sincerely thank Dr. McGwier for his vision and support throughout this research.  
+I want to acknowledge the many people who helped me with my graduate work at Virginia Tech and made this work possible.  Thank you to the members of my committee: Dr. Robert W. McGwier, Dr. Louis Beex, Dr. Michael Buehrer, and Dr. Bert Huang for your guidance.  In particular, I would like to sincerely thank Dr. McGwier for his vision and support throughout this research.  
 
-I want to express my gratitude to the faculty, staff, and students of the Hume Center for all of your help and for providing me with the opportunities to work on such interesting research.  I am especially thankful for Dr. Joseph Ernst for his invaluable insight and assistance.
+I want to express my gratitude to the faculty, staff, and students of the Hume Center for all of your help and for providing me with the opportunities to work on such interesting research.  I am especially thankful for Dr. Joseph Ernst and Dr. Chris Headley for their invaluable insight and assistance.
 
 I would also like to thank my family and friends for their support throughout my college career.  I want to specifically thank my husband Ben for his unwavering support and for always pushing me to be my best.
 
@@ -175,23 +174,43 @@ However, privacy concerns inhibit most research thrusts into email analysis.
 Email metadata, can be used for several potential applications to this information beyond gaining a better understanding of the organizational structure.  It could be possible ot identify people of influence or potential leaders.  By recognizing changing behavior, potential insider treats could be identified.
 
 \section{Problem Overview}
-The purpose of this research is to investigate the email behaviors of employees belonging to an academic research organization with the goal of understanding to what extent metadata can be used to determine this organic organizational chart.
-The study presented in this thesis documents how an email metadata dataset was collected and appropriately anonymized.
-This is done in two parts.
-The first section of the analysis aims to accurately classify the employees of the center by their job title.
-Then, this research measured how well this organic organizational chart matches the official organizational chart.
+This thesis addresses the problem of automatic organizational determination.
+Specifically, it considers using email analysis to perform this operation.
+However, there is a lack of modern, publicly available email datasets to use for this research.
+A new source of workplace emails with accurate job title labels was required.
 
-The study utilized email metadata from 37 voluntary participants.
-This metadata is used not only to analyze the voluntary participants, but also to what extent the non-participant members of the organization can be characterized.
+The study presented in this thesis documents how a new email metadata dataset was collected and appropriately anonymized from the email records of 37 voluntary participants from an academic research organization.
+This metadata is used not only to analyze the participants, but also to what extent the non-participant members of the organization can be characterized.
+
+
+The problem of analysis is broken into two parts.
+The first half addresses accurately classifying the employees of the center by their job title.
+This will give insight into how well email behaviors indicate the official hierarchy as well as how similar the job titles are to one another.
+The second part of the problem investigates how well this organic organizational chart matches the official organizational chart.
+
+
+
 \section{Approach}
-The 98 features used in this study can be grouped into two common areas in email analytics: traffic-based and social-based.
-Using random forests, these features are used to predict each employee's job title.
-The ability to accurately determine job title using as few as three features is demonstrated.
-Finally, a comparison between relationships displayed in the data with the formal organizational chart is presented.  
+These emails are used to calculate a high-dimensional feature set to be used with machine learning techniques.
+The 114 features used in this study can be grouped into two common areas in email analytics: traffic-based and social-based.
+Using random forests, these features are used to accurately predict each employee's job title.
+Finally, a comparison is presented between relationships displayed in the data with the formal organizational chart.
+Combining predicted job titles with hierarchical relationships discovered from the data can identify an organization's true structure.
+
 \section{Contributions}
-The contributions outlined in this thesis are broad.  First, a new, fully anonymized dataset was developed from raw emails from an academic research environment.  This dataset, unlike others before it, has accurate job title labels.  Furthermore, a unique combination of features were calculated from this data.  Many had been used in email analysis before, but some are new and specific to this data.  In general, the problem of job title classification has not been extensively studied.  However, the results in this thesis surpass the results of previous research.
+The contributions outlined in this thesis are broad.  
+First, a new, fully anonymized dataset was developed from raw emails from an academic research environment.  
+This dataset, unlike others before it, has accurate job title labels.  
+Furthermore, a unique combination of features were calculated from this data.  
+Some had been used in email analysis before, but many are new and specific to this data.
+Research investigating this problem in the past has focused on one of the two types of features, where this analysis aggregates traffic- and social-based features together.
+In general, the problem of job title classification has not been extensively studied.  
+The results in this thesis surpass the results of previous research.
+Finally, a closer look at email relationships lends insight into the organic structure of the organization.
+
+
 \section{Outline}
-This paper continues by discussing the related works in Section~\ref{PriorWork}.  
+This thesis continues by discussing the related works in Section~\ref{PriorWork}.  
 Section~\ref{Data} describes the process of data collection and some statistics of the dataset and the features extracted from the data.
 The methods investigated using these features are covered in Section~\ref{Algorithm}.
 The results of the analysis are presented in Section~\ref{Performance}.
@@ -199,6 +218,11 @@ The results of the analysis are presented in Section~\ref{Performance}.
 
 
 \chapter{Prior Work} \label{PriorWork}
+This chapter investigates the previous research performed in the realm of email analysis.
+Context is established with a discussion on the importance of workplace email communication in modern society.
+A description of the benchmark in email datasets, the Enron email corpus, is provided, and the drawbacks of this dataset are highlighted.
+The last section provides an overview of features typically used in email analysis and the works that address the problem of organization determination.
+
 \section{Background}
 Email is a pervasive medium for communication in modern society\textemdash{}particularly in the workplace.
 In 2015, there were over 2.6 billion email users~\cite{radicati_emails_2015}.
@@ -206,7 +230,7 @@ It is projected that by the end of 2019, over one third of the global population
 In fact, the average business email user sends and receives a total of 112 emails per day.
 Corporate email alone accounts for 54.7\% of worldwide email traffic.
 Retention of large email archives has become common practice with decreasing memory size and cost~\cite{fisher_revisiting_2006}.
-Out of 600 employees at a high-tech company, the average employee had 28,660 emails stored in 133 folders which is a significant increase over the past ten years.
+Out of the 600 employees involved in that study at Microsoft, the average employee had 28,660 emails stored in 133 folders which is a significant increase over the past ten years.
 This is a considerable amount of untapped information that could be leveraged to characterize employee roles within an organization.
 \section{Commonly Used Datasets}
 Since the Enron email dataset was released in 2004 \cite{klimt_introducing_2004}, it has been extensively researched on topics including spam classification~\cite{gaber_e-mail_2016}, \cite{shams_classifying_2013}; email categorization \cite{he_novel_2014}, \cite{keila_structure_2005}; and recipient prediction \cite{sofershtein_predicting_2015}, \cite{hu_towards_2012}.
@@ -235,16 +259,20 @@ An example of this approach~\cite{rowe_automated_2007}, which combined features 
 
 \chapter{Email Dataset and Feature Extraction} \label{Data}
 
+This chapter details the all the steps taken to transform the raw data into the high-dimensional feature spaced used in the learning algorithm.
+Information is provided on the data collected and statistics about the dataset.
+There is a detailed description of all features used, both traffic-based and social-based.
+
+\section{Data Collection}
 Over the past decade, the Enron dataset has been widely used to study email behaviors because it is one of the only datasets available comprised of real-world corporate emails.
 A list of ground truth job titles was compiled by~\cite{shetty_status_2004}.  However, there are known issues with these labels.
 Due to difficulties with the Enron dataset, as described in Section~\ref{PriorWork}, this study uses a new dataset generated from volunteers in one of the university's centers.
 
-\section{Data Collection}
 Due to the inherent privacy concerns, researchers worked with the Internal Review Board (IRB) to approve a dataset which maintains participants' privacy.
 This dataset is meant to be representative of metadata which any company could use without violating the privacy of their employees.
 Special care was taken to protect the privacy of those involved in the study.
 During the collection process, all subject and body text was hashed, and all email metadata was stored in a MySQL database using scripts without any researchers observing any email text.
-Furthermore, any identifying information has been omitted from this publication.
+Furthermore, any identifying information has been omitted from this thesis.
 
 Most of the collected data is information from the header of an email such as the sending and receiving email addresses and date and time.
 The number of characters in the subject and body text were extracted before the subject and body text was hashed.
@@ -313,11 +341,12 @@ This provides 69 total employees in the study.
 
 \section{Features}
 The study includes 114 features that were extracted from the email data: 84 traffic-based and 30 social-based.
-The traffic-based features are those calculated purely from the collected email metadata.
-The social features, on the other hand, first model the email patterns in a graphical network and then calculate statistics from this model.
 In the following sections, all features from each of the two categories are described. 
 
 \subsection{Traffic-Based Features}
+The traffic-based features are those calculated purely from the collected email metadata.
+This section details all of the traffic-based features used in this analysis and how they are calculated. 
+
 \subsubsection{Email Counts and Email Types}
 The simplest traffic-based features involve counting how many and what kinds of emails each participant sends and receives.
 First, the total number of emails, total sent, and total received give a measure of how active an email user is on average.
@@ -368,13 +397,16 @@ The metric used to evaluate features is information gain.  This was used because
 This number of unique subjects received represents how many distinct conversations involve each individual.
 It is intuitive that people who are involved in more conversations hold a higher position in an organization because their input is requested more often.
 A histogram showing the different values for this metric over the different job classes is shown in Figure~\ref{fig:traffic_ex_hist}.
-It is clear from the figure that GradStudents participated in far fewer email conversations than any other group.
-Researchers generated more emails on average, but fewer than the Program Managers.
-The directors of the center participate in the most email conversations. 
+This figure demonstrates how difficult this classification problem can be.
+It is clear from the figure that graduate students participated in far fewer email conversations than any other group.
+However, at least one graduate student is in six out of the first seven bins.
+Another issue is that there are different personalities among the staff, which might explain why there are at least two research employees and at least one dierctor in the first bin ($<500$) and last bin ($>5000$).
+The divisions among the classes become slightly more clear when the feature values are normalized between 0 and 1, as opposed to the raw numbers shown here.
+All feature values are normalized before being used by the learning algorithm.
 \begin{figure}[t]
     \centering
-        \includegraphics[width=\columnwidth,trim={1mm 17mm 1mm 2mm},clip]{Unique_subjects_rec_hist}
-        \caption[Unique subjects received histogram]{Histogram of unique subjects received by job title.  The feature value for this plot has been normalized so that all values fall between 0 and 1.  Note that by using different thresholds, meaningful splits in the data can be made.  For example, all but two graduate students have a value less than $0.1$.}
+        \includegraphics[width=\columnwidth,trim={1mm 5mm 1mm 2mm},clip]{Unique_subjects_rec_hist}
+        \caption[Unique subjects received histogram]{Histogram of unique subjects received by job title.  Note that by using different thresholds, meaningful splits in the data can be made.  For example, employees with less than $500$ unique subjects received are likely to be graduate students, and employees with greater than $4500$ are likely to be higher status employees (i.e., Directors, PMs, some Research).}
         \label{fig:traffic_ex_hist}
 \end{figure}
 
@@ -387,8 +419,11 @@ Notice that there are intuitive explanations behind all of the features selected
 
 
 \subsection{Social Network Features}
-\subsubsection{Social Network Representation}
 In addition to tracking metadata statistics, features are also derived from modeling the emails as a social network.
+The social features first transform email patterns in a graphical network and then calculate statistics from this model.
+
+
+\subsubsection{Social Network Representation}
 A social network is composed of nodes, which represent people, and edges, which represent the emails between people.
 For this analysis, two different graphs were generated for analysis.
 In the full graph, an edge exists between any two individuals that exchanged at least one email.
@@ -420,7 +455,7 @@ Some employees never exchanged any emails, while others exchanged many.
     \label{fig:adj_matrix}
 \end{figure}
 
-Using this model, another suite of statistics can be calculated about the people in the graph.  The gasphs were modeled in python.  The graph library networkx \cite{hagberg-2008-exploring} was used to calculate all graph features.
+Using this model, a suite of statistics can be calculated about the people in the graph.  The gasphs were modeled in python.  The graph library networkx \cite{hagberg-2008-exploring} was used to calculate all graph features.
 
 \subsubsection{Degree Measures}
 The degree of each node, from both the full and partial graph, was used as a feature.  
@@ -582,12 +617,14 @@ These scores are calculated in an iterative reinforcement algorithm.
 In the original website ranking context, a hub is a site that links to many sites that are determined to be relevant or important.
 This can be interpreted to mean that employees with a high hubs score more often communicate with many of the directors or other important employees within the center.
 The histogram of hub values in the full graph broken down by class is shown in Figure~\ref{fig:social_ex_hist}.
+This figure shows more class division than Figure~\ref{fig:traffic_ex_hist}, as graduate students are limited to only the first two bins.
+It appears that the same employees that had high unique subjects received counts also have large full graph hubs counts, specifically most of the Directors and PMs.
 
 \begin{figure}[t]
     \centering
         \includegraphics[width=\columnwidth,trim={.6mm 2mm 0.6mm 3mm},clip]{Hubs_hist}
         \vspace{-17pt}
-        \caption[Full graph hubs histogram]{Histogram of hubs from social graph by job title.  Note that directors on average have the highest hub score and graduate students have the lowest.  In fact, three out of eight directors can be identified by filtering samples on full graph hubs values $>0.6$. }
+        \caption[Full graph hubs histogram]{Histogram of hubs from social graph by job title.  Note that directors on average have the highest hub score and graduate students have the lowest.  In fact, all graduate students have a full graph hubs score $<0.005$.  All but two PMs have a full graph hubs value $>0.025$.}
         \label{fig:social_ex_hist}
 \end{figure}
 
@@ -773,7 +810,7 @@ Therefore, a very good classifier can be built using much fewer features if the 
     \centering
         \includegraphics[width=.8\columnwidth,trim={1mm 6mm 1mm 3.5mm},clip]{FeatureAnalysis}
         \vspace{-7pt}
-        \caption[Prediction accuracy compared to number of features]{Prediction accuracy compared to number of features used for analysis.  Note that the accuracy is still very high, 89.86\%, when only fifteen features are used.  The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. }
+        \caption[Prediction accuracy compared to number of features]{Prediction accuracy compared to number of features used for analysis.  Note that the accuracy is still very high, 89.86\%, when only fifteen features are used.  The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 114 features. }
         \label{fig:feat_analysis}
 \end{figure}
 
