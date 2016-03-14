@@ -1,3 +1,5 @@
+\contentsline {chapter}{List of Figures}{vi}{section*.2}
+\contentsline {chapter}{List of Tables}{vii}{section*.3}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Problem Overview}{2}{section.1.2}
@@ -13,17 +15,17 @@
 \contentsline {section}{\numberline {3.2}Dataset Description and Statistics}{11}{section.3.2}
 \contentsline {section}{\numberline {3.3}Features}{12}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Traffic-Based Features}{13}{subsection.3.3.1}
-\contentsline {subsubsection}{Email Counts and Email Types}{13}{section*.5}
-\contentsline {subsubsection}{Metadata Statistics}{14}{section*.6}
-\contentsline {subsubsection}{Most Useful Traffic-Based Features}{16}{section*.7}
+\contentsline {subsubsection}{Email Counts and Email Types}{13}{section*.7}
+\contentsline {subsubsection}{Metadata Statistics}{14}{section*.8}
+\contentsline {subsubsection}{Most Useful Traffic-Based Features}{16}{section*.9}
 \contentsline {subsection}{\numberline {3.3.2}Social Network Features}{18}{subsection.3.3.2}
-\contentsline {subsubsection}{Social Network Representation}{18}{section*.9}
-\contentsline {subsubsection}{Degree Measures}{20}{section*.12}
-\contentsline {subsubsection}{Cliques}{21}{section*.13}
-\contentsline {subsubsection}{Adapting Search Engine Algorithms}{22}{section*.14}
-\contentsline {subsubsection}{Clustering Metrics}{22}{section*.15}
-\contentsline {subsubsection}{Centrality Measures}{24}{section*.16}
-\contentsline {subsubsection}{Most Useful Social Network Features}{27}{section*.17}
+\contentsline {subsubsection}{Social Network Representation}{18}{section*.11}
+\contentsline {subsubsection}{Degree Measures}{20}{section*.14}
+\contentsline {subsubsection}{Cliques}{21}{section*.15}
+\contentsline {subsubsection}{Adapting Search Engine Algorithms}{22}{section*.16}
+\contentsline {subsubsection}{Clustering Metrics}{22}{section*.17}
+\contentsline {subsubsection}{Centrality Measures}{24}{section*.18}
+\contentsline {subsubsection}{Most Useful Social Network Features}{27}{section*.19}
 \contentsline {chapter}{\numberline {4}Algorithm Design}{29}{chapter.4}
 \contentsline {section}{\numberline {4.1}Model Selection}{29}{section.4.1}
 \contentsline {section}{\numberline {4.2}Feature Selection}{31}{section.4.2}
@@ -32,6 +34,7 @@
 \contentsline {section}{\numberline {5.2}Leave-One-Out Cross-Validation}{39}{section.5.2}
 \contentsline {section}{\numberline {5.3}Hierarchy Analysis}{41}{section.5.3}
 \contentsline {chapter}{\numberline {6}Future Work}{43}{chapter.6}
-\contentsline {section}{\numberline {6.1}Generalization}{43}{section.6.1}
-\contentsline {section}{\numberline {6.2}Deep Learning}{44}{section.6.2}
-\contentsline {chapter}{\numberline {7}Conclusions}{47}{chapter.7}
+\contentsline {section}{\numberline {6.1}Improving LOOCV Accuracy}{44}{section.6.1}
+\contentsline {section}{\numberline {6.2}Deep Learning Application}{46}{section.6.2}
+\contentsline {chapter}{\numberline {7}Conclusions}{50}{chapter.7}
+\contentsline {chapter}{\numberline {8}Bibliography}{52}{chapter.8}

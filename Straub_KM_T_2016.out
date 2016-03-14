@@ -1,27 +1,30 @@
-\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Motivation}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{Problem Overview}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.3}{Approach}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.4}{Contributions}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.5}{Outline}{chapter.1}% 6
-\BOOKMARK [0][-]{chapter.2}{Prior Work}{}% 7
-\BOOKMARK [1][-]{section.2.1}{Background}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.2}{Commonly Used Datasets}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.3}{Prior Analysis}{chapter.2}% 10
-\BOOKMARK [0][-]{chapter.3}{Email Dataset and Feature Extraction}{}% 11
-\BOOKMARK [1][-]{section.3.1}{Data Collection}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.2}{Dataset Description and Statistics}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.3}{Features}{chapter.3}% 14
-\BOOKMARK [2][-]{subsection.3.3.1}{Traffic-Based Features}{section.3.3}% 15
-\BOOKMARK [2][-]{subsection.3.3.2}{Social Network Features}{section.3.3}% 16
-\BOOKMARK [0][-]{chapter.4}{Algorithm Design}{}% 17
-\BOOKMARK [1][-]{section.4.1}{Model Selection}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.2}{Feature Selection}{chapter.4}% 19
-\BOOKMARK [0][-]{chapter.5}{Performance Analysis}{}% 20
-\BOOKMARK [1][-]{section.5.1}{Classification Results}{chapter.5}% 21
-\BOOKMARK [1][-]{section.5.2}{Leave-One-Out Cross-Validation}{chapter.5}% 22
-\BOOKMARK [1][-]{section.5.3}{Hierarchy Analysis}{chapter.5}% 23
-\BOOKMARK [0][-]{chapter.6}{Future Work}{}% 24
-\BOOKMARK [1][-]{section.6.1}{Generalization}{chapter.6}% 25
-\BOOKMARK [1][-]{section.6.2}{Deep Learning}{chapter.6}% 26
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 27
+\BOOKMARK [0][-]{section*.2}{List of Figures}{}% 1
+\BOOKMARK [0][-]{section*.3}{List of Tables}{}% 2
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 3
+\BOOKMARK [1][-]{section.1.1}{Motivation}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.2}{Problem Overview}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.3}{Approach}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.4}{Contributions}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.5}{Outline}{chapter.1}% 8
+\BOOKMARK [0][-]{chapter.2}{Prior Work}{}% 9
+\BOOKMARK [1][-]{section.2.1}{Background}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.2}{Commonly Used Datasets}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.3}{Prior Analysis}{chapter.2}% 12
+\BOOKMARK [0][-]{chapter.3}{Email Dataset and Feature Extraction}{}% 13
+\BOOKMARK [1][-]{section.3.1}{Data Collection}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.2}{Dataset Description and Statistics}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.3}{Features}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.3.1}{Traffic-Based Features}{section.3.3}% 17
+\BOOKMARK [2][-]{subsection.3.3.2}{Social Network Features}{section.3.3}% 18
+\BOOKMARK [0][-]{chapter.4}{Algorithm Design}{}% 19
+\BOOKMARK [1][-]{section.4.1}{Model Selection}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.2}{Feature Selection}{chapter.4}% 21
+\BOOKMARK [0][-]{chapter.5}{Performance Analysis}{}% 22
+\BOOKMARK [1][-]{section.5.1}{Classification Results}{chapter.5}% 23
+\BOOKMARK [1][-]{section.5.2}{Leave-One-Out Cross-Validation}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.3}{Hierarchy Analysis}{chapter.5}% 25
+\BOOKMARK [0][-]{chapter.6}{Future Work}{}% 26
+\BOOKMARK [1][-]{section.6.1}{Improving LOOCV Accuracy}{chapter.6}% 27
+\BOOKMARK [1][-]{section.6.2}{Deep Learning Application}{chapter.6}% 28
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 29
+\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 30

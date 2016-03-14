@@ -38,7 +38,7 @@
 \usepackage{tocloft}
 \hypersetup{breaklinks=true}
 \urlstyle{same}
-
+\usepackage[nottoc, numbib]{tocbibind}
 \graphicspath{{Pictures/}}
 
 \setlength\cftparskip{-2pt}
@@ -451,7 +451,7 @@ Some employees never exchanged any emails, while others exchanged many.
     \centering
     \includegraphics[width=\columnwidth,trim={4mm .5mm 0mm 5mm},clip]{adj_matrix}
     \vspace{-17pt}
-    \caption[The dataset represented as an adjacency matrix]{The adjacency matrix representing the social connections of the center.  This graph is very well connected with just one component.  Nonetheless, there are many pairs of individuals who never exchanged a single email.}
+    \caption[The dataset represented as an adjacency matrix]{The adjacency matrix representing the social connections of the center.  This graph overall is well connected and has just one component.  Nonetheless, there are many pairs of individuals who never exchanged a single email.}
     \label{fig:adj_matrix}
 \end{figure}
 
@@ -634,6 +634,10 @@ However, in general these centrality measures attempt to capture different aspec
 In terms of this application, it measures how the breadth and depth of an employee's email communications within the center.
 
 \chapter{Algorithm Design} \label{Algorithm}
+This chapter describes the analysis behind the main algorithm used in the analysis: the random forest.
+The first section describes the process of training and cross-validating the model.
+The second section discusses the method behind ranking the different features used.
+
 \section{Model Selection}
 Due to the large number of features and relatively low number of participants, a classification method was carefully chosen to avoid overfitting the data.
 While tree based classifiers can be susceptible to overfitting, the random forest is robust to overfitting issues and was therefore chosen for this study.
@@ -679,7 +683,7 @@ Random forests can be difficult to interpret because the ensemble method obscure
 An attribute analysis helps to better understand which features are better label predictors.
 Since random trees use information gain to dictate splits, information gain was used as the evaluation criteria for the features.
 Specifically, each attribute was evaluated by measuring the information gain with respect to the class.
-Information gain is calculated as follows:
+Information gain, also known as mutual information, is calculated as follows:
 \begin{equation}
 I(\text{Class}; \text{Attribute}) = H(\text{Class}) - H(\text{Class} | \text{Attribute})
 \end{equation} \label{eq:info_gained}
@@ -857,59 +861,121 @@ The relation between employees to project managers appears to be stronger than t
 Many of the errors in this classification are due to employees who work with multiple project managers.  
 
 \chapter{Future Work} \label{FutureWork}
-\section{Generalization}
-\begin{itemize}
-\item As discussed above, the accuracy of the leave-one-out cross-validation test was low because of the limited number of data points.  The confusion matrix in Figure \ref{fig:loocv_conf_plot} shows that about one third of the predictions were incorrect.  
-\item These results can typically be improved by increasing the amount of training data. 
-\item Performed experiment to gauge how the amount of training data affects the accuracy of the LOOCV test.  This is shown below in Figure  \ref{fig:loocv_generalization}.
+There are obvious limitations with this dataset due to its small size.
+It is also not clear how well these methods and results would generalize to other email datasets, however such datasets are not publicly available.
+This chapter details what analyses could be possible given a larger dataset.
+The first section of this chapter presents some analysis showing that more data would improve the classification performance.
+The second section describes a deep learning method that could be used as a classifier if a massive dataset were available.
+\section{Improving LOOCV Accuracy}
+As discussed above, the accuracy of the leave-one-out cross-validation test was low because of the limited number of data points.
+The confusion matrix in Figure~\ref{fig:loocv_conf_plot} shows that about one third of the predictions were incorrect.  
+These results can typically be improved by increasing the amount of training data. 
+
+An experiment was performed to gauge how the amount of training data affects the accuracy of the LOOCV test.
+A series of eleven time periods were set for each person in the study, ranging from one week to ten months.
+Only the 37 employees who sent or received at least one email per week for ten months were included in this analysis, which is a much smaller population to test than what was used in the LOOCV analysis in Ch~\ref{Performance}.
+Some of these 37 employees were direct participants in the study, and some were second-ring employees.
+For each employee's time slices, the features were calculated separately and then LOOCV was performed on each time slice.
+For example, the first run considered the most recent week of email history for each person.
+The LOOCV accuracy from only one week of data is obviously very low - approximately 32\%.
+Then the test was run on the next time slice, which was the most recent two weeks.
+This repeated until LOOCV was performed on 10 months of data for each person.
+The results of this analysis is shown below in Figure~\ref{fig:loocv_generalization}.
+As the number of days of data increases, the accuracy increases slowly and the variance in the accuracy decreases.
+A logarithmic curve fit to the data is shown.
+This shows that more data, as measured by time, in general increases classification accuracy.
 \begin{figure}[t]
     \centering
         \includegraphics[width=.7\columnwidth,trim={1mm 2mm 1mm 3.5mm},clip]{generalization}
         \vspace{-7pt}
-        \caption[Effects of more data on accuracy]{Effects of using more data for leave-one-out cross-validation.  [Still working on generating this, but I expect it to exponentially decrease.  From this data, I can fit a curve to the data that I do have to estimate how well the algorithm will perform with more data.]}
+        \caption[Effects of more data on prediction accuracy]{Effects of using more data for leave-one-out cross-validation.  As the number of days of data increases, the accuracy increases slowly and the variance in the accuracy decreases.  This implies that more email data can increase classification accuracy.}
         \label{fig:loocv_generalization}
 \end{figure}
-\end{itemize}
-\section{Deep Learning}
-\begin{itemize}
-\item Techniques such as random forests work well for small, low-dimensional data.  However, imagine if the size of the dataset were greatly increased to billions of people without labels.  In this case, a more sophisticated model would be necessary for successful classification.  This is required to accurately learn the complicated structure inherent to such large real-world datasets.
+
+The improvement with additional data shown in Figure~\ref{fig:loocv_generalization} is modest.
+Recall that the size of the population under test was decreased because of the consistent behavior constraints.
+In order to investigate the affect of more data, as measured in people, another test was performed.
+Starting with the original 67 employees (removing the two outreach employees), a random five employees were removed from training data and the LOOCV accuracy was measured for the remaining 62.
+To combat variance due to the randomness of removing employees, the test was repeated five times and the results averaged together.
+Then, ten random employees were removed from the original training data and test.
+This continued until only seven employees remained.
+These results are shown in Figure~\ref{fig:people_generalization}.
+Similar trends are exhibited between this plot and the previous, namely decreasing variance and increasing accuracy.
+Again, a logarithmic trendline is shown for reference.
+It is clear that adding more people, in general, improves the performance of the classifier.
+\begin{figure}[t]
+    \centering
+        \includegraphics[width=.7\columnwidth,trim={1mm 2mm 1mm 3.5mm},clip]{loocv_general}
+        \vspace{-7pt}
+        \caption[Effects of more people on prediction accuracy]{Effects of using more people for leave-one-out cross-validation.  As more people are included in the training data, the LOOCV accuracy of the classifier increases slowly.}
+        \label{fig:people_generalization}
+\end{figure}
+
+Based on these analyses, it is clear that adding more people to an email dataset and adding people with more historial email data improved the accuracy of the job title classifier.
+
+\section{Deep Learning Application}
+Techniques such as random forests work well for small, low-dimensional data.
+However, imagine if the size of the dataset were greatly increased to billions of people without labels.
+In this case, a more sophisticated model would be necessary for successful classification in order to to accurately learn the complicated structure inherent to such large real-world datasets.
 Suppose a representative sample of volunteers from the dataset self-identifies themselves.
-This would produce a set of labeled training data, transforming the problem space to semi-supervised learning. 
-\item Describe deep belief networks: A deep belief network is a generative graph with nodes that represent stochastic variables.
+This would produce a set of labeled training data, transforming an unsupervised problem into to a semi-supervised one. 
+
+A deep belief network (DBN) is one model used to solve these types a problems. 
+A DBN is a generative graph with nodes that represent stochastic variables.
 There are several layers of these nodes, some of which are visible and some are hidden.
-Typically, the top two layers of nodes have undirected connections.
+Typically, the layers of nodes have undirected connections.
 Therefore, these layers are actually Restricted Boltzman machines (RBMs).
 The rest of the layers use directed edges, forming a Bayesian network.
-For each node, there exists a probability of activation, $p(s_i=1)$, which is represented by the nonlinear sigmoid function applied to a weighted input from the layer above.
+A DBN is shown in Figure~\ref{fig:DBN}.
+
+\begin{figure}[t]
+    \centering
+        \includegraphics[width=.7\columnwidth,trim={1mm 2mm 1mm 3.5mm},clip]{dbn}
+        \vspace{-7pt}
+        \caption[Deep Belief Network]{A deep belief network is a graphical network constructed by layering Restricted Boltzman machines on top of Sigmoid Belief Networks.}
+        \label{fig:DBN}
+\end{figure}
+
+For the nodes in the rest of these layers, there exists a probability of activation, $p(s_i=1)$, which is represented by the nonlinear sigmoid function applied to a weighted input from the layer above.
 Specifically,
 \begin{equation}
 p(s_i=1) = \frac{1}{1+\exp \left(-b_i-\sum_j s_j w_{ij}\right)}
 \end{equation}
-where $j$ represents the ancestors of node $i$, $w_{ij}$ are the weights on the connections between $i$ and $j$, and $b_i$ is the bias associated with node $i$...
-\item The challenge with very deep networks is that they are very difficult to train \cite{bengio_learning_2009}.
+where $j$ represents the ancestors of node $i$, $w_{ij}$ are the weights on the connections between $i$ and $j$, and $b_i$ is the bias associated with node $i$.
+
+Thereore, the DBN with $l$ hidden layers is able to model the join distribution between inputs $x$ and those hidden layers:
+\begin{equation}
+P(x, h^1, ..., h^l) = \left(\prod_{k=0}^{l-2}P(h^k|h^{k+1} \right) P(h^{l-1},h^l)
+\end{equation}
+
+Therefore $P(h^{l-1},h^l)$ represents the joint distribution of the top two layers, which form the RBM.
+
+The challenge with very deep networks is that training is very difficult and very time consuming \cite{bengio_learning_2009}.
 Unsupervised pre-training can improve the efficency of training deep belief networks, as first described in \cite{hinton_recognize_2007}.
-In that work, Hinton describes a fast, greedy method to train these networks one layer at a time.  
-\item 
-Describe the process of unsupervised pre-training.
-\item Testing on the MNIST dataset of handwritten digits, unsupervised pre-training is shown to improve classification results over only supervised training  \cite{erhan_why_2010}. 
+In that work, Hinton describes a fast, greedy method to train these networks one layer at a time.  This process is as follows:
+\begin{enumerate}
+\item Train an RBM on the input, $x$, as the bottom layer of the network.
+\item Use the RBM to transform $x$ by sampling $p(h^{(1)}|h^{(0)})$ or by finding the mean activations, $p(h^{(1)}=1|h^{(0)})$.
+\item Repeat these steps up through the network until the top layer is reached.
+\item Add a linear classifier
+\item Fine-tune all the parameters of the deep network using a supervised training method
+\end{enumerate}
+
+ 
+Testing on the MNIST dataset of handwritten digits, unsupervised pre-training is shown to improve classification results over only supervised training  \cite{erhan_why_2010}. 
 Pre-training identifies a set of initial weights for the network that can ultimately lead to better classification results.  
 An advantage of unsupervised pre-training is that, with small enough layers, it acts as a regularizer by decreasing variance and increasing the bias \cite{hinton_recognize_2007}.  
-\item This labeled data can be used for backpropagation to fine-tune the network.
-Describe the process backpropagation with the small set of labeled data.
-\item In conjunction with greedy pre-training, backpropagation has been shown to improve both the optimization and generalization of a DBN. 
+
+In conjunction with greedy pre-training, backpropagation  with some labeled data has been shown to improve both the optimization and generalization of a DBN. 
 Hinton et al. showed that unsupervised pre-training followed by backpropagation of a DBN outperformed traditional feed forward neural networks on the MNIST dataset \cite{hinton_fast_2006}.
-\item Analogous paper for comparison:\\
-Much of the research in deep learning today is focused on image classification and analysis, such as the MNIST dataset.  However, DBNs have been applied to text analysis as well.  In \cite{ruangkanokmas_deep}, a sophisticated version of a DBN was used to construct a sentiment classifier. The purpose of this research is to label online reviews as positive, negative, or neutral.  The difference between this method and other DBN approaches is that this work replaced some of the hidden layers of the network with a feature selection step.  Overall, this improves the training learning efficiency of the algorithm.  This method can classify sentiments more accurately and train more quickly than previous semi-supervised algorithms.
-\end{itemize}
 
-
-
-%If I had more data I could cluster but it would be rough.
-%If I could label a few from each class, take 2 layers of neurons (greedily train).
-%Use Boltzman's and backprop to get an awesome classifier!
-%Write 3-4 pages on what more, higher-dimensional data + deep learning could improve.
-%Show that I know how it works.
-
+Much of the research in deep learning today is focused on image classification and analysis, such as the MNIST dataset.  However, DBNs have been applied to text analysis as well.
+In \cite{ruangkanokmas_deep}, a sophisticated version of a DBN was used to construct a sentiment classifier.
+The purpose of this research is to label online reviews as positive, negative, or neutral.
+The difference between this method and other DBN approaches is that this work replaced some of the hidden layers of the network with a feature selection step.
+Overall, this improves the training learning efficiency of the algorithm.
+This method can classify sentiments more accurately and train more quickly than previous semi-supervised algorithms.
+It is a classifier such as this that could be used to powerfully learn with extremely large email datasets, particularly those without hashed text.
 
 
 \chapter{Conclusions} \label{Conclusions}
@@ -920,12 +986,8 @@ Random Forests are shown to be powerful classifiers by predicting employee job t
 Using only 3 features, employees are successfully classified higher than 80\% of the time and are classified over 95\% of the time when 20 features are used.
 The email data was also used to show that emails could be used to predict an employee's primary program manager, but had a worse chance of being able to identify the director associated with the employee on the official organizational chart.
 This work has shown that it is possible to generate important organizational information from using carefully processed email metadata without compromising the privacy of employees.
-Future work will attempt to gain more insight into an organization's organic hierarchy and to apply these algorithms to other datasets to determine the general applicability of the results.
 
 
-
-
-%%%%%%%%%%%%%%%%%
 %
 % Include an EPS figure with this command:
 %   \epsffile{filename.eps}
