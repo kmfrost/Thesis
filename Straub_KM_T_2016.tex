@@ -146,7 +146,7 @@ The result is a much fuller understanding of the center's internal structure tha
 \chapter*{Acknowledgments}
 I want to acknowledge the many people who helped me with my graduate work at Virginia Tech and made this work possible.  Thank you to the members of my committee: Dr. Robert W. McGwier, Dr. Louis Beex, Dr. Michael Buehrer, and Dr. Bert Huang for your guidance.  In particular, I would like to sincerely thank Dr. McGwier for his vision and support throughout this research.  
 
-I want to express my gratitude to the faculty, staff, and students of the Hume Center for all of your help and for providing me with the opportunities to work on such interesting research.  I am especially thankful for Dr. Joseph Ernst and Dr. Chris Headley for their invaluable insight and assistance.
+I want to express my gratitude to the faculty, staff, and students of the Hume Center for all of your help and for providing me with the opportunities to work on such interesting research.  I am especially thankful for Dr. Joseph Ernst and Dr. William C. Headley for their invaluable insight and assistance.
 
 I would also like to thank my family and friends for their support throughout my college career.  I want to specifically thank my husband Ben for his unwavering support and for always pushing me to be my best.
 
@@ -165,21 +165,23 @@ Finally, I thank God for all the blessings in my life and for getting me to wher
 
 \chapter{Introduction} \label{Introduction}
 \section{Motivation}
-A reorganization of a business can be very costly and has great effects once implemented, either for better or for worse.
+A reorganization of a business can be very costly and has far-reaching effects once implemented, either for better or for worse.
 While this official hierarchy is important, there is an equally important organic organization of any business, which may or may not be reflected in the official organization chart.
-Understanding this unofficial structure is important, but due to its informal nature, it can be difficult to determine.
+Understanding this unofficial structure could be invaluable during such a business reorganiztion, but due to its informal nature, it can be difficult to determine.
 One massive source of electronically searchable information that could be used to better understand this hidden structure is the business's emails.
 However, privacy concerns inhibit most research thrusts into email analysis.  
 
-Email metadata, can be used for several potential applications to this information beyond gaining a better understanding of the organizational structure.  It could be possible ot identify people of influence or potential leaders.  By recognizing changing behavior, potential insider treats could be identified.
+Extracting hierarchical relationships from email metadata can be used for several potential applications beyond gaining a better understanding of the organizational structure.  For example, it could be possible to identify people of influence or potential leaders.  By recognizing changing behavior, potential insider threats could be identified.
 
 \section{Problem Overview}
 This thesis addresses the problem of automatic organizational determination.
 Specifically, it considers using email analysis to perform this operation.
 However, there is a lack of modern, publicly available email datasets to use for this research.
-A new source of workplace emails with accurate job title labels was required.
+Out of the email datasets that do exist, namely the Enron email corpus, there is a lack of accurate job title labels for the employees.
+Labels are necessary for evaluating the results of the organic hierarchy analysis with the official organization chart.
+A new source of workplace emails with accurate job title labels was required.  
 
-The study presented in this thesis documents how a new email metadata dataset was collected and appropriately anonymized from the email records of 37 voluntary participants from an academic research organization.
+The research presented in this thesis documents how a new email metadata dataset was collected and appropriately anonymized from the email records of 37 voluntary participants from an academic research organization.
 This metadata is used not only to analyze the participants, but also to what extent the non-participant members of the organization can be characterized.
 
 
@@ -874,7 +876,7 @@ These results can typically be improved by increasing the amount of training dat
 An experiment was performed to gauge how the amount of training data affects the accuracy of the LOOCV test.
 A series of eleven time periods were set for each person in the study, ranging from one week to ten months.
 Only the 37 employees who sent or received at least one email per week for ten months were included in this analysis, which is a much smaller population to test than what was used in the LOOCV analysis in Ch~\ref{Performance}.
-Some of these 37 employees were direct participants in the study, and some were second-ring employees.
+Some of these 37 employees were direct participants in the study, and some were second-ring employees who did not directly participate in the study.
 For each employee's time slices, the features were calculated separately and then LOOCV was performed on each time slice.
 For example, the first run considered the most recent week of email history for each person.
 The LOOCV accuracy from only one week of data is obviously very low - approximately 32\%.
@@ -915,8 +917,8 @@ Based on these analyses, it is clear that adding more people to an email dataset
 
 \section{Deep Learning Application}
 Techniques such as random forests work well for small, low-dimensional data.
-However, imagine if the size of the dataset were greatly increased to billions of people without labels.
-In this case, a more sophisticated model would be necessary for successful classification in order to to accurately learn the complicated structure inherent to such large real-world datasets.
+However, if the size of the dataset were greatly increased to billions of people without labels.
+In this case, a more sophisticated model would be necessary for successful classification in order to accurately learn the complicated structure inherent to such large real-world datasets.
 Suppose a representative sample of volunteers from the dataset self-identifies themselves.
 This would produce a set of labeled training data, transforming an unsupervised problem into to a semi-supervised one. 
 
@@ -932,7 +934,7 @@ An example DBN is shown in Figure~\ref{fig:DBN}.
     \centering
         \includegraphics[width=.7\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{dbn}
         \vspace{-7pt}
-        \caption[Deep Belief Network]{A deep belief network is a graphical network constructed by layering Restricted Boltzman machines on top of a Bayesian network. \cite{hinton_fast_2006}}
+        \caption[Deep Belief Network]{A deep belief network is a graphical network constructed by layering Restricted Boltzman machines on top of a Bayesian network \cite{hinton_fast_2006}.}
         \label{fig:DBN}
 \end{figure}
 
