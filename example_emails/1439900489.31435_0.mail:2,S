@@ -1,0 +1,475 @@
+Return-Path: <ecegrad-g+bncBDMLP5O67AFBBKOGZSXAKGQEZCOEXFI@vt.edu>
+X-Original-To: kstraub@vt.edu
+Delivered-To: kstraub@vt.edu
+Received: from localhost (localhost [127.0.0.1])
+	by hume-197.cc.ncr.vt.edu (Postfix) with ESMTP id 8BD948009D
+	for <kstraub@vt.edu>; Tue, 18 Aug 2015 08:21:29 -0400 (EDT)
+X-Virus-Scanned: Debian amavisd-new at hume.vt.edu
+X-Spam-Flag: NO
+X-Spam-Score: -2.324
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.324 tagged_above=-999 required=4
+	tests=[BAYES_00=-1.9, HTML_MESSAGE=0.001, RP_MATCHES_RCVD=-0.425]
+	autolearn=unavailable
+Received: from hume-197.cc.ncr.vt.edu ([127.0.0.1])
+	by localhost (hume-mail.ncr.vt.edu [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id 2ojX9fo3oNED for <kstraub@vt.edu>;
+	Tue, 18 Aug 2015 08:21:29 -0400 (EDT)
+Received: from mr4.cc.vt.edu (mr4.cc.vt.edu [198.82.164.236])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by hume-197.cc.ncr.vt.edu (Postfix) with ESMTPS id 6A69380005
+	for <kstraub@vt.edu>; Tue, 18 Aug 2015 08:21:29 -0400 (EDT)
+Received: from mail-qg0-f47.google.com (mail-qg0-f47.google.com [209.85.192.47])
+	by mr4.cc.vt.edu (8.14.4/8.14.4) with ESMTP id t7ICLNpd000307
+	for <kstraub@vt.edu>; Tue, 18 Aug 2015 08:21:28 -0400
+Received: by qgdd90 with SMTP id d90sf115020074qgd.3
+        for <kstraub@vt.edu>; Tue, 18 Aug 2015 05:21:23 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:from:to:cc:subject:thread-topic:thread-index
+         :date:message-id:references:in-reply-to:accept-language
+         :content-language:content-type:mime-version:x-original-sender
+         :x-original-authentication-results:reply-to:precedence:mailing-list
+         :list-id:x-spam-checked-in-group:list-post:list-help:list-archive
+         :list-unsubscribe;
+        bh=Ruy4qKjNuiBq/bw588k3TUcCZhszmTlIpuPcSnzp1nY=;
+        b=HbT0QllUcIJvW3Tp8NuSa94lEZ66l9jwOXutJwdyMyNz1+Na4NkU5m/WQZWPEQ+wsR
+         Vk0VvSIbUAHoPof9hn+iyVa6KkxLF5lCzFNsZeU+4byNzrYkhNfGDC7wPMOkX4vxClea
+         TSlzo1GxhJ48sXeClPackgsce6geijWQFOGX0J5k5RKjGJU7PiUrDTSxRRbounjn8pfy
+         DBy2vw/YP83Ap6KoRGBWaIqG1NBGUxJ/FiwPNuQNzLTNbtiHFfyCjO5Xahor2LN56X8Y
+         46osjoCK+mmpiy2Kyu3rr9NerAy1JjgsBdWBkUM//HpltzJ+lnHUrM7xbTER7CMsNzL6
+         ZRKQ==
+X-Gm-Message-State: ALoCoQl8RD1Q1iBg4zECseH0uQ/Wfu1BQxnSAcj/RX1ZQB0c0AZUPKCM/eqX7VqO9r5X3f6So+pnmlinUwJGa+MTj+DJd1YeBbIUqEGM5bHsWT1lTRrYkmem6YuxfykBPpgXn3rVn9k7
+X-Received: by 10.140.144.17 with SMTP id 17mr5621643qhq.6.1439900458338;
+        Tue, 18 Aug 2015 05:20:58 -0700 (PDT)
+X-Received: by 10.140.144.17 with SMTP id 17mr5621533qhq.6.1439900458086;
+        Tue, 18 Aug 2015 05:20:58 -0700 (PDT)
+X-BeenThere: ecegrad-g@vt.edu
+Received: by 10.140.104.201 with SMTP id a67ls962636qgf.30.gmail; Tue, 18 Aug
+ 2015 05:20:57 -0700 (PDT)
+X-Received: by 10.140.235.129 with SMTP id g123mr12833165qhc.11.1439900457426;
+        Tue, 18 Aug 2015 05:20:57 -0700 (PDT)
+Received: from omr1.cc.vt.edu (omr1.cc.ipv6.vt.edu. [2607:b400:92:8300:0:c6:2117:b0e])
+        by mx.google.com with ESMTPS id 62si8316831qha.12.2015.08.18.05.20.57
+        for <ecegrad-g@g.mail.vt.edu>
+        (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 18 Aug 2015 05:20:57 -0700 (PDT)
+Received-SPF: pass (google.com: domain of pendlelk@exchange.vt.edu designates 198.82.160.13 as permitted sender) client-ip=198.82.160.13;
+Received: from mr3.cc.vt.edu (mr3.cc.ipv6.vt.edu [IPv6:2001:468:c80:2105:0:2b9:e1ff:8be3])
+	by omr1.cc.vt.edu (8.14.4/8.14.4) with ESMTP id t7ICKvg9025677
+	for <ecegrad-g@g.mail.vt.edu>; Tue, 18 Aug 2015 08:20:57 -0400
+Received: from MARCONI.cc.w2k.vt.edu (marconi.cc.vt.edu [198.82.160.13] (may be forged))
+	by mr3.cc.vt.edu (8.14.4/8.14.4) with ESMTP id t7ICKp3k032447;
+	Tue, 18 Aug 2015 08:20:56 -0400
+X-CrossPremisesHeadersFilteredBySendConnector: MARCONI.cc.w2k.vt.edu
+Received: from MARCONI.cc.w2k.vt.edu (2001:468:c80:2104:0:2ce:f173:7f15) by
+ MARCONI.cc.w2k.vt.edu (2001:468:c80:2104:0:2ce:f173:7f15) with Microsoft SMTP
+ Server (TLS) id 15.0.995.29; Tue, 18 Aug 2015 08:20:51 -0400
+Received: from MARCONI.cc.w2k.vt.edu ([fe80::a822:9a0:814d:5e06]) by
+ MARCONI.cc.w2k.vt.edu ([fe80::a822:9a0:814d:5e06%12]) with mapi id
+ 15.00.0995.032; Tue, 18 Aug 2015 08:20:51 -0400
+From: "Pendleton, Leslie" <pendlelk@exchange.vt.edu>
+To: "ecegrad-g@vt.edu" <ecegrad-g@vt.edu>
+CC: "Nachlas, Joel" <nachlas@vt.edu>, "Plassmann, Paul" <pep3@exchange.vt.edu>
+Subject: Reliability Course
+Thread-Topic: Reliability Course
+Thread-Index: AQHQ2bA4ArQcMEBTPUyK5+ELpUpEgQ==
+Date: Tue, 18 Aug 2015 12:20:50 +0000
+Message-ID: <1439900454861.76966@exchange.vt.edu>
+References: <CAG_+RUqXUSH+auz=FspLxGPcPUQ=SvdPDoGy84QkTsmuYzazQw@mail.gmail.com>,<D1F7C16F.7F323%pep3@vt.edu>
+In-Reply-To: <D1F7C16F.7F323%pep3@vt.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator: 
+x-originating-ip: [128.173.88.153]
+Content-Type: multipart/mixed;
+	boundary="_004_143990045486176966exchangevtedu_"
+MIME-Version: 1.0
+X-OrganizationHeadersPreserved: MARCONI.cc.w2k.vt.edu
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Original-Sender: pendlelk@exchange.vt.edu
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of pendlelk@exchange.vt.edu designates 198.82.160.13 as permitted
+ sender) smtp.mailfrom=pendlelk@exchange.vt.edu
+Reply-To: pendlelk@exchange.vt.edu
+Precedence: list
+Mailing-list: list ecegrad-g@vt.edu; contact ecegrad-g+owners@vt.edu
+List-ID: <ecegrad-g.vt.edu>
+X-Spam-Checked-In-Group: ecegrad-g@vt.edu
+X-Google-Group-Id: 941494946579
+List-Post: <http://groups.google.com/a/vt.edu/group/ecegrad-g/post>, <mailto:ecegrad-g@vt.edu>
+List-Help: <http://support.google.com/a/vt.edu/bin/topic.py?topic=25838>, <mailto:ecegrad-g+help@vt.edu>
+List-Archive: <http://groups.google.com/a/vt.edu/group/ecegrad-g/>
+List-Unsubscribe: <mailto:googlegroups-manage+941494946579+unsubscribe@googlegroups.com>,
+ <http://groups.google.com/a/vt.edu/group/ecegrad-g/subscribe>
+
+--_004_143990045486176966exchangevtedu_
+Content-Type: multipart/alternative;
+	boundary="_000_143990045486176966exchangevtedu_"
+
+--_000_143990045486176966exchangevtedu_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+
+FYI, attached is information on a reliability theory course offered by Dr. =
+Joel Nachlas in the ISE Department.
+
+
+Leslie K. Pendleton, Ph.D.
+Director, Student Services
+Department of Electrical and Computer Engineering (Mail Code 0111)
+Virginia Tech
+340 Whittemore Hall
+Blacksburg, VA 24061
+USA
+Email: pendleton@vt.edu
+Phone: (540) 231-8219
+Fax: (540) 231-3362
+
+
+
+
+--_000_143990045486176966exchangevtedu_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none"><!--P{margin-top:0;margin-b=
+ottom:0;} .ms-cui-menu {background-color:#ffffff;border:1px rgb(166, 166, 1=
+66) solid;font-family:'Segoe UI','Segoe WP','Segoe UI WPC',Tahoma,Arial,san=
+s-serif;font-size:10pt;color:rgb(51, 51, 51);} .ms-cui-menusection-title {d=
+isplay:none;} .ms-cui-ctl {vertical-align:text-top;text-decoration:none;col=
+or:rgb(51, 51, 51);} .ms-cui-ctl-on {background-color:rgb(205, 230, 247);op=
+acity: 0.8;} .ms-cui-img-cont-float {display:inline-block;margin-top:2px} .=
+ms-cui-smenu-inner {padding-top:0px;} .ms-owa-paste-option-icon {margin: 0p=
+x 6px 0px 6px;vertical-align:middle!important;padding-bottom: 2px;display:i=
+nline-block;} .ms-rtePasteFlyout-option:hover {background-color:rgb(205, 23=
+0, 247) !important;opacity:1 !important;} .ms-rtePasteFlyout-option {paddin=
+g:8px 4px 8px 4px;outline:none;} .ms-cui-menusection {float:left; width:85p=
+x;height:24px;overflow:hidden}.wf {speak:none; font-weight:normal; font-var=
+iant:normal; text-transform:none; -webkit-font-smoothing:antialiased; verti=
+cal-align:middle; display:inline-block;}.wf-family-owa {font-family:'o365Ic=
+ons'}@font-face {  font-family:'o365IconsIE8';  src:url('prem/15.0.995.34/r=
+esources/styles/office365icons.ie8.eot?#iefix') format('embedded-opentype')=
+,         url('prem/15.0.995.34/resources/styles/office365icons.ie8.woff') =
+format('woff'),         url('prem/15.0.995.34/resources/styles/office365ico=
+ns.ie8.ttf') format('truetype');  font-weight:normal;  font-style:normal;}@=
+font-face {  font-family:'o365IconsMouse';  src:url('prem/15.0.995.34/resou=
+rces/styles/office365icons.mouse.eot?#iefix') format('embedded-opentype'), =
+        url('prem/15.0.995.34/resources/styles/office365icons.mouse.woff') =
+format('woff'),         url('prem/15.0.995.34/resources/styles/office365ico=
+ns.mouse.ttf') format('truetype');  font-weight:normal;  font-style:normal;=
+}.wf-family-owa {font-family:'o365IconsMouse'}.ie8 .wf-family-owa {font-fam=
+ily:'o365IconsIE8'}.ie8 .wf-owa-play-large:before {content:'\e254';}.notIE8=
+ .wf-owa-play-large:before {content:'\e054';}.ie8 .wf-owa-play-large {color=
+:#FFFFFF/*$WFWhiteColor*/;}.notIE8 .wf-owa-play-large {border-color:#FFFFFF=
+/*$WFWhiteColor*/; width:1.4em; height:1.4em; border-width:.1em; border-sty=
+le:solid; border-radius:.8em; text-align:center; box-sizing:border-box; -mo=
+z-box-sizing:border-box; padding:0.1em; color:#FFFFFF/*$WFWhiteColor*/;}.ie=
+8 .wf-size-play-large {width:40px; height:40px; font-size:30px}.notIE8 .wf-=
+size-play-large {width:40px; height:40px; font-size:30px}.notIE8 .wf-owa-tr=
+iangle-down-small:before {content:'\e052';}.ie8 .wf-owa-triangle-down-small=
+:before { content:'\e052';}.ie8 .wf-owa-triangle-down-small {color:#666666/=
+*$WFGreyColor*/;}.wf-size-x20 {font-size: 20px!important;}--></style>
+</head>
+<body dir=3D"ltr" style=3D"font-size:12pt;color:#000000;background-color:#F=
+FFFFF;font-family:Calibri,Arial,Helvetica,sans-serif;">
+<p><br>
+</p>
+<p>FYI, attached is information on a reliability theory course offered by D=
+r. Joel Nachlas in the ISE Department.<br>
+</p>
+<div>
+<p><br>
+</p>
+<div id=3D"Signature">
+<div class=3D"BodyFragment"><font size=3D"2">
+<div class=3D"PlainText">Leslie K. Pendleton, Ph.D.<br>
+Director, Student Services<br>
+Department of Electrical and Computer Engineering (Mail Code 0111)<br>
+Virginia Tech<br>
+340 Whittemore Hall<br>
+Blacksburg, VA 24061<br>
+USA<br>
+Email: pendleton@vt.edu<br>
+Phone: (540) 231-8219<br>
+Fax: (540) 231-3362<br>
+<br>
+</div>
+</font></div>
+</div>
+</div>
+<p></p>
+<p><br>
+</p>
+<p><br>
+</p>
+</body>
+</html>
+
+--_000_143990045486176966exchangevtedu_--
+--_004_143990045486176966exchangevtedu_
+Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document;
+	name="Fall course on reliability theory.docx"
+Content-Description: Fall course on reliability theory.docx
+Content-Disposition: attachment;
+	filename="Fall course on reliability theory.docx"; size=13951;
+	creation-date="Mon, 17 Aug 2015 20:51:41 GMT";
+	modification-date="Mon, 17 Aug 2015 20:51:41 GMT"
+Content-ID: <1710285A1FD5E4499D67352A0998DF58@exchange.vt.edu>
+Content-Transfer-Encoding: base64
+
+UEsDBBQABgAIAAAAIQAJJIeCgQEAAI4FAAATAAgCW0NvbnRlbnRfVHlwZXNdLnhtbCCiBAIooAAC
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC0
+lE1Pg0AQhu8m/geyVwPbejDGlPag9ahNrPG8LkPZyH5kZ/v17x1KS6qhpVq9kMAy7/vMCzOD0UqX
+0QI8KmtS1k96LAIjbabMLGWv08f4lkUYhMlEaQ2kbA3IRsPLi8F07QAjqjaYsiIEd8c5ygK0wMQ6
+MHSSW69FoFs/407IDzEDft3r3XBpTQAT4lBpsOHgAXIxL0M0XtHjmsRDiSy6r1+svFImnCuVFIFI
++cJk31zirUNClZt3sFAOrwiD8VaH6uSwwbbumaLxKoNoInx4Epow+NL6jGdWzjX1kByXaeG0ea4k
+NPWVmvNWAiJlrsukOdFCmR3/QQ4M6xLw7ylq3RPt31QoxnkOkj52dx4a46rppLbYq+12gxAopFNM
+vv6CcVfouFXuRFjC+8u/UeyJd4LkNBpT8V7CCYn/MIxGuhMi0LwD31z7Z3NsZI5Z0mRMvHVI+8P/
+ou3dgqiqYxo5Bz4oaFZE24g1jrR7zu4Pqu2WQdbizTfbdPgJAAD//wMAUEsDBBQABgAIAAAAIQAe
+kRq38wAAAE4CAAALAAgCX3JlbHMvLnJlbHMgogQCKKAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjJLbSgNBDIbvBd9hyH032woi0tneSKF3
+IusDhJnsAXcOzKTavr2jILpQ217m9OfLT9abg5vUO6c8Bq9hWdWg2JtgR99reG23iwdQWchbmoJn
+DUfOsGlub9YvPJGUoTyMMaui4rOGQSQ+ImYzsKNchci+VLqQHEkJU4+RzBv1jKu6vsf0VwOamaba
+WQ1pZ+9AtcdYNl/WDl03Gn4KZu/Yy4kVyAdhb9kuYipsScZyjWop9SwabDDPJZ2RYqwKNuBpotX1
+RP9fi46FLAmhCYnP83x1nANaXg902aJ5x687HyFZLBZ9e/tDg7MvaD4BAAD//wMAUEsDBBQABgAI
+AAAAIQB8O5c5IgEAALkDAAAcAAgBd29yZC9fcmVscy9kb2N1bWVudC54bWwucmVscyCiBAEooAAB
+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
+
+--_004_143990045486176966exchangevtedu_--

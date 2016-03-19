@@ -1,0 +1,255 @@
+Return-Path: <ictasall-g+bncBC56DC7J3IGRBCHIZSXAKGQEROMTL5I@vt.edu>
+X-Original-To: kstraub@vt.edu
+Delivered-To: kstraub@vt.edu
+Received: from localhost (localhost [127.0.0.1])
+	by hume-197.cc.ncr.vt.edu (Postfix) with ESMTP id 469948009D
+	for <kstraub@vt.edu>; Tue, 18 Aug 2015 09:33:06 -0400 (EDT)
+X-Virus-Scanned: Debian amavisd-new at hume.vt.edu
+X-Spam-Flag: NO
+X-Spam-Score: -4.624
+X-Spam-Level: 
+X-Spam-Status: No, score=-4.624 tagged_above=-999 required=4
+	tests=[BAYES_00=-1.9, HTML_MESSAGE=0.001, RCVD_IN_DNSWL_MED=-2.3,
+	RP_MATCHES_RCVD=-0.425] autolearn=unavailable
+Received: from hume-197.cc.ncr.vt.edu ([127.0.0.1])
+	by localhost (hume-mail.ncr.vt.edu [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id K6S3DHkbNRZm for <kstraub@vt.edu>;
+	Tue, 18 Aug 2015 09:33:04 -0400 (EDT)
+Received: from mr6.cc.vt.edu (mr6.cc.vt.edu [198.82.141.20])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by hume-197.cc.ncr.vt.edu (Postfix) with ESMTPS id 5B16C80005
+	for <kstraub@vt.edu>; Tue, 18 Aug 2015 09:33:04 -0400 (EDT)
+Received: from mail-pa0-f50.google.com (mail-pa0-f50.google.com [209.85.220.50])
+	by mr6.cc.vt.edu (8.14.4/8.14.4) with ESMTP id t7IDWvNO027730
+	for <kstraub@vt.edu>; Tue, 18 Aug 2015 09:33:03 -0400
+Received: by pawq9 with SMTP id q9sf35851293paw.3
+        for <kstraub@vt.edu>; Tue, 18 Aug 2015 06:32:57 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:from:to:subject:thread-topic:thread-index
+         :importance:date:message-id:accept-language:content-language
+         :content-type:mime-version:x-original-sender
+         :x-original-authentication-results:reply-to:precedence:mailing-list
+         :list-id:x-spam-checked-in-group:list-post:list-help:list-archive
+         :list-unsubscribe;
+        bh=dooahNZH+cb1wdrDeb2HvEdrNE0jQTOzBwNfZIla+YM=;
+        b=GzZd90Zl1dvPOZQlby0DrDMsZJJ8kz6T6jkBPwvR+RQhiZ/YRVbNkGk6JxT8dtQ+3b
+         8KYtQ4ZEKy4iXbZcqZVz5vCTXNZliF6a0Soe+tBmoP1qoDPzXBO6ucP7cdDrhk9BC/FX
+         6EVSIR4evuX9eBKS/7gOmc1EDVG+FTa1SrPg/+jwFBjTXC7CeXILt14d6djpZrGYCM2v
+         w1uL7Qv+J5+3QWcMDVPkJFE0Mo7WMJm6vAjFhd3CdH4RsyekdElE2wZa9xsAWRMggS2/
+         5M4XTWeIXX+YBZk2WqqZvLr2XvrE3Rab82KgfxRmnTmkNPZ2/0iNAFFabRh+aI4cwOnf
+         h9jA==
+X-Gm-Message-State: ALoCoQk1iDc4Sd5FqGGK19FGZapxRJ2DJ+bRUROqLAU+UUPlWHzEPGFfnF9f6SEQgvNmFZqvKnPIofIii5LB8Cr99ad8QEQyHSRvD6xZIkuxMTt0FUj6BNOjPEfquSdcWvbGiTtFNXXc
+X-Received: by 10.66.163.162 with SMTP id yj2mr5705036pab.27.1439904777462;
+        Tue, 18 Aug 2015 06:32:57 -0700 (PDT)
+X-Received: by 10.66.163.162 with SMTP id yj2mr5705014pab.27.1439904777369;
+        Tue, 18 Aug 2015 06:32:57 -0700 (PDT)
+X-BeenThere: ictasall-g@vt.edu
+Received: by 10.140.88.203 with SMTP id t69ls837786qgd.78.gmail; Tue, 18 Aug
+ 2015 06:32:56 -0700 (PDT)
+X-Received: by 10.140.237.135 with SMTP id i129mr13437052qhc.32.1439904776339;
+        Tue, 18 Aug 2015 06:32:56 -0700 (PDT)
+Received: from omr1.cc.vt.edu (omr1.cc.ipv6.vt.edu. [2607:b400:92:8300:0:c6:2117:b0e])
+        by mx.google.com with ESMTPS id l5si31345126qgf.22.2015.08.18.06.32.56
+        for <ictasall-g@g.mail.vt.edu>
+        (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 18 Aug 2015 06:32:56 -0700 (PDT)
+Received-SPF: pass (google.com: domain of aclapp@vt.edu designates 198.82.160.13 as permitted sender) client-ip=198.82.160.13;
+Received: from mr6.cc.vt.edu (mr6.cc.ipv6.vt.edu [IPv6:2001:468:c80:2105:0:250:3bcb:5b17])
+	by omr1.cc.vt.edu (8.14.4/8.14.4) with ESMTP id t7IDWuWw026900
+	for <ictasall-g@g.mail.vt.edu>; Tue, 18 Aug 2015 09:32:56 -0400
+Received: from MARCONI.cc.w2k.vt.edu (marconi.cc.vt.edu [198.82.160.13] (may be forged))
+	by mr6.cc.vt.edu (8.14.4/8.14.4) with ESMTP id t7IDWoCF027240
+	for <ictasall-g@vt.edu>; Tue, 18 Aug 2015 09:32:55 -0400
+X-CrossPremisesHeadersFilteredBySendConnector: MARCONI.cc.w2k.vt.edu
+Received: from BELL.cc.w2k.vt.edu (2001:468:c80:2104:0:271:24e9:3ff6) by
+ MARCONI.cc.w2k.vt.edu (2001:468:c80:2104:a822:9a0:814d:5e06) with Microsoft
+ SMTP Server (TLS) id 15.0.995.29; Tue, 18 Aug 2015 09:32:49 -0400
+Received: from BELL.cc.w2k.vt.edu ([fe80::b858:b785:2085:e109]) by
+ BELL.cc.w2k.vt.edu ([fe80::b858:b785:2085:e109%12]) with mapi id
+ 15.00.0995.032; Tue, 18 Aug 2015 09:32:49 -0400
+From: "Timpano, Autumn" <aclapp@vt.edu>
+To: "ictasall-g@vt.edu" <ictasall-g@vt.edu>
+Subject: Trainings offered this week
+Thread-Topic: Trainings offered this week
+Thread-Index: AdDZufzflvyjks8EQq2OtDscRVbE4AAADPsg
+Importance: high
+X-Priority: 1
+Date: Tue, 18 Aug 2015 13:32:49 +0000
+Message-ID: <d7a06c97073d459fa2644f203d8c8bbf@BELL.cc.w2k.vt.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [128.173.220.248]
+Content-Type: multipart/alternative;
+	boundary="_000_d7a06c97073d459fa2644f203d8c8bbfBELLccw2kvtedu_"
+MIME-Version: 1.0
+X-OrganizationHeadersPreserved: MARCONI.cc.w2k.vt.edu
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+X-Original-Sender: aclapp@vt.edu
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com:
+ domain of aclapp@vt.edu designates 198.82.160.13 as permitted sender) smtp.mailfrom=aclapp@vt.edu
+Reply-To: aclapp@vt.edu
+Precedence: list
+Mailing-list: list ictasall-g@vt.edu; contact ictasall-g+owners@vt.edu
+List-ID: <ictasall-g.vt.edu>
+X-Spam-Checked-In-Group: ictasall-g@vt.edu
+X-Google-Group-Id: 450544748818
+List-Post: <http://groups.google.com/a/vt.edu/group/ictasall-g/post>, <mailto:ictasall-g@vt.edu>
+List-Help: <http://support.google.com/a/vt.edu/bin/topic.py?topic=25838>, <mailto:ictasall-g+help@vt.edu>
+List-Archive: <http://groups.google.com/a/vt.edu/group/ictasall-g/>
+List-Unsubscribe: <mailto:googlegroups-manage+450544748818+unsubscribe@googlegroups.com>,
+ <http://groups.google.com/a/vt.edu/group/ictasall-g/subscribe>
+
+--_000_d7a06c97073d459fa2644f203d8c8bbfBELLccw2kvtedu_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+Please make note of the following training sessions offered at ICTAS today =
+and tomorrow.
+
+
+EHS Bloodborne Pathogens
+Tuesday, 8/18 - 2:00PM
+Register at https://secure.hosting.vt.edu/www.ehss.vt.edu/register.php?id=
+=3D3209
+
+EHS Lab Hazardous Waste Disposal
+Wednesday, 8/19 - 10:00AM
+Register at https://secure.hosting.vt.edu/www.ehss.vt.edu/register.php?id=
+=3D3248
+
+EHS Chemical Safety
+Wednesday, 8/19 - 2:00PM
+Register at https://secure.hosting.vt.edu/www.ehss.vt.edu/register.php?id=
+=3D3246
+
+
+All trainings will be held in 310 Kelly Hall.  Please note that registratio=
+n is required.
+--
+Autumn Timpano, MPH
+Laboratory Facilities Manager
+ICTAS, Virginia Tech
+425 Kelly Hall (0193)
+325 Stanger St.
+Blacksburg, VA  24061
+(540) 553-5511
+
+
+--_000_d7a06c97073d459fa2644f203d8c8bbfBELLccw2kvtedu_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:#954F72;
+	text-decoration:underline;}
+span.EmailStyle17
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+span.EmailStyle18
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"#0563C1" vlink=3D"#954F72">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal">Please make note of the following training sessions =
+offered at ICTAS today and tomorrow.<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><b><u>EHS Bloodborne Pathogens<o:p></o:p></u></b></p=
+>
+<p class=3D"MsoNormal">Tuesday, 8/18 &#8211; 2:00PM<o:p></o:p></p>
+<p class=3D"MsoNormal">Register at <a href=3D"https://secure.hosting.vt.edu=
+/www.ehss.vt.edu/register.php?id=3D3209">
+https://secure.hosting.vt.edu/www.ehss.vt.edu/register.php?id=3D3209</a><o:=
+p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><b><u>EHS Lab Hazardous Waste Disposal<o:p></o:p></u=
+></b></p>
+<p class=3D"MsoNormal">Wednesday, 8/19 &#8211; 10:00AM<o:p></o:p></p>
+<p class=3D"MsoNormal">Register at <a href=3D"https://secure.hosting.vt.edu=
+/www.ehss.vt.edu/register.php?id=3D3248">
+https://secure.hosting.vt.edu/www.ehss.vt.edu/register.php?id=3D3248</a><o:=
+p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><b><u>EHS Chemical Safety <o:p></o:p></u></b></p>
+<p class=3D"MsoNormal">Wednesday, 8/19 &#8211; 2:00PM<o:p></o:p></p>
+<p class=3D"MsoNormal">Register at <a href=3D"https://secure.hosting.vt.edu=
+/www.ehss.vt.edu/register.php?id=3D3246">
+https://secure.hosting.vt.edu/www.ehss.vt.edu/register.php?id=3D3246</a><sp=
+an style=3D"color:#1F497D"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">All trainings will be held in 310 Kelly Hall.&nbsp; =
+Please note that
+<u><span style=3D"color:#C80000">registration is required</span></u>.&nbsp;=
+ <o:p></o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt">--<o:p></o:p></span=
+></p>
+<p class=3D"MsoNormal"><b><i><span style=3D"font-size:12.0pt">Autumn Timpan=
+o, MPH<o:p></o:p></span></i></b></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt">Laboratory Faciliti=
+es Manager<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt">ICTAS, Virginia Tec=
+h<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt">425 Kelly Hall (019=
+3)<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt">325 Stanger St.<o:p=
+></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt">Blacksburg, VA&nbsp=
+; 24061<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt">(540) 553-5511<o:p>=
+</o:p></span></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+</body>
+</html>
+
+--_000_d7a06c97073d459fa2644f203d8c8bbfBELLccw2kvtedu_--
