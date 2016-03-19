@@ -127,7 +127,7 @@ Kayla M. Straub
 Email correspondence has become the predominant method of communication for businesses.
 If not for the inherent privacy concerns, this electronically searchable data could be used to better understand how employees interact. 
 For example, after the Enron dataset was made available, researchers were able to provide great insight into employee behaviors based on the available data despite the many challenges with that dataset.  
-The work in this paper demonstrates the application of a suite of methods to an appropriately anonymized email dataset created from volunteers' email metadata.  
+The work in this paper demonstrates the application of a suite of methods to an appropriately anonymized academic email dataset created from volunteers' email metadata.  
 This new dataset, from an internal email server, is first used to validate machine learning and feature extraction algorithms and then to generate insight into the interactions within the center.  
 Based solely on email metadata, a random forest approach modeled behavior patterns and accurately classified employees by job title.  
 The algorithm performed very well not only on participants in the study but also on other members of the center who were connected to participants through email. 
@@ -220,7 +220,7 @@ The results of the analysis are presented in Section~\ref{Performance}.
 
 
 \chapter{Prior Work} \label{PriorWork}
-This chapter investigates the previous research performed in the realm of email analysis.
+This chapter investigates the previous research performed in the area of email analysis.
 Context is established with a discussion on the importance of workplace email communication in modern society.
 A description of the benchmark in email datasets, the Enron email corpus, is provided, and the drawbacks of this dataset are highlighted.
 The last section provides an overview of features typically used in email analysis and the works that address the problem of organization determination.
@@ -235,7 +235,9 @@ Retention of large email archives has become common practice with decreasing mem
 Out of the 600 employees involved in that study at Microsoft, the average employee had 28,660 emails stored in 133 folders which is a significant increase over the past ten years.
 This is a considerable amount of untapped information that could be leveraged to characterize employee roles within an organization.
 \section{Commonly Used Datasets}
-Since the Enron email dataset was released in 2004 \cite{klimt_introducing_2004}, it has been extensively researched on topics including spam classification~\cite{gaber_e-mail_2016}, \cite{shams_classifying_2013}; email categorization \cite{he_novel_2014}, \cite{keila_structure_2005}; and recipient prediction \cite{sofershtein_predicting_2015}, \cite{hu_towards_2012}.
+When the Enron email corpus was released in 2004 \cite{klimt_introducing_2004}, it became the one of the largest email datasets available for public use.
+It is unique in that it included all of the email text, which lead to many studies involving text analysis and natural language processing. 
+Since then, this dataset has been extensively researched on topics including spam classification~\cite{gaber_e-mail_2016}, \cite{shams_classifying_2013}; email categorization \cite{he_novel_2014}, \cite{keila_structure_2005}; and recipient prediction \cite{sofershtein_predicting_2015}, \cite{hu_towards_2012}.
 However, there are known flaws and discrepancies with even the most recent versions of this dataset\textemdash{}ranging from misspelled email addresses~\cite{nordbo_data_2014} to duplicate email addresses~\cite{waterman_big_2014}, and misfiled emails~\cite{namata_inferring_2006}.
 In one of the most popular forms of the dataset~\cite{shetty_enron_2004}, the database includes 253,735 emails sent as ``CC'' and  253,713 emails sent as ``BCC''.
 Further inspection reveals that emails sent as one type or the other were almost always mistakenly recorded as both.  In addition to all of these issues, no comprehensive or accurate list of job title labels is available.
@@ -438,7 +440,7 @@ The full graph including all of the center employees is shown in Figure~\ref{fig
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\columnwidth,trim={4mm .5mm 0mm 5mm},clip]{HumeGraph2}
+    \includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{color_social_network}
     \vspace{-17pt}
     \caption[The social network of the center]{A social graph representation of the center.  Nodes represent employees, and the thickness of the edges between nodes represent how many emails were exchanged.}
     \label{fig:social_net}
@@ -451,7 +453,7 @@ Some employees never exchanged any emails, while others exchanged many.
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\columnwidth,trim={4mm .5mm 0mm 5mm},clip]{adj_matrix}
+    \includegraphics[width=\columnwidth,trim={4mm .5mm 0mm 5mm},clip]{JetEdit}
     \vspace{-17pt}
     \caption[The dataset represented as an adjacency matrix]{The adjacency matrix representing the social connections of the center.  This graph overall is well connected and has just one component.  Nonetheless, there are many pairs of individuals who never exchanged a single email.}
     \label{fig:adj_matrix}
@@ -753,7 +755,7 @@ The confusion matrix for this analysis is another way to visualize the results, 
     \centering
     \includegraphics[width=\columnwidth,trim={1mm 2mm 1mm 3mm},clip]{Prediction_50_50_RF}
     \vspace{-20pt}
-    \caption[Classification results]{The Random Forest algorithm was extremely accurate even for very uneven class sizes.  Note that all members of 4 classes were labelled perfectly.  There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.}
+    \caption[Job title classification results]{The Random Forest algorithm was extremely accurate even for very uneven class sizes.  Note that all members of 4 classes were labelled perfectly.  There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.}
     \label{fig:result_hist}
 \end{figure}
 
