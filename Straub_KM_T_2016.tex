@@ -240,7 +240,18 @@ It is unique in that it included all of the email text, which lead to many studi
 Since then, this dataset has been extensively researched on topics including spam classification~\cite{gaber_e-mail_2016}, \cite{shams_classifying_2013}; email categorization \cite{he_novel_2014}, \cite{keila_structure_2005}; and recipient prediction \cite{sofershtein_predicting_2015}, \cite{hu_towards_2012}.
 However, there are known flaws and discrepancies with even the most recent versions of this dataset\textemdash{}ranging from misspelled email addresses~\cite{nordbo_data_2014} to duplicate email addresses~\cite{waterman_big_2014}, and misfiled emails~\cite{namata_inferring_2006}.
 In one of the most popular forms of the dataset~\cite{shetty_enron_2004}, the database includes 253,735 emails sent as ``CC'' and  253,713 emails sent as ``BCC''.
-Further inspection reveals that emails sent as one type or the other were almost always mistakenly recorded as both.  In addition to all of these issues, no comprehensive or accurate list of job title labels is available.
+Further inspection reveals that emails sent as one type or the other were almost always mistakenly recorded as both.
+
+There exists a list of ground truth job title labels for the Enron email corpus, enabling corporate hierarchy analysis.
+The research in~\cite{gilbert_phrases_2012} made use of these labels along with performing natural language processing functions on the email text.
+This work identified phrases more likely to be used when emailing superiors compared to phrases used when emailing peers or subordinates.
+In~\cite{mitra_analyzing_2013}, the corpus and job title labels were used to explore pattens in office email gossip with respect to the organizational hierarchy.
+There are clear issues with the job title labels, though.
+For example, Jeff Dasovic is labeled as an “Employee”, seemingly the lowest title.
+However, he had more emails than anyone else in the dataset and is identified in records as “Director for State Government Affairs.” 
+As noted in~\cite{gilbert_phrases_2012}, there are similar inconsistencies for Sally Beck, Rick Buy, and Rod Hayslett.
+Amidst all of these concerns about the Enron job title labels, this work proposes using a new dataset with accurate job titles generated from intimate knowledge of the organization.
+
 \section{Prior Analysis}
 The existing literature on analyzing social email behavior is mainly divided into two categories: traffic-based and social-based~\cite{tang_email_2013}.
 Traffic-based methods calculate statistics based only on email patterns.
@@ -255,8 +266,11 @@ A common metric that has been shown to indicate importance in a social graph is 
 Betweenness centrality is a measure of how many shortest paths in a graph travel over each node.
 A node with high betweenness centrality in a social graph has been shown to represent a high degree of influence on other nodes.
 As shown in~\cite{tyler_email_2003}, a betweenness centrality algorithm can be used to determine community structures within an organization.
-Other successful metrics were used in~\cite{wilson_discovery_2009}, which detected the most important email users within a corporate network without using betweenness as a feature.
+There are several other types of centrality such as closeness, current-flow betweenness, and random-walk centrality~\cite{newman2005measure}.
+In~\cite{agarwal_comprehensive_2012}, researchers were able to more accurately predict superior-subordinate pairs within Enron using only degree centrality than some natural language processing methods.
+Other successful metrics were used in~\cite{wilson_discovery_2009}, which detected the most important email users within a corporate network without using betweenness or centrality as features.
 The features used in that study were: degree, the number of edges connected to a node; density, the ratio of actual edges to the number of possible edges; and proximity prestige, the ratio of nodes that can reach a node $i$ to the average distance from those nodes to $i$.
+
 
 Instead of considering only traffic-based or social-based analytics, these can be be used jointly.
 An example of this approach~\cite{rowe_automated_2007}, which combined features such as number of emails, response time, cliques, and degree centrality into a ``Social Score'', was used to rank Enron employees.  
