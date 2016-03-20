@@ -240,7 +240,18 @@ It is unique in that it included all of the email text, which lead to many studi
 Since then, this dataset has been extensively researched on topics including spam classification~\cite{gaber_e-mail_2016}, \cite{shams_classifying_2013}; email categorization \cite{he_novel_2014}, \cite{keila_structure_2005}; and recipient prediction \cite{sofershtein_predicting_2015}, \cite{hu_towards_2012}.
 However, there are known flaws and discrepancies with even the most recent versions of this dataset\textemdash{}ranging from misspelled email addresses~\cite{nordbo_data_2014} to duplicate email addresses~\cite{waterman_big_2014}, and misfiled emails~\cite{namata_inferring_2006}.
 In one of the most popular forms of the dataset~\cite{shetty_enron_2004}, the database includes 253,735 emails sent as ``CC'' and  253,713 emails sent as ``BCC''.
-Further inspection reveals that emails sent as one type or the other were almost always mistakenly recorded as both.  In addition to all of these issues, no comprehensive or accurate list of job title labels is available.
+Further inspection reveals that emails sent as one type or the other were almost always mistakenly recorded as both.
+
+There exists a list of ground truth job title labels for the Enron email corpus, enabling corporate hierarchy analysis.
+The research in~\cite{gilbert_phrases_2012} made use of these labels along with performing natural language processing functions on the email text.
+This work identified phrases more likely to be used when emailing superiors compared to phrases used when emailing peers or subordinates.
+In~\cite{mitra_analyzing_2013}, the corpus and job title labels were used to explore pattens in office email gossip with respect to the organizational hierarchy.
+There are clear issues with the job title labels, though.
+For example, Jeff Dasovic is labeled as an “Employee”, seemingly the lowest title.
+However, he had more emails than anyone else in the dataset and is identified in records as “Director for State Government Affairs.” 
+As noted in~\cite{gilbert_phrases_2012}, there are similar inconsistencies for Sally Beck, Rick Buy, and Rod Hayslett.
+Amidst all of these concerns about the Enron job title labels, this work proposes using a new dataset with accurate job titles generated from intimate knowledge of the organization.
+
 \section{Prior Analysis}
 The existing literature on analyzing social email behavior is mainly divided into two categories: traffic-based and social-based~\cite{tang_email_2013}.
 Traffic-based methods calculate statistics based only on email patterns.
@@ -255,15 +266,18 @@ A common metric that has been shown to indicate importance in a social graph is 
 Betweenness centrality is a measure of how many shortest paths in a graph travel over each node.
 A node with high betweenness centrality in a social graph has been shown to represent a high degree of influence on other nodes.
 As shown in~\cite{tyler_email_2003}, a betweenness centrality algorithm can be used to determine community structures within an organization.
-Other successful metrics were used in~\cite{wilson_discovery_2009}, which detected the most important email users within a corporate network without using betweenness as a feature.
+There are several other types of centrality such as closeness, current-flow betweenness, and random-walk centrality~\cite{newman2005measure}.
+In~\cite{agarwal_comprehensive_2012}, researchers were able to more accurately predict superior-subordinate pairs within Enron using only degree centrality than some natural language processing methods.
+Other successful metrics were used in~\cite{wilson_discovery_2009}, which detected the most important email users within a corporate network without using betweenness or centrality as features.
 The features used in that study were: degree, the number of edges connected to a node; density, the ratio of actual edges to the number of possible edges; and proximity prestige, the ratio of nodes that can reach a node $i$ to the average distance from those nodes to $i$.
+
 
 Instead of considering only traffic-based or social-based analytics, these can be be used jointly.
 An example of this approach~\cite{rowe_automated_2007}, which combined features such as number of emails, response time, cliques, and degree centrality into a ``Social Score'', was used to rank Enron employees.  
 
 \chapter{Email Dataset and Feature Extraction} \label{Data}
 
-This chapter details the all the steps taken to transform the raw data into the high-dimensional feature spaced used in the learning algorithm.
+This chapter details all of the steps taken to transform the raw data into the high-dimensional feature space used in the learning algorithm.
 Information is provided on the data collected and statistics about the dataset.
 There is a detailed description of all features used, both traffic-based and social-based.
 
@@ -272,7 +286,7 @@ Over the past decade, the Enron dataset has been widely used to study email beha
 A list of ground truth job titles was compiled by~\cite{shetty_status_2004}.  However, there are known issues with these labels.
 Due to difficulties with the Enron dataset, as described in Section~\ref{PriorWork}, this study uses a new dataset generated from volunteers in one of the university's centers.
 
-Due to the inherent privacy concerns, researchers worked with the Internal Review Board (IRB) to approve a dataset which maintains participants' privacy.
+Due to the inherent privacy concerns, it was necessary to work with the Internal Review Board (IRB) to approve a dataset which maintains participants' privacy.
 This dataset is meant to be representative of metadata which any company could use without violating the privacy of their employees.
 Special care was taken to protect the privacy of those involved in the study.
 During the collection process, all subject and body text was hashed, and all email metadata was stored in a MySQL database using scripts without any researchers observing any email text.
@@ -330,7 +344,7 @@ Distinct Emails    & 585,096         & 252,759       \\ \bottomrule
 \end{table}
 
 The center divides its employees into six main areas: directors, graduate students, operations, outreach, project management (PM), and research. 
-A chart showing the distribution of classes is shown below in Figure \ref{fig:class_breakdown}
+A chart showing the distribution of classes is shown in Figure \ref{fig:class_breakdown}.
 \begin{figure}[t]
     \centering
         \includegraphics[width=\columnwidth,trim={1mm 8mm 1mm 2mm},clip]{class_breakdown}
@@ -373,7 +387,7 @@ The metadata of the emails contains extremely useful information.  This includes
 From the time stamp, the time of day for each email was available.
 The total number of emails with timestamps after hours were used as a metric.
 For this purpose, after hours was defined as between 6pm and 7am EST on weekdays or anytime on weekends.
-The timestamps were also used to calcualate the average number of emails per day for each employee.
+The timestamps were also used to calculate the average number of emails per day for each employee.
 The mean and variance of the number of characters in the subject and body were calculated.
 The total number of attachments sent and received were computed as well as the average number of attachments per email.
 
@@ -404,7 +418,7 @@ A histogram showing the different values for this metric over the different job 
 This figure demonstrates how difficult this classification problem can be.
 It is clear from the figure that graduate students participated in far fewer email conversations than any other group.
 However, at least one graduate student is in six out of the first seven bins.
-Another issue is that there are different personalities among the staff, which might explain why there are at least two research employees and at least one dierctor in the first bin ($<500$) and last bin ($>5000$).
+Another issue is that there are different personalities among the staff, which might explain why there are at least two research employees and at least one director in the first bin ($<500$) and last bin ($>5000$).
 The divisions among the classes become slightly more clear when the feature values are normalized between 0 and 1, as opposed to the raw numbers shown here.
 All feature values are normalized before being used by the learning algorithm.
 \begin{figure}[t]
@@ -459,13 +473,13 @@ Some employees never exchanged any emails, while others exchanged many.
     \label{fig:adj_matrix}
 \end{figure}
 
-Using this model, a suite of statistics can be calculated about the people in the graph.  The gasphs were modeled in python.  The graph library networkx \cite{hagberg-2008-exploring} was used to calculate all graph features.
+Using this model, a suite of statistics can be calculated about the people in the graph.  The graphs were modeled in python.  The graph library networkx \cite{hagberg-2008-exploring} was used to calculate all graph features.
 
 \subsubsection{Degree Measures}
 The degree of each node, from both the full and partial graph, was used as a feature.  
 The degree of a node $i$ is simply the number of other edges connected to node $i$.
 All graph features were calculated once for the full graph and again for the partial graph.
-The average neighbor degree was calculated used as another feature.
+The average neighbor degree was used as another feature.
 The neighborhood of node $i$ is comprised of all nodes that are connected to $i$ via edges.
 Therefore for node $i$, this metric averages the degree of each node in the neighborhood of $i$.
 Mathematically, this is:
@@ -476,7 +490,7 @@ where $N(i)$ are the neighbors of node $i$ and $k_j$ is the degree of node $j$.
 The distance between nodes were also used to generate some features.
 In graph theory, distance is measured by the length of the path between two nodes.
 Between node $i$ and any other node $j$ in graph $\mathcal{G}$, there exists a shortest path, $d(i,j)$.
-The average shortest path between node $i$ and all other nodes in the graph, $d_avg,i$, was used as a metric for the learning algorithm.
+The average shortest path between node $i$ and all other nodes in the graph, $d_{avg,i}$, was used as a metric for the learning algorithm.
 That is,
 \begin{equation}
 d_{avg,i} = \frac{1}{n-1}\sum_{j \in \mathcal{V}, j\neq i}d(i,j)
@@ -502,14 +516,14 @@ This algorithm was originally designed to rate web pages, but has since been app
 A node's authority is just that\textemdash{}a measure of its importance over other nodes.
 A node's hub score is a measure of how well-connected it is to other nodes.
 
-Another algorithm used to generate features was the pagerank algorithm, developed by Google \cite{page_pagerank_1999} also to rank webpages for search results.
+Another algorithm used to generate features was the pagerank algorithm, developed by Google \cite{page_pagerank_1999} to rank webpages for search results.
 The assumption is that the most important webpages will be linked to frequently by other pages.
 Therefore, the ranking is determined by estimating the quality and quantity of links to a node.
 Both of these algorithms were shown to predict expertise within an online social network in \cite{zhang_expertise_2007}.
 
 \subsubsection{Clustering Metrics}
 The triangle clustering coefficient, $C_3$ was also used as a metric.
-Say there exists a node $i$ with neighbors $m$ and $n$.
+Consider a node $i$ with neighbors $m$ and $n$.
 This value, developed by~\cite{saramaki_generalizations_2007}, measures the probability that $m$ and $n$ are also connected.
 This is calculated by comparing the number of triangles within the graph to the maximum number of possible triangles in the graph.  If node $i$ has degree $k_i$, there can be at most $\frac{k_i(k_i-1)}{2}$ triangles formed in this subgraph.  Recall that the social networks are weighted graphs.  The weights of the graph are incorporated to this metric by finding the geometric mean \cite{zhang_expertise_2007}.   Therefore, triangle clustering coefficient for node $i$, $C_{3,i}$, is:
 \begin{equation}
@@ -547,7 +561,7 @@ This is true for all of the following algorithms that consider shortest path.
 
 Next is betweenness centrality.
 In a graph, there exists a shortest path between any node $s$ and any other node $t$.  Betweenness centrality of a node $i$, $C_B(i)$, is the percentage of all shortest paths in graph $\mathcal{G}$ that traverse node $i$ \cite{freeman_set_1977}.
-It is calculated:
+It is calculated as:
 \begin{equation}
 C_B(i) = \sum_{s,t\in \mathcal{V}}\frac{\sigma(s,t|i}{\sigma(s,t)}
 \end{equation}
@@ -599,7 +613,7 @@ SC(i) = \sum_{k=1}^\infty \frac{\mu_k(i)}{k!}
 
 The final social network-based features is 
 communicability betweenness centrality.
-This metric combines combines the concepts of current flow betweenness centrality and communicability centrality~\cite{estrada2008communicability}.
+This metric combines the concepts of current flow betweenness centrality and communicability centrality~\cite{estrada2008communicability}.
 To compute the communicability betweenness centrality, consider the graph $\mathcal{G}$  with adjacency matrix $\boldsymbol{A}$.
 Now consider $\mathcal{G}(r)$ which is identical to $\mathcal{G}$ except with all edges connected to node $r$ removed.
 The adjacency matrix of $\mathcal{G}(r)$ can be written as $\boldsymbol{A}+\boldsymbol{E}(r)$.
@@ -628,7 +642,7 @@ It appears that the same employees that had high unique subjects received counts
     \centering
         \includegraphics[width=\columnwidth,trim={.6mm 2mm 0.6mm 3mm},clip]{Hubs_hist}
         \vspace{-17pt}
-        \caption[Full graph hubs histogram]{Histogram of hubs from social graph by job title.  Note that directors on average have the highest hub score and graduate students have the lowest.  In fact, all graduate students have a full graph hubs score $<0.005$.  All but two PMs have a full graph hubs value $>0.025$.}
+        \caption[Histogram of the full graph hubs feature]{Histogram of hubs from social graph by job title.  Note that directors on average have the highest hub score and graduate students have the lowest.  In fact, all graduate students have a full graph hubs score $<0.005$.  All but two PMs have a full graph hubs value $>0.025$.}
         \label{fig:social_ex_hist}
 \end{figure}
 
@@ -746,7 +760,7 @@ The remaining 30\% of the data was used as a cross-validation set.
 Then, all of the metrics described in Section~\ref{Data} were calculated for both groups separately.
 The training data was used as input to the random forest algorithm as described in Section~\ref{Algorithm}, cross-validation was performed, and predictions were generated for the test data.
 The number of correct and incorrect classifications for each class are shown below in Figure~\ref{fig:result_hist}.
-Note that only three predictions were wrong: two people in research were classified as graduate students and one graduate student was misclassified as research.
+Note that only three predictions were wrong: two people in research were misclassified as graduate students and one graduate student was misclassified as research.
 It is important to note that two out of the three misclassification are for employees who did not provide their emails for the study.
 Therefore, the classification accuracy for the study participants is 97.3\%, correctly classified inferred employees is 93.8\%, and the overall accuracy of this method using all features is 95.7\%
 The confusion matrix for this analysis is another way to visualize the results, as shown in Figure~\ref{fig:conf_matrix}.
@@ -755,7 +769,7 @@ The confusion matrix for this analysis is another way to visualize the results, 
     \centering
     \includegraphics[width=\columnwidth,trim={1mm 2mm 1mm 3mm},clip]{Prediction_50_50_RF}
     \vspace{-20pt}
-    \caption[Job title classification results]{The Random Forest algorithm was extremely accurate even for very uneven class sizes.  Note that all members of 4 classes were labelled perfectly.  There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.}
+    \caption[Job title classification results]{The Random Forest algorithm was extremely accurate even for very uneven class sizes.  Note that all members of 4 classes were labeled perfectly.  There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.}
     \label{fig:result_hist}
 \end{figure}
 
@@ -774,7 +788,7 @@ On further inspection, the errors made by the learning algorithm can be explaine
 The distinction between graduate students and research faculty is likely the lest clear for two primary reasons.
 First, some PhD students have been at the center as long or longer than some research faculty.
 This leads to older PhD students having larger email counts than some of the newer research staff, which could trick the algorithm.
-Some research faculty also take classes, which may cause their email communication patterns to more closely resemble graduate students. 
+Some research faculty are also students, which may cause their email communication patterns to more closely resemble graduate students. 
 To further complicate matters, some graduate students joined the center as staff after they graduated.
 
 
@@ -844,7 +858,7 @@ The category of graduate student was the easiest to predict.
 However, note that for each category the majority of the people classified were true members of each group, except for the research category.
 Even out of those classified as research, there were more true researchers than any other class.
 
-In~\cite{namata_inferring_2006}, Namata et al. performed the same analysis was performed on the Enron email corpus.
+In~\cite{namata_inferring_2006}, Namata et al. performed the same analysis on the Enron email corpus.
 Compared to the dataset used in this analysis the Enron data involved many more people.
 The Enron dataset has employees distributed more evenly into six classes, one more than used in the analysis above.
 Even with these advantages, \cite{namata_inferring_2006} was only able to achieve 62.09\% LOOCV accuracy.

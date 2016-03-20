@@ -11,8 +11,9 @@ D.~Fisher, A.~J. Brush, E.~Gleave, and M.~A. Smith, ``Revisiting {Whittaker} \&
   pp.~309--312, ACM, 2006.
 
 \bibitem{klimt_introducing_2004}
-B.~Klimt and Y.~Yang, ``Introducing the {Enron} {Corpus}.,'' in {\em {CEAS}},
-  2004.
+B.~Klimt and Y.~Yang, ``The enron corpus: A new dataset for email
+  classification research,'' in {\em Machine learning: ECML 2004},
+  pp.~217--226, Springer, 2004.
 
 \bibitem{gaber_e-mail_2016}
 E.~M. Bahgat, S.~Rady, and W.~Gad, ``An {E}-mail {Filtering} {Approach} {Using}
@@ -21,8 +22,9 @@ E.~M. Bahgat, S.~Rady, and W.~Gad, ``An {E}-mail {Filtering} {Approach} {Using}
   Publishing, 2016.
 
 \bibitem{shams_classifying_2013}
-R.~Shams and R.~Mercer, ``Classifying {Spam} {Emails} {Using} {Text} and
-  {Readability} {Features},'' in {\em {ICDM} 2013}, pp.~657--666, Dec. 2013.
+R.~Shams and R.~E. Mercer, ``Classifying spam emails using text and readability
+  features,'' in {\em Data Mining (ICDM), 2013 IEEE 13th International
+  Conference on}, pp.~657--666, IEEE, 2013.
 
 \bibitem{he_novel_2014}
 B.~He, Z.~Li, and N.~Yang, ``A {Novel} {Approach} for {Email} {Clustering}
@@ -34,8 +36,9 @@ P.~S. Keila and D.~B. Skillicorn, ``Structure in the {Enron} email dataset,''
   pp.~183--199, 2005.
 
 \bibitem{sofershtein_predicting_2015}
-Z.~Sofershtein and S.~Cohen, ``Predicting {Email} {Recipients},'' pp.~761--764,
-  ACM Press, 2015.
+Z.~Sofershtein and S.~Cohen, ``Predicting email recipients,'' in {\em
+  Proceedings of the 2015 IEEE/ACM International Conference on Advances in
+  Social Networks Analysis and Mining 2015}, pp.~761--764, ACM, 2015.
 
 \bibitem{hu_towards_2012}
 Q.~Hu, S.~Bao, J.~Xu, W.~Zhou, M.~Li, and H.~Huang, ``Towards building
@@ -43,8 +46,8 @@ Q.~Hu, S.~Bao, J.~Xu, W.~Zhou, M.~Li, and H.~Huang, ``Towards building
   pp.~398--403, July 2012.
 
 \bibitem{nordbo_data_2014}
-A.~Nordbø, ``Data {Visualization} for {Discovery} of {Digital} {Evidence} in
-  {Email},'' 2014.
+A.~Nordb{\o}, ``Data visualization for discovery of digital evidence in
+  email,'' 2014.
 
 \bibitem{waterman_big_2014}
 K.~K. Waterman and P.~J. Bruening, ``Big {Data} analytics: risks and
@@ -60,6 +63,15 @@ G.~M. Namata, L.~Getoor, and C.~Diehl, ``Inferring formal titles in
 J.~Shetty and J.~Adibi, ``The {Enron} email dataset database schema and brief
   statistical report,'' {\em Information sciences institute technical report,
   University of Southern California}, vol.~4, 2004.
+
+\bibitem{gilbert_phrases_2012}
+E.~Gilbert, ``Phrases that signal workplace hierarchy,'' in {\em Proceedings of
+  the {ACM} 2012 conference on {Computer} {Supported} {Cooperative} {Work}},
+  pp.~1037--1046, ACM, 2012.
+
+\bibitem{mitra_analyzing_2013}
+T.~Mitra and E.~Gilbert, ``Analyzing gossip in workplace email,'' {\em ACM
+  SIGWEB Newsletter Winter}, vol.~5, 2013.
 
 \bibitem{tang_email_2013}
 G.~Tang, J.~Pei, and W.-S. Luk, ``Email mining: tasks, common techniques, and
@@ -91,6 +103,17 @@ J.~R. Tyler, D.~M. Wilkinson, and B.~A. Huberman, ``Email as {Spectroscopy}:
   {\em arXiv:cond-mat/0303264}, Mar. 2003.
 \newblock arXiv: cond-mat/0303264.
 
+\bibitem{newman2005measure}
+M.~E. Newman, ``A measure of betweenness centrality based on random walks,''
+  {\em Social networks}, vol.~27, no.~1, pp.~39--54, 2005.
+
+\bibitem{agarwal_comprehensive_2012}
+A.~Agarwal, A.~Omuya, A.~Harnly, and O.~Rambow, ``A comprehensive gold standard
+  for the enron organizational hierarchy,'' in {\em Proceedings of the 50th
+  {Annual} {Meeting} of the {Association} for {Computational} {Linguistics}:
+  {Short} {Papers}-{Volume} 2}, pp.~161--165, Association for Computational
+  Linguistics, 2012.
+
 \bibitem{wilson_discovery_2009}
 G.~Wilson and W.~Banzhaf, ``Discovery of email communication networks from the
   {Enron} corpus with a genetic algorithm using social network analysis,'' in
@@ -104,9 +127,8 @@ R.~Rowe, G.~Creamer, S.~Hershkop, and S.~J. Stolfo, ``Automated social
 
 \bibitem{shetty_status_2004}
 J.~Shetty and J.~Adibi, ``Ex employee status report.,'' 2004.
-\newblock [\url{http://www.isi.edu/\~adibi/Enron/Enron\_Employee\_Status.xls}].
-  \_Internet
-  Archive\_.[\url{https://web.archive.org/web/20131126121206/http://www.isi.edu/\~adibi/Enron/Enron\_Employee\_Status.xls}],
+\newblock
+  [\url{http://www.isi.edu/\~adibi/Enron/Enron\_Employee\_Status.xls}].\_InternetArchive\_.[\url{https://web.archive.org/web/20131126121206/http://www.isi.edu/\~adibi/Enron/Enron\_Employee\_Status.xls}],
   Accessed 1/30/2016.
 
 \bibitem{hagberg-2008-exploring}
@@ -120,8 +142,8 @@ J.~M. Kleinberg, ``Hubs, authorities, and communities,'' {\em ACM Computing
   Surveys (CSUR)}, vol.~31, no.~4es, p.~5, 1999.
 
 \bibitem{page_pagerank_1999}
-L.~Page, S.~Brin, R.~Motwani, and T.~Winograd, ``The {PageRank} citation
-  ranking: bringing order to the {Web}.,'' 1999.
+L.~Page, S.~Brin, R.~Motwani, and T.~Winograd, ``The pagerank citation ranking:
+  bringing order to the web.,'' 1999.
 
 \bibitem{zhang_expertise_2007}
 J.~Zhang, M.~S. Ackerman, and L.~Adamic, ``Expertise networks in online
