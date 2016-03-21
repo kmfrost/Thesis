@@ -242,7 +242,7 @@ However, there are known flaws and discrepancies with even the most recent versi
 In one of the most popular forms of the dataset~\cite{shetty_enron_2004}, the database includes 253,735 emails sent as ``CC'' and  253,713 emails sent as ``BCC''.
 Further inspection reveals that emails sent as one type or the other were almost always mistakenly recorded as both.
 
-There exists a list of ground truth job title labels for the Enron email corpus, enabling corporate hierarchy analysis.
+There exists a list of ground truth job title labels for the Enron email corpus~\cite{shetty_status_2004}, enabling corporate hierarchy analysis.
 The research in~\cite{gilbert_phrases_2012} made use of these labels along with performing natural language processing functions on the email text.
 This work identified phrases more likely to be used when emailing superiors compared to phrases used when emailing peers or subordinates.
 In~\cite{mitra_analyzing_2013}, the corpus and job title labels were used to explore pattens in office email gossip with respect to the organizational hierarchy.
@@ -250,6 +250,7 @@ There are clear issues with the job title labels, though.
 For example, Jeff Dasovic is labeled as an “Employee”, seemingly the lowest title.
 However, he had more emails than anyone else in the dataset and is identified in records as “Director for State Government Affairs.” 
 As noted in~\cite{gilbert_phrases_2012}, there are similar inconsistencies for Sally Beck, Rick Buy, and Rod Hayslett.
+Furthermore, out of the 161 employees with labels, 29 of them are listed as "N/A".
 Amidst all of these concerns about the Enron job title labels, this work proposes using a new dataset with accurate job titles generated from intimate knowledge of the organization.
 
 \section{Prior Analysis}
@@ -300,26 +301,23 @@ For example, if an email is forwarded, it will have the same hashed subject once
 The number of attachments to each email was also collected.
 The center's email server offers the ability to both digitally sign and encrypt emails.
 Sending an email with either or both of these options appears as a special type of attachment in the raw email file.
-Therefore, during the data collection process, information about if an email was signed or encrypted was recorded.  All of the metadata was collected by a comprehensive parser script.  The types of information extracted from each email is summarized in Table \ref{tab:db_metadata}.
+Therefore, during the data collection process, information about if an email was signed or encrypted was recorded.  All of the metadata was collected by a comprehensive parser script.  The types of information extracted from each email are:
+\begin{itemize}
+	\setlength\itemsep{-0.75em}
+	  
+	\item Destination and source email address    
+	\item Email time stamp                        
+	\item Subject prefix (e.g., Re:, Fwd:)        
+	\item Hash of subject after removing prefix   
+	\item Hash of body text                       
+	\item Length of subject in characters         
+	\item Length of body text in characters       
+	\item Number of attachments                   
+	\item Indicator if email was digitally signed 
+	\item Indicator if email was encrypted        
 
-\begin{table}[t]
-\centering
-\caption{The list of all information collected from each email within the study.}
-\label{tab:db_metadata}
-\begin{tabular}{@{}l@{}}
-\toprule
-Destination and source email address    \\
-Email time stamp                        \\
-Subject prefix (e.g., Re:, Fwd:)        \\
-Hash of subject after removing prefix   \\
-Hash of body text                       \\
-Length of subject in characters         \\
-Length of body text in characters       \\
-Number of attachments                   \\
-Indicator if email was digitally signed \\
-Indicator if email was encrypted        \\ \bottomrule
-\end{tabular}
-\end{table}
+\end{itemize}
+
 
 
 \section{Dataset Description and Statistics}
@@ -1034,7 +1032,124 @@ This work has shown that it is possible to generate important organizational inf
 
 % In LaTeX, each appendix is a "chapter"
 % \chapter{Program Source}
-
+\chapter*{Appendix A: Full Feature List}
+\begin{enumerate}
+	\setlength\itemsep{-0.75em}
+	\item total\_sent
+	\item unique\_addresses\_sent
+	\item unique\_add\_sent\_perc
+	\item unique\_subjects\_sent
+	\item unique\_sub\_sent\_perc
+	\item total\_received
+	\item unique\_addresses\_received
+	\item uniqueadd\_rec\_perc
+	\item unique\_subjects\_received
+	\item unique\_sub\_rec\_perc
+	\item total\_emails
+	\item total\_sent\_signed
+	\item total\_sent\_signed\_perc
+	\item unique\_addresses\_sent\_signed
+	\item unique\_add\_sent\_perc\_signed
+	\item unique\_subjects\_sent\_signed
+	\item unique\_sub\_sent\_perc\_signed
+	\item total\_received\_signed
+	\item total\_rec\_signed\_perc
+	\item unique\_addresses\_received\_signed
+	\item unique\_add\_rec\_perc\_signed
+	\item unique\_subjects\_received\_signed
+	\item unique\_sub\_rec\_perc\_signed
+	\item total\_sent\_encrypted
+	\item total\_sent\_encrypted\_perc
+	\item unique\_addresses\_sent\_encrypted
+	\item unique\_add\_sent\_perc\_encrypted
+	\item unique\_subjects\_sent\_encrypted
+	\item unique\_sub\_sent\_perc\_encrypted
+	\item total\_received\_encrypted
+	\item total\_rec\_encrypted\_perc
+	\item unique\_addresses\_received\_encrypted
+	\item unique\_add\_rec\_perc\_encrypted
+	\item unique\_subjects\_received\_encrypted
+	\item unique\_sub\_rec\_perc\_encrypted
+	\item inter\_hume\_sent
+	\item inter\_hume\_received
+	\item inter\_vt\_sent
+	\item inter\_vt\_received
+	\item sent\_to
+	\item sent\_to\_perc
+	\item sent\_cc
+	\item sent\_cc\_perc
+	\item rec\_to
+	\item rec\_to\_perc
+	\item rec\_cc
+	\item rec\_cc\_perc
+	\item avg\_recipients\_sent
+	\item avg\_recipients\_rec
+	\item avg\_body\_chars\_sent
+	\item avg\_body\_chars\_rec
+	\item var\_body\_chars\_sent
+	\item var\_body\_chars\_rec
+	\item after\_hours\_sent
+	\item after\_hours\_sent\_perc
+	\item after\_hours\_rec
+	\item after\_hours\_rec\_perc
+	\item after\_hours\_sent\_hume
+	\item after\_hours\_sent\_hume\_perc
+	\item after\_hours\_rec\_hume
+	\item after\_hours\_rec\_hume\_perc
+	\item avg\_sent\_per\_day
+	\item avg\_rec\_per\_day
+	\item avg\_emails\_per\_day
+	\item attached\_sent
+	\item attached\_rec
+	\item avg\_attachments\_sent
+	\item avg\_attachments\_rec
+	\item sent\_re
+	\item sent\_re\_perc
+	\item sent\_fw
+	\item sent\_fw\_perc
+	\item rec\_re
+	\item rec\_re\_perc
+	\item rec\_fw
+	\item rec\_fw\_perc
+	\item avg\_subject\_chars\_sent
+	\item avg\_subject\_chars\_rec
+	\item var\_subject\_chars\_sent
+	\item var\_subject\_chars\_rec
+	\item fg\_between\_centrality
+	\item pg\_between\_centrality
+	\item pg\_avg\_neighbor\_degree
+	\item fg\_avg\_neighbor\_degree
+	\item pg\_clustering
+	\item fg\_clustering
+	\item pg\_closeness\_centrality
+	\item fg\_closeness\_centrality
+	\item pg\_degree\_centrality
+	\item fg\_degree\_centrality
+	\item pg\_current\_flow\_closeness\_centrality
+    \item fg\_current\_flow\_closeness\_centrality
+	\item pg\_current\_flow\_betweenness\_centrality
+	\item fg\_current\_flow\_betweenness\_centrality
+	\item pg\_communicability\_centrality
+	\item fg\_communicability\_centrality
+	\item pg\_communicability\_betweenness\_centrality
+	\item fg\_communicability\_betweenness\_centrality
+	\item pg\_load\_centrality
+	\item fg\_load\_centrality
+	\item pg\_square\_clustering
+	\item fg\_square\_clustering
+	\item fg\_eccentricity
+	\item pg\_eccentricity
+	\item pg\_pagerank
+	\item fg\_pagerank
+	\item pg\_hubs
+	\item pg\_authorities
+	\item fg\_hubs
+	\item fg\_authorities
+	\item pg\_avg\_shortest\_paths
+	\item fg\_avg\_shortest\_paths
+	\item pg\_num\_cliques
+	\item fg\_num\_cliques
+\end{enumerate}
 
 \end{document}
 
