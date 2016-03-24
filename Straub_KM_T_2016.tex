@@ -561,7 +561,7 @@ Next is betweenness centrality.
 In a graph, there exists a shortest path between any node $s$ and any other node $t$.  Betweenness centrality of a node $i$, $C_B(i)$, is the percentage of all shortest paths in graph $\mathcal{G}$ that traverse node $i$ \cite{freeman_set_1977}.
 It is calculated as:
 \begin{equation}
-C_B(i) = \sum_{s,t\in \mathcal{V}}\frac{\sigma(s,t|i}{\sigma(s,t)}
+C_B(i) = \sum_{s,t\in \mathcal{V}}\frac{\sigma(s,t|i)}{\sigma(s,t)}
 \end{equation}
 where $\mathcal{V}$ is the set of all nodes in $\mathcal{G}$, $\sigma(s,t)$ is the number of shortest paths between $s$ and $t$, and $\sigma(s,t|i)$ is the number of those paths that pass through $i$.
 It is further defined that if $s=t$, then $\sigma(s,t)=1$ and if $i\in s,t$, then $\sigma(s,t|i) = 0$.
@@ -601,7 +601,8 @@ b_i = \sum_{i\neq s\neq t} r_{st}
 where $r_{st}$ is the element of matrix $\boldsymbol{R}$ which represents the probability that a random walk from $s$ to $t$ passes through $i$.
 
 Another feature used by the algorithm is communicability centrality, or subgraph centrality~\cite{Estrada_2005}.  
-To calculate this measure, consider all of the closed walks in graph $\mathcal{G}$, of length $k$ beginning on node $i$, denoted by $\mu_k$.
+To calculate this measure, consider all of the closed walks in graph $\mathcal{G}$, of length $k$.
+Of those walks, those that begin on node $i$ are denoted as $\mu_k$.
 A closed walk is any walk that begins and ends on the same node.
 Repetition of either the edges and vertices is allowed.
 The communicability centrality of node $i$, $SC(i)$ is computed as:
