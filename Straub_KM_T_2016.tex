@@ -267,7 +267,8 @@ A common metric that has been shown to indicate importance in a social graph is 
 Betweenness centrality is a measure of how many shortest paths in a graph travel over each node.
 A node with high betweenness centrality in a social graph has been shown to represent a high degree of influence on other nodes.
 As shown in~\cite{tyler_email_2003}, a betweenness centrality algorithm can be used to determine community structures within an organization.
-There are several other types of centrality such as closeness, current-flow betweenness, and random-walk centrality~\cite{newman2005measure}.
+There are several other types of centrality such as degree, closeness, current-flow closeness, and current-flow betweenness~\cite{balinsky2011rapid}.
+The researchers in~\cite{avrachenkov2013alpha} evaluated variations of betweeness centraltiy on the Enron dataset and other social networks.
 In~\cite{agarwal_comprehensive_2012}, researchers were able to more accurately predict superior-subordinate pairs within Enron using only degree centrality than some natural language processing methods.
 Other successful metrics were used in~\cite{wilson_discovery_2009}, which detected the most important email users within a corporate network without using betweenness or centrality as features.
 The features used in that study were: degree, the number of edges connected to a node; density, the ratio of actual edges to the number of possible edges; and proximity prestige, the ratio of nodes that can reach a node $i$ to the average distance from those nodes to $i$.
@@ -725,8 +726,8 @@ Feature                                      & Type         & Information Gain\\
 Unique subjects received                     & Traffic      & 0.728  \\
 Total signed emails received                 & Traffic      & 0.728  \\
 Partial graph hubs                           & Social       & 0.589  \\
-Number of emails received as forwards        & Traffic      & 0.0.519  \\
-Partial graph current flow closeness centrality & Social    & 0.0.512  \\
+Number of emails received as forwards        & Traffic      & 0.519  \\
+Partial graph current flow closeness centrality & Social    & 0.512  \\
 Partial graph pagerank                       & Social       & 0.512    \\
 Percentage of emails sent with unique addresses & Traffic   & 0.51  \\
 Number of emails received as carbon copies   & Traffic      & 0.5      \\

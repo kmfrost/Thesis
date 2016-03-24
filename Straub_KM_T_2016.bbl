@@ -64,6 +64,12 @@ J.~Shetty and J.~Adibi, ``The {Enron} email dataset database schema and brief
   statistical report,'' {\em Information sciences institute technical report,
   University of Southern California}, vol.~4, 2004.
 
+\bibitem{shetty_status_2004}
+J.~Shetty and J.~Adibi, ``Ex employee status report.,'' 2004.
+\newblock
+  [\url{http://www.isi.edu/\~adibi/Enron/Enron\_Employee\_Status.xls}].\_InternetArchive\_.[\url{https://web.archive.org/web/20131126121206/http://www.isi.edu/\~adibi/Enron/Enron\_Employee\_Status.xls}],
+  Accessed 1/30/2016.
+
 \bibitem{gilbert_phrases_2012}
 E.~Gilbert, ``Phrases that signal workplace hierarchy,'' in {\em Proceedings of
   the {ACM} 2012 conference on {Computer} {Supported} {Cooperative} {Work}},
@@ -103,9 +109,15 @@ J.~R. Tyler, D.~M. Wilkinson, and B.~A. Huberman, ``Email as {Spectroscopy}:
   {\em arXiv:cond-mat/0303264}, Mar. 2003.
 \newblock arXiv: cond-mat/0303264.
 
-\bibitem{newman2005measure}
-M.~E. Newman, ``A measure of betweenness centrality based on random walks,''
-  {\em Social networks}, vol.~27, no.~1, pp.~39--54, 2005.
+\bibitem{balinsky2011rapid}
+A.~Balinsky, H.~Balinsky, and S.~Simske, ``Rapid change detection and text
+  mining,'' in {\em Proceedings of the 2nd Conference on Mathematics in Defence
+  (IMA), Defence Academy, UK}, 2011.
+
+\bibitem{avrachenkov2013alpha}
+K.~Avrachenkov, N.~Litvak, V.~Medyanikov, and M.~Sokol, ``Alpha current flow
+  betweenness centrality,'' in {\em Algorithms and Models for the Web Graph},
+  pp.~106--117, Springer, 2013.
 
 \bibitem{agarwal_comprehensive_2012}
 A.~Agarwal, A.~Omuya, A.~Harnly, and O.~Rambow, ``A comprehensive gold standard
@@ -124,12 +136,6 @@ R.~Rowe, G.~Creamer, S.~Hershkop, and S.~J. Stolfo, ``Automated social
   hierarchy detection through email network analysis,'' in {\em Proceedings of
   the 9th {WebKDD} and 1st {SNA}-{KDD} 2007 workshop on {Web} mining and social
   network analysis}, pp.~109--117, ACM, 2007.
-
-\bibitem{shetty_status_2004}
-J.~Shetty and J.~Adibi, ``Ex employee status report.,'' 2004.
-\newblock
-  [\url{http://www.isi.edu/\~adibi/Enron/Enron\_Employee\_Status.xls}].\_InternetArchive\_.[\url{https://web.archive.org/web/20131126121206/http://www.isi.edu/\~adibi/Enron/Enron\_Employee\_Status.xls}],
-  Accessed 1/30/2016.
 
 \bibitem{hagberg-2008-exploring}
 A.~A. Hagberg, D.~A. Schult, and P.~J. Swart, ``Exploring network structure,
