@@ -54,6 +54,22 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.25in}
 
+
+\lstdefinelanguage{email}{
+	basicstyle=\linespread{0.8}\scriptsize\color{black},
+	keywordstyle=\color{black},
+	identifierstyle=\color{black},
+	stringstyle=\color{black},
+	commentstyle=\color{black},
+	breaklines=true,
+	showstringspaces=false,%without this there will be a symbol in the places where there is a space
+	numbers=none,%
+	emph={},emphstyle=\color{black},
+	frame=single,
+	tabsize=4
+}
+
+
 % Uncomment for double-spaced document.
 \renewcommand{\baselinestretch}{2}
 
@@ -179,16 +195,16 @@ Specifically, it considers using email analysis to perform this operation.
 However, there is a lack of modern, publicly available email datasets to use for this research.
 Out of the email datasets that do exist, namely the Enron email corpus, there is a lack of accurate job title labels for the employees.
 Labels are necessary for evaluating the results of the organic hierarchy analysis with the official organization chart.
-A new source of workplace emails with accurate job title labels was required.  
 
 The research presented in this thesis documents how a new email metadata dataset was collected and appropriately anonymized from the email records of 37 voluntary participants from an academic research organization.
 This metadata is used not only to analyze the participants, but also to what extent the non-participant members of the organization can be characterized.
 
 
 The problem of analysis is broken into two parts.
-The first half addresses accurately classifying the employees of the center by their job title.
+The first half addresses how to accurately classify employees by their job titles.
 This will give insight into how well email behaviors indicate the official hierarchy as well as how similar the job titles are to one another.
 The second part of the problem investigates how well this organic organizational chart matches the official organizational chart.
+Altogether, the result reveals how much information about an organization can be extracted from the internal emails.
 
 
 
@@ -200,14 +216,14 @@ Finally, a comparison is presented between relationships displayed in the data w
 Combining predicted job titles with hierarchical relationships discovered from the data can identify an organization's true structure.
 
 \section{Contributions}
-The contributions outlined in this thesis are broad.  
+The contributions outlined in this thesis show improvements to machine learning techniques applied to email analysis.  
 First, a new, fully anonymized dataset was developed from raw emails from an academic research environment.  
 This dataset, unlike others before it, has accurate job title labels.  
 Furthermore, a unique combination of features were calculated from this data.  
 Some had been used in email analysis before, but many are new and specific to this data.
 Research investigating this problem in the past has focused on one of the two types of features, where this analysis aggregates traffic- and social-based features together.
 In general, the problem of job title classification has not been extensively studied.  
-The results in this thesis surpass the results of previous research.
+The leave-one-out cross-validation results in this thesis surpass the results of previous research on the Enron corpus.
 Finally, a closer look at email relationships lends insight into the organic structure of the organization.
 
 
@@ -253,6 +269,12 @@ As noted in~\cite{gilbert_phrases_2012}, there are similar inconsistencies for S
 Furthermore, out of the 161 employees with labels, 29 of them are listed as "N/A".
 Amidst all of these concerns about the Enron job title labels, this work proposes using a new dataset with accurate job titles generated from intimate knowledge of the organization.
 
+The other datasets for analysis are rare in this vein of behavior modeling and community analysis.
+Other datasets used in the literature are usually either private or different types.
+For example, the research in~\cite{tyler_email_2003} was performed on a internal email dataset collected by HP labs that was not publicly released.
+Often datasets collect communication patterns from public online sources such as Twitter~\cite{Zafarani+Liu:2009}, YouTube~\cite{mislove-2007-socialnetworks},  and Wikipedia~\cite{leskovec2010predicting}.
+However, this research focused on organizational structure in addition to the social network components, so these datasets were unsuitable for this purpose.
+
 \section{Prior Analysis}
 The existing literature on analyzing social email behavior is mainly divided into two categories: traffic-based and social-based~\cite{tang_email_2013}.
 Traffic-based methods calculate statistics based only on email patterns.
@@ -273,9 +295,10 @@ In~\cite{agarwal_comprehensive_2012}, researchers were able to more accurately p
 Other successful metrics were used in~\cite{wilson_discovery_2009}, which detected the most important email users within a corporate network without using betweenness or centrality as features.
 The features used in that study were: degree, the number of edges connected to a node; density, the ratio of actual edges to the number of possible edges; and proximity prestige, the ratio of nodes that can reach a node $i$ to the average distance from those nodes to $i$.
 
-
 Instead of considering only traffic-based or social-based analytics, these can be be used jointly.
 An example of this approach~\cite{rowe_automated_2007}, which combined features such as number of emails, response time, cliques, and degree centrality into a ``Social Score'', was used to rank Enron employees.  
+Unfortunately, this was preliminary research did not publish any quantifiable results.
+This thesis aims to expand on this work and quantify the results when applied to a new dataset.
 
 \chapter{Email Dataset and Feature Extraction} \label{Data}
 
@@ -291,8 +314,29 @@ Due to difficulties with the Enron dataset, as described in Section~\ref{PriorWo
 Due to the inherent privacy concerns, it was necessary to work with the Internal Review Board (IRB) to approve a dataset which maintains participants' privacy.
 This dataset is meant to be representative of metadata which any company could use without violating the privacy of their employees.
 Special care was taken to protect the privacy of those involved in the study.
-During the collection process, all subject and body text was hashed, and all email metadata was stored in a MySQL database using scripts without any researchers observing any email text.
+During the collection process, all subject and body text was hashed using the MD5 algorithm.
+A hashing algorithm was used to protect the email text of the participants because once text is hashed, it is impossible to recover the original message.
+An example hash is shown in Figure~\ref{fig:hash_ex}.
+All email metadata was stored in a MySQL database using scripts without any researchers observing any email text.
 Furthermore, any identifying information has been omitted from this thesis.
+No unauthorized persons had access to the database, which was stored on a password-protected server run by the center.
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{hash_ex}
+	\caption[Example subject hash]{The subject on the left was hashed using the MD5 algorithm to obtain the string on the right.  Hashing algorithms only function in one direction such that the original text cannot be recovered from the hashed string.}
+	\label{fig:hash_ex}
+\end{figure}
+
+
+The first step in the data collection process was to design an accurate automated email parser.
+This script would extract the metadata from raw emails.
+Email formats can vary based on clients used or whether the email was sent from a mobile phone, which meant the parser script needed to be generic enough to handle many different configurations.
+Small issues included recognizing forwarded emails as any of the following subject prefixes: "Fw:", "Fwd:", or "FW:".
+The biggest obstacle was handling emails with embedded HTML.
+For each email, the parsing script first needed to recognize that there was HTML present in the body text, then accurately parse the information from the tags.
+Attachments were also difficult to handle because they appeared as immense blocks of encoded text.
+The parser was designed to identify attachments and not include that text in the character count.  
+An example email with both HTML and an attachment is in Appendix A.
 
 Most of the collected data is information from the header of an email such as the sending and receiving email addresses and date and time.
 The number of characters in the subject and body text were extracted before the subject and body text was hashed.
@@ -336,21 +380,43 @@ However, it is comprised of fewer people than the Enron dataset.
                    & Center          & Enron         \\ \midrule
 Time               & 11/2012-11/2015 & 1/2000-9/2002 \\
 Distinct Email Addresses & 32,118          & 75,406        \\
-Participants       & 37              & 249           \\
+Participants       & 37              & 158           \\
 Distinct Emails    & 585,096         & 252,759       \\ \bottomrule
 \end{tabular}
 }
 \end{table}
 
+Figure~\ref{fig:emails_over_time} shows the email traffic of the center over time.
+The growth of the center between early 2013 and late 2015 is evident by the increasing baseline email traffic.
+The spikes in the graph likely denotes when email inboxes of employees were migrated from an old mail server.
+Note that each year before February is a dip in email activity.
+This is indicative of Virginia Tech's winter break and Christmas holidays.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{emails_over_time}
+	\caption[Center emails over time]{Number of emails sent in the database over time.  The data trends upwords as the center has grown.}
+	\label{fig:emails_over_time}
+\end{figure}
+
+
 The center divides its employees into six main areas: directors, graduate students, operations, outreach, project management (PM), and research. 
 A chart showing the distribution of classes is shown in Figure \ref{fig:class_breakdown}.
 \begin{figure}[t]
     \centering
-        \includegraphics[width=\columnwidth,trim={1mm 8mm 1mm 2mm},clip]{class_breakdown}
+        \includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{class_breakdown}
         \caption[Dataset class distribution pie chart]{Pie chart showing the distribution of classes in the dataset.  Note that the classes are far from being uniformly distributed.}
         \label{fig:class_breakdown}
 \end{figure}
 
+However, compare the distribution of job title labels in Figure~\ref{fig:class_breakdown} to the distribution of emails per title in Figure~\ref{fig:email_pie}.  The directors of the center send by far the most emails, even though there are only eight.  The graduate students send less than 9\% of the total emails in the dataset, even though they are the largest class.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{Total_emails_by_class}
+	\caption[Email distribution by job title]{Pie chart showing the distribution of emails by class.  The most emails come from the director class, even though they comprise only 11\% of the employees.}
+	\label{fig:email_pie}
+\end{figure}
 
 While the study includes only 37 volunteers, the email metadata from these volunteers identified 32 additional employees of the center.
 These additional employees were included in the study when ground truth for their job was available and when they were identified in at least 100 email metadata records.
@@ -359,6 +425,7 @@ This provides 69 total employees in the study.
 \section{Features}
 The study includes 114 features that were extracted from the email data: 84 traffic-based and 30 social-based.
 In the following sections, all features from each of the two categories are described. 
+A full feature list is provided in Appendix B.
 
 \subsection{Traffic-Based Features}
 The traffic-based features are those calculated purely from the collected email metadata.
@@ -422,7 +489,7 @@ The divisions among the classes become slightly more clear when the feature valu
 All feature values are normalized before being used by the learning algorithm.
 \begin{figure}[t]
     \centering
-        \includegraphics[width=\columnwidth,trim={1mm 5mm 1mm 2mm},clip]{Unique_subjects_rec_hist}
+        \includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{Unique_subjects_rec_hist}
         \caption[Unique subjects received histogram]{Histogram of unique subjects received by job title.  Note that by using different thresholds, meaningful splits in the data can be made.  For example, employees with less than $500$ unique subjects received are likely to be graduate students, and employees with greater than $4500$ are likely to be higher status employees (i.e., Directors, PMs, some Research).}
         \label{fig:traffic_ex_hist}
 \end{figure}
@@ -466,7 +533,7 @@ Some employees never exchanged any emails, while others exchanged many.
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\columnwidth,trim={4mm .5mm 0mm 5mm},clip]{JetEdit}
+    \includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 5mm},clip]{JetEdit}
     \vspace{-17pt}
     \caption[The dataset represented as an adjacency matrix]{The adjacency matrix representing the social connections of the center.  This graph overall is well connected and has just one component.  Nonetheless, there are many pairs of individuals who never exchanged a single email.}
     \label{fig:adj_matrix}
@@ -552,14 +619,14 @@ The majority of the social-based features were variations on centrality measures
 First is closeness centrality.
 Closeness centrality, $C(i)$ is the normalized inverse of the sum of shortest path distances from node $i$ to all other nodes in the graph \cite{freeman_centrality_1978}.  It is calculated as follows:
 \begin{equation}
-C(i) = \frac{n-1}{\sum_{j=1}^{n-1}d(i,j)}
+C(i) = \left(\frac{\sum_{j=1}^{n-1}d(i,j)}{n-1}\right)^{-1}
 \end{equation}
 where $n$ is the number of nodes in graph $\mathcal{G}$ and $d(i,j)$ is the minimum shortest path distance between node $i$ and node $j$.
 Since for this application $\mathcal{G}$ is a weighted graph, shortest path distances are calculated using Djikstra's alogrithm~\cite{dijkstra1959note}.
 This is true for all of the following algorithms that consider shortest path.
 
 Next is betweenness centrality.
-In a graph, there exists a shortest path between any node $s$ and any other node $t$.  Betweenness centrality of a node $i$, $C_B(i)$, is the percentage of all shortest paths in graph $\mathcal{G}$ that traverse node $i$ \cite{freeman_set_1977}.
+In a graph, there exists a shortest path between any node $s$ and any other node $t$.  Betweenness centrality of a node $i$, $C_B(i)$, is the sum of the percentage of all shortest paths in graph $\mathcal{G}$ that traverse node $i$ \cite{freeman_set_1977}.
 It is calculated as:
 \begin{equation}
 C_B(i) = \sum_{s,t\in \mathcal{V}}\frac{\sigma(s,t|i)}{\sigma(s,t)}
@@ -640,7 +707,7 @@ It appears that the same employees that had high unique subjects received counts
 
 \begin{figure}[t]
     \centering
-        \includegraphics[width=\columnwidth,trim={.6mm 2mm 0.6mm 3mm},clip]{Hubs_hist}
+        \includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{Hubs_hist}
         \vspace{-17pt}
         \caption[Histogram of the full graph hubs feature]{Histogram of hubs from social graph by job title.  Note that directors on average have the highest hub score and graduate students have the lowest.  In fact, all graduate students have a full graph hubs score $<0.005$.  All but two PMs have a full graph hubs value $>0.025$.}
         \label{fig:social_ex_hist}
@@ -653,15 +720,36 @@ In terms of this application, it measures how the breadth and depth of an employ
 
 \chapter{Algorithm Design} \label{Algorithm}
 This chapter describes the analysis behind the main algorithm used in the analysis: the random forest.
-The first section describes the process of training and cross-validating the model.
-The second section discusses the method behind ranking the different features used.
+The first section describes the process of selecting the classification algorithm.
+The second section discusses the theory behind random forests as well as the process of training and cross-validating the model.
+The final section discusses the method behind ranking the different features used.
 
-\section{Model Selection}
+\section{Algorithm Selection}
 Due to the large number of features and relatively low number of participants, a classification method was carefully chosen to avoid overfitting the data.
-While tree based classifiers can be susceptible to overfitting, the random forest is robust to overfitting issues and was therefore chosen for this study.
-The java-based software package Weka was used to generate the random forest based on the algorithm described in~\cite{Breiman2001}.
+The first analysis that was performed was selecting an appropriate classification algorithm.
+Considering only the 32 first-ring employees, those with less than 100 emails were removed.
+The two outreach employees were also not included in this test.
+The emails were randomly split with equal probability into training and testing sets.
+Using these two sets of data, several different machine learning classification algorithms were evaluated using the java-based software package Weka~\cite{hall2009weka}.
+The accuracy of each of these tests was recorded, and the best performers are shown in Figure~\ref{fig:algorithm_selection}.
+The random forest algorithm was the most accurate.
+This technique is popular in a variety of fields for being very robust to noise within the data.
+Furthermore, random forests were used in~\cite{namata_inferring_2006}, which will serve as a benchmark for classification accuracy.
 
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.8\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{ModelSelection}
+	\vspace{-12pt}
+	\caption[Algorithm selection analysis]{Randomly generated training and test sets were used to evaluate several different classification algorithms.  Random forests were the most accurate and were therefore used for further analysis.}
+	\label{fig:algorithm_selection}
+\end{figure}
+
+
+\section{Algorithm Description}
 Random forests are an ensemble method of machine learning comprised of many random trees.
+While tree-based classifiers can be susceptible to overfitting, the random forest is robust to overfitting issues and performs implicit feature selection to identify the most meaningful features.  
+Weka uses the random forest based on the algorithm described in~\cite{Breiman2001}.
+
 A random tree is a machine learning algorithm that uses training data to learn a series of rules for classification.
 These rules are constructed in a hierarchy that visually resembles a tree.
 Each decision is based on what rule will maximize the information gained.
@@ -669,48 +757,94 @@ An example random tree with depth three is shown in Figure~\ref{fig:ex_tree}.
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\columnwidth,trim={0mm 2.5mm 0mm 2mm},clip]{3_level_tree}
-    \vspace{-15pt}
+    \includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{3_level_tree}
+    \vspace{-12pt}
     \caption[Example random tree]{Example random tree of depth 3 to demonstrate how a few rules can be used to find significant class divisions.}
     \label{fig:ex_tree}
 \end{figure}
 
-The emails in the dataset were randomly assigned to one of three groups: 35\% for training, 30\% for cross-validation, and 35\% for testing.
-The training set was used to train the dataset by building the random trees.
-The cross-validation set was used to select the hyperparameters of the algorithm such as number of trees and number of features used for branch splits.
-The testing set was used only once on a model trained by the training set using these optimal parameters.
+Random trees are built using a greedy heuristic that determines the best split at each level.
+The best split is defined as the split which maximizes the mutual information and therefore makes the data after the split most homogeneous.
+In this model, both the class and the features are treated as random variables.
+The entropy of the class represents the amount of randomness in the class distribution, and is denoted as:
+\begin{equation}
+H(\text{Class})=\sum_{l\in \text{Labels}} p(l)\log p(l)
+\end{equation}
+The conditional entropy is evaluated for all available features.  
+It represents the amount of randomness remaining in the class distribution when the attribute value is known.
+The conditional entropy is calculated as:
+\begin{align}
+H(\text{Class}|\text{Attribute}) &= \sum_{a\in \text{Attributes}}p(a)H(\text{Class}|\text{Attribute}=a) \\
+&=  -\sum_{a\in\text{Attributes}}p(a)\sum_{l\in\text{Labels}}p(l|a)\log p(l|a)
+\end{align}
+Mutual information represents how well knowledge of the attribute informs the prediction of the class.
+Mutual information between the class distribution and the attribute is calculated as follows:
+\begin{equation}
+I(\text{Class}; \text{Attribute}) = H(\text{Class}) - H(\text{Class} | \text{Attribute})
+\end{equation} \label{eq:info_gained}
+The random tree algorithm splits on the attribute value that maximizes the mutual information.
+Note that $H(\text{Class})$ is a constant, therefore the best attribute to split on, $A^*$, is:
+\begin{align}
+A^* &= \arg\max_a I(\text{Class}|\text{Attribute}) \\
+&= \arg \max_a H(\text{Class})-H(\text{Class}|\text{Attribute})\\
+&= \arg\min_a H(\text{Class}|{Attribute})
+\end{align}
 
-Random forests build many deep random trees with slight random variations.
+Note that the feature values used in this thesis are continuous, but the process above is described for discrete attribute values.
+The feature values can be discretized by using thresholds instead.
+If the feature values are sorting in ascending order, then a threshold can be defined between each consecutive pair of points.
+These thresholds act as discrete ways to separate the data.
+Therefore, the threshold that maximizes the mutual information, $T^*$ is:
+\begin{align}
+T^* &= \arg\min_t H(\text{Class}|\text{Threshold})\\
+&= \arg\min_t H(\text{Class}|\text{Attribute}<t\})p(\text{Attribute}<t) \notag \\
+ &\qquad \qquad + H(\text{Class}|\text{Attribute}\geq t)p(\text{Attribute}\geq t)
+\end{align}
+
+
+Random forests build many deep random trees with intentional random variations.
 Individually, these random trees overfit the data.
 However, these random trees are combined through a process of bootstrap aggregating, or bagging.
-From the cross-validation analysis, the number of trees was 750.
-The bagging process involves each random tree generating a new training dataset by sampling observations from the input training set with replacement.
-These subsamples are used to build the random trees.
+The bagging process involves each random tree generating a new training dataset by randomly sampling observations from the input training set with replacement.
+Therefore, each tree uses a different training set to build its rules.
 For this analysis, each tree selects $\frac{2N}{3}$ samples to train the trees where $N$ is the number of data points in the overall training set.
 Just as the samples were subsampled, so were the features.
-Only this subset of features can be used as rules for that tree.
-In this implementation, each tree used a subsample of 7 random features.
-This value represents approximately 6\% of the total avaliable features, and this parameter was selected through cross-validation.
-
+Each tree can only use a small subset of the full feature set.
 After all the trees are built, the test data is run through all the random trees in the forest.
 Each tree outputs a prediction label for each data point, and the majority vote on each sample is the final predicted label.
-This random forest model reduces the variance and increases the accuracy of the model compared to a single random tree.
+In theory, the more meaningful features will drive some trees to make accurate predictions and will overrule trees that used the less informative features, effectively performing feature selection.
+The random forest process is depicted in Figure~\ref{fig:random_forest_diagram}.
+Overall, a random forest reduces the variance and increases the accuracy of the model compared to a single random tree.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.7\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{RandForest}
+	\vspace{-15pt}
+	\caption[Random forest prediction process]{A random forest builds many random trees using subsamples of the data.  Each tree generates a prediction for each test point, and the final prediction is decided by majority vote.}
+	\label{fig:random_forest_diagram}
+\end{figure}
+
+To use this classification algorithm, the data must be split into three groups.
+The emails in the dataset were randomly assigned to one of the following: 35\% for training, 30\% for cross-validation, and 35\% for testing.
+The training set was used to train the dataset by building the random trees.
+The cross-validation set was used in lieu of a test set to optimize the parameters of the random forest.
+The testing set is used only once as the final evaluation of a model trained by the training set using these optimal parameters.
+
+There are several parameters that were tuned to optimize this algorithm.
+The first parameter that was analyzed was the percentage splits described above. 
+Different sectioning percentages were tried for the training and cross-validation sets, but 35\% for training and 30\% for cross-validation produced the best cross-validation accuracy.
+This is likely because it is nearly an even split between the two sets.
+From cross-validation analysis, the optimum number of trees in the random forest was determined to be 750.
+Another test found that each tree should subsample of 7 random features for maximum cross-validation accuracy.
+This value represents approximately 6\% of the total available features.
+
+
 
 \section{Feature Selection}
 Random forests can be difficult to interpret because the ensemble method obscures which features are most meaningful.
 An attribute analysis helps to better understand which features are better label predictors.
 Since random trees use information gain to dictate splits, information gain was used as the evaluation criteria for the features.
-Specifically, each attribute was evaluated by measuring the information gain with respect to the class.
-Information gain, also known as mutual information, is calculated as follows:
-\begin{equation}
-I(\text{Class}; \text{Attribute}) = H(\text{Class}) - H(\text{Class} | \text{Attribute})
-\end{equation} \label{eq:info_gained}
-where $I(\text{Class}; \text{Attribute})$ represents the mutual information between the class and the attribute, $H(\text{Class})$ is the entropy of the class variable, and  $H(\text{Class} | \text{Attribute})$ represents the conditional entropy of the Class given the Attribute value.  
-
-Mutual information represents how well knowledge of the attribute informs the prediction of the class.
-In this model, both the attribute and the class are treated as random variables.
-The entropy of a random variable is a measure of the uncertainty associated with it.
-After this information gained value was calculated for each feature, they were ranked in order of most important to least.
+Specifically, each attribute was evaluated by measuring the information gain with respect to the class, and each attribute was ranked in order of most important to least.
 Table~\ref{tab:ranked_feats} shows the top twenty features from this analysis and the features' corresponding information gain.  
 Note that in this table, exactly half of the features are traffic-based and the other half are social-based.
 This highlights the imporance of using both types of features in this analysis because both types of features contain valuable information related to the class of an individual.
@@ -767,7 +901,7 @@ The confusion matrix for this analysis is another way to visualize the results, 
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\columnwidth,trim={1mm 2mm 1mm 3mm},clip]{Prediction_50_50_RF}
+    \includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{Prediction_50_50_RF}
     \vspace{-20pt}
     \caption[Job title classification results]{The Random Forest algorithm was extremely accurate even for very uneven class sizes.  Note that all members of 4 classes were labeled perfectly.  There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.}
     \label{fig:result_hist}
@@ -776,7 +910,7 @@ The confusion matrix for this analysis is another way to visualize the results, 
 
 \begin{figure}[t]
     \centering
-        \includegraphics[width=.9\columnwidth,trim={1mm 6mm 1mm 3.5mm},clip]{Classification_confusion}
+        \includegraphics[width=.7\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{Classification_confusion}
         \vspace{-7pt}
         \caption[Job title prediction confusion matrix]{Confusion matrix for the job prediction test.  The only two classes that confused the classifier were graduate student and research, making a total of 3 errors.  These classes are very similar, so it is understandable that there would be errors.}
         \label{fig:conf_matrix}
@@ -812,7 +946,7 @@ This is a decrease of less than 6\% from when the test data is from the month im
 
 \begin{figure}[t]
     \centering
-        \includegraphics[width=.8\columnwidth,trim={1mm 6mm 1mm 3.5mm},clip]{TimeGapsAnalysis}
+        \includegraphics[width=.8\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{TimeGapsAnalysis}
         \vspace{-7pt}
         \caption[Accuracy of classification over time]{As time between the training data and the testing data increases, the accuracy of the prediciton algorithm slowly decreases.  This reinforces the assumption that the email behavior of the center employees is relatively constant in time.}
         \label{fig:time_analysis}
@@ -830,7 +964,7 @@ Therefore, a very good classifier can be built using much fewer features if the 
 
 \begin{figure}[t]
     \centering
-        \includegraphics[width=.8\columnwidth,trim={1mm 6mm 1mm 3.5mm},clip]{FeatureAnalysis}
+        \includegraphics[width=.8\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{FeatureAnalysis}
         \vspace{-7pt}
         \caption[Prediction accuracy compared to number of features]{Prediction accuracy compared to number of features used for analysis.  Note that the accuracy is still very high, 89.86\%, when only fifteen features are used.  The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 114 features. }
         \label{fig:feat_analysis}
@@ -846,7 +980,7 @@ This ensures that the algorithm is not learning each person's behaviors individu
 The results of this test are reported below in Figure~\ref{fig:loocv_conf_plot}.
 \begin{figure}[t]
     \centering
-        \includegraphics[width=.9\columnwidth,trim={1mm 4mm 1mm 3.5mm},clip]{confusion_plot}
+        \includegraphics[width=.7\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{LOOCV_confusion}
         \vspace{-7pt}
         \caption[Leave one out cross validation results]{Prediction accuracy was higher for graduate students, who have more uniform behaviors and more training data.  However, for each category, the majority of the people classified were true members of that group, save for research.  Note that even for those classified as research, there were more true researchers than any other class.}
         \label{fig:loocv_conf_plot}
@@ -866,17 +1000,62 @@ The difference between that analysis and the work described in this thesis is th
 This analysis shows that integrating social-based features with the trafic-based statistics can improve job classification results.
 
 \section{Hierarchy Analysis}
-Most of the employees at the center are organized under a director and work with a program manager (unless for example they are a director or program manager).
+The purpose of this hierarchy analysis was to compare the email relationships from the data with the official project groups of the center.
+All of the employees at the center are organized under a director and many work with a program manager (unless for example they are a director or program manager).
+Therefore, from knowledge of the center, employees were labeled with their official director, and research staff and graduate students were labeled with their primary program manager.
+Note that these labels were not available for all participants in the study.
 To generate a metric of how well emails can be used to predict the center's organizational chart, the director and project manager for each applicable employee is predicted from the email metadata. 
 
 The director of each employee is predicted by the algorithm to be the director that the employee communicated with most by email.
-Only 57.58\% of the center's employees communicate most frequently with their official director.
+Only 52.63\% of the center's employees communicate most frequently with their official director.
 This result points to a possible disconnect between the official organization chart and the organic relationships within the center.
 
 To identify each employee's project manager ground truth is selected to be the project that primarily funds the employee.
-This time, 72.73\% of graduate students and researchers communicate most frequently with their primary program manager.
+This time, 91.67\% of graduate students and researchers communicate most frequently with their primary program manager.
 The relation between employees to project managers appears to be stronger than that with directors.
-Many of the errors in this classification are due to employees who work with multiple project managers.  
+From knowledge of the center, it appears that the few errors in this classification are due to employees who work with multiple project managers.  
+
+This analysis was broken down by class and plotted in Figure~\ref{fig:project_classify}.
+It appears that in general, graduate students are very likely to regularly email their assigned director and project manager.
+Members of the research staff communicate predictably with their primary program manager, but the director relationships from the organization chart are not reflected in the email data.
+Project management and operations also seem to exhibit a disconnect between the official director of each group and the directors they email.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=.7\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{superior_identification}
+	\vspace{-7pt}
+	\caption[Project manager and director prediction results]{The accuracy of the director assignment appears to vary greatly between classes.  However, the assigned project manager of researchers and graduate students is accurately predicted from the email data.}
+	\label{fig:project_classify}
+\end{figure}
+
+To synthesize all of the analysis thus far, an organic organization chart was created for the center.
+This type of chart could be used as a tool for understanding the underlying structure of a company in order to analyze possible reorganizations.
+Although the center has a very flat structure, project information often flows from directors to project managers down to research staff and finally graduate students.
+A graph was constructed where the nodes represent anonymized job titles representing the employees of the center.
+The output of the classification algorithm was used as the source of these job titles.
+Therefore, the two research staff are labeled as graduate students, and the mislabeled graduate student is given the title of research.
+Then, an edge was drawn between each graduate student and the research personnel they emailed the most.
+Similarly, edges were drawn between each researcher and the project manager they emailed the most and each project manager and the director they emailed most.  The result is shown in Figure~\ref{fig:generated_hierarchy}.
+Note that in this figure, the employees with the incorrect classification labels are outlined in red.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{generated_org_chart}
+	\vspace{-7pt}
+	\caption[Generated organic organization chart of the center]{The generated organic organization chart of the center using the previous analyses.  This chart could be used as a tool in corporate reorganizations to analyze workload and coworker relationships.}
+	\label{fig:generated_hierarchy}
+\end{figure}
+
+
+The first thing to note about the chart above is that it is two distinct components.
+If the center was considering dividing into two offices, this might be an obvious way to partition the employees.
+Another obvious feature of this graph is the project manager that does not have any researcher connections.
+Perhaps that person performs a different function than the other project managers.
+It is also possible that that person could take on a project to help relieve one of the other project managers with several researcher connections.
+The final interesting thing to note about this graph is that the researcher outlined in red is in fact a graduate student.
+However, that person has two graduate student connections.
+If this student were to graduate and be hired on as a research staff, this figure indicates which graduate students he or she could help mentor.
+This organic organization chart reveals the underlying relationships within the center that differ from the official organization chart.
 
 \chapter{Future Work} \label{FutureWork}
 There are obvious limitations with this dataset due to its small size.
@@ -884,6 +1063,7 @@ It is also not clear how well these methods and results would generalize to othe
 This chapter details what analyses could be possible given a larger dataset.
 The first section of this chapter presents some analysis showing that more data would improve the classification performance.
 The second section describes a deep learning method that could be used as a classifier if a massive dataset were available.
+The third section considers possible paths forward with this work.
 \section{Improving LOOCV Accuracy}
 As discussed above, the accuracy of the leave-one-out cross-validation test was low because of the limited number of data points.
 The confusion matrix in Figure~\ref{fig:loocv_conf_plot} shows that about one third of the predictions were incorrect.  
@@ -904,7 +1084,7 @@ A logarithmic curve fit to the data is shown.
 This shows that more data, as measured by time, in general increases classification accuracy.
 \begin{figure}[t]
     \centering
-        \includegraphics[width=.7\columnwidth,trim={1mm 2mm 1mm 3.5mm},clip]{generalization}
+        \includegraphics[width=.7\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{num_days_LOOCV}
         \vspace{-7pt}
         \caption[Effects of more data on prediction accuracy]{Effects of using more data for leave-one-out cross-validation.  As the number of days of data increases, the accuracy increases slowly and the variance in the accuracy decreases.  This implies that more email data can increase classification accuracy.}
         \label{fig:loocv_generalization}
@@ -923,7 +1103,7 @@ Again, a logarithmic trendline is shown for reference.
 It is clear that adding more people, in general, improves the performance of the classifier.
 \begin{figure}[t]
     \centering
-        \includegraphics[width=.7\columnwidth,trim={1mm 2mm 1mm 3.5mm},clip]{LOOCV_general}
+        \includegraphics[width=.7\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{Num_of_people_LOOCV}
         \vspace{-7pt}
         \caption[Effects of more people on prediction accuracy]{Effects of using more people for leave-one-out cross-validation.  As more people are included in the training data, the LOOCV accuracy of the classifier increases slowly.}
         \label{fig:people_generalization}
@@ -933,8 +1113,11 @@ Based on these analyses, it is clear that adding more people to an email dataset
 
 \section{Deep Learning Application}
 Techniques such as random forests work well for small, low-dimensional data.
-However, if the size of the dataset were greatly increased to billions of people without labels.
-In this case, a more sophisticated model would be necessary for successful classification in order to accurately learn the complicated structure inherent to such large real-world datasets.
+Deep learning is an emerging field that has proven to be very powerful and effective in solving very complex problems.
+However, massive amounts of data are necessary to properly train a deep learning algorithm.
+Unfortunately, data on that scale is unavailable for email analysis.
+Consider a much larger dataset, made up of millions of people without labels.
+In this case, a more sophisticated, deep learning model would be necessary for successful classification in order to accurately learn the complicated structure inherent to such large real-world datasets.
 Suppose a representative sample of volunteers from the dataset self-identifies themselves.
 This would produce a set of labeled training data, transforming an unsupervised problem into to a semi-supervised one. 
 
@@ -985,6 +1168,7 @@ An advantage of unsupervised pre-training is that, with small enough layers, it 
 
 In conjunction with greedy pre-training, backpropagation  with some labeled data has been shown to improve both the optimization and generalization of a DBN. 
 Hinton et al. showed that unsupervised pre-training followed by backpropagation of a DBN outperformed traditional feed forward neural networks on the MNIST dataset \cite{hinton_fast_2006}.
+The nonlinearity of the logistic function used in backpropagation mitigates the possibility of overfitting to the data.
 
 Much of the research in deep learning today is focused on image classification and analysis, such as the MNIST dataset.  However, DBNs have been applied to text analysis as well.
 In \cite{ruangkanokmas_deep}, a sophisticated version of a DBN was used to construct a sentiment classifier.
@@ -995,14 +1179,24 @@ This method can classify sentiments more accurately and train more quickly than 
 A classifier such as this could be used to powerfully learn with extremely large email datasets, particularly those without hashed text.
 
 
+
 \chapter{Conclusions} \label{Conclusions}
-This work presents a new dataset, approximately the size of Enron, that was collected from volunteers' emails with particular attention to protect participant privacy.
-The new dataset includes accurate labels executed by researchers with knowledge of the center and its employees.
-Statistics were calculated from this dataset, and were used with a random forest algorithm to automatically classify the center's employees.
+This work presents a new dataset, approximately the size of Enron, that was collected from volunteers' emails with particular attention to protect volunteers' privacy.
+The new dataset includes accurate labels generated by researchers with knowledge of the center and its employees.
+
+A variety of features were calculated from this dataset, and were used with a random forest algorithm to automatically classify the center's employees.
+This feature set included features that had been studied in the past, but also others that were unique to this data.
+Furthermore, this research presents a list of features that combines the two previous schools of thought: traffic-based features and social-based features.
+
 Random Forests are shown to be powerful classifiers by predicting employee job titles with very high accuracy, even for employees for whom only secondhand data is available in the dataset.
-Using only 3 features, employees are successfully classified higher than 80\% of the time and are classified over 95\% of the time when 20 features are used.
+In fact, the results found from this analysis surpass previous work on the Enron corpus.
+The result showed an improved leave-one-out cross-validation error using a dataset that has a fraction of the samples.
+Furthermore, analysis showed that email behavior is consistent in time.
 The email data was also used to show that emails could be used to predict an employee's primary program manager, but had a worse chance of being able to identify the director associated with the employee on the official organizational chart.
-This work has shown that it is possible to generate important organizational information from using carefully processed email metadata without compromising the privacy of employees.
+
+A method for generating an organic hierarchy was presented.
+This chart could be a useful tool in aiding large corporate reorganizations by clearly summarizing project-based and social relationships not immediately evident from official records.
+This work has shown that it is possible to glean organizational information from using carefully processed email metadata without compromising the privacy of employees.
 
 
 %
@@ -1030,11 +1224,15 @@ This work has shown that it is possible to generate important organizational inf
 \bibliographystyle{ieeetr}
 \bibliography{bib}
 
-% \appendix
+\appendix
 
 % In LaTeX, each appendix is a "chapter"
 % \chapter{Program Source}
-\chapter*{Appendix A: Full Feature List}
+\chapter*{Appendix A: Example Email}
+\lstinputlisting[language=email]{1439900489.txt}
+
+
+\chapter*{Appendix B: Full Feature List}
 \begin{enumerate}
 	\setlength\itemsep{-0.75em}
 	\item total\_sent

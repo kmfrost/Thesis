@@ -1,22 +1,29 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Dataset class distribution pie chart}}{14}{figure.caption.5}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Unique subjects received histogram}}{18}{figure.caption.9}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces The social network of the center}}{20}{figure.caption.11}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces The dataset represented as an adjacency matrix}}{21}{figure.caption.12}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Histogram of the full graph hubs feature}}{29}{figure.caption.19}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Example subject hash}}{11}{figure.caption.4}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Center emails over time}}{15}{figure.caption.6}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Dataset class distribution pie chart}}{16}{figure.caption.7}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Email distribution by job title}}{17}{figure.caption.8}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Unique subjects received histogram}}{21}{figure.caption.12}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces The social network of the center}}{23}{figure.caption.14}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces The dataset represented as an adjacency matrix}}{24}{figure.caption.15}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Histogram of the full graph hubs feature}}{32}{figure.caption.22}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Example random tree}}{31}{figure.caption.20}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Algorithm selection analysis}}{34}{figure.caption.23}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Example random tree}}{35}{figure.caption.24}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Random forest prediction process}}{38}{figure.caption.25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Job title classification results}}{37}{figure.caption.22}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Job title prediction confusion matrix}}{38}{figure.caption.23}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Accuracy of classification over time}}{39}{figure.caption.24}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Prediction accuracy compared to number of features}}{40}{figure.caption.25}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Leave one out cross validation results}}{41}{figure.caption.26}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Job title classification results}}{44}{figure.caption.27}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Job title prediction confusion matrix}}{45}{figure.caption.28}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Accuracy of classification over time}}{46}{figure.caption.29}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Prediction accuracy compared to number of features}}{47}{figure.caption.30}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Leave one out cross validation results}}{48}{figure.caption.31}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Project manager and director prediction results}}{51}{figure.caption.32}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Generated organic organization chart of the center}}{52}{figure.caption.33}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Effects of more data on prediction accuracy}}{46}{figure.caption.27}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Effects of more people on prediction accuracy}}{47}{figure.caption.28}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces The Components of a Deep Belief Network}}{48}{figure.caption.29}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Effects of more data on prediction accuracy}}{56}{figure.caption.34}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Effects of more people on prediction accuracy}}{57}{figure.caption.35}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces The Components of a Deep Belief Network}}{58}{figure.caption.36}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

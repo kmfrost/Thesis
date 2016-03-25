@@ -79,6 +79,26 @@ E.~Gilbert, ``Phrases that signal workplace hierarchy,'' in {\em Proceedings of
 T.~Mitra and E.~Gilbert, ``Analyzing gossip in workplace email,'' {\em ACM
   SIGWEB Newsletter Winter}, vol.~5, 2013.
 
+\bibitem{tyler_email_2003}
+J.~R. Tyler, D.~M. Wilkinson, and B.~A. Huberman, ``Email as {Spectroscopy}:
+  {Automated} {Discovery} of {Community} {Structure} within {Organizations},''
+  {\em arXiv:cond-mat/0303264}, Mar. 2003.
+\newblock arXiv: cond-mat/0303264.
+
+\bibitem{Zafarani+Liu:2009}
+R.~Zafarani and H.~Liu, ``Social computing data repository at {ASU},'' 2009.
+
+\bibitem{mislove-2007-socialnetworks}
+A.~Mislove, M.~Marcon, K.~P. Gummadi, P.~Druschel, and B.~Bhattacharjee,
+  ``{Measurement and Analysis of Online Social Networks},'' in {\em Proceedings
+  of the 5th ACM/Usenix Internet Measurement Conference (IMC'07)}, (San Diego,
+  CA), October 2007.
+
+\bibitem{leskovec2010predicting}
+J.~Leskovec, D.~Huttenlocher, and J.~Kleinberg, ``Predicting positive and
+  negative links in online social networks,'' in {\em Proceedings of the 19th
+  international conference on World wide web}, pp.~641--650, ACM, 2010.
+
 \bibitem{tang_email_2013}
 G.~Tang, J.~Pei, and W.-S. Luk, ``Email mining: tasks, common techniques, and
   tools,'' {\em Knowledge and Information Systems}, vol.~41, pp.~1--31, June
@@ -102,12 +122,6 @@ S.~Wasserman and K.~Faust, {\em Social {Network} {Analysis}: {Methods} and
 \bibitem{freeman_set_1977}
 L.~C. Freeman, ``A {Set} of {Measures} of {Centrality} {Based} on
   {Betweenness},'' {\em Sociometry}, vol.~40, no.~1, pp.~35--41, 1977.
-
-\bibitem{tyler_email_2003}
-J.~R. Tyler, D.~M. Wilkinson, and B.~A. Huberman, ``Email as {Spectroscopy}:
-  {Automated} {Discovery} of {Community} {Structure} within {Organizations},''
-  {\em arXiv:cond-mat/0303264}, Mar. 2003.
-\newblock arXiv: cond-mat/0303264.
 
 \bibitem{balinsky2011rapid}
 A.~Balinsky, H.~Balinsky, and S.~Simske, ``Rapid change detection and text
@@ -192,6 +206,11 @@ E.~Estrada and J.~A. Rodr\'{\i}guez-Vel\'azquez, ``Subgraph centrality in
 \bibitem{estrada2008communicability}
 E.~Estrada and N.~Hatano, ``Communicability in complex networks,'' {\em
   Physical Review E}, vol.~77, no.~3, p.~036111, 2008.
+
+\bibitem{hall2009weka}
+M.~Hall, E.~Frank, G.~Holmes, B.~Pfahringer, P.~Reutemann, and I.~H. Witten,
+  ``The weka data mining software: an update,'' {\em ACM SIGKDD explorations
+  newsletter}, vol.~11, no.~1, pp.~10--18, 2009.
 
 \bibitem{Breiman2001}
 L.~Breiman, ``Random forests,'' {\em Machine Learning}, vol.~45, no.~1,

@@ -17,14 +17,15 @@
 \BOOKMARK [2][-]{subsection.3.3.1}{Traffic-Based Features}{section.3.3}% 17
 \BOOKMARK [2][-]{subsection.3.3.2}{Social Network Features}{section.3.3}% 18
 \BOOKMARK [0][-]{chapter.4}{Algorithm Design}{}% 19
-\BOOKMARK [1][-]{section.4.1}{Model Selection}{chapter.4}% 20
-\BOOKMARK [1][-]{section.4.2}{Feature Selection}{chapter.4}% 21
-\BOOKMARK [0][-]{chapter.5}{Performance Analysis}{}% 22
-\BOOKMARK [1][-]{section.5.1}{Classification Results}{chapter.5}% 23
-\BOOKMARK [1][-]{section.5.2}{Leave-One-Out Cross-Validation}{chapter.5}% 24
-\BOOKMARK [1][-]{section.5.3}{Hierarchy Analysis}{chapter.5}% 25
-\BOOKMARK [0][-]{chapter.6}{Future Work}{}% 26
-\BOOKMARK [1][-]{section.6.1}{Improving LOOCV Accuracy}{chapter.6}% 27
-\BOOKMARK [1][-]{section.6.2}{Deep Learning Application}{chapter.6}% 28
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 29
-\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 30
+\BOOKMARK [1][-]{section.4.1}{Algorithm Selection}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.2}{Algorithm Description}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.3}{Feature Selection}{chapter.4}% 22
+\BOOKMARK [0][-]{chapter.5}{Performance Analysis}{}% 23
+\BOOKMARK [1][-]{section.5.1}{Classification Results}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.2}{Leave-One-Out Cross-Validation}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.3}{Hierarchy Analysis}{chapter.5}% 26
+\BOOKMARK [0][-]{chapter.6}{Future Work}{}% 27
+\BOOKMARK [1][-]{section.6.1}{Improving LOOCV Accuracy}{chapter.6}% 28
+\BOOKMARK [1][-]{section.6.2}{Deep Learning Application}{chapter.6}% 29
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 30
+\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 31
