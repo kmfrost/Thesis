@@ -533,7 +533,7 @@ Some employees never exchanged any emails, while others exchanged many.
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 5mm},clip]{JetEdit}
+    \includegraphics[width=1.05\columnwidth,trim={0mm 0mm 0mm 5mm},clip]{ViridisEdit}
     \vspace{-17pt}
     \caption[The dataset represented as an adjacency matrix]{The adjacency matrix representing the social connections of the center.  This graph overall is well connected and has just one component.  Nonetheless, there are many pairs of individuals who never exchanged a single email.}
     \label{fig:adj_matrix}
@@ -787,7 +787,7 @@ Note that $H(\text{Class})$ is a constant, therefore the best attribute to split
 \begin{align}
 A^* &= \arg\max_a I(\text{Class}|\text{Attribute}) \\
 &= \arg \max_a H(\text{Class})-H(\text{Class}|\text{Attribute})\\
-&= \arg\min_a H(\text{Class}|{Attribute})
+&= \arg\min_a H(\text{Class}|\text{Attribute})
 \end{align}
 
 Note that the feature values used in this thesis are continuous, but the process above is described for discrete attribute values.
@@ -818,7 +818,7 @@ Overall, a random forest reduces the variance and increases the accuracy of the 
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.7\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{RandForest}
+	\includegraphics[width=0.6\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{RandForest}
 	\vspace{-15pt}
 	\caption[Random forest prediction process]{A random forest builds many random trees using subsamples of the data.  Each tree generates a prediction for each test point, and the final prediction is decided by majority vote.}
 	\label{fig:random_forest_diagram}
@@ -846,8 +846,9 @@ An attribute analysis helps to better understand which features are better label
 Since random trees use information gain to dictate splits, information gain was used as the evaluation criteria for the features.
 Specifically, each attribute was evaluated by measuring the information gain with respect to the class, and each attribute was ranked in order of most important to least.
 Table~\ref{tab:ranked_feats} shows the top twenty features from this analysis and the features' corresponding information gain.  
-Note that in this table, exactly half of the features are traffic-based and the other half are social-based.
-This highlights the imporance of using both types of features in this analysis because both types of features contain valuable information related to the class of an individual.
+Note that in this table, the features are almost perfectly split between the two types.
+Nine of the features are traffic-based and eleven are social-based.
+This highlights the importance of using both types of features in this analysis because both types of features contain valuable information related to the class of an individual.
 
 \begin{table}[t]
 \caption{Top 20 features ranked by the information gain.}
@@ -857,26 +858,27 @@ This highlights the imporance of using both types of features in this analysis b
 \begin{tabular}{@{}lrr@{}}
 \toprule
 Feature                                      & Type         & Information Gain\\ \midrule
-Unique subjects received                     & Traffic      & 0.728  \\
-Total signed emails received                 & Traffic      & 0.728  \\
-Partial graph hubs                           & Social       & 0.589  \\
-Number of emails received as forwards        & Traffic      & 0.519  \\
+Partial graph hubs                           & Social        & 0.589  \\
+Full graph hubs                              & Social        & 0.554  \\
+Number of emails received as forwards        & Traffic      & 0.554  \\
+Number of signed emails received             & Traffic      & 0.514  \\
+Number of signed emails received with unique subjects & Traffic & 0.514\\ 
 Partial graph current flow closeness centrality & Social    & 0.512  \\
-Partial graph pagerank                       & Social       & 0.512    \\
-Percentage of emails sent with unique addresses & Traffic   & 0.51  \\
-Number of emails received as carbon copies   & Traffic      & 0.5      \\
-Full graph pagerank                          & Social       & 0.492    \\
-Average number of emails received per day    & Traffic      & 0.489    \\
+Partial graph pagerank                       & Social       & 0.512  \\
+Number of emails received as carbon copies   & Traffic      & 0.500  \\
+Number of emails received from Hume employees & Traffic	    & 0.492  \\
+Full graph current flow closeness centrality & Social       & 0.492  \\
+Full graph pagerank                          & Social       & 0.492  \\
+Average number of emails received per day    & Traffic      & 0.489  \\
+Partial graph communicability centrality     & Social       & 0.486  \\
 Partial graph communicability betweenness centrality & Social & 0.486  \\
-Partial graph communicability centrality     & Social       & 0.486    \\
 Average number of emails per day (both sent and received) & Traffic & 0.479    \\
-Partial graph number of cliques              & Social       & 0.47 \\
-Percentage of emails received as forwards    & Traffic      & 0.451 \\
-Number of emails sent as carbon copies       & Traffic      & 0.43 \\
-Partial graph degree centrality              & Social       & 0.429 \\
-Partial graph closeness centrality           & Social       & 0.429 \\
-Partial graph average shortest paths         & Social       & 0.429 \\ 
-Percentage of signed emails received with unique addresses & Traffic & 0.418\\ \bottomrule
+Number of emails sent to Hume employees      & Traffic	    & 0.476  \\
+Partial graph number of cliques              & Social       & 0.470  \\
+Percentage of emails received as forwards    & Traffic      & 0.451  \\
+Partial graph degree centrality				 & Social		& 0.448  \\
+Partial graph average shortest paths         & Social	    & 0.448  \\ \bottomrule
+
 
 \end{tabular}
 }
@@ -1040,7 +1042,7 @@ Note that in this figure, the employees with the incorrect classification labels
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{generated_org_chart}
+	\includegraphics[width=1.05\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{orgChart_3con}
 	\vspace{-7pt}
 	\caption[Generated organic organization chart of the center]{The generated organic organization chart of the center using the previous analyses.  This chart could be used as a tool in corporate reorganizations to analyze workload and coworker relationships.}
 	\label{fig:generated_hierarchy}
