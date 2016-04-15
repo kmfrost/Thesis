@@ -1,0 +1,57 @@
+\documentclass[12pt]{report}
+
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm, amssymb}
+\usepackage{enumerate}
+\setlength\parindent{24pt}
+
+\begin{document}
+
+\begin{enumerate}
+    \item Discuss past and future government applications
+
+    \item Develop a more comprehensive related works section for Ch. 2
+    \begin{enumerate}
+        \item Setup context more effectively
+        \item More on general machine learning techniques
+        \item Discuss analogous research
+    \end{enumerate}
+
+    \item Investigate big spikes in the time graph
+
+        \par \textit{Spikes represent Gmail folders being ported to the Hume center using an old script, which was responsible for changing the timestamps.  A more sophisticated system was developed for transferring emails in Summer 2014, and there are no more spikes after this point.  The biggest spike (from Jan 2014) came from moving large folders from a single graduate student.  Based on the folder names, these are unrelated to the Hume center and were sent before this person was a graduate student, therefore these emails will be removed from the dataset for the purposes of this analysis.}
+
+
+    \item Calculate measure of non-symmetry of Hume adjacency matrix
+    \begin{enumerate}
+		\item Briefly explain the case of people emailing themselves - is it from CC-ed emails?
+	\end{enumerate}
+	
+	\item Look into mutual information values of zero and explain 
+	
+    	\par \textit{There were four significant digits available for each value, so it did not appear to be a rounding error.  There seemed to be an arbitrary cutoff point around 0.22 bits.  Lack of documentation makes it difficult to pinpoint the cause or correct for it, so I developed my own script to calculate the mutual information based on the description in Section $4.2$.  Table $4.1$ has been updated to reflect the changes.  Many of the features from the table were unchanged, but some are new.}
+
+    \item Is there any source of data leakage? If not, explain disparity between classification and LOOCV results.
+
+    \item Discuss a naive guess/baseline for classification
+
+    \item Look into using a prior to represent the class distribution
+
+	\item Add more commentary on LOOCV results
+    \begin{enumerate}
+		\item What types of people are misclassified?
+    \end{enumerate}
+    
+	\item For hierarchy analysis:
+	\begin{enumerate}
+		\item Take direction into account for hierarchy connections
+		\item Add more edges
+		
+		\par \textit{I changed this analysis to only consider sent emails.  I added edges (increasing in transparency) to represent 2nd and 3rd strongest connections. These changes are shown in Figure $5.7$.  The more complex structure of the Hume center is now evident, but some of the divisions remain clear.}
+	\end{enumerate}
+
+	\item Add collective classification to future work
+\end{enumerate}
+\end{document}
