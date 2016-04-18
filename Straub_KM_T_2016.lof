@@ -14,16 +14,16 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Example random tree}}{35}{figure.caption.24}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Random forest prediction process}}{38}{figure.caption.25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Job title classification results}}{44}{figure.caption.27}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Job title prediction confusion matrix}}{45}{figure.caption.28}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Accuracy of classification over time}}{46}{figure.caption.29}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Prediction accuracy compared to number of features}}{47}{figure.caption.30}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Leave one out cross validation results}}{48}{figure.caption.31}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Project manager and director prediction results}}{51}{figure.caption.32}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Generated organic organization chart of the center}}{52}{figure.caption.33}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Job title classification results}}{43}{figure.caption.27}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Job title prediction confusion matrix}}{44}{figure.caption.28}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Accuracy of classification over time}}{45}{figure.caption.29}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Prediction accuracy compared to number of features}}{46}{figure.caption.30}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Leave-one-out cross-validation results}}{47}{figure.caption.31}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Project manager and director prediction results}}{50}{figure.caption.32}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Generated organic organization chart of the center}}{51}{figure.caption.33}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Effects of more data on prediction accuracy}}{55}{figure.caption.34}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Effects of more people on prediction accuracy}}{56}{figure.caption.35}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces The Components of a Deep Belief Network}}{57}{figure.caption.36}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Effects of more data on prediction accuracy}}{54}{figure.caption.34}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Effects of more people on prediction accuracy}}{55}{figure.caption.35}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces The Components of a Deep Belief Network}}{56}{figure.caption.36}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
