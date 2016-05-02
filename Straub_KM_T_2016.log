@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  18 APR 2016 10:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  2 MAY 2016 17:02
 entering extended mode
 **Straub_KM_T_2016.tex
 (Straub_KM_T_2016.tex
@@ -741,7 +741,7 @@ Overfull \hbox (23.48918pt too wide) in paragraph at lines 535--537
 File: Pictures/Hubs_hist.png Graphic file (type png)
 
 <use Pictures/Hubs_hist.png>
-Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 709.
+Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 712.
 (pdftex.def)             Requested size: 469.75499pt x 257.45328pt.
  [31] [32 <./Pictures/Hubs_hist.png>]
 Chapter 4.
@@ -751,153 +751,153 @@ Chapter 4.
 File: Pictures/ModelSelection.png Graphic file (type png)
 
 <use Pictures/ModelSelection.png>
-Package pdftex.def Info: Pictures/ModelSelection.png used on input line 740.
+Package pdftex.def Info: Pictures/ModelSelection.png used on input line 743.
 (pdftex.def)             Requested size: 375.80542pt x 283.85942pt.
  [34 <./Pictures/ModelSelection.png>]
 <Pictures/3_level_tree.png, id=573, 918.7926pt x 345.9324pt>
 File: Pictures/3_level_tree.png Graphic file (type png)
 
 <use Pictures/3_level_tree.png>
-Package pdftex.def Info: Pictures/3_level_tree.png used on input line 759.
+Package pdftex.def Info: Pictures/3_level_tree.png used on input line 762.
 (pdftex.def)             Requested size: 469.75499pt x 176.86658pt.
  [35 <./Pictures/3_level_tree.png>] [36]
 [37] <Pictures/RandForest.png, id=601, 461.5644pt x 441.3288pt>
 File: Pictures/RandForest.png Graphic file (type png)
 
 <use Pictures/RandForest.png>
-Package pdftex.def Info: Pictures/RandForest.png used on input line 820.
+Package pdftex.def Info: Pictures/RandForest.png used on input line 824.
 (pdftex.def)             Requested size: 281.85585pt x 269.493pt.
  [38 <./Pictures/RandForest.png>] [39] [40]
+[41]
 Chapter 5.
-[41
+[42
 
-] <Pictures/Prediction_50_50_RF.png, id=628, 577.1964pt x 308.352pt>
+] <Pictures/Prediction_50_50_RF.png, id=632, 577.1964pt x 308.352pt>
 File: Pictures/Prediction_50_50_RF.png Graphic file (type png)
 
 <use Pictures/Prediction_50_50_RF.png>
 Package pdftex.def Info: Pictures/Prediction_50_50_RF.png used on input line 90
-5.
+9.
 (pdftex.def)             Requested size: 469.75499pt x 250.95413pt.
 
-<Pictures/Classification_confusion.png, id=630, 557.08125pt x 469.00218pt>
+<Pictures/Classification_confusion.png, id=634, 557.08125pt x 469.00218pt>
 File: Pictures/Classification_confusion.png Graphic file (type png)
 
 <use Pictures/Classification_confusion.png>
 Package pdftex.def Info: Pictures/Classification_confusion.png used on input li
-ne 914.
+ne 918.
 (pdftex.def)             Requested size: 328.82706pt x 276.84486pt.
- [42] [43 <./Pictures/Prediction_50_50_RF.png>] [44 <./Pictures/Classification_
+ [43] [44 <./Pictures/Prediction_50_50_RF.png>] [45 <./Pictures/Classification_
 confusion.png (PNG copy)>]
-<Pictures/TimeGapsAnalysis.png, id=649, 626.8218pt x 327.624pt>
+<Pictures/TimeGapsAnalysis.png, id=653, 626.8218pt x 327.624pt>
 File: Pictures/TimeGapsAnalysis.png Graphic file (type png)
 
 <use Pictures/TimeGapsAnalysis.png>
-Package pdftex.def Info: Pictures/TimeGapsAnalysis.png used on input line 950.
+Package pdftex.def Info: Pictures/TimeGapsAnalysis.png used on input line 953.
 (pdftex.def)             Requested size: 375.80542pt x 196.42593pt.
 
-<Pictures/FeatureAnalysis.png, id=653, 531.4254pt x 341.5962pt>
+<Pictures/FeatureAnalysis.png, id=657, 531.4254pt x 341.5962pt>
 File: Pictures/FeatureAnalysis.png Graphic file (type png)
 
 <use Pictures/FeatureAnalysis.png>
-Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 968.
+Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 971.
 (pdftex.def)             Requested size: 375.80542pt x 241.57071pt.
- [45 <./Pictures/TimeGapsAnalysis.png>]
-<Pictures/LOOCV_confusion.png, id=662, 572.1375pt x 472.01344pt>
+ [46 <./Pictures/TimeGapsAnalysis.png>]
+<Pictures/LOOCV_confusion.png, id=666, 572.1375pt x 472.01344pt>
 File: Pictures/LOOCV_confusion.png Graphic file (type png)
 
 <use Pictures/LOOCV_confusion.png>
-Package pdftex.def Info: Pictures/LOOCV_confusion.png used on input line 984.
+Package pdftex.def Info: Pictures/LOOCV_confusion.png used on input line 987.
 (pdftex.def)             Requested size: 328.82706pt x 271.28317pt.
- [46 <./Pictures/FeatureAnalysis.png>]
-[47 <./Pictures/LOOCV_confusion.png (PNG copy)>] [48]
-<Pictures/superior_identification.png, id=683, 651.93562pt x 408.77719pt>
+ [47 <./Pictures/FeatureAnalysis.png>]
+[48 <./Pictures/LOOCV_confusion.png (PNG copy)>] [49]
+<Pictures/superior_identification.png, id=687, 651.93562pt x 408.77719pt>
 File: Pictures/superior_identification.png Graphic file (type png)
 
 <use Pictures/superior_identification.png>
 Package pdftex.def Info: Pictures/superior_identification.png used on input lin
-e 1026.
+e 1029.
 (pdftex.def)             Requested size: 328.82706pt x 206.18446pt.
- [49]
-<Pictures/orgChart_3con.png, id=690, 1029.8475pt x 523.20468pt>
+ [50]
+<Pictures/orgChart_3con.png, id=694, 1029.8475pt x 523.20468pt>
 File: Pictures/orgChart_3con.png Graphic file (type png)
 
 <use Pictures/orgChart_3con.png>
-Package pdftex.def Info: Pictures/orgChart_3con.png used on input line 1044.
+Package pdftex.def Info: Pictures/orgChart_3con.png used on input line 1047.
 (pdftex.def)             Requested size: 493.24417pt x 250.58453pt.
 
-Overfull \hbox (23.48918pt too wide) in paragraph at lines 1044--1046
+Overfull \hbox (23.48918pt too wide) in paragraph at lines 1047--1049
  [][] 
  []
 
-[50 <./Pictures/superior_identification.png>] [51 <./Pictures/orgChart_3con.png
+[51 <./Pictures/superior_identification.png>] [52 <./Pictures/orgChart_3con.png
 >]
 Chapter 6.
-[52
+[53
 
-] <Pictures/num_days_LOOCV.png, id=710, 553.5882pt x 317.5062pt>
+] <Pictures/num_days_LOOCV.png, id=715, 553.5882pt x 317.5062pt>
 File: Pictures/num_days_LOOCV.png Graphic file (type png)
 
 <use Pictures/num_days_LOOCV.png>
-Package pdftex.def Info: Pictures/num_days_LOOCV.png used on input line 1088.
+Package pdftex.def Info: Pictures/num_days_LOOCV.png used on input line 1091.
 (pdftex.def)             Requested size: 328.82706pt x 188.60118pt.
 
-<Pictures/Num_of_people_LOOCV.png, id=714, 487.8225pt x 333.49594pt>
+<Pictures/Num_of_people_LOOCV.png, id=719, 487.8225pt x 333.49594pt>
 File: Pictures/Num_of_people_LOOCV.png Graphic file (type png)
 
 <use Pictures/Num_of_people_LOOCV.png>
 Package pdftex.def Info: Pictures/Num_of_people_LOOCV.png used on input line 11
-07.
+10.
 (pdftex.def)             Requested size: 328.82706pt x 224.7998pt.
- [53] [54 <./Pictures/num_days_LOOCV.png>] [55 <./Pictures/Num_of_people_LOOCV.
+ [54] [55 <./Pictures/num_days_LOOCV.png>] [56 <./Pictures/Num_of_people_LOOCV.
 png>]
-<Pictures/dbn.png, id=734, 860.4948pt x 357.4956pt>
+<Pictures/dbn.png, id=738, 860.4948pt x 357.4956pt>
 File: Pictures/dbn.png Graphic file (type png)
  <use Pictures/dbn.png>
-Package pdftex.def Info: Pictures/dbn.png used on input line 1135.
+Package pdftex.def Info: Pictures/dbn.png used on input line 1138.
 (pdftex.def)             Requested size: 328.82706pt x 136.61342pt.
 
-[56 <./Pictures/dbn.png>] [57] [58] [59]
+[57 <./Pictures/dbn.png>] [58] [59] [60]
 Chapter 7.
-[60
+[61
 
-] (Straub_KM_T_2016.bbl [61]
+] (Straub_KM_T_2016.bbl [62]
 Chapter 8.
-[62
+[63
 
-] [63]
-Underfull \hbox (badness 2221) in paragraph at lines 68--72
+] [64]
+Underfull \hbox (badness 2221) in paragraph at lines 70--74
 []\OT1/ptm/m/n/12 J. Shetty and J. Adibi, ``Ex em-ployee sta-tus re-port.,'' 20
 04.  [[]$http : / / www . isi . edu /$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--72
+Underfull \hbox (badness 10000) in paragraph at lines 70--74
 $[]\OT1/ptm/m/n/12 adibi / Enron / Enron[]Employee[]Status . xls$[]].[]Internet
 Archive[].[[]$https : / / web . archive . org / web /$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--72
+Underfull \hbox (badness 10000) in paragraph at lines 70--74
 $\OT1/ptm/m/n/12 20131126121206 / http : / / www . isi . edu / []adibi / Enron 
 / Enron[]Employee[]Status . xls$[]], Ac-cessed
  []
 
-[64] [65]
+[65] [66] [67]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¤ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¤ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
- [66]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¡ in font ptmr7t!
- [67]
+ [68]
 Missing character: There is no Â in font ptmri7t!
 Missing character: There is no ® in font ptmri7t!
-) [68]
+) [69]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 1233.
+nput line 1236.
  (1439900489.txt
 LaTeX Font Info:    Try loading font information for OML+ptm on input line 1.
 
@@ -906,31 +906,31 @@ File: omlptm.fd
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <8> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 1.
- [69
+ [70
 
-] [70]
+] [71]
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 140.
 
-[71] [72] [73] [74]) [75] [76
+[72]) [73] [74
 
-] [77] [78] [79]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1355.
- [80]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1355.
+] [75] [76] [77]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1358.
+ [78]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1358.
  (Straub_KM_T_2016.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1355.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1355.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1358.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1358.
 
 Package rerunfilecheck Info: File `Straub_KM_T_2016.out' has not changed.
 (rerunfilecheck)             Checksum: 306EE6CCD8548E7D0C3779411AEC1EF8;1920.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1355.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1358.
  ) 
 Here is how much of TeX's memory you used:
- 12998 strings out of 493673
- 199767 string characters out of 3141530
- 710413 words of memory out of 3000000
- 15317 multiletter control sequences out of 15000+200000
+ 12311 strings out of 493673
+ 181364 string characters out of 3141530
+ 710491 words of memory out of 3000000
+ 14819 multiletter control sequences out of 15000+200000
  33665 words of font info for 81 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  37i,11n,45p,533b,1735s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -951,9 +951,9 @@ onts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/urw/times/utmb8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw
 /times/utmr8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr
 i8a.pfb>
-Output written on Straub_KM_T_2016.pdf (88 pages, 2654172 bytes).
+Output written on Straub_KM_T_2016.pdf (86 pages, 2597191 bytes).
 PDF statistics:
- 1675 PDF objects out of 1728 (max. 8388607)
- 821 named destinations out of 1000 (max. 500000)
+ 1443 PDF objects out of 1728 (max. 8388607)
+ 632 named destinations out of 1000 (max. 500000)
  480 words of extra memory for PDF output out of 10000 (max. 10000000)
 

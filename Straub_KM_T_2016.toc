@@ -30,12 +30,12 @@
 \contentsline {section}{\numberline {4.1}Algorithm Selection}{33}{section.4.1}
 \contentsline {section}{\numberline {4.2}Algorithm Description}{35}{section.4.2}
 \contentsline {section}{\numberline {4.3}Feature Selection}{39}{section.4.3}
-\contentsline {chapter}{\numberline {5}Performance Analysis}{41}{chapter.5}
-\contentsline {section}{\numberline {5.1}Classification Results}{42}{section.5.1}
-\contentsline {section}{\numberline {5.2}Leave-One-Out Cross-Validation}{46}{section.5.2}
-\contentsline {section}{\numberline {5.3}Hierarchy Analysis}{48}{section.5.3}
-\contentsline {chapter}{\numberline {6}Future Work}{52}{chapter.6}
-\contentsline {section}{\numberline {6.1}Improving LOOCV Accuracy}{53}{section.6.1}
-\contentsline {section}{\numberline {6.2}Deep Learning Application}{55}{section.6.2}
-\contentsline {chapter}{\numberline {7}Conclusions}{60}{chapter.7}
-\contentsline {chapter}{\numberline {8}Bibliography}{62}{chapter.8}
+\contentsline {chapter}{\numberline {5}Performance Analysis}{42}{chapter.5}
+\contentsline {section}{\numberline {5.1}Classification Results}{43}{section.5.1}
+\contentsline {section}{\numberline {5.2}Leave-One-Out Cross-Validation}{47}{section.5.2}
+\contentsline {section}{\numberline {5.3}Hierarchy Analysis}{49}{section.5.3}
+\contentsline {chapter}{\numberline {6}Future Work}{53}{chapter.6}
+\contentsline {section}{\numberline {6.1}Improving LOOCV Accuracy}{54}{section.6.1}
+\contentsline {section}{\numberline {6.2}Deep Learning Application}{56}{section.6.2}
+\contentsline {chapter}{\numberline {7}Conclusions}{61}{chapter.7}
+\contentsline {chapter}{\numberline {8}Bibliography}{63}{chapter.8}

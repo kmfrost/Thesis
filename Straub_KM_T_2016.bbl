@@ -15,20 +15,21 @@ B.~Klimt and Y.~Yang, ``The enron corpus: A new dataset for email
   classification research,'' in {\em Machine learning: ECML 2004},
   pp.~217--226, Springer, 2004.
 
-\bibitem{gaber_e-mail_2016}
-E.~M. Bahgat, S.~Rady, and W.~Gad, ``An {E}-mail {Filtering} {Approach} {Using}
-  {Classification} {Techniques},'' in {\em {AISI}2015, {November} 28-30, 2015,
-  {Beni} {Suef}, {Egypt}}, vol.~407, pp.~321--331, Cham: Springer International
-  Publishing, 2016.
+\bibitem{bahgat2016mail}
+E.~M. Bahgat, S.~Rady, and W.~Gad, ``An e-mail filtering approach using
+  classification techniques,'' in {\em The 1st International Conference on
+  Advanced Intelligent System and Informatics (AISI2015), November 28-30, 2015,
+  Beni Suef, Egypt}, pp.~321--331, Springer, 2016.
 
 \bibitem{shams_classifying_2013}
 R.~Shams and R.~E. Mercer, ``Classifying spam emails using text and readability
-  features,'' in {\em Data Mining (ICDM), 2013 IEEE 13th International
-  Conference on}, pp.~657--666, IEEE, 2013.
+  features,'' in {\em 2013 IEEE 13th International Conference on Data Mining
+  (ICDM)}, pp.~657--666, IEEE, 2013.
 
 \bibitem{he_novel_2014}
-B.~He, Z.~Li, and N.~Yang, ``A {Novel} {Approach} for {Email} {Clustering}
-  {Based} on {Semantics},'' in {\em {WISA}, 2014}, pp.~269--272, Sept. 2014.
+B.~He, Z.~Li, and N.~Yang, ``A novel approach for email clustering based on
+  semantics,'' in {\em Web Information System and Application Conference
+  (WISA), 2014 11th}, pp.~269--272, IEEE, 2014.
 
 \bibitem{keila_structure_2005}
 P.~S. Keila and D.~B. Skillicorn, ``Structure in the {Enron} email dataset,''
@@ -42,12 +43,13 @@ Z.~Sofershtein and S.~Cohen, ``Predicting email recipients,'' in {\em
 
 \bibitem{hu_towards_2012}
 Q.~Hu, S.~Bao, J.~Xu, W.~Zhou, M.~Li, and H.~Huang, ``Towards building
-  effective email recipient recommendation service,'' in {\em {SOLI} 2012},
-  pp.~398--403, July 2012.
+  effective email recipient recommendation service,'' in {\em Service
+  Operations and Logistics, and Informatics (SOLI), 2012 IEEE International
+  Conference on}, pp.~398--403, IEEE, 2012.
 
 \bibitem{nordbo_data_2014}
 A.~Nordb{\o}, ``Data visualization for discovery of digital evidence in
-  email,'' 2014.
+  email,'' Master's thesis, Gj{\o}vik University College, 2014.
 
 \bibitem{waterman_big_2014}
 K.~K. Waterman and P.~J. Bruening, ``Big {Data} analytics: risks and
@@ -83,10 +85,11 @@ T.~Mitra and E.~Gilbert, ``Analyzing gossip in workplace email,'' {\em ACM
 J.~R. Tyler, D.~M. Wilkinson, and B.~A. Huberman, ``Email as {Spectroscopy}:
   {Automated} {Discovery} of {Community} {Structure} within {Organizations},''
   {\em arXiv:cond-mat/0303264}, Mar. 2003.
-\newblock arXiv: cond-mat/0303264.
 
 \bibitem{Zafarani+Liu:2009}
-R.~Zafarani and H.~Liu, ``Social computing data repository at {ASU},'' 2009.
+R.~Zafarani and H.~Liu, ``Social computing data repository at asu,'' {\em
+  School of Computing, Informatics and Decision Systems Engineering, Arizona
+  State University}, 2009.
 
 \bibitem{mislove-2007-socialnetworks}
 A.~Mislove, M.~Marcon, K.~P. Gummadi, P.~Druschel, and B.~Bhattacharjee,
@@ -107,12 +110,11 @@ G.~Tang, J.~Pei, and W.-S. Luk, ``Email mining: tasks, common techniques, and
 \bibitem{yelupula_social_2008}
 K.~Yelupula and S.~Ramaswamy, ``Social network analysis for email
   classification,'' in {\em Proceedings of the 46th {Annual} {Southeast}
-  {Regional} {Conference} on {XX}}, pp.~469--474, ACM, 2008.
+  {Regional} {Conference}}, pp.~469--474, ACM, 2008.
 
 \bibitem{martin_analyzing_2005}
 S.~Martin, B.~Nelson, A.~Sewani, K.~Chen, and A.~D. Joseph, ``Analyzing
-  {Behavioral} {Features} for {Email} {Classification}.,'' in {\em {CEAS}},
-  2005.
+  behavioral features for email classification,'' in {\em CEAS}, 2005.
 
 \bibitem{wasserman_social_1994}
 S.~Wasserman and K.~Faust, {\em Social {Network} {Analysis}: {Methods} and
@@ -142,8 +144,9 @@ A.~Agarwal, A.~Omuya, A.~Harnly, and O.~Rambow, ``A comprehensive gold standard
 
 \bibitem{wilson_discovery_2009}
 G.~Wilson and W.~Banzhaf, ``Discovery of email communication networks from the
-  {Enron} corpus with a genetic algorithm using social network analysis,'' in
-  {\em {CEC}'09}, pp.~3256--3263, IEEE, 2009.
+  enron corpus with a genetic algorithm using social network analysis,'' in
+  {\em IEEE Congress on Evolutionary Computation, 2009}, pp.~3256--3263, IEEE,
+  2009.
 
 \bibitem{rowe_automated_2007}
 R.~Rowe, G.~Creamer, S.~Hershkop, and S.~J. Stolfo, ``Automated social
@@ -163,7 +166,8 @@ J.~M. Kleinberg, ``Hubs, authorities, and communities,'' {\em ACM Computing
 
 \bibitem{page_pagerank_1999}
 L.~Page, S.~Brin, R.~Motwani, and T.~Winograd, ``The pagerank citation ranking:
-  bringing order to the web.,'' 1999.
+  Bringing order to the web,'' Technical Report 1999-66, Stanford InfoLab,
+  November 1999.
 
 \bibitem{zhang_expertise_2007}
 J.~Zhang, M.~S. Ackerman, and L.~Adamic, ``Expertise networks in online
@@ -200,12 +204,12 @@ K.~Stephenson and M.~Zelen, ``Rethinking centrality: Methods and examples,''
   {\em Social Networks}, vol.~11, no.~1, pp.~1--37, 1989.
 
 \bibitem{Estrada_2005}
-E.~Estrada and J.~A. Rodr\'{\i}guez-Vel\'azquez, ``Subgraph centrality in
-  asdf,'' {\em Phys. Rev. E}, vol.~71, p.~056103, May 2005.
+E.~Estrada and J.~A. Rodriguez-Velazquez, ``Subgraph centrality in complex
+  networks,'' {\em Physical Review E}, vol.~71, no.~5, 2005.
 
 \bibitem{estrada2008communicability}
 E.~Estrada and N.~Hatano, ``Communicability in complex networks,'' {\em
-  Physical Review E}, vol.~77, no.~3, p.~036111, 2008.
+  Physical Review E}, vol.~77, no.~3, 2008.
 
 \bibitem{hall2009weka}
 M.~Hall, E.~Frank, G.~Holmes, B.~Pfahringer, P.~Reutemann, and I.~H. Witten,
@@ -236,6 +240,7 @@ D.~Erhan, Y.~Bengio, A.~Courville, P.-A. Manzagol, P.~Vincent, and S.~Bengio,
 
 \bibitem{ruangkanokmas_deep}
 P.~Ruangkanokmas, T.~Achalakul, and K.~Akkarajitsakul, ``Deep belief networks
-  with feature selection for sentiment classification,''
+  with feature selection for sentiment classification,'' {\em 7th International
+  Conference on Intelligent Systems, Modelling and Simulation}, 2016.
 
 \end{thebibliography}

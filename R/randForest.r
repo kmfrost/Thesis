@@ -7,8 +7,12 @@ pids <- subset(trai, select=c(pid))
 trai <- subset(trai, select=-c(pid))
 test <- subset(test, select=-c(Status))
 
-rf <- randomForest(Status~., data=trai, ntree=500, sampsize=c(8,30,7,2,5,17))
-pred <- predict(rf, test, type='prob')
+rf <- randomForest(Status~., data=trai, ntree=500, sampsize=c(8,30,7,2,5,17), strata=trai$Status)
+pred <- predict(rf, test)
 confusionMatrix(pred, trai$Status)
 
 
+loocv_data <- read.csv("trai_norm_email_features_100.csv")
+loocv_data <- subset(loocv_data, select=-c(pid, Status))
+result <- rfcv(loocv_data, trai$Status, cv.fold=69,ntree=500, classwt=c(8,30,7,2,5,17))
+confusionMatrix(unlist(result$predicted['119']), trai$Status)

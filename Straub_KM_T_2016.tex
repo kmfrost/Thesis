@@ -252,7 +252,7 @@ Such an accumulation of emails holds a considerable amount of untapped informati
 \section{Commonly Used Datasets} \label{sec:Enron}
 When the Enron email corpus was released in 2004 \cite{klimt_introducing_2004}, it became the one of the largest email datasets available for public use.
 It is unique in that it included all of the email text, which lead to many studies involving text analysis and natural language processing. 
-Since then, this dataset has been extensively researched on topics including spam classification~\cite{gaber_e-mail_2016}, \cite{shams_classifying_2013}; email categorization \cite{he_novel_2014}, \cite{keila_structure_2005}; and recipient prediction \cite{sofershtein_predicting_2015}, \cite{hu_towards_2012}.
+Since then, this dataset has been extensively researched on topics including spam classification~\cite{bahgat2016mail}, \cite{shams_classifying_2013}; email categorization \cite{he_novel_2014}, \cite{keila_structure_2005}; and recipient prediction \cite{sofershtein_predicting_2015}, \cite{hu_towards_2012}.
 However, there are known flaws and discrepancies with even the most recent versions of this dataset\textemdash{}ranging from misspelled email addresses~\cite{nordbo_data_2014} to duplicate email addresses~\cite{waterman_big_2014}, and misfiled emails~\cite{namata_inferring_2006}.
 In one of the most popular forms of the dataset~\cite{shetty_enron_2004}, the database includes 253,735 emails sent as ``CC'' and  253,713 emails sent as ``BCC''.
 Further inspection reveals that emails sent as one type or the other were almost always mistakenly recorded as both.
@@ -379,7 +379,7 @@ However, this study involved fewer people than were used to construct the Enron 
                    & Center          & Enron         \\ \midrule
 Time               & 11/2012-11/2015 & 1/2000-9/2002 \\
 Distinct Email Addresses & 32,118          & 75,406        \\
-Participants       & 37              & 158           \\
+Participants       & 36              & 158           \\
 Distinct Emails    & 585,096         & 252,759       \\ \bottomrule
 \end{tabular}
 }
@@ -417,11 +417,11 @@ However, compare the distribution of job title labels in Figure~\ref{fig:class_b
 	\label{fig:email_pie}
 \end{figure}
 
-While the study includes only 37 volunteers, the email metadata from these volunteers identified 32 additional employees of the center.
+While the study includes only 36 volunteers, the email metadata from these volunteers identified 38 additional employees of the center.
 These additional employees were included in the study when ground truth for their job was available and when they were identified in at least 100 email metadata records.
 This provides 69 total employees in the study.
 
-\section{Features}
+\section{Features} \label{sec:features}
 The study uses 114 features that were extracted from the email data: 84 traffic-based and 30 social-based.
 In the following sections, all features from each of the two categories are described. 
 A full feature list is provided in Appendix B.
@@ -655,8 +655,11 @@ From this matrix, the current flow closeness centrality of node $i$, $I_i$, is c
 \begin{equation}
 I_i = \frac{n}{nc_{ii}+T-2R}
 \end{equation}
-where $n$ is the number of nodes in $\mathcal{G}$, $T$ is the sum of the diagonal elements, $T = \sum_{j=1}^nc_{jj}$, and $R$ is the sum of any row in $\boldsymbol{C}$, $R = \sum_{j=1}^nc_{ij}$.
-Note that because the matrix is symmetric, all rows of $\boldsymbol{C}$ will have the same sum, therefore $R$ is not dependent on $i$~\cite{stephenson1989rethinking}.
+where $n$ is the number of nodes in $\mathcal{G}$; $T$ is the sum of the diagonal elements, $T = \sum_{j=1}^nc_{jj}$; and $R$ is the sum of any row in $\boldsymbol{C}$, $R = \sum_{j=1}^nc_{ij}$.
+Note that because of the way it is constructed, each row in $\boldsymbol{B}$ will have the same sum.
+This sum is equal to the number of columns in matrix $\boldsymbol{B}$, which is equivalent to the number of nodes in graph $\mathcal{G}$, $|\mathcal{V}|$.
+A property of matrices states that if there exists a matrix where rows all add to the same value, $\lambda$, then all rows of the inverse of that matrix will sum to $1/\lambda$.
+Therefore all rows of $\boldsymbol{C}$ will sum to $1/|\mathcal{V}|$, and $R$ is a constant that is not dependent on $i$~\cite{stephenson1989rethinking}.
 
 Current flow betweenness centrality, as indicated by the name, also considers all possible paths between the source and target nodes.
 This measure is also known as random walk betweenness centrality.
@@ -677,7 +680,7 @@ The communicability centrality of node $i$, $SC(i)$ is computed as:
 SC(i) = \sum_{k=1}^\infty \frac{\mu_k(i)}{k!}
 \end{equation}
 
-The final social network-based features is 
+The final social network-based feature is 
 communicability betweenness centrality.
 This metric combines the concepts of current flow betweenness centrality and communicability centrality~\cite{estrada2008communicability}.
 To compute the communicability betweenness centrality, consider the graph $\mathcal{G}$  with adjacency matrix $\boldsymbol{A}$.
@@ -695,7 +698,7 @@ Note that all metrics used in the learning algorithm were normalized to be betwe
 All of these different graph statistics were used as inputs into the random forest algorithm to characterize each node's importance in the social graph.
 
 \subsubsection{Most Useful Social Network Features}
-The feature that was ranked the most useful social-network based feature by the feature ranker in Section~\ref{Algorithm} was the full graph hubs.
+The feature that was ranked the most useful social-network based feature by the feature ranker in Chapter~\ref{ssec:feature_select} was the full graph hubs.
 Recall that a node's hubs value is an estimate of how well a node is connected to authorities.
 These scores are calculated in an iterative reinforcement algorithm.
 In the original website ranking context, a hub is a site that links to many sites that are determined to be relevant or important.
@@ -718,7 +721,7 @@ However, in general these centrality measures attempt to capture different aspec
 In terms of this application, it measures how the breadth and depth of an employee's email communications within the center.
 
 \chapter{Algorithm Design} \label{Algorithm}
-This chapter describes the analysis behind the main algorithm used in the analysis: the random forest.
+This chapter describes the analysis behind the main algorithm: the random forest.
 The first section describes the process of selecting the classification algorithm.
 The second section discusses the theory behind random forests as well as the process of training and cross-validating the model.
 The final section discusses the method behind ranking the different features used.
@@ -746,7 +749,7 @@ Furthermore, random forests were used in~\cite{namata_inferring_2006}, which wil
 
 \section{Algorithm Description} \label{sec:InfoGain}
 Random forests training is an ensemble method of machine learning comprised of many random trees.
-While tree-based classifiers can be susceptible to overfitting, the random forest is robust to overfitting issues and performs implicit feature selection to identify the most meaningful features.  
+While tree-based classifiers can be susceptible to overfitting, the random forest classifier has a lower variance and performs implicit feature selection to identify the most meaningful features.  
 Weka uses the random forest based on the algorithm described in~\cite{Breiman2001}.
 
 A random tree is a machine learning algorithm that uses training data to learn a series of rules for classification.
@@ -781,6 +784,7 @@ Mutual information between the class distribution and the attribute is calculate
 \begin{equation}
 I(\text{Class}; \text{Attribute}) = H(\text{Class}) - H(\text{Class} | \text{Attribute})
 \end{equation} \label{eq:info_gained}
+
 The random tree algorithm splits on the attribute value that maximizes the mutual information.
 Note that $H(\text{Class})$ is a constant, therefore the best attribute to split on, $A^*$, is:
 \begin{align}
@@ -825,7 +829,7 @@ Overall, a random forest reduces the variance and increases the accuracy of the 
 
 To use this classification algorithm, the data must be split into three groups.
 The emails in the dataset were randomly assigned to one of the following: 35\% for training, 30\% for validation, and 35\% for testing.
-The training set was used to train the dataset by building the random trees.
+The training set was used to build the random trees.
 The validation set was used in lieu of a test set to optimize the parameters of the random forest.
 The testing set is used only once as the final evaluation of a model trained by the training set using these optimal parameters.
 
@@ -839,7 +843,7 @@ This value represents approximately 6\% of the total available features.
 
 
 
-\section{Feature Selection}
+\section{Feature Selection} \label{ssec:feature_select}
 Random forests can be difficult to interpret because the ensemble method obscures which features are most meaningful.
 An attribute analysis helps to better understand which features are better label predictors.
 Since random trees use information gain to dictate splits, information gain was used as the evaluation criteria for the features.
@@ -890,10 +894,10 @@ The second part of the results section assumes perfect labeling of the employees
 The ultimate goal of this research was to determine what additional information can be gained by analyzing the organic organizational chart when compared with the official organizational chart.
 
 \section{Classification Results}
-As described in Section~\ref{Algorithm}, data was split by randomly assigning each email to training or testing sets with equal probability, $0.35$.
+As described in Section~\ref{sec:InfoGain}, data was split by randomly assigning each email to training or testing sets with equal probability, $0.35$.
 The remaining 30\% of the data was used as a validation set.
-Then, all of the metrics described in Section~\ref{Data} were calculated for both groups separately.
-The training data was used as input to the random forest algorithm as described in Section~\ref{Algorithm}, validation was performed, and predictions were generated for the test data.
+Then, all of the metrics described in Section~\ref{sec:features} were calculated for both groups separately.
+The training data was used as input to the random forest algorithm as described in Section~\ref{sec:InfoGain}, validation was performed, and predictions were generated for the test data.
 The number of correct and incorrect classifications for each class are shown (below) in Figure~\ref{fig:result_hist}.
 Note that only three predictions were wrong: two people in research were misclassified as graduate students and one graduate student was misclassified as research.
 It is important to note that two out of the three misclassifications are for employees who did not provide their emails for the study.
@@ -904,7 +908,7 @@ The confusion matrix for this analysis is another way to visualize the results, 
     \centering
     \includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{Prediction_50_50_RF}
     \vspace{-20pt}
-    \caption[Job title classification results]{The Random Forest algorithm was extremely accurate even for very uneven class sizes.  Note that all members of 4 classes were labeled perfectly.  There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.}
+    \caption[Job title classification results]{The random forest algorithm was extremely accurate even for very uneven class sizes.  Note that all members of 4 classes were labeled perfectly.  There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.}
     \label{fig:result_hist}
 \end{figure}
 
@@ -918,9 +922,8 @@ The confusion matrix for this analysis is another way to visualize the results, 
 \end{figure}
 
 
-
 On further inspection, the errors made by the learning algorithm can be explained by understanding center operations.
-The distinction between graduate students and research faculty is likely the lest clear for two primary reasons.
+The distinction between graduate students and research faculty is likely the least clear for two primary reasons.
 First, some PhD students have been at the center as long or longer than some research faculty.
 This leads to older PhD students having larger email counts than some of the newer research staff, which could trick the algorithm.
 Some research faculty are also students, which may cause their email communication patterns to more closely resemble graduate students. 
@@ -949,7 +952,7 @@ This is a decrease of less than 6\% from when the test data is from the month im
     \centering
         \includegraphics[width=.8\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{TimeGapsAnalysis}
         \vspace{-7pt}
-        \caption[Accuracy of classification over time]{As time between the training data and the testing data increases, the accuracy of the prediciton algorithm slowly decreases.  This reinforces the assumption that the email behavior of the center employees is relatively constant in time.}
+        \caption[Accuracy of classification over time]{As time between the training data and the testing data increases, the accuracy of the prediction algorithm slowly decreases.  This reinforces the assumption that the email behavior of the center employees is relatively constant in time.}
         \label{fig:time_analysis}
 \end{figure}
 
@@ -983,7 +986,7 @@ The results of this test are reported below in Figure~\ref{fig:loocv_conf_plot}.
     \centering
         \includegraphics[width=.7\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{LOOCV_confusion}
         \vspace{-7pt}
-        \caption[Leave-one-out cross-validation results]{Prediction accuracy was higher for graduate students, who have more uniform behaviors and more training data.  However, for each category, the majority of the people classified were true members of that group, save for research.  Note that even for those classified as research, there were more true researchers than any other class.}
+        \caption[Leave-one-out cross-validation results]{Prediction accuracy was higher for graduate students, who have more uniform behaviors and more training data.  However, for each category, the majority of the people classified were true members of that group, save for research.}
         \label{fig:loocv_conf_plot}
 \end{figure}
 
@@ -991,7 +994,7 @@ This analysis resulted in a lower accuracy than the previous experiment.
 In total, only 67.2\% were correct.
 The category of graduate student was the easiest to predict.
 However, note that for each category the majority of the people classified were true members of each group, except for the research category.
-Even out of those classified as research, there were more true researchers than any other class.
+Even out of those classified as research, there were more true researchers than any single other class.
 
 In~\cite{namata_inferring_2006}, Namata et al. performed the same analysis on the Enron email corpus.
 Compared to the dataset used in this analysis the Enron data involved many more people.
@@ -1078,8 +1081,8 @@ For each employee's time slices, the features were calculated separately and the
 For example, the first run considered the most recent week of email history for each person.
 The LOOCV accuracy from only one week of data is obviously very low - approximately 32\%.
 Then the test was run on the next time slice, which was the most recent two weeks.
-This repeated until LOOCV was performed on 10 months of data for each person.
-The results of this analysis is shown in Figure~\ref{fig:loocv_generalization}.
+This process was repeated until LOOCV was performed on 10 months of data for each person.
+The results of this analysis are shown in Figure~\ref{fig:loocv_generalization}.
 As the number of days of data increases, the accuracy increases slowly and the variance in the accuracy decreases.
 A logarithmic curve fit to the data is shown.
 This shows that more data, as measured by time, in general increases classification accuracy.
@@ -1093,9 +1096,9 @@ This shows that more data, as measured by time, in general increases classificat
 
 The improvement with additional data shown in Figure~\ref{fig:loocv_generalization} is modest.
 Recall that the size of the population under test was decreased because of the consistent behavior constraints.
-In order to investigate the affect of more data, as measured in people, another test was performed.
+In order to investigate the effect of more data, as measured in people, another test was performed.
 Starting with the original 67 employees (removing the two outreach employees), a random five employees were removed from training data and the LOOCV accuracy was measured for the remaining 62.
-To combat variance due to the randomness of removing employees, the test was repeated five times and the results averaged together.
+To combat variance due to the randomness of removing employees, the test was repeated five times and the results averaged.
 Then, ten random employees were removed from the original training data and test.
 This continued until only seven employees remained.
 These results are shown in Figure~\ref{fig:people_generalization}.
@@ -1119,7 +1122,7 @@ However, massive amounts of data are necessary to properly train a deep learning
 Unfortunately, data on that scale is unavailable for email analysis.
 Consider a much larger dataset, made up of millions of people without labels.
 In this case, a more sophisticated, deep learning model would be necessary for successful classification in order to accurately learn the complicated structure inherent to such large real-world datasets.
-Suppose a representative sample of volunteers from the dataset self-identifies themselves.
+Suppose a representative sample of volunteers from the dataset self-identifies.
 This would produce a set of labeled training data, transforming an unsupervised problem into to a semi-supervised one. 
 
 A deep belief network (DBN) is one model used to solve these types of problems. 
@@ -1182,14 +1185,14 @@ A classifier such as this could be used to powerfully learn with extremely large
 
 
 \chapter{Conclusions} \label{Conclusions}
-This work presents a new dataset, approximately the size of Enron, that was collected from volunteers' emails with particular attention to protect volunteers' privacy.
+This work presents a new dataset, approximately the size of the Enron dataset, that was collected from volunteers' emails with particular attention to protect volunteers' privacy.
 The new dataset includes accurate labels generated by researchers with knowledge of the center and its employees.
 
 A variety of features were calculated from this dataset, and were used with a random forest algorithm to automatically classify the center's employees.
 This feature set included features that had been studied in the past, but also others that were unique to this data.
 Furthermore, this research presents a list of features that combines the two previous schools of thought: traffic-based features and social-based features.
 
-Random Forests are shown to be powerful classifiers by predicting employee job titles with very high accuracy, even for employees for whom only secondhand data is available in the dataset.
+Random forests are shown to be powerful classifiers by predicting employee job titles with very high accuracy, even for employees for whom only secondhand data is available in the dataset.
 In fact, the results found from this analysis surpass previous work on the Enron corpus.
 The result showed an improved leave-one-out cross-validation error using a dataset that has a fraction of the samples.
 Furthermore, analysis showed that email behavior is consistent in time.
