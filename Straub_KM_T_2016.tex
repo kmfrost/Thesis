@@ -423,6 +423,8 @@ One challenge of working with this dataset is that the distribution of these job
 
 A chart showing the distribution of employees into classes is shown in Figure \ref{fig:class_breakdown}.
 Approximately half of the participants are graduate students, and there are only two outreach personnel included in the study.
+The distributions of the study participants and peripheral employees with respect to job title are very similar with one key difference.
+Many of the peripheral employees are former graduate students who have left the center after graduating, so the peripheral set contains two-thirds of the total graduate students.
 Fig.~\ref{fig:db_bar} compares the distribution of job titles to the average number of emails per person per class.
 Even though graduate students are by far the largest class, they send the fewest emails per person out of any class.
 The directors exhibit opposite behavior: there are only eight directors in the center, but collectively their emails make up almost $50\%$ of the database.
@@ -502,27 +504,35 @@ Examples include the percentage of  sent emails that were sent after hours and t
 The best traffic-based feature for predicting employee status was the number of unique subjects received.
 The metric used to evaluate features is mutual information.
 This was used because it is integral to the machine learning algorithm as described in Section~\ref{sec:InfoGain}; details on the mutual information are provided in that section.
-This number of unique subjects received represents how many distinct conversations involve each individual.
-It is intuitive that people who are involved in more conversations hold a higher position in an organization because their input is requested more often.
+The traffic feature with the highest mutual information was the number of forwarded emails received.
+Typically, those higher in the chain of command are forwarded emails in order to present them with a summary of a conversation or to pass along relevant information.
+Forwarding emails is also often used to pass along assignments or requests to a another employee, either up or down the chain of command~\cite{bulow2016distant}.
+Graduate students and lower-level employees are more likely to receive either replies or emails sent directly to them.
+
+
 A histogram showing the different values for this metric over the different job classes is shown in Figure~\ref{fig:traffic_ex_hist}.
+The log of the raw values are plotted here for visual clarity.
 This figure demonstrates how difficult this classification problem can be.
-It is clear from the figure that graduate students participated in far fewer email conversations than any other group.
-However, at least one graduate student is in six out of the first seven bins.
-Another issue is that there are different personalities among the staff, which might explain why there are at least two research employees and at least one director in the first bin ($<500$) and last bin ($>5000$).
+It is clear from the figure that graduate students received far fewer forwarded emails most any other groups.
+Some of the different personalities among the staff are reflected their in email behavior, which might explain why the middle bins contain employees from three or more groups.
+The graduate student with approximately $10^{2.5}$ forwarded emails is likley a more either more involved in office activities or at least more email-active.  
+On the other hand, the operations employee that has less than $30$ forwarded emails is clearly less email-active than other members of that team.
 The divisions among the classes become slightly more clear when the feature values are normalized between 0 and 1, as opposed to the raw numbers shown here.
 All feature values are normalized before being used by the learning algorithm.
 \begin{figure}[t]
     \centering
-        \includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{Unique_subjects_rec_hist}
-        \caption[Unique subjects received histogram]{Histogram of unique subjects received by job title.  Note that by using different thresholds, meaningful splits in the data can be made.  For example, employees with fewer than $500$ unique subjects received are likely to be graduate students, and employees with greater than $4500$ are likely to be higher status employees (i.e., Directors, PMs, some Research).}
+        \includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{FW_hist}
+        \caption[Forwarded emails received histogram]{Histogram of number of forwarded emails received by job title.  Note that by using different thresholds, meaningful splits in the data can be made.  For example, the majority of employees with less than $100$ forwarded emails are graduate students. Employees with larger values, i.e. on the order of $1,000$ forwarded emails, are likely to be higher status employees (i.e., Directors, PMs, some Research).}
         \label{fig:traffic_ex_hist}
 \end{figure}
 
-The second best traffic feature was the number of signed emails received.
-Signed emails usually signal sensitive information.
+The second best traffic feature was the number of signed emails received, and the third most important traffic feature was the number of signed emails received with unique subjects.
+These two values clearly will be highly correlated because they both consider signed emails, which usually signal sensitive information.
 Only certain groups within the center deal with this type of information, therefore it is understandable that this feature could help divide the subjects by title.
-Finally, the third best traffic feature was the number of emails received as forwards.
-Typically, those higher in the chain of command are forwarded emails where graduate students and lower-level employees are more likely to receive either replies or emails sent directly to them.
+The fourth best traffic feature was the number of emails received as copies.
+Copying a person on a email within the workplace is often used to inform them of current activity or to inform a manager of an assignment for their subordinate~\cite{skovholt2006email}.
+Because of these behaviors, it is reasonable to anticipate directors and PMs to receive more copied emails.
+This is similar to the case of forwarded emails.
 Notice that there are intuitive explanations behind all of the features selected by the ranker.
 
 
@@ -550,20 +560,27 @@ The full graph including all of the center employees is shown in Figure~\ref{fig
     \label{fig:social_net}
 \end{figure}
 
+
+
+Using this social network model, a suite of statistics can be calculated about the people in the graph.  The graphs were modeled in python.  The graph library networkx \cite{hagberg-2008-exploring} was used to calculate all graph features.
+
+\subsection{Adjacency Matrix Analysis}
 Another representation of the full graph is shown as an adjacency matrix in Figure~\ref{fig:adj_matrix}.
 Each of the two axes represent the employees of the center.
 The color at each coordinate indicates how much communication existed between the two employees.
 Some employees never exchanged any emails, while others exchanged many.
 
 \begin{figure}[t]
-    \centering
-    \includegraphics[width=1.05\columnwidth,trim={0mm 0mm 0mm 5mm},clip]{ViridisEdit}
-    \vspace{-17pt}
-    \caption[The dataset represented as an adjacency matrix]{The adjacency matrix representing the social connections of the center.  This graph overall is well connected and has just one component.  Nonetheless, there are many pairs of individuals who never exchanged a single email.}
-    \label{fig:adj_matrix}
+	\centering
+	\includegraphics[width=1.05\columnwidth,trim={0mm 0mm 0mm 5mm},clip]{ViridisEdit}
+	\vspace{-17pt}
+	\caption[The dataset represented as an adjacency matrix]{The adjacency matrix representing the social connections of the center.  This graph overall is well connected and has just one component.  Nonetheless, there are many pairs of individuals who never exchanged a single email.}
+	\label{fig:adj_matrix}
 \end{figure}
 
-Using this model, a suite of statistics can be calculated about the people in the graph.  The graphs were modeled in python.  The graph library networkx \cite{hagberg-2008-exploring} was used to calculate all graph features.
+Before moving on to the features calculated from the social network model, there are several important things to notice about the adjacency matrix that will provide insight into the center's communications.
+
+
 
 \subsubsection{Degree Measures}
 The degree of each node, from both the full and partial graph, was used as a feature.  
@@ -728,7 +745,7 @@ These scores are calculated in an iterative reinforcement algorithm.
 In the original website ranking context, a hub is a site that links to many sites that are determined to be relevant or important.
 This can be interpreted to mean that employees with a high hubs score more often communicate with many of the directors or other important employees within the center.
 The histogram of hub values in the partial graph broken down by class is shown in Figure~\ref{fig:social_ex_hist}.
-Note that in this figure, the log of the hubs value is presented for visual clarity.
+Again, the log of the raw hubs score is presented for clarity.
 This figure shows more class division than Figure~\ref{fig:traffic_ex_hist}, as graduate students are limited to only the first four bins.
 It appears that the same types of employees that had high unique subjects received counts also have large full graph hubs counts, specifically most of the Directors and PMs.
 
@@ -740,10 +757,10 @@ It appears that the same types of employees that had high unique subjects receiv
         \label{fig:social_ex_hist}
 \end{figure}
 
-The next two most useful measurements were the partial graph communicability centrality and the partial graph communicability betweenness centrality.
+The next three most useful measurements are the hubs value for the full graph, the current flow closeness centrality for the partial graph, and partial graph pagerank.
 These measures may seem to have less intuitive interpretations than the top-ranked traffic-based features.
-However, in general these centrality measures attempt to capture different aspects of how well a node is embedded within the graph.
-In terms of this application, it measures how the breadth and depth of an employee's email communications within the center.
+However, in general these webpage ranking and centrality measures attempt to capture different aspects of how well a node is embedded within the graph.
+In terms of this application, it measures the breadth and depth of an employee's email communications within the center.
 
 \chapter{Algorithm Design} \label{Algorithm}
 This chapter describes the analysis behind the main algorithm: the random forest.
@@ -1012,9 +1029,9 @@ This method ensures that the algorithm is not learning each person's behaviors i
 The results of this test are reported below in Figure~\ref{fig:loocv_conf_plot}.
 \begin{figure}[t]
     \centering
-        \includegraphics[width=.7\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{LOOCV_confusion}
+        \includegraphics[width=.7\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{LOOCV}
         \vspace{-7pt}
-        \caption[Leave-one-out cross-validation results]{Prediction accuracy was higher for graduate students, who have more uniform behaviors and more training data.  However, for each category, the majority of the people classified were true members of that group, save for research.}
+        \caption[Leave-one-out cross-validation results]{Prediction accuracy was higher for graduate students, who have more uniform behaviors and more training data.  However, for each category except for research, at least half of the people classified were true members of that group.}
         \label{fig:loocv_conf_plot}
 \end{figure}
 
@@ -1022,8 +1039,12 @@ This analysis resulted in a lower accuracy than the previous experiment.
 In total, only 65.7\% were correct.
 The category of graduate student was the easiest to predict and the operations class was the most difficult.
 This result is understandable because the employees within operations perform the widest range of duties, including technical, administrative, and program support.
-However, note that for each category the majority of the people classified were true members of each group, except for the research category.
+There is also a wide variety of responsibilities in the research class in addition to technical work, such as mentoring graduate students and interfacing with PMs and directors.
+This may explain why at least one person from each other class was misclassified as research.
+Note that for each category except for research, at least half of the people classified were true members of each group.
 Even out of those classified as research, there were more true researchers than any single other class.
+Surprisingly, when comparing the LOOCV accuracy was slightly higher for peripheral employees, $68.4\%$ compared to $62.1\%$ for direct participants.
+This is likely due to the fact that the peripheral set has more graduate students, which seems to be the easiest class to label correctly.
 
 Namata et al. performed the same analysis on the Enron email corpus~\cite{namata_inferring_2006}.
 Compared to the dataset used in this analysis the Enron data involved many more people.
@@ -1031,6 +1052,8 @@ The Enron dataset has employees distributed more evenly into six classes, one mo
 Even with these advantages, the previous work was only able to achieve 62.09\% LOOCV accuracy.
 The difference between that analysis and the work described in this thesis is that Namata et al. only used traffic-based features.
 This analysis shows that integrating social-based features with the traffic-based statistics can improve job classification results.
+
+
 
 \section{Hierarchy Analysis}
 The purpose of this hierarchy analysis was to compare the email relationships from the data with the official project groups of the center.

@@ -1,0 +1,29 @@
+Correctly Classified Instances          44               65.6716 %
+Incorrectly Classified Instances        23               34.3284 %
+Kappa statistic                          0.4848
+Mean absolute error                      0.169 
+Root mean squared error                  0.29  
+Relative absolute error                 69.9315 %
+Root relative squared error             83.4301 %
+Total Number of Instances               67     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.933     0.216      0.778     0.933     0.848      0.946    GradStudent
+                 0.529     0.22       0.45      0.529     0.486      0.695    Research
+                 0.5       0.051      0.571     0.5       0.533      0.737    Director
+                 0.4       0.016      0.667     0.4       0.5        0.847    PM
+                 0.143     0          1         0.143     0.25       0.64     Operations
+                 0         0          0         0         0          ?        Outreach
+Weighted Avg.    0.657     0.16       0.685     0.657     0.63       0.818
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f   <-- classified as
+ 28  2  0  0  0  0 |  a = GradStudent
+  6  9  1  1  0  0 |  b = Research
+  1  3  4  0  0  0 |  c = Director
+  0  1  2  2  0  0 |  d = PM
+  1  5  0  0  1  0 |  e = Operations
+  0  0  0  0  0  0 |  f = Outreach
