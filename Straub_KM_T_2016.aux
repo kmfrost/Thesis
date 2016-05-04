@@ -56,6 +56,7 @@
 \citation{mislove-2007-socialnetworks}
 \citation{leskovec2010predicting}
 \citation{tang_email_2013}
+\citation{gilbert2012phrases}
 \citation{yelupula_social_2008}
 \citation{martin_analyzing_2005}
 \citation{wasserman_social_1994}
@@ -82,21 +83,21 @@
 \newlabel{tab:db_stats}{{3.1}{14}{A comparison between the internal dataset and the Enron email corpus.\relax }{table.caption.5}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Center emails over time}}{15}{figure.caption.6}}
 \newlabel{fig:emails_over_time}{{3.2}{15}{Center emails over time}{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Features}{15}{section.3.3}}
-\newlabel{sec:features}{{3.3}{15}{Features}{section.3.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Dataset class distribution pie chart}}{16}{figure.caption.7}}
-\newlabel{fig:class_breakdown}{{3.3}{16}{Dataset class distribution pie chart}{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Traffic-Based Features}{16}{subsection.3.3.1}}
-\@writefile{toc}{\contentsline {subsubsection}{Email Counts and Email Types}{16}{section*.9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Email distribution by job title}}{17}{figure.caption.8}}
-\newlabel{fig:email_pie}{{3.4}{17}{Email distribution by job title}{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Dataset class distribution}}{16}{figure.caption.7}}
+\newlabel{fig:class_breakdown}{{3.3}{16}{Dataset class distribution}{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Features}{16}{section.3.3}}
+\newlabel{sec:features}{{3.3}{16}{Features}{section.3.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Emails per person per job title}}{17}{figure.caption.8}}
+\newlabel{fig:db_bar}{{3.4}{17}{Emails per person per job title}{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Traffic-Based Features}{17}{subsection.3.3.1}}
+\@writefile{toc}{\contentsline {subsubsection}{Email Counts and Email Types}{17}{section*.9}}
 \@writefile{toc}{\contentsline {subsubsection}{Metadata Statistics}{18}{section*.10}}
-\@writefile{toc}{\contentsline {subsubsection}{Most Useful Traffic-Based Features}{19}{section*.11}}
+\@writefile{toc}{\contentsline {subsubsection}{Most Useful Traffic-Based Features}{20}{section*.11}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Unique subjects received histogram}}{21}{figure.caption.12}}
 \newlabel{fig:traffic_ex_hist}{{3.5}{21}{Unique subjects received histogram}{figure.caption.12}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Social Network Features}{21}{subsection.3.3.2}}
-\citation{hagberg-2008-exploring}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Social Network Features}{22}{subsection.3.3.2}}
 \@writefile{toc}{\contentsline {subsubsection}{Social Network Representation}{22}{section*.13}}
+\citation{hagberg-2008-exploring}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces The social network of the center}}{23}{figure.caption.14}}
 \newlabel{fig:social_net}{{3.6}{23}{The social network of the center}{figure.caption.14}{}}
 \@writefile{toc}{\contentsline {subsubsection}{Degree Measures}{23}{section*.16}}
@@ -104,25 +105,25 @@
 \newlabel{fig:adj_matrix}{{3.7}{24}{The dataset represented as an adjacency matrix}{figure.caption.15}{}}
 \citation{kleinberg_hubs_1999}
 \@writefile{toc}{\contentsline {subsubsection}{Cliques}{25}{section*.17}}
-\@writefile{toc}{\contentsline {subsubsection}{Adapting Search Engine Algorithms}{25}{section*.18}}
 \citation{page_pagerank_1999}
 \citation{zhang_expertise_2007}
 \citation{saramaki_generalizations_2007}
 \citation{zhang_expertise_2007}
-\citation{lind_cycles_2005}
+\@writefile{toc}{\contentsline {subsubsection}{Adapting Search Engine Algorithms}{26}{section*.18}}
 \@writefile{toc}{\contentsline {subsubsection}{Clustering Metrics}{26}{section*.19}}
+\citation{lind_cycles_2005}
 \citation{freeman_centrality_1978}
 \citation{dijkstra1959note}
-\@writefile{toc}{\contentsline {subsubsection}{Centrality Measures}{27}{section*.20}}
 \citation{freeman_set_1977}
 \citation{borgatti2011analyzing}
+\@writefile{toc}{\contentsline {subsubsection}{Centrality Measures}{28}{section*.20}}
 \citation{brandes2005centrality}
 \citation{stephenson1989rethinking}
 \citation{Estrada_2005}
 \citation{estrada2008communicability}
 \@writefile{toc}{\contentsline {subsubsection}{Most Useful Social Network Features}{31}{section*.21}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Histogram of the full graph hubs feature}}{32}{figure.caption.22}}
-\newlabel{fig:social_ex_hist}{{3.8}{32}{Histogram of the full graph hubs feature}{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Histogram of the hubs feature for the partial graph}}{32}{figure.caption.22}}
+\newlabel{fig:social_ex_hist}{{3.8}{32}{Histogram of the hubs feature for the partial graph}{figure.caption.22}{}}
 \citation{hall2009weka}
 \citation{namata_inferring_2006}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Algorithm Design}{33}{chapter.4}}
@@ -142,13 +143,14 @@
 \newlabel{fig:random_forest_diagram}{{4.3}{38}{Random forest prediction process}{figure.caption.25}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.3}Feature Selection}{39}{section.4.3}}
 \newlabel{ssec:feature_select}{{4.3}{39}{Feature Selection}{section.4.3}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Top 20 features ranked by the information gain.\relax }}{41}{table.caption.26}}
-\newlabel{tab:ranked_feats}{{4.1}{41}{Top 20 features ranked by the information gain.\relax }{table.caption.26}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Top 20 features ranked by the mutual information.\relax }}{41}{table.caption.26}}
+\newlabel{tab:ranked_feats}{{4.1}{41}{Top 20 features ranked by the mutual information.\relax }{table.caption.26}{}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {5}Performance Analysis}{42}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{Performance}{{5}{42}{Performance Analysis}{chapter.5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.1}Classification Results}{43}{section.5.1}}
+\newlabel{ssec:classification_results}{{5.1}{43}{Classification Results}{section.5.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Job title classification results}}{44}{figure.caption.27}}
 \newlabel{fig:result_hist}{{5.1}{44}{Job title classification results}{figure.caption.27}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Job title prediction confusion matrix}}{45}{figure.caption.28}}
@@ -158,39 +160,38 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Prediction accuracy compared to number of features}}{47}{figure.caption.30}}
 \newlabel{fig:feat_analysis}{{5.4}{47}{Prediction accuracy compared to number of features}{figure.caption.30}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.2}Leave-One-Out Cross-Validation}{47}{section.5.2}}
-\citation{namata_inferring_2006}
-\citation{namata_inferring_2006}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Leave-one-out cross-validation results}}{48}{figure.caption.31}}
 \newlabel{fig:loocv_conf_plot}{{5.5}{48}{Leave-one-out cross-validation results}{figure.caption.31}{}}
+\citation{namata_inferring_2006}
 \@writefile{toc}{\contentsline {section}{\numberline {5.3}Hierarchy Analysis}{49}{section.5.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Project manager and director prediction results}}{51}{figure.caption.32}}
-\newlabel{fig:project_classify}{{5.6}{51}{Project manager and director prediction results}{figure.caption.32}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Generated organic organization chart of the center}}{52}{figure.caption.33}}
-\newlabel{fig:generated_hierarchy}{{5.7}{52}{Generated organic organization chart of the center}{figure.caption.33}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Future Work}{53}{chapter.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Generated organic organization chart of the center}}{50}{figure.caption.32}}
+\newlabel{fig:generated_hierarchy}{{5.6}{50}{Generated organic organization chart of the center}{figure.caption.32}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Project manager and director prediction results}}{52}{figure.caption.33}}
+\newlabel{fig:project_classify}{{5.7}{52}{Project manager and director prediction results}{figure.caption.33}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Future Work}{54}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{FutureWork}{{6}{53}{Future Work}{chapter.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Improving LOOCV Accuracy}{54}{section.6.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Effects of more data on prediction accuracy}}{55}{figure.caption.34}}
-\newlabel{fig:loocv_generalization}{{6.1}{55}{Effects of more data on prediction accuracy}{figure.caption.34}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Effects of more people on prediction accuracy}}{56}{figure.caption.35}}
-\newlabel{fig:people_generalization}{{6.2}{56}{Effects of more people on prediction accuracy}{figure.caption.35}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Deep Learning Application}{56}{section.6.2}}
+\newlabel{FutureWork}{{6}{54}{Future Work}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Improving LOOCV Accuracy}{55}{section.6.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Effects of more data on prediction accuracy}}{56}{figure.caption.34}}
+\newlabel{fig:loocv_generalization}{{6.1}{56}{Effects of more data on prediction accuracy}{figure.caption.34}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Effects of more people on prediction accuracy}}{57}{figure.caption.35}}
+\newlabel{fig:people_generalization}{{6.2}{57}{Effects of more people on prediction accuracy}{figure.caption.35}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Deep Learning Application}{57}{section.6.2}}
 \citation{hinton_fast_2006}
 \citation{hinton_fast_2006}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces The Components of a Deep Belief Network}}{57}{figure.caption.36}}
-\newlabel{fig:DBN}{{6.3}{57}{The Components of a Deep Belief Network}{figure.caption.36}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces The Components of a Deep Belief Network}}{58}{figure.caption.36}}
+\newlabel{fig:DBN}{{6.3}{58}{The Components of a Deep Belief Network}{figure.caption.36}{}}
 \citation{bengio_learning_2009}
 \citation{hinton_recognize_2007}
 \citation{erhan_why_2010}
 \citation{hinton_recognize_2007}
 \citation{hinton_fast_2006}
 \citation{ruangkanokmas_deep}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{61}{chapter.7}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{62}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{Conclusions}{{7}{61}{Conclusions}{chapter.7}{}}
+\newlabel{Conclusions}{{7}{62}{Conclusions}{chapter.7}{}}
 \bibstyle{ieeetr}
 \bibdata{bib}
 \bibcite{radicati_emails_2015}{1}
@@ -198,7 +199,7 @@
 \bibcite{klimt_introducing_2004}{3}
 \bibcite{bahgat2016mail}{4}
 \bibcite{shams_classifying_2013}{5}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Bibliography}{63}{chapter.8}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Bibliography}{64}{chapter.8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibcite{he_novel_2014}{6}
@@ -246,4 +247,4 @@
 \bibcite{hinton_recognize_2007}{48}
 \bibcite{erhan_why_2010}{49}
 \bibcite{ruangkanokmas_deep}{50}
-\@writefile{lol}{\contentsline {lstlisting}{1439900489.txt}{70}{lstlisting.Alph0.-1}}
+\@writefile{lol}{\contentsline {lstlisting}{1439900489.txt}{71}{lstlisting.Alph0.-1}}

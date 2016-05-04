@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  2 MAY 2016 17:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  3 MAY 2016 23:45
 entering extended mode
 **Straub_KM_T_2016.tex
 (Straub_KM_T_2016.tex
@@ -272,23 +272,6 @@ Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@uldp=\dimen119
 \SOUL@ulht=\dimen120
 )
-("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
-Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
-
-("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package xcolor Info: Driver file: pdftex.def on input line 225.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
-Package xcolor Info: Model `RGB' extended on input line 1353.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
-)
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\comment\comment.sty"
 \CommentStream=\write3
 
@@ -318,6 +301,14 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
+("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+
+("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 142.
+)
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancybox\fancybox.sty"
 Package: fancybox 2010/05/15 1.4
 
@@ -371,130 +362,164 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@lastruleclass=\count122
 \@thisrulewidth=\dimen142
 )
+("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+
+("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen143
+\extrarowheight=\dimen144
+\NC@list=\toks38
+\extratabsurround=\skip57
+\backup@length=\skip58
+)
+\everycr=\toks39
+\minrowclearance=\skip59
+)
+LaTeX Info: Redefining \color on input line 702.
+\rownum=\count123
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\floatrow\floatrow.sty"
 Package: floatrow 2008/08/02 v0.3b floatrow: float package extension
 
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
 Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen143
-\captionmargin@=\dimen144
-\captionwidth=\dimen145
-\caption@tempdima=\dimen146
-\caption@indent=\dimen147
-\caption@parindent=\dimen148
-\caption@hangindent=\dimen149
+\captionmargin=\dimen145
+\captionmargin@=\dimen146
+\captionwidth=\dimen147
+\caption@tempdima=\dimen148
+\caption@indent=\dimen149
+\caption@parindent=\dimen150
+\caption@hangindent=\dimen151
 )
-\c@float@type=\count123
-\float@exts=\toks38
+\c@float@type=\count124
+\float@exts=\toks40
 \float@box=\box32
 \@floatcapt=\box33
 Package floatrow Info: Modified float package code loaded on input line 455.
 Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 
-\FR@everyfloat=\toks39
+\FR@everyfloat=\toks41
 \flrow@foot=\insert233
-\FB@wd=\dimen150
-\FBo@wd=\dimen151
-\FBc@wd=\dimen152
-\FBo@ht=\skip57
-\FBc@ht=\skip58
-\FBf@ht=\skip59
-\FBo@max=\skip60
-\FBc@max=\skip61
-\FBf@max=\skip62
-\c@FBl@b=\count124
-\floatbox@depth=\count125
-\c@FRobj=\count126
-\c@FRsobj=\count127
-\Xhsize=\skip63
-\sXhsize=\skip64
-\Zhsize=\skip65
-\sZhsize=\skip66
+\FB@wd=\dimen152
+\FBo@wd=\dimen153
+\FBc@wd=\dimen154
+\FBo@ht=\skip60
+\FBc@ht=\skip61
+\FBf@ht=\skip62
+\FBo@max=\skip63
+\FBc@max=\skip64
+\FBf@max=\skip65
+\c@FBl@b=\count125
+\floatbox@depth=\count126
+\c@FRobj=\count127
+\c@FRsobj=\count128
+\Xhsize=\skip66
+\sXhsize=\skip67
+\Zhsize=\skip68
+\sZhsize=\skip69
 \flrow@rowbox=\box34
-\FR@Zunitlength=\dimen153
-\c@FBcnt=\count128
-\FPOScnt=\count129
-\LTleft=\skip67
-\LTright=\skip68
-\LTleft=\skip69
-\LTright=\skip70
-\flrow@types=\toks40
+\FR@Zunitlength=\dimen155
+\c@FBcnt=\count129
+\FPOScnt=\count130
+\LTleft=\skip70
+\LTright=\skip71
+\LTleft=\skip72
+\LTright=\skip73
+\flrow@types=\toks42
 )
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
-\c@ContinuedFloat=\count130
+\c@ContinuedFloat=\count131
 Package caption Info: float package is loaded.
 Package caption Info: floatrow package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 )
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
-\fancy@headwidth=\skip71
-\f@ncyO@elh=\skip72
-\f@ncyO@erh=\skip73
-\f@ncyO@olh=\skip74
-\f@ncyO@orh=\skip75
-\f@ncyO@elf=\skip76
-\f@ncyO@erf=\skip77
-\f@ncyO@olf=\skip78
-\f@ncyO@orf=\skip79
+\fancy@headwidth=\skip74
+\f@ncyO@elh=\skip75
+\f@ncyO@erh=\skip76
+\f@ncyO@olh=\skip77
+\f@ncyO@orh=\skip78
+\f@ncyO@elf=\skip79
+\f@ncyO@erf=\skip80
+\f@ncyO@olf=\skip81
+\f@ncyO@orf=\skip82
 )
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
-\Gm@cnth=\count131
-\Gm@cntv=\count132
-\c@Gm@tempcnt=\count133
-\Gm@bindingoffset=\dimen154
-\Gm@wd@mp=\dimen155
-\Gm@odd@mp=\dimen156
-\Gm@even@mp=\dimen157
-\Gm@layoutwidth=\dimen158
-\Gm@layoutheight=\dimen159
-\Gm@layouthoffset=\dimen160
-\Gm@layoutvoffset=\dimen161
-\Gm@dimlist=\toks41
+\Gm@cnth=\count132
+\Gm@cntv=\count133
+\c@Gm@tempcnt=\count134
+\Gm@bindingoffset=\dimen156
+\Gm@wd@mp=\dimen157
+\Gm@odd@mp=\dimen158
+\Gm@even@mp=\dimen159
+\Gm@layoutwidth=\dimen160
+\Gm@layoutheight=\dimen161
+\Gm@layouthoffset=\dimen162
+\Gm@layoutvoffset=\dimen163
+\Gm@dimlist=\toks43
 
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\tocloft\tocloft.sty"
 Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 44.
-\cftparskip=\skip80
-\cftbeforetoctitleskip=\skip81
-\cftaftertoctitleskip=\skip82
-\cftbeforepartskip=\skip83
-\cftpartnumwidth=\skip84
-\cftpartindent=\skip85
-\cftbeforechapskip=\skip86
-\cftchapindent=\skip87
-\cftchapnumwidth=\skip88
-\cftbeforesecskip=\skip89
-\cftsecindent=\skip90
-\cftsecnumwidth=\skip91
-\cftbeforesubsecskip=\skip92
-\cftsubsecindent=\skip93
-\cftsubsecnumwidth=\skip94
-\cftbeforesubsubsecskip=\skip95
-\cftsubsubsecindent=\skip96
-\cftsubsubsecnumwidth=\skip97
-\cftbeforeparaskip=\skip98
-\cftparaindent=\skip99
-\cftparanumwidth=\skip100
-\cftbeforesubparaskip=\skip101
-\cftsubparaindent=\skip102
-\cftsubparanumwidth=\skip103
-\cftbeforeloftitleskip=\skip104
-\cftafterloftitleskip=\skip105
-\cftbeforefigskip=\skip106
-\cftfigindent=\skip107
-\cftfignumwidth=\skip108
-\c@lofdepth=\count134
-\c@lotdepth=\count135
-\cftbeforelottitleskip=\skip109
-\cftafterlottitleskip=\skip110
-\cftbeforetabskip=\skip111
-\cfttabindent=\skip112
-\cfttabnumwidth=\skip113
+\cftparskip=\skip83
+\cftbeforetoctitleskip=\skip84
+\cftaftertoctitleskip=\skip85
+\cftbeforepartskip=\skip86
+\cftpartnumwidth=\skip87
+\cftpartindent=\skip88
+\cftbeforechapskip=\skip89
+\cftchapindent=\skip90
+\cftchapnumwidth=\skip91
+\cftbeforesecskip=\skip92
+\cftsecindent=\skip93
+\cftsecnumwidth=\skip94
+\cftbeforesubsecskip=\skip95
+\cftsubsecindent=\skip96
+\cftsubsecnumwidth=\skip97
+\cftbeforesubsubsecskip=\skip98
+\cftsubsubsecindent=\skip99
+\cftsubsubsecnumwidth=\skip100
+\cftbeforeparaskip=\skip101
+\cftparaindent=\skip102
+\cftparanumwidth=\skip103
+\cftbeforesubparaskip=\skip104
+\cftsubparaindent=\skip105
+\cftsubparanumwidth=\skip106
+\cftbeforeloftitleskip=\skip107
+\cftafterloftitleskip=\skip108
+\cftbeforefigskip=\skip109
+\cftfigindent=\skip110
+\cftfignumwidth=\skip111
+\c@lofdepth=\count135
+\c@lotdepth=\count136
+\cftbeforelottitleskip=\skip112
+\cftafterlottitleskip=\skip113
+\cftbeforetabskip=\skip114
+\cfttabindent=\skip115
+\cfttabnumwidth=\skip116
 )
 Package hyperref Info: Option `breaklinks' set `true' on input line 38.
 
@@ -508,65 +533,65 @@ Package tocbibind Note: Using chapter style headings, unless overridden.
 ) ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\epsf\epsf.sty"
 This is `epsf.tex' v2.7.4 <14 February 2011>
 \epsffilein=\read2
-\epsfframemargin=\dimen162
-\epsfframethickness=\dimen163
-\epsfrsize=\dimen164
-\epsftmp=\dimen165
-\epsftsize=\dimen166
-\epsfxsize=\dimen167
-\epsfysize=\dimen168
-\pspoints=\dimen169
+\epsfframemargin=\dimen164
+\epsfframethickness=\dimen165
+\epsfrsize=\dimen166
+\epsftmp=\dimen167
+\epsftsize=\dimen168
+\epsfxsize=\dimen169
+\epsfysize=\dimen170
+\pspoints=\dimen171
 ) (Straub_KM_T_2016.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 77.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 78.
 
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count136
-\scratchdimen=\dimen170
+\scratchcounter=\count137
+\scratchdimen=\dimen172
 \scratchbox=\box35
-\nofMPsegments=\count137
-\nofMParguments=\count138
-\everyMPshowfont=\toks42
-\MPscratchCnt=\count139
-\MPscratchDim=\dimen171
-\MPnumerator=\count140
-\makeMPintoPDFobject=\count141
-\everyMPtoPDFconversion=\toks43
+\nofMPsegments=\count138
+\nofMParguments=\count139
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count140
+\MPscratchDim=\dimen173
+\MPnumerator=\count141
+\makeMPintoPDFobject=\count142
+\everyMPtoPDFconversion=\toks45
 )
 \AtBeginShipoutBox=\box36
-Package hyperref Info: Link coloring OFF on input line 77.
+Package hyperref Info: Link coloring OFF on input line 78.
  ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count142
+\c@section@level=\count143
 )
-LaTeX Info: Redefining \ref on input line 77.
-LaTeX Info: Redefining \pageref on input line 77.
-LaTeX Info: Redefining \nameref on input line 77.
+LaTeX Info: Redefining \ref on input line 78.
+LaTeX Info: Redefining \pageref on input line 78.
+LaTeX Info: Redefining \nameref on input line 78.
 
 (Straub_KM_T_2016.out) (Straub_KM_T_2016.out)
 \@outlinefile=\write5
-\c@lstlisting=\count143
+\c@lstlisting=\count144
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: floatrow package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -607,40 +632,41 @@ Package caption Info: End \AtBeginDocument code.
 
 [1
 
-{C:/Users/Kayla/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 161.
-
-(Straub_KM_T_2016.toc
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-LaTeX Font Info:    Try loading font information for U+msa on input line 1.
+{C:/Users/Kayla/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Try loading font information for U+msa on input line 148.
 
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 1.
+LaTeX Font Info:    Try loading font information for U+msb on input line 148.
 
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 1.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 148.
 
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) [3
+) [2]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 162.
+
+(Straub_KM_T_2016.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+ [3
 
 ] [4])
 \tf@toc=\write6
-
-[5] (Straub_KM_T_2016.lof [6])
+ [5] (Straub_KM_T_2016.lof [6])
 \tf@lof=\write7
- [7] (Straub_KM_T_2016.lot)
+ [7]
+(Straub_KM_T_2016.lot)
 \tf@lot=\write8
  [8]
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 182.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 183.
 [1
 
 ] [2] [3] [4]
@@ -660,89 +686,92 @@ Missing character: There is no ú in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
- [6] [7] [8] [9]
+ [6]
+
+LaTeX Warning: Citation `gilbert2012phrases' on page 7 undefined on input line 
+284.
+
+[7] [8] [9]
 Chapter 3.
 [10
 
-] <Pictures/hash_ex.png, id=355, 890.8482pt x 102.1416pt>
+] <Pictures/hash_ex.png, id=356, 890.8482pt x 102.1416pt>
 File: Pictures/hash_ex.png Graphic file (type png)
 
 <use Pictures/hash_ex.png>
-Package pdftex.def Info: Pictures/hash_ex.png used on input line 324.
+Package pdftex.def Info: Pictures/hash_ex.png used on input line 334.
 (pdftex.def)             Requested size: 469.75499pt x 53.86047pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 325.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 335.
  [11 <./Pictures/hash_ex.png>]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 352.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 362.
 
 
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 352.
- [12]
-<Pictures/emails_over_time.png, id=370, 751.608pt x 498.663pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 362.
+ [12] [13]
+<Pictures/emails_over_time.png, id=377, 751.608pt x 498.663pt>
 File: Pictures/emails_over_time.png Graphic file (type png)
 
 <use Pictures/emails_over_time.png>
-Package pdftex.def Info: Pictures/emails_over_time.png used on input line 396.
+Package pdftex.def Info: Pictures/emails_over_time.png used on input line 414.
 (pdftex.def)             Requested size: 469.75499pt x 311.6636pt.
-
-<Pictures/class_breakdown.png, id=374, 409.0482pt x 224.037pt>
+ [14] [15 <./Pictures/emails_over_time.png>] <Pictures/class_breakdown.png, id=
+392, 409.0482pt x 224.037pt>
 File: Pictures/class_breakdown.png Graphic file (type png)
 
 <use Pictures/class_breakdown.png>
-Package pdftex.def Info: Pictures/class_breakdown.png used on input line 406.
+Package pdftex.def Info: Pictures/class_breakdown.png used on input line 432.
 (pdftex.def)             Requested size: 469.75499pt x 257.29526pt.
- [13]
-<Pictures/Total_emails_by_class.png, id=383, 485.1726pt x 230.7822pt>
-File: Pictures/Total_emails_by_class.png Graphic file (type png)
 
-<use Pictures/Total_emails_by_class.png>
-Package pdftex.def Info: Pictures/Total_emails_by_class.png used on input line 
-415.
-(pdftex.def)             Requested size: 469.75499pt x 223.45349pt.
- [14]
+<Pictures/DB_Stats_bar.png, id=394, 740.7675pt x 310.15875pt>
+File: Pictures/DB_Stats_bar.png Graphic file (type png)
+
+<use Pictures/DB_Stats_bar.png>
+Package pdftex.def Info: Pictures/DB_Stats_bar.png used on input line 440.
+(pdftex.def)             Requested size: 469.75499pt x 192.4252pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 429.
- [15 <./Pictures/emails_over_time.png>] [16 <./Pictures/class_breakdown.png>] [
-17 <./Pictures/Total_emails_by_class.png>] [18]
-<Pictures/Unique_subjects_rec_hist.png, id=416, 837.88031pt x 459.21562pt>
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 452.
+ [16 <./Pictures/class_breakdown.png>] [17 <./Pictures/DB_Stats_bar.png>] [18] 
+[19]
+<Pictures/Unique_subjects_rec_hist.png, id=421, 837.88031pt x 459.21562pt>
 File: Pictures/Unique_subjects_rec_hist.png Graphic file (type png)
 
 <use Pictures/Unique_subjects_rec_hist.png>
 Package pdftex.def Info: Pictures/Unique_subjects_rec_hist.png used on input li
-ne 491.
+ne 516.
 (pdftex.def)             Requested size: 469.75499pt x 257.45328pt.
- [19] [20] [21 <./Pictures/Unique_subjects_rec_hist.png>]
+ [20] [21 <./Pictures/Unique_subjects_rec_hist.png>]
 <Pictures/color_social_network.png, id=436, 1329.0453pt x 706.0779pt>
 File: Pictures/color_social_network.png Graphic file (type png)
 
 <use Pictures/color_social_network.png>
 Package pdftex.def Info: Pictures/color_social_network.png used on input line 5
-22.
+47.
 (pdftex.def)             Requested size: 469.75499pt x 249.56586pt.
 
 <Pictures/ViridisEdit.png, id=439, 1446.90562pt x 836.3747pt>
 File: Pictures/ViridisEdit.png Graphic file (type png)
 
 <use Pictures/ViridisEdit.png>
-Package pdftex.def Info: Pictures/ViridisEdit.png used on input line 535.
+Package pdftex.def Info: Pictures/ViridisEdit.png used on input line 560.
 (pdftex.def)             Requested size: 493.24417pt x 280.26689pt.
 
-Overfull \hbox (23.48918pt too wide) in paragraph at lines 535--537
+Overfull \hbox (23.48918pt too wide) in paragraph at lines 560--562
  [][] 
  []
 
 [22] [23 <./Pictures/color_social_network.png>] [24 <./Pictures/ViridisEdit.png
 >] [25] [26] [27] [28] [29] [30]
-<Pictures/Hubs_hist.png, id=541, 837.88031pt x 459.21562pt>
+<Pictures/Hubs_hist.png, id=539, 826.58812pt x 449.42906pt>
 File: Pictures/Hubs_hist.png Graphic file (type png)
 
 <use Pictures/Hubs_hist.png>
-Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 712.
-(pdftex.def)             Requested size: 469.75499pt x 257.45328pt.
+Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 737.
+(pdftex.def)             Requested size: 469.75499pt x 249.14458pt.
  [31] [32 <./Pictures/Hubs_hist.png>]
 Chapter 4.
 [33
@@ -751,124 +780,134 @@ Chapter 4.
 File: Pictures/ModelSelection.png Graphic file (type png)
 
 <use Pictures/ModelSelection.png>
-Package pdftex.def Info: Pictures/ModelSelection.png used on input line 743.
+Package pdftex.def Info: Pictures/ModelSelection.png used on input line 768.
 (pdftex.def)             Requested size: 375.80542pt x 283.85942pt.
  [34 <./Pictures/ModelSelection.png>]
 <Pictures/3_level_tree.png, id=573, 918.7926pt x 345.9324pt>
 File: Pictures/3_level_tree.png Graphic file (type png)
 
 <use Pictures/3_level_tree.png>
-Package pdftex.def Info: Pictures/3_level_tree.png used on input line 762.
+Package pdftex.def Info: Pictures/3_level_tree.png used on input line 787.
 (pdftex.def)             Requested size: 469.75499pt x 176.86658pt.
  [35 <./Pictures/3_level_tree.png>] [36]
-[37] <Pictures/RandForest.png, id=601, 461.5644pt x 441.3288pt>
+
+LaTeX Warning: Reference `fig:rand_forest' on page 37 undefined on input line 8
+32.
+
+[37] <Pictures/RandForest.png, id=600, 461.5644pt x 441.3288pt>
 File: Pictures/RandForest.png Graphic file (type png)
 
 <use Pictures/RandForest.png>
-Package pdftex.def Info: Pictures/RandForest.png used on input line 824.
+Package pdftex.def Info: Pictures/RandForest.png used on input line 848.
 (pdftex.def)             Requested size: 281.85585pt x 269.493pt.
  [38 <./Pictures/RandForest.png>] [39] [40]
 [41]
 Chapter 5.
 [42
 
-] <Pictures/Prediction_50_50_RF.png, id=632, 577.1964pt x 308.352pt>
+] <Pictures/Prediction_50_50_RF.png, id=631, 577.1964pt x 308.352pt>
 File: Pictures/Prediction_50_50_RF.png Graphic file (type png)
 
 <use Pictures/Prediction_50_50_RF.png>
-Package pdftex.def Info: Pictures/Prediction_50_50_RF.png used on input line 90
-9.
+Package pdftex.def Info: Pictures/Prediction_50_50_RF.png used on input line 93
+8.
 (pdftex.def)             Requested size: 469.75499pt x 250.95413pt.
 
-<Pictures/Classification_confusion.png, id=634, 557.08125pt x 469.00218pt>
+<Pictures/Classification_confusion.png, id=633, 557.08125pt x 469.00218pt>
 File: Pictures/Classification_confusion.png Graphic file (type png)
 
 <use Pictures/Classification_confusion.png>
 Package pdftex.def Info: Pictures/Classification_confusion.png used on input li
-ne 918.
+ne 947.
 (pdftex.def)             Requested size: 328.82706pt x 276.84486pt.
  [43] [44 <./Pictures/Prediction_50_50_RF.png>] [45 <./Pictures/Classification_
 confusion.png (PNG copy)>]
-<Pictures/TimeGapsAnalysis.png, id=653, 626.8218pt x 327.624pt>
+<Pictures/TimeGapsAnalysis.png, id=652, 626.8218pt x 327.624pt>
 File: Pictures/TimeGapsAnalysis.png Graphic file (type png)
 
 <use Pictures/TimeGapsAnalysis.png>
-Package pdftex.def Info: Pictures/TimeGapsAnalysis.png used on input line 953.
+Package pdftex.def Info: Pictures/TimeGapsAnalysis.png used on input line 981.
 (pdftex.def)             Requested size: 375.80542pt x 196.42593pt.
 
-<Pictures/FeatureAnalysis.png, id=657, 531.4254pt x 341.5962pt>
+<Pictures/FeatureAnalysis.png, id=656, 531.4254pt x 341.5962pt>
 File: Pictures/FeatureAnalysis.png Graphic file (type png)
 
 <use Pictures/FeatureAnalysis.png>
-Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 971.
+Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 999.
 (pdftex.def)             Requested size: 375.80542pt x 241.57071pt.
  [46 <./Pictures/TimeGapsAnalysis.png>]
-<Pictures/LOOCV_confusion.png, id=666, 572.1375pt x 472.01344pt>
+<Pictures/LOOCV_confusion.png, id=665, 572.1375pt x 472.01344pt>
 File: Pictures/LOOCV_confusion.png Graphic file (type png)
 
 <use Pictures/LOOCV_confusion.png>
-Package pdftex.def Info: Pictures/LOOCV_confusion.png used on input line 987.
+Package pdftex.def Info: Pictures/LOOCV_confusion.png used on input line 1015.
 (pdftex.def)             Requested size: 328.82706pt x 271.28317pt.
  [47 <./Pictures/FeatureAnalysis.png>]
 [48 <./Pictures/LOOCV_confusion.png (PNG copy)>] [49]
-<Pictures/superior_identification.png, id=687, 651.93562pt x 408.77719pt>
+<Pictures/org_chart_with_legend.png, id=686, 1030.60031pt x 575.90157pt>
+File: Pictures/org_chart_with_legend.png Graphic file (type png)
+
+<use Pictures/org_chart_with_legend.png>
+Package pdftex.def Info: Pictures/org_chart_with_legend.png used on input line 
+1050.
+(pdftex.def)             Requested size: 493.24417pt x 275.62115pt.
+
+Overfull \hbox (23.48918pt too wide) in paragraph at lines 1050--1052
+ [][] 
+ []
+
+[50 <./Pictures/org_chart_with_legend.png>]
+<Pictures/superior_identification.png, id=695, 642.14906pt x 280.04625pt>
 File: Pictures/superior_identification.png Graphic file (type png)
 
 <use Pictures/superior_identification.png>
 Package pdftex.def Info: Pictures/superior_identification.png used on input lin
-e 1029.
-(pdftex.def)             Requested size: 328.82706pt x 206.18446pt.
- [50]
-<Pictures/orgChart_3con.png, id=694, 1029.8475pt x 523.20468pt>
-File: Pictures/orgChart_3con.png Graphic file (type png)
-
-<use Pictures/orgChart_3con.png>
-Package pdftex.def Info: Pictures/orgChart_3con.png used on input line 1047.
-(pdftex.def)             Requested size: 493.24417pt x 250.58453pt.
-
-Overfull \hbox (23.48918pt too wide) in paragraph at lines 1047--1049
- [][] 
- []
-
-[51 <./Pictures/superior_identification.png>] [52 <./Pictures/orgChart_3con.png
->]
+e 1075.
+(pdftex.def)             Requested size: 375.80542pt x 160.0689pt.
+ [51] [52 <./Pictures/superior_identification.png>] [53]
 Chapter 6.
-[53
+[54
 
-] <Pictures/num_days_LOOCV.png, id=715, 553.5882pt x 317.5062pt>
+] <Pictures/num_days_LOOCV.png, id=719, 553.5882pt x 317.5062pt>
 File: Pictures/num_days_LOOCV.png Graphic file (type png)
 
 <use Pictures/num_days_LOOCV.png>
-Package pdftex.def Info: Pictures/num_days_LOOCV.png used on input line 1091.
+Package pdftex.def Info: Pictures/num_days_LOOCV.png used on input line 1123.
 (pdftex.def)             Requested size: 328.82706pt x 188.60118pt.
 
-<Pictures/Num_of_people_LOOCV.png, id=719, 487.8225pt x 333.49594pt>
+<Pictures/Num_of_people_LOOCV.png, id=723, 487.8225pt x 333.49594pt>
 File: Pictures/Num_of_people_LOOCV.png Graphic file (type png)
 
 <use Pictures/Num_of_people_LOOCV.png>
 Package pdftex.def Info: Pictures/Num_of_people_LOOCV.png used on input line 11
-10.
+42.
 (pdftex.def)             Requested size: 328.82706pt x 224.7998pt.
- [54] [55 <./Pictures/num_days_LOOCV.png>] [56 <./Pictures/Num_of_people_LOOCV.
+ [55] [56 <./Pictures/num_days_LOOCV.png>] [57 <./Pictures/Num_of_people_LOOCV.
 png>]
-<Pictures/dbn.png, id=738, 860.4948pt x 357.4956pt>
+<Pictures/dbn.png, id=742, 860.4948pt x 357.4956pt>
 File: Pictures/dbn.png Graphic file (type png)
  <use Pictures/dbn.png>
-Package pdftex.def Info: Pictures/dbn.png used on input line 1138.
+Package pdftex.def Info: Pictures/dbn.png used on input line 1170.
 (pdftex.def)             Requested size: 328.82706pt x 136.61342pt.
 
-[57 <./Pictures/dbn.png>] [58] [59] [60]
+[58 <./Pictures/dbn.png>]
+Overfull \hbox (4.01338pt too wide) in paragraph at lines 1190--1194
+\OT1/ptm/m/n/12 ing [[]]. Un-su-per-vised pre-training can im-prove the ef-fi-c
+iency of train-ing deep be-lief net-works [[]].
+ []
+
+[59] [60] [61]
 Chapter 7.
-[61
+[62
 
-] (Straub_KM_T_2016.bbl [62]
+] (Straub_KM_T_2016.bbl [63]
 Chapter 8.
-[63
+[64
 
-] [64]
-Underfull \hbox (badness 2221) in paragraph at lines 70--74
-[]\OT1/ptm/m/n/12 J. Shetty and J. Adibi, ``Ex em-ployee sta-tus re-port.,'' 20
-04.  [[]$http : / / www . isi . edu /$
+] [65]
+Underfull \hbox (badness 2547) in paragraph at lines 70--74
+[]\OT1/ptm/m/n/12 J. Shetty and J. Adibi, ``Ex em-ployee sta-tus re-port,'' 200
+4.  [[]$http : / / www . isi . edu /$
  []
 
 
@@ -883,7 +922,7 @@ $\OT1/ptm/m/n/12 20131126121206 / http : / / www . isi . edu / []adibi / Enron
 / Enron[]Employee[]Status . xls$[]], Ac-cessed
  []
 
-[65] [66] [67]
+[66] [67] [68]
 Missing character: There is no √ in font ptmr7t!
 Missing character: There is no § in font ptmr7t!
 Missing character: There is no √ in font ptmr7t!
@@ -892,12 +931,12 @@ Missing character: There is no √ in font ptmr7t!
 Missing character: There is no © in font ptmr7t!
 Missing character: There is no √ in font ptmr7t!
 Missing character: There is no ° in font ptmr7t!
- [68]
+ [69]
 Missing character: There is no ¬ in font ptmri7t!
 Missing character: There is no Æ in font ptmri7t!
-) [69]
+) [70]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 1236.
+nput line 1266.
  (1439900489.txt
 LaTeX Font Info:    Try loading font information for OML+ptm on input line 1.
 
@@ -906,34 +945,38 @@ File: omlptm.fd
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <8> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 1.
- [70
+ [71
 
-] [71]
+] [72]
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 140.
 
-[72]) [73] [74
+[73]) [74] [75
 
-] [75] [76] [77]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1358.
- [78]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1358.
+] [76] [77] [78]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1388.
+ [79]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1388.
  (Straub_KM_T_2016.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1358.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1358.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1388.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1388.
 
 Package rerunfilecheck Info: File `Straub_KM_T_2016.out' has not changed.
 (rerunfilecheck)             Checksum: 306EE6CCD8548E7D0C3779411AEC1EF8;1920.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1358.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1388.
  ) 
 Here is how much of TeX's memory you used:
- 12311 strings out of 493673
- 181364 string characters out of 3141530
- 710491 words of memory out of 3000000
- 14819 multiletter control sequences out of 15000+200000
- 33665 words of font info for 81 fonts, out of 3000000 for 9000
+ 12415 strings out of 493673
+ 182881 string characters out of 3141530
+ 712725 words of memory out of 3000000
+ 14911 multiletter control sequences out of 15000+200000
+ 35250 words of font info for 83 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 37i,11n,45p,533b,1735s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,11n,45p,533b,1735s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<D:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Program Fi
@@ -951,9 +994,9 @@ onts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/urw/times/utmb8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw
 /times/utmr8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr
 i8a.pfb>
-Output written on Straub_KM_T_2016.pdf (86 pages, 2597191 bytes).
+Output written on Straub_KM_T_2016.pdf (87 pages, 2575292 bytes).
 PDF statistics:
- 1443 PDF objects out of 1728 (max. 8388607)
- 632 named destinations out of 1000 (max. 500000)
+ 1447 PDF objects out of 1728 (max. 8388607)
+ 633 named destinations out of 1000 (max. 500000)
  480 words of extra memory for PDF output out of 10000 (max. 10000000)
 
