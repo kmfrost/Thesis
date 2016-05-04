@@ -13,29 +13,29 @@
 \contentsline {chapter}{\numberline {3}Email Dataset and Feature Extraction}{10}{chapter.3}
 \contentsline {section}{\numberline {3.1}Data Collection}{10}{section.3.1}
 \contentsline {section}{\numberline {3.2}Dataset Description and Statistics}{13}{section.3.2}
-\contentsline {section}{\numberline {3.3}Features}{16}{section.3.3}
+\contentsline {section}{\numberline {3.3}Features}{17}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Traffic-Based Features}{17}{subsection.3.3.1}
-\contentsline {subsubsection}{Email Counts and Email Types}{17}{section*.9}
-\contentsline {subsubsection}{Metadata Statistics}{18}{section*.10}
+\contentsline {subsubsection}{Email Counts and Email Types}{18}{section*.9}
+\contentsline {subsubsection}{Metadata Statistics}{19}{section*.10}
 \contentsline {subsubsection}{Most Useful Traffic-Based Features}{20}{section*.11}
-\contentsline {subsection}{\numberline {3.3.2}Social Network Features}{22}{subsection.3.3.2}
-\contentsline {subsubsection}{Social Network Representation}{22}{section*.13}
-\contentsline {subsubsection}{Degree Measures}{23}{section*.16}
-\contentsline {subsubsection}{Cliques}{25}{section*.17}
-\contentsline {subsubsection}{Adapting Search Engine Algorithms}{26}{section*.18}
-\contentsline {subsubsection}{Clustering Metrics}{26}{section*.19}
-\contentsline {subsubsection}{Centrality Measures}{28}{section*.20}
-\contentsline {subsubsection}{Most Useful Social Network Features}{31}{section*.21}
-\contentsline {chapter}{\numberline {4}Algorithm Design}{33}{chapter.4}
-\contentsline {section}{\numberline {4.1}Algorithm Selection}{33}{section.4.1}
-\contentsline {section}{\numberline {4.2}Algorithm Description}{35}{section.4.2}
-\contentsline {section}{\numberline {4.3}Feature Selection}{39}{section.4.3}
-\contentsline {chapter}{\numberline {5}Performance Analysis}{42}{chapter.5}
-\contentsline {section}{\numberline {5.1}Classification Results}{43}{section.5.1}
-\contentsline {section}{\numberline {5.2}Leave-One-Out Cross-Validation}{47}{section.5.2}
-\contentsline {section}{\numberline {5.3}Hierarchy Analysis}{49}{section.5.3}
-\contentsline {chapter}{\numberline {6}Future Work}{54}{chapter.6}
-\contentsline {section}{\numberline {6.1}Improving LOOCV Accuracy}{55}{section.6.1}
-\contentsline {section}{\numberline {6.2}Deep Learning Application}{57}{section.6.2}
-\contentsline {chapter}{\numberline {7}Conclusions}{62}{chapter.7}
-\contentsline {chapter}{\numberline {8}Bibliography}{64}{chapter.8}
+\contentsline {subsection}{\numberline {3.3.2}Social Network Features}{23}{subsection.3.3.2}
+\contentsline {subsubsection}{Social Network Representation}{23}{section*.13}
+\contentsline {subsubsection}{Degree Measures}{26}{section*.16}
+\contentsline {subsubsection}{Cliques}{27}{section*.17}
+\contentsline {subsubsection}{Adapting Search Engine Algorithms}{27}{section*.18}
+\contentsline {subsubsection}{Clustering Metrics}{28}{section*.19}
+\contentsline {subsubsection}{Centrality Measures}{29}{section*.20}
+\contentsline {subsubsection}{Most Useful Social Network Features}{32}{section*.21}
+\contentsline {chapter}{\numberline {4}Algorithm Design}{35}{chapter.4}
+\contentsline {section}{\numberline {4.1}Algorithm Selection}{35}{section.4.1}
+\contentsline {section}{\numberline {4.2}Algorithm Description}{37}{section.4.2}
+\contentsline {section}{\numberline {4.3}Feature Selection}{42}{section.4.3}
+\contentsline {chapter}{\numberline {5}Performance Analysis}{44}{chapter.5}
+\contentsline {section}{\numberline {5.1}Classification Results}{45}{section.5.1}
+\contentsline {section}{\numberline {5.2}Leave-One-Out Cross-Validation}{49}{section.5.2}
+\contentsline {section}{\numberline {5.3}Hierarchy Analysis}{52}{section.5.3}
+\contentsline {chapter}{\numberline {6}Future Work}{56}{chapter.6}
+\contentsline {section}{\numberline {6.1}Improving LOOCV Accuracy}{57}{section.6.1}
+\contentsline {section}{\numberline {6.2}Deep Learning Application}{59}{section.6.2}
+\contentsline {chapter}{\numberline {7}Conclusions}{64}{chapter.7}
+\contentsline {chapter}{\numberline {8}Bibliography}{66}{chapter.8}

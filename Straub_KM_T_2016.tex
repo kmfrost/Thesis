@@ -281,7 +281,7 @@ The existing literature on analyzing social email behavior is mainly divided int
 Traffic-based methods calculate statistics based only on email patterns.
 Social-based methods represent the email communications as a social graph and then extract information from this model about the inherent relationships.
 A third type of feature that has been studied utilizes email text.
-The work by Gilbert~\cite{gilbert2012phrases} showed that the wording used in an email could be used to make inferences about the corporate hierarchy.
+The work by Gilbert~\cite{gilbert_phrases_2012} showed that the wording used in an email could be used to make inferences about the corporate hierarchy.
 However, email text contains sensitive information and is often unavailable for a general email study.
 Therefore, features based on email text are not considered in this work.
 
@@ -325,6 +325,7 @@ This dataset is meant to be representative of metadata which any company could u
 Special care was taken to protect the privacy of those involved in the study.
 During the collection process, all subject and body text was hashed using the MD5 algorithm.
 A hashing algorithm was used to protect the email text of the participants because once text is hashed, it is impossible to recover the original message.
+Even if two very similar strings are hashed, their hashes will be completely independent.
 An example hash is shown in Figure~\ref{fig:hash_ex}.
 All email metadata was stored in a MySQL database using scripts without any researchers observing any email text.
 Any identifying information has been omitted from this thesis.
@@ -419,7 +420,7 @@ A more sophisticated migration process was implemented during the summer of 2014
 
 The center divides its employees into six main areas: directors, graduate students, operations, outreach, project management (PM), and research. 
 Each person in the study was labeled with his or her job title.
-One challenge of working with this dataset is that the distribution of these job titles is far from uniform.
+One important note about working with this dataset is that the distribution of these job titles is far from uniform.
 
 A chart showing the distribution of employees into classes is shown in Figure \ref{fig:class_breakdown}.
 Approximately half of the participants are graduate students, and there are only two outreach personnel included in the study.
@@ -440,7 +441,7 @@ The directors exhibit opposite behavior: there are only eight directors in the c
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=\columnwidth,trim={2mm 2mm 2mm 2mm},clip]{DB_Stats_bar}
-	\caption[Emails per person per job title]{Representation of each class in the dataset with respect to average emails per person and number of people.  Both distributions are very nonuniform, which poses a challenge to the classification algorithm.}
+	\caption[Emails per person per job title]{Representation of each class in the dataset with respect to average emails per person and number of people.  Both distributions are very nonuniform.}
 	\label{fig:db_bar}
 \end{figure}
 
@@ -507,8 +508,9 @@ This was used because it is integral to the machine learning algorithm as descri
 The traffic feature with the highest mutual information was the number of forwarded emails received.
 Typically, those higher in the chain of command are forwarded emails in order to present them with a summary of a conversation or to pass along relevant information.
 Forwarding emails is also often used to pass along assignments or requests to a another employee, either up or down the chain of command~\cite{bulow2016distant}.
+Notice that this feature also counts the raw number of emails, which means that those who send and receive more emails will in general also have a larger forwarded emails received count.
+It is therefore intuitive that employees who are involved in more forwarded conversations are likely to hold a higher position in the organization.
 Graduate students and lower-level employees are more likely to receive either replies or emails sent directly to them.
-
 
 A histogram showing the different values for this metric over the different job classes is shown in Figure~\ref{fig:traffic_ex_hist}.
 The log of the raw values are plotted here for visual clarity.
@@ -562,12 +564,9 @@ The full graph including all of the center employees is shown in Figure~\ref{fig
 
 
 
-Using this social network model, a suite of statistics can be calculated about the people in the graph.  The graphs were modeled in python.  The graph library networkx \cite{hagberg-2008-exploring} was used to calculate all graph features.
-
-\subsection{Adjacency Matrix Analysis}
 Another representation of the full graph is shown as an adjacency matrix in Figure~\ref{fig:adj_matrix}.
-Each of the two axes represent the employees of the center.
-The color at each coordinate indicates how much communication existed between the two employees.
+Each of the two axes represent the employees of the center; the y-axis holds the sender of each pair and the x-axis represents the receiver.
+The color at each coordinate indicates how many emails were sent between the two employees.
 Some employees never exchanged any emails, while others exchanged many.
 
 \begin{figure}[t]
@@ -579,8 +578,16 @@ Some employees never exchanged any emails, while others exchanged many.
 \end{figure}
 
 Before moving on to the features calculated from the social network model, there are several important things to notice about the adjacency matrix that will provide insight into the center's communications.
+First, note that Figure~\ref{fig:adj_matrix} is not symmetric.
+This means that, considering pairs of employees, one person sent more emails than the other.
+To compute a symmetry metric, 
+For this metric, the diagonal of the matrix is ignored.
 
+The scale is normalized to measure symmetry such that a perfectly antisymmetric matrix would evaluate to negative one and a perfectly symmetric matrix would evaluate to one.
+Note that the values in the matrix represent email counts, which are always positive; therefore, the minimum value is zero.
+On this scale of $0$ to $1$, the adjacency matrix in Figure~\ref{fig:adj_matrix} scored $0.7036$.
 
+Using this social network model, a suite of statistics can be calculated about the people in the graph.  The graphs were modeled in python.  The graph library networkx \cite{hagberg-2008-exploring} was used to calculate all graph features.
 
 \subsubsection{Degree Measures}
 The degree of each node, from both the full and partial graph, was used as a feature.  
@@ -865,8 +872,17 @@ Random forest training reduces the variance and increases the accuracy of the mo
 	\includegraphics[width=0.6\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{RandForest}
 	\vspace{-15pt}
 	\caption[Random forest prediction process]{A random forest builds many random trees using subsamples of the data.  Each tree generates a prediction for each test point, and the final prediction is decided by majority vote.}
-	\label{fig:random_forest_diagram}
+	\label{fig:rand_forest}
 \end{figure}
+
+Note that the way the training method is designed, the prior distributions of the classes are built into the training process.
+Each tree is built using a subsample of people from the dataset, and these subsamples will reflect the original class distribution.
+The trees are built using these assumptions.
+For example, the rules might be constructed to expect more graduate students than any other category, or with the knowledge that outreach employees are relatively rare.
+These assumptions will be reflected in the testing data.
+If instead the trees were constructed by subsampling emails for all employees and calculating the features at that level, a different prior would have been instilled in the trees.
+This new prior would be influenced by the distribution of emails by class, represented by the blue bar in Figure~\ref{fig:db_bar}, which does not reflect the prior distribution of people into classes.
+
 
 To use this classification algorithm, the data must be split into three groups.
 The emails in the dataset were randomly assigned to one of the following: 35\% for training, 30\% for validation, and 35\% for testing.
@@ -1038,11 +1054,15 @@ The results of this test are reported below in Figure~\ref{fig:loocv_conf_plot}.
 This analysis resulted in a lower accuracy than the previous experiment.
 In total, only 65.7\% were correct.
 The category of graduate student was the easiest to predict and the operations class was the most difficult.
-This result is understandable because the employees within operations perform the widest range of duties, including technical, administrative, and program support.
+This result is understandable because employees within operations perform the widest range of duties, including technical, administrative, and program support.
+One important consideration during this test is that many of the classes within the center contain employees with diverse sets of responsibilities.
+The director class contains directors over research, operations, and project management in addition to professors that advise students within the center.
+It would be plausible for a director of project management to be misclassified as a PM, or vice versa.
+In fact, three research directors that are professors at the university were misclassified as research staff or graduate students.
 There is also a wide variety of responsibilities in the research class in addition to technical work, such as mentoring graduate students and interfacing with PMs and directors.
 This may explain why at least one person from each other class was misclassified as research.
-Note that for each category except for research, at least half of the people classified were true members of each group.
-Even out of those classified as research, there were more true researchers than any single other class.
+Previous analysis showed that the boundary between graduate students and research staff can be unclear.
+This was clear again during this test in that four postdoctoral researchers and/or former students were misclassified as graduate students and three doctoral graduate students were misclassified as research staff.
 Surprisingly, when comparing the LOOCV accuracy was slightly higher for peripheral employees, $68.4\%$ compared to $62.1\%$ for direct participants.
 This is likely due to the fact that the peripheral set has more graduate students, which seems to be the easiest class to label correctly.
 

@@ -3,4 +3,5 @@ The style file: ieeetr.bst
 Database file #1: bib.bib
 Warning--entry type for "shetty_status_2004" isn't style-file defined
 --line 317 of file bib.bib
-(There was 1 warning)
+Warning--I didn't find a database entry for "gilbert2012phrases"
+(There were 2 warnings)
