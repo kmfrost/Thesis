@@ -187,7 +187,12 @@ Understanding this unofficial structure could be invaluable during such a busine
 One massive source of electronically searchable information that could be used to better understand this hidden structure is the business's emails.
 However, privacy concerns inhibit most research thrusts into email analysis.  
 
-Extracting hierarchical relationships from email metadata can be used for several potential applications beyond gaining a better understanding of the organizational structure.  For example, it could be possible to identify people of influence or potential leaders.  By recognizing changing behavior, potential insider threats could be identified.
+Extracting hierarchical relationships from email metadata can be used for several potential applications beyond gaining a better understanding of corporate operations.
+These methods could be applied to any communications system to perform organizational analysis, anomalous behavior detection, or leadership identification.
+For example, it could be possible to identify people of influence or potential leaders.
+By recognizing changing behavior, potential insider threats could be identified.
+In a military context, this work shows the importance of protecting this metadata from adversaries who could use it to uncover information about an organization that they could use to find vulnerabilities.
+
 
 \section{Problem Overview}
 This thesis addresses the problem of automatic organizational determination.
@@ -580,12 +585,28 @@ Some employees never exchanged any emails, while others exchanged many.
 Before moving on to the features calculated from the social network model, there are several important things to notice about the adjacency matrix that will provide insight into the center's communications.
 First, note that Figure~\ref{fig:adj_matrix} is not symmetric.
 This means that, considering pairs of employees, one person sent more emails than the other.
-To compute a symmetry metric, 
-For this metric, the diagonal of the matrix is ignored.
-
-The scale is normalized to measure symmetry such that a perfectly antisymmetric matrix would evaluate to negative one and a perfectly symmetric matrix would evaluate to one.
+A metric was developed to quantify how close the adjacency matrix is to perfect symmetry, ignoring the diagonal of the matrix.
+This value was weighted to give high email counts more weight.
+For example, a pair that exchanges emails on the order of several thousands in both directions is given more weight than a pair that exchanged five emails.
+The scale of this value is then normalized to measure symmetry such that a perfectly antisymmetric matrix would evaluate to negative one and a perfectly symmetric matrix would evaluate to one.
 Note that the values in the matrix represent email counts, which are always positive; therefore, the minimum value is zero.
 On this scale of $0$ to $1$, the adjacency matrix in Figure~\ref{fig:adj_matrix} scored $0.7036$.
+
+Another aspect of the adjacency matrix that bears mention is that the diagonal is not zero.
+This implies that some employees of the center email themselves.
+Within the dataset, $79.7\%$ sent at least one email to themselves and $52.2\%$ sent at least $10$.
+These self-emails are broken down by email and subject type in Figure~\ref{fig:self-emails}.
+Overwhelmingly these emails represent either replies to emails or copies to themselves.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.7\columnwidth,trim={2mm 1mm 2mm 2mm},clip]{Self-emails_bar}
+	\vspace{-17pt}
+	\caption[Types of emails employees sent to themselves]{The adjacency matrix diagonal shows that some employees regularly email themselves.  These emails are almost always either replies to emails or copies to themselves.}
+	\label{fig:self-emails}
+\end{figure}
+
+
 
 Using this social network model, a suite of statistics can be calculated about the people in the graph.  The graphs were modeled in python.  The graph library networkx \cite{hagberg-2008-exploring} was used to calculate all graph features.
 
@@ -880,9 +901,6 @@ Each tree is built using a subsample of people from the dataset, and these subsa
 The trees are built using these assumptions.
 For example, the rules might be constructed to expect more graduate students than any other category, or with the knowledge that outreach employees are relatively rare.
 These assumptions will be reflected in the testing data.
-If instead the trees were constructed by subsampling emails for all employees and calculating the features at that level, a different prior would have been instilled in the trees.
-This new prior would be influenced by the distribution of emails by class, represented by the blue bar in Figure~\ref{fig:db_bar}, which does not reflect the prior distribution of people into classes.
-
 
 To use this classification algorithm, the data must be split into three groups.
 The emails in the dataset were randomly assigned to one of the following: 35\% for training, 30\% for validation, and 35\% for testing.
