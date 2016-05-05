@@ -9,25 +9,26 @@
 \BOOKMARK [0][-]{chapter.2}{Prior Work}{}% 9
 \BOOKMARK [1][-]{section.2.1}{Background}{chapter.2}% 10
 \BOOKMARK [1][-]{section.2.2}{Commonly Used Datasets}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.3}{Prior Analysis}{chapter.2}% 12
-\BOOKMARK [0][-]{chapter.3}{Email Dataset and Feature Extraction}{}% 13
-\BOOKMARK [1][-]{section.3.1}{Data Collection}{chapter.3}% 14
-\BOOKMARK [1][-]{section.3.2}{Dataset Description and Statistics}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.3}{Features}{chapter.3}% 16
-\BOOKMARK [2][-]{subsection.3.3.1}{Traffic-Based Features}{section.3.3}% 17
-\BOOKMARK [2][-]{subsection.3.3.2}{Social Network Features}{section.3.3}% 18
-\BOOKMARK [0][-]{chapter.4}{Algorithm Design}{}% 19
-\BOOKMARK [1][-]{section.4.1}{Algorithm Selection}{chapter.4}% 20
-\BOOKMARK [1][-]{section.4.2}{Algorithm Description}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.3}{Feature Selection}{chapter.4}% 22
-\BOOKMARK [0][-]{chapter.5}{Performance Analysis}{}% 23
-\BOOKMARK [1][-]{section.5.1}{Classification Results}{chapter.5}% 24
-\BOOKMARK [1][-]{section.5.2}{Leave-One-Out Cross-Validation}{chapter.5}% 25
-\BOOKMARK [1][-]{section.5.3}{Hierarchy Analysis}{chapter.5}% 26
-\BOOKMARK [0][-]{chapter.6}{Future Work}{}% 27
-\BOOKMARK [1][-]{section.6.1}{Improving LOOCV Accuracy}{chapter.6}% 28
-\BOOKMARK [1][-]{section.6.2}{Algorithms for Processing Larger Data}{chapter.6}% 29
-\BOOKMARK [2][-]{subsection.6.2.1}{Deep Belief Networks}{section.6.2}% 30
-\BOOKMARK [2][-]{subsection.6.2.2}{Collective Classification}{section.6.2}% 31
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 32
-\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 33
+\BOOKMARK [1][-]{section.2.3}{Prior Email Analysis}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.3.1}{Machine Learning Overview}{section.2.3}% 13
+\BOOKMARK [0][-]{chapter.3}{Email Dataset and Feature Extraction}{}% 14
+\BOOKMARK [1][-]{section.3.1}{Data Collection}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.2}{Dataset Description and Statistics}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.3}{Features}{chapter.3}% 17
+\BOOKMARK [2][-]{subsection.3.3.1}{Traffic-Based Features}{section.3.3}% 18
+\BOOKMARK [2][-]{subsection.3.3.2}{Social Network Features}{section.3.3}% 19
+\BOOKMARK [0][-]{chapter.4}{Algorithm Design}{}% 20
+\BOOKMARK [1][-]{section.4.1}{Algorithm Selection}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.2}{Algorithm Description}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.3}{Feature Selection}{chapter.4}% 23
+\BOOKMARK [0][-]{chapter.5}{Performance Analysis}{}% 24
+\BOOKMARK [1][-]{section.5.1}{Classification Results}{chapter.5}% 25
+\BOOKMARK [1][-]{section.5.2}{Leave-One-Out Cross-Validation}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.3}{Hierarchy Analysis}{chapter.5}% 27
+\BOOKMARK [0][-]{chapter.6}{Future Work}{}% 28
+\BOOKMARK [1][-]{section.6.1}{Improving LOOCV Accuracy}{chapter.6}% 29
+\BOOKMARK [1][-]{section.6.2}{Algorithms for Processing Larger Data}{chapter.6}% 30
+\BOOKMARK [2][-]{subsection.6.2.1}{Deep Belief Networks}{section.6.2}% 31
+\BOOKMARK [2][-]{subsection.6.2.2}{Collective Classification}{section.6.2}% 32
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 33
+\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 34

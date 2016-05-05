@@ -185,18 +185,26 @@ A reorganization of a business can be very costly and has far-reaching effects o
 Some of the world's largest corporations have recently executed some major restructuring.
 For example, in the last six months, Northrop Grumman consolidated two of its four business sectors: electronic systems and information systems.
 These changes also included creating a new executive position filled by the former head of electronic systems~\cite{NG}.
-
+Another major merger is the deal struck by two major chemical corporations: DuPont and Dow.
+They agreed to combine their resources and then split off into three new entities.
+This is a supremely complex task involving the reassignment of over $100,000$ people~\cite{dupont}.
+All of these companies use official organizational charts to manage the corporate hierarchy.
+Reorganizing the structure of the corporation involves a reorganization of this official chart.
 
 While this official hierarchy is important, there is an equally important organic organization of any business, which may or may not be reflected in the official organization chart.
-Understanding this unofficial structure could be invaluable during such a business reorganiztion, but due to its informal nature, it can be difficult to determine.
+Understanding this unofficial structure could be invaluable during such a business reorganization, but due to its informal nature, it can be difficult to determine.
 One massive source of electronically searchable information that could be used to better understand this hidden structure is the business's emails.
 However, privacy concerns inhibit most research thrusts into email analysis.  
 
 Extracting hierarchical relationships from email metadata can be used for several potential applications beyond gaining a better understanding of corporate operations.
-These methods could be applied to any communications system to perform organizational analysis, anomalous behavior detection, or leadership identification.
-For example, it could be possible to identify people of influence or potential leaders.
-By recognizing changing behavior, potential insider threats could be identified.
+These methods could be applied to any communications system such as cellular communications, website links, social media, and network traffic.
+Within these sytems it would be possible to perform organizational analysis, anomalous behavior detection, or leadership identification.
+For example, it could be possible to identify people of influence or potential leaders based on their volume and patterns of communication.
+Alternatively, by recognizing behavior patterns inconsistent with a person's surrounding peers, potential insider threats could be identified.
 In a military context, this work shows the importance of protecting this metadata from adversaries who could use it to uncover information about an organization that they could use to find vulnerabilities.
+This type of work is also very important to government agencies in order to analyze large-scale data, as was made clear by the reports released by Edward Snowden in $2013$~\cite{snowden}.
+The type of analysis described in this work applied to the data Snowden reports about could produce valuable understanding of people's behavior and status. 
+
 
 
 \section{Problem Overview}
@@ -250,6 +258,7 @@ This chapter investigates the previous research performed in the area of email a
 Context is established with a discussion on the importance of workplace email communication in modern society.
 A description of the benchmark in email datasets, the Enron email corpus, is provided, and the drawbacks of this dataset are highlighted.
 Section~\ref{sec:priorAnalysis} provides an overview of features typically used in email analysis and the works that address the problem of organization determination.
+A brief overview of the existing machine learning literature is presented in Section~\ref{sec:MachineLearning}.
 
 \section{Background}
 Email is a pervasive medium for communication in modern society\textemdash{}particularly in the workplace.
@@ -257,7 +266,7 @@ In 2015, there were over 2.6 billion email users~\cite{radicati_emails_2015}.
 It is projected that by the end of 2019, over one third of the global population will be using email.
 In fact, the average business email user sends and receives a total of 112 emails per day.
 Corporate email alone accounts for 54.7\% of worldwide email traffic.
-Retention of large email archives has become common practice with decreasing memory size and cost~\cite{fisher_revisiting_2006}.
+Retention of large email archives has become common practice with decreasing physical memory size and cost~\cite{fisher_revisiting_2006}.
 Out of the 600 employees involved in that study at Microsoft, the average employee had 28,660 emails stored in 133 folders; that represents a significant increase over the past ten years.
 Such an accumulation of emails holds a considerable amount of untapped information that could be leveraged to characterize employee roles within an organization.
 
@@ -286,7 +295,7 @@ For example, the research by Tyler et al. was performed on a internal email data
 Often datasets collect communication patterns from public online sources such as Twitter~\cite{Zafarani+Liu:2009}, YouTube~\cite{mislove-2007-socialnetworks},  and Wikipedia~\cite{leskovec2010predicting}.
 However, this research focused on organizational structure in addition to the social network components, so these datasets were unsuitable for this purpose.
 
-\section{Prior Analysis} \label{sec:priorAnalysis}
+\section{Prior Email Analysis} \label{sec:priorAnalysis}
 The existing literature on analyzing social email behavior is mainly divided into two categories: traffic-based and social-based~\cite{tang_email_2013}.
 Traffic-based methods calculate statistics based only on email patterns.
 Social-based methods represent the email communications as a social graph and then extract information from this model about the inherent relationships.
@@ -318,6 +327,16 @@ Instead of considering exclusively traffic-based or social-based analytics, thes
 The only example of this approach combined features such as number of emails, response time, cliques, and degree centrality into a ``Social Score'', was used to rank Enron employees~\cite{rowe_automated_2007}.  
 Unfortunately, this work represents preliminary research and did not publish any quantifiable results.
 This thesis aims to expand on this work and quantify the results when applied to a new dataset.
+
+\subsection{Machine Learning Overview}
+In this era of increasing computer memory for decreasing costs, modern businesses, researchers, medical facilities, and more are constantly collecting large volumes of data.
+This data may come from sources including sensors, online interactions such as social media, business transactions, and mobile devices.
+Email data is just one example of emerging trends in the collection and storage of large-scale information, dubbed ``big data''.
+This term refers to datasets too large for traditional data processing techniques to handle.
+Machine learning techniques have emerged and rapidly evolved to meet the demand for processing capabilities required to adequately analyze big data.
+
+
+
 
 \chapter{Email Dataset and Feature Extraction} \label{Data}
 
