@@ -182,6 +182,11 @@ Finally, I thank God for all the blessings in my life and for getting me to wher
 \chapter{Introduction} \label{Introduction}
 \section{Motivation}
 A reorganization of a business can be very costly and has far-reaching effects once implemented, either for better or for worse.
+Some of the world's largest corporations have recently executed some major restructuring.
+For example, in the last six months, Northrop Grumman consolidated two of its four business sectors: electronic systems and information systems.
+These changes also included creating a new executive position filled by the former head of electronic systems~\cite{NG}.
+
+
 While this official hierarchy is important, there is an equally important organic organization of any business, which may or may not be reflected in the official organization chart.
 Understanding this unofficial structure could be invaluable during such a business reorganiztion, but due to its informal nature, it can be difficult to determine.
 One massive source of electronically searchable information that could be used to better understand this hidden structure is the business's emails.
@@ -1071,6 +1076,8 @@ The results of this test are reported below in Figure~\ref{fig:loocv_conf_plot}.
 
 This analysis resulted in a lower accuracy than the previous experiment.
 In total, only 65.7\% were correct.
+Note that this performs significantly better than the naive guess approach, where the most common class is predicted for all cases.
+In that approach, the most common class is graduate students and that would result in $44.8\%$ accuracy.
 The category of graduate student was the easiest to predict and the operations class was the most difficult.
 This result is understandable because employees within operations perform the widest range of duties, including technical, administrative, and program support.
 One important consideration during this test is that many of the classes within the center contain employees with diverse sets of responsibilities.
@@ -1086,7 +1093,7 @@ This is likely due to the fact that the peripheral set has more graduate student
 
 Namata et al. performed the same analysis on the Enron email corpus~\cite{namata_inferring_2006}.
 Compared to the dataset used in this analysis the Enron data involved many more people.
-The Enron dataset has employees distributed more evenly into six classes, one more than used in the analysis above.
+The Enron dataset has employees distributed more evenly into six classes, only one more than used in the analysis above.
 Even with these advantages, the previous work was only able to achieve 62.09\% LOOCV accuracy.
 The difference between that analysis and the work described in this thesis is that Namata et al. only used traffic-based features.
 This analysis shows that integrating social-based features with the traffic-based statistics can improve job classification results.
@@ -1206,18 +1213,17 @@ It is clear that adding more people, in general, improves the performance of the
         \label{fig:people_generalization}
 \end{figure}
 
-Based on these analyses, it is clear that adding more people to an email dataset and adding people with more historial email data improved the accuracy of the job title classifier.
+Based on these analyses, it is clear that adding more people to an email dataset and adding people with more historical email data improved the accuracy of the job title classifier.
 
-\section{Deep Learning Application}
+\section{Algorithms for Processing Larger Data}
 Techniques such as random forests work well for small, low-dimensional data.
-Deep learning is an emerging field that has proven to be very powerful and effective in solving very complex problems.
-However, massive amounts of data are necessary to properly train a deep learning algorithm.
+Machine learning is an emerging field that has proven to be very powerful and effective in solving very complex problems dealing with massive amounts of data.
 Unfortunately, data on that scale is unavailable for email analysis.
 Consider a much larger dataset, made up of millions of people without labels.
-In this case, a more sophisticated, deep learning model would be necessary for successful classification in order to accurately learn the complicated structure inherent to such large real-world datasets.
-Suppose a representative sample of volunteers from the dataset self-identifies.
-This would produce a set of labeled training data, transforming an unsupervised problem into to a semi-supervised one. 
+In this case, a more sophisticated learning model would be necessary for successful classification and to accurately learn the complicated structure inherent to such large real-world datasets.
 
+\subsection{Deep Belief Networks}
+One powerful deep learning tools that could be used on a larger email dataset is a deep belief network.
 A deep belief network (DBN) is one model used to solve these types of problems. 
 A DBN is a generative graph with nodes that represent stochastic variables.
 There are several layers of these nodes, some of which are visible and some of which are hidden.
@@ -1263,7 +1269,9 @@ Testing on the MNIST dataset of handwritten digits, unsupervised pre-training is
 Pre-training identifies a set of initial weights for the network that can ultimately lead to better classification results.  
 An advantage of unsupervised pre-training is that, with small enough layers, it acts as a regularizer by decreasing variance and increasing the bias~\cite{hinton_recognize_2007}.  
 
-In conjunction with greedy pre-training, backpropagation  with some labeled data has been shown to improve both the optimization and generalization of a DBN. 
+In conjunction with greedy pre-training, backpropagation  with some labeled data has been shown to improve both the optimization and generalization of a DBN.
+Suppose a representative sample of volunteers from the dataset self-identifies.
+This would produce a set of labeled training data, transforming an unsupervised problem into to a semi-supervised one, making backpropagation possible.
 Hinton et al. showed that unsupervised pre-training followed by backpropagation of a DBN outperformed traditional feed forward neural networks on the MNIST dataset~\cite{hinton_fast_2006}.
 The nonlinearity of the logistic function used in backpropagation mitigates the possibility of overfitting to the data.
 
@@ -1274,6 +1282,14 @@ The difference between this method and other DBN approaches is that this work re
 Overall, this improves the training efficiency of the algorithm.
 This method can classify sentiments more accurately and train more quickly than previous semi-supervised algorithms.
 A classifier such as this could be used to powerfully learn with extremely large email datasets, particularly those without hashed text.
+
+\subsection{Collective Classification}
+As an alternate approach to this massive data problem, statistical relational learning techniques could be used instead of deep learning.
+These methods are used to model, learn, and infer from relational data with complex stochastic structures~\cite{getoor2007introduction}.
+Previous analysis assumed that each person behaved independently.
+The benefit of viewing the problem from a relational learning perspective is that information about one person may provide insight about another.
+However, this greatly complicates the model.
+
 
 
 

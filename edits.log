@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  15 APR 2016 11:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  4 MAY 2016 22:18
 entering extended mode
 **edits.tex
 (edits.tex
@@ -171,18 +171,18 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 \makeMPintoPDFobject=\count106
 \everyMPtoPDFconversion=\toks28
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 34.
+LaTeX Font Info:    Try loading font information for U+msa on input line 35.
  ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 34.
+LaTeX Font Info:    Try loading font information for U+msb on input line 35.
 
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/Kayla/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] (edits.
-aux) ) 
+{C:/Users/Kayla/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] (ed
+its.aux) ) 
 Here is how much of TeX's memory you used:
  2151 strings out of 493673
  26665 string characters out of 3141530
@@ -190,15 +190,15 @@ Here is how much of TeX's memory you used:
  5493 multiletter control sequences out of 15000+200000
  11554 words of font info for 36 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 27i,4n,26p,627b,250s stack positions out of 5000i,500n,10000p,200000b,50000s
-{D:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<D:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on edits.pdf (2 pages, 51512 bytes).
+ 27i,4n,26p,627b,254s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<D
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on edits.pdf (3 pages, 55416 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
+ 29 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

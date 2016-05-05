@@ -26,6 +26,8 @@
 \BOOKMARK [1][-]{section.5.3}{Hierarchy Analysis}{chapter.5}% 26
 \BOOKMARK [0][-]{chapter.6}{Future Work}{}% 27
 \BOOKMARK [1][-]{section.6.1}{Improving LOOCV Accuracy}{chapter.6}% 28
-\BOOKMARK [1][-]{section.6.2}{Deep Learning Application}{chapter.6}% 29
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 30
-\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 31
+\BOOKMARK [1][-]{section.6.2}{Algorithms for Processing Larger Data}{chapter.6}% 29
+\BOOKMARK [2][-]{subsection.6.2.1}{Deep Belief Networks}{section.6.2}% 30
+\BOOKMARK [2][-]{subsection.6.2.2}{Collective Classification}{section.6.2}% 31
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 32
+\BOOKMARK [0][-]{chapter.8}{Bibliography}{}% 33

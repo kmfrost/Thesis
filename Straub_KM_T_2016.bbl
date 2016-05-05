@@ -1,5 +1,9 @@
 \begin{thebibliography}{10}
 
+\bibitem{NG}
+J.~Pereira, ``Northrop {Grumman} {Realigns} {Sectors}, {Restores} {COO}
+  {Post},'' {\em The Wall Street Journal}, Oct. 15 2015.
+
 \bibitem{radicati_emails_2015}
 S.~Radicati and Levenstein, {\em Email statistics report, 2015-2019}.
 \newblock Technical report, 2015.
@@ -252,5 +256,9 @@ D.~Erhan, Y.~Bengio, A.~Courville, P.-A. Manzagol, P.~Vincent, and S.~Bengio,
 P.~Ruangkanokmas, T.~Achalakul, and K.~Akkarajitsakul, ``Deep belief networks
   with feature selection for sentiment classification,'' {\em 7th International
   Conference on Intelligent Systems, Modelling and Simulation}, 2016.
+
+\bibitem{getoor2007introduction}
+L.~Getoor, {\em Introduction to statistical relational learning}.
+\newblock MIT press, 2007.
 
 \end{thebibliography}
