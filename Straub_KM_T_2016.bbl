@@ -171,6 +171,10 @@ J.~F{\"u}rnkranz, D.~Gamberger, and N.~Lavra{\v{c}}, {\em Foundations of rule
   learning}.
 \newblock Springer Science \& Business Media, 2012.
 
+\bibitem{barber2012bayesian}
+D.~Barber, {\em Bayesian reasoning and machine learning}.
+\newblock Cambridge University Press, 2012.
+
 \bibitem{bulow2016distant}
 A.~M. B{\"u}low, J.~y.~H. Lee, and N.~Panteli, ``Distant relations: The
   affordances of email in interorganizational conflict,'' {\em International
@@ -273,5 +277,26 @@ P.~Ruangkanokmas, T.~Achalakul, and K.~Akkarajitsakul, ``Deep belief networks
 \bibitem{getoor2007introduction}
 L.~Getoor, {\em Introduction to statistical relational learning}.
 \newblock MIT press, 2007.
+
+\bibitem{taskar2002discriminative}
+B.~Taskar, P.~Abbeel, and D.~Koller, ``Discriminative probabilistic models for
+  relational data,'' in {\em Proceedings of the Eighteenth conference on
+  Uncertainty in artificial intelligence}, pp.~485--492, Morgan Kaufmann
+  Publishers Inc., 2002.
+
+\bibitem{lu2003link}
+Q.~Lu and L.~Getoor, ``Link-based classification,'' in {\em ICML}, vol.~3,
+  pp.~496--503, 2003.
+
+\bibitem{xiang2010modeling}
+R.~Xiang, J.~Neville, and M.~Rogati, ``Modeling relationship strength in online
+  social networks,'' in {\em Proceedings of the 19th international conference
+  on World wide web}, pp.~981--990, ACM, 2010.
+
+\bibitem{carvalho2005collective}
+V.~R. Carvalho and W.~W. Cohen, ``On the collective classification of email
+  speech acts,'' in {\em Proceedings of the 28th annual international ACM SIGIR
+  conference on Research and development in information retrieval},
+  pp.~345--352, ACM, 2005.
 
 \end{thebibliography}

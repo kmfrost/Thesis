@@ -9,6 +9,7 @@
 
 \documentclass[12pt]{report}
 
+\usepackage{multicol}
 \usepackage{times}
 \usepackage{graphicx}
 \usepackage{amsmath}
@@ -328,17 +329,34 @@ The only example of this approach combined features such as number of emails, re
 Unfortunately, this work represents preliminary research and did not publish any quantifiable results.
 This thesis aims to expand on this work and quantify the results when applied to a new dataset.
 
-\subsection{Machine Learning Overview}
+\subsection{Machine Learning Overview} \label{sec:MachineLearning}
 In this era of increasing computer memory for decreasing costs, modern businesses, researchers, medical facilities, and more are constantly collecting large volumes of data.
 This data may come from sources including sensors, online interactions such as social media, business transactions, and mobile devices.
 Email data is just one example of emerging trends in the collection and storage of large-scale information, dubbed ``big data''.
 This term refers to datasets too large for traditional data processing techniques to handle.
 Machine learning has rapidly evolved to meet the demand for processing capabilities required to adequately analyze big data.
 
-Data mining and machine learning are very closely connected.
-Data mining involves the extracting knowledge and patterns from large databases and selecting the best tools to perform this function.
-Machine learning focuses on training a machine to identify patterns and relationships from the data~\cite{furnkranz2012foundations}.
-The work presented in this thesis performs data mining tasks, some of which make use of machine learning algorithms.
+Although data mining and machine learning are very closely connected, it is important to note the difference between the two.
+Data mining involves the extraction of knowledge and patterns from large databases, often for predictive purposes.
+Machine learning focuses on designing algorithms to train a machine to identify patterns and relationships from data~\cite{furnkranz2012foundations}.
+The work presented in this thesis performs data mining tasks, making use of machine learning algorithms.
+This section will provide a brief survey of the field of machine learning before specifically examining prior work on algorithms and topics relevant to this thesis.
+
+Machine learning techniques are divided into two broad categories: unsupervised and supervised~\cite{barber2012bayesian}.
+T
+The goal of all types of learning is to extract understanding of the data well enough to accurately perform a function on unseen or future data.  
+
+Unsupervised techniques are used when working with unlabeled data, and the goal is to accurately characterize the given data.
+An example of an unsupervised application is anomaly detection.
+Given some amount of data, the algorithm attempts to identify samples that are significantly dissimilar to the rest of the data.
+If investigating a series of credit card transactions, an anomaly detection algorithm aims to identify the fraudulent charges.
+
+Supervised learning is used when working with labeled data and learning the relationship between the data and the label.
+Although labeled data is often more difficult to obtain, supervised learning 
+
+Note that there is a third type of learning: semi-supervised, which refers to working with data that is partially labeled.
+This is most often relevant to cases with large amounts of data where a small percentage is able to be hand-labeled.
+This thesis will revisit this concept when discussing future work in Chapter~\ref{FutureWork}.
 
 
 
@@ -680,8 +698,8 @@ This algorithm was originally designed to rate web pages, but has since been app
 A node's authority is just that\textemdash{}a measure of its importance over other nodes.
 A node's hub score is a measure of how well-connected it is to other nodes.
 
-Another algorithm used to generate features was the pagerank algorithm~\cite{page_pagerank_1999}, developed by Google to rank webpages for search results.
-The assumption is that the most important webpages will be linked to frequently by other pages.
+Another algorithm used to generate features was the pagerank algorithm~\cite{page_pagerank_1999}, developed by Google to rank web pages for search results.
+The assumption is that the most important web pages will be linked to frequently by other pages.
 Therefore, the ranking is determined by estimating the quality and quantity of links to a node.
 Both of these algorithms have been shown to predict expertise within an online social network~\cite{zhang_expertise_2007}.
 
@@ -822,7 +840,7 @@ In terms of this application, it measures the breadth and depth of an employee's
 \chapter{Algorithm Design} \label{Algorithm}
 This chapter describes the analysis behind the main algorithm: the random forest.
 The first section describes the process of selecting the classification algorithm.
-The second section discusses the theory behind random forests as well as the process of training and cross-validating the model.
+The second section discusses the theory behind random forests as well as the process of training and validating the model.
 The final section discusses the method behind ranking the different features used.
 
 \section{Algorithm Selection}
@@ -1308,12 +1326,18 @@ This method can classify sentiments more accurately and train more quickly than 
 A classifier such as this could be used to powerfully learn with extremely large email datasets, particularly those without hashed text.
 
 \subsection{Collective Classification}
-As an alternate approach to this massive data problem, statistical relational learning techniques could be used instead of deep learning.
+As an alternate approach to this big data problem, statistical relational learning techniques could be used instead of deep learning.
 These methods are used to model, learn, and infer from relational data with complex stochastic structures~\cite{getoor2007introduction}.
-Previous analysis assumed that each person behaved independently.
-The benefit of viewing the problem from a relational learning perspective is that information about one person may provide insight about another.
-However, this greatly complicates the model.
+This is in contrast to traditional machine learning techniques which assume that all data samples are independent and identically distributed~\cite{taskar2002discriminative}.
+Relational learning proposes considering the behavioral dependencies between people.
+An example of this would be to cluster people who work together or in similar fields based on the relations inherent in the data.
 
+By viewing the problem from a relational learning perspective, information about one person may provide insight about another, which could improve classification performance~\cite{lu2003link}.
+These correlations and relationships can be leveraged to produce joint predictions for related samples simultaneously, referred to as ``collective classification''.
+Collective classification techniques have been effectively applied to hyperlinked documents~\cite{taskar2002discriminative}, social networks~\cite{xiang2010modeling}, and email analysis~\cite{carvalho2005collective}.
+The challenge with collective classification is that it introduces additional complexity to the classification algorithm.
+However, a more sophisticated algorithm such as this would be necessary in the massive data scenario.
+Future work in this field should consider the collective classification approach.
 
 
 
@@ -1368,8 +1392,9 @@ This work has shown that it is possible to glean organizational information from
 
 
 \chapter*{Appendix B: Full Feature List}
+\begin{multicols}{2}
 \begin{enumerate}
-	\setlength\itemsep{-0.75em}
+	\setlength\itemsep{-1em}
 	\item total\_sent
 	\item unique\_addresses\_sent
 	\item unique\_add\_sent\_perc
@@ -1485,6 +1510,6 @@ This work has shown that it is possible to glean organizational information from
 	\item pg\_num\_cliques
 	\item fg\_num\_cliques
 \end{enumerate}
-
+\end{multicols}
 \end{document}
 

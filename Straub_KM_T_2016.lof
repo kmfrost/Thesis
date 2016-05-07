@@ -1,30 +1,30 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Example subject hash}}{13}{figure.caption.4}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Center emails over time}}{17}{figure.caption.6}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Dataset class distribution}}{18}{figure.caption.7}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Emails per person per job title}}{19}{figure.caption.8}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Forwarded emails received histogram}}{24}{figure.caption.12}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces The social network of the center}}{26}{figure.caption.14}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces The dataset represented as an adjacency matrix}}{27}{figure.caption.15}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Types of emails employees sent to themselves}}{28}{figure.caption.16}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Histogram of the hubs feature for the partial graph}}{36}{figure.caption.23}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Example subject hash}}{14}{figure.caption.4}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Center emails over time}}{18}{figure.caption.6}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Dataset class distribution}}{19}{figure.caption.7}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Emails per person per job title}}{20}{figure.caption.8}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Forwarded emails received histogram}}{25}{figure.caption.12}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces The social network of the center}}{27}{figure.caption.14}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces The dataset represented as an adjacency matrix}}{28}{figure.caption.15}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Types of emails employees sent to themselves}}{29}{figure.caption.16}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Histogram of the hubs feature for the partial graph}}{37}{figure.caption.23}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Algorithm selection analysis}}{39}{figure.caption.24}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Example random tree}}{40}{figure.caption.25}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Random forest prediction process}}{43}{figure.caption.26}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Algorithm selection analysis}}{40}{figure.caption.24}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Example random tree}}{41}{figure.caption.25}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Random forest prediction process}}{44}{figure.caption.26}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Job title classification results}}{49}{figure.caption.28}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Job title prediction confusion matrix}}{50}{figure.caption.29}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Accuracy of classification over time}}{51}{figure.caption.30}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Prediction accuracy compared to number of features}}{52}{figure.caption.31}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Leave-one-out cross-validation results}}{53}{figure.caption.32}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Generated organic organization chart of the center}}{56}{figure.caption.33}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Project manager and director prediction results}}{58}{figure.caption.34}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Job title classification results}}{50}{figure.caption.28}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Job title prediction confusion matrix}}{51}{figure.caption.29}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Accuracy of classification over time}}{52}{figure.caption.30}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Prediction accuracy compared to number of features}}{53}{figure.caption.31}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Leave-one-out cross-validation results}}{54}{figure.caption.32}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Generated organic organization chart of the center}}{57}{figure.caption.33}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Project manager and director prediction results}}{59}{figure.caption.34}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Effects of more data on prediction accuracy}}{61}{figure.caption.35}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Effects of more people on prediction accuracy}}{62}{figure.caption.36}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces The Components of a Deep Belief Network}}{63}{figure.caption.37}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Effects of more data on prediction accuracy}}{62}{figure.caption.35}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Effects of more people on prediction accuracy}}{63}{figure.caption.36}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces The Components of a Deep Belief Network}}{64}{figure.caption.37}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
