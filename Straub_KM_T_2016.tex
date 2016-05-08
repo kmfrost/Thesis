@@ -200,7 +200,7 @@ However, privacy concerns inhibit most research thrusts into email analysis.
 
 Extracting hierarchical relationships from email metadata can be used for several potential applications beyond gaining a better understanding of corporate operations.
 These methods could be applied to any communications system such as cellular communications, website links, social media, and network traffic.
-Within these sytems it would be possible to perform organizational analysis, anomalous behavior detection, or leadership identification.
+Within these systems it would be possible to perform organizational analysis, anomalous behavior detection, or leadership identification.
 For example, it could be possible to identify people of influence or potential leaders based on their volume and patterns of communication.
 Alternatively, by recognizing behavior patterns inconsistent with a person's surrounding peers, potential insider threats could be identified.
 In a military context, this work shows the importance of protecting this metadata from adversaries who could use it to uncover information about an organization that they could use to find vulnerabilities.
@@ -321,7 +321,7 @@ Note that two or more equivalent shortest paths can exist for a pair of nodes.
 A node with high betweenness centrality in a social graph has been shown to represent a high degree of influence on other nodes.
 A betweenness centrality algorithm has been used to determine community structures within an organization~\cite{tyler_email_2003}.
 There are several other types of centrality such as degree, closeness, current-flow closeness, and current-flow betweenness~\cite{balinsky2011rapid}.
-Avrachenkov et al. evaluated variations of betweeness centraltiy on the Enron dataset and other social networks~\cite{avrachenkov2013alpha}.
+Avrachenkov et al. evaluated variations of betweenness centrality on the Enron dataset and other social networks~\cite{avrachenkov2013alpha}.
 Furthermore, Agrawal et al. classified Enron employees within superior-subordinate pairs.
 Using degree centrality features generated more accurate labels than natural language processing methods~\cite{agarwal_comprehensive_2012}.
 Other research has detected the most important email users within a corporate network without using betweenness or centrality as features~\cite{wilson_discovery_2009}.
@@ -356,7 +356,7 @@ The machine learning algorithm in this thesis solves a classification problem wh
 
 Typical supervised learning approaches divide the available data into three distinct sets.
 The first set is the training data, which is used to describe the data and build the learning model.
-Validation data, the second set, is used as psuedo-test data to estimate how well the model has been trained.
+Validation data, the second set, is used as pseudo-test data to estimate how well the model has been trained.
 The validation set is tested several times to tune the parameters and maximize the accuracy of the model.
 The final portion of the data is reserved as the test set.
 This is only used on the optimized model once and the performance on this set is used as the overall accuracy of the model.
@@ -405,7 +405,7 @@ This study used a combination of metadata-based and text-based features, but fou
 A Gaussian Process algorithm was able to achieve $52.7\%$ classification accuracy~\cite{preoctiuc2015analysis}.
 
 Another study investigated classifying Twitter users not only by occupation but also by age and social class~\cite{sloan2015tweets}.
-This work scanned for key words in a users's profile descriptions of themselves, and used those words to predict that user's occupation. 
+This work scanned for key words in a user's profile descriptions of themselves, and used those words to predict that user's occupation. 
 For labels, this study also used the SOC system described above.
 Using human validation, the algorithm was able to predict job title with 57.8\% accuracy over $1,000$ cases.
 
@@ -619,7 +619,7 @@ The log of the raw values are plotted here for visual clarity.
 This figure demonstrates how difficult this classification problem can be.
 It is clear from the figure that graduate students received far fewer forwarded emails than most other groups.
 Some of the different personalities among the staff are reflected in their email behavior, which might explain why the middle bins contain employees from three or more groups.
-The graduate student with approximately $10^{2.5}$ forwarded emails is likley either more involved in office activities or at least more email-active.  
+The graduate student with approximately $10^{2.5}$ forwarded emails is likely either more involved in office activities or at least more email-active.  
 On the other hand, the operations employee that has less than $30$ forwarded emails is clearly less email-active than other members of that team.
 The divisions among the classes become slightly more clear when the feature values are normalized between 0 and 1, as opposed to the raw numbers shown here.
 All feature values are normalized before being used by the learning algorithm.
@@ -883,7 +883,7 @@ It appears that the same types of employees that had high forwards received coun
 
 The next three most useful measurements are the hubs value for the full graph, the current flow closeness centrality for the partial graph, and partial graph pagerank.
 These measures may seem to have less intuitive interpretations than the top-ranked traffic-based features.
-However, in general these webpage ranking and centrality measures attempt to capture different aspects of how well a node is embedded within the graph.
+However, in general these web page ranking and centrality measures attempt to capture different aspects of how well a node is embedded within the graph.
 In terms of this application, it measures the breadth and depth of an employee's email communications within the center.
 
 \chapter{Algorithm Design} \label{Algorithm}
