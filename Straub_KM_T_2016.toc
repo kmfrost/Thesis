@@ -7,38 +7,41 @@
 \contentsline {section}{\numberline {1.4}Contributions}{4}{section.1.4}
 \contentsline {section}{\numberline {1.5}Outline}{5}{section.1.5}
 \contentsline {chapter}{\numberline {2}Prior Work}{6}{chapter.2}
-\contentsline {section}{\numberline {2.1}Background}{7}{section.2.1}
-\contentsline {section}{\numberline {2.2}Commonly Used Datasets}{7}{section.2.2}
-\contentsline {section}{\numberline {2.3}Prior Email Analysis}{9}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Machine Learning Overview}{11}{subsection.2.3.1}
-\contentsline {chapter}{\numberline {3}Email Dataset and Feature Extraction}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}Data Collection}{13}{section.3.1}
-\contentsline {section}{\numberline {3.2}Dataset Description and Statistics}{16}{section.3.2}
-\contentsline {section}{\numberline {3.3}Features}{20}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Traffic-Based Features}{20}{subsection.3.3.1}
-\contentsline {subsubsection}{Email Counts and Email Types}{21}{section*.9}
-\contentsline {subsubsection}{Metadata Statistics}{22}{section*.10}
-\contentsline {subsubsection}{Most Useful Traffic-Based Features}{23}{section*.11}
-\contentsline {subsection}{\numberline {3.3.2}Social Network Features}{26}{subsection.3.3.2}
-\contentsline {subsubsection}{Social Network Representation}{26}{section*.13}
-\contentsline {subsubsection}{Degree Measures}{29}{section*.17}
-\contentsline {subsubsection}{Cliques}{30}{section*.18}
-\contentsline {subsubsection}{Adapting Search Engine Algorithms}{31}{section*.19}
-\contentsline {subsubsection}{Clustering Metrics}{32}{section*.20}
-\contentsline {subsubsection}{Centrality Measures}{33}{section*.21}
-\contentsline {subsubsection}{Most Useful Social Network Features}{36}{section*.22}
-\contentsline {chapter}{\numberline {4}Algorithm Design}{39}{chapter.4}
-\contentsline {section}{\numberline {4.1}Algorithm Selection}{39}{section.4.1}
-\contentsline {section}{\numberline {4.2}Algorithm Description}{41}{section.4.2}
-\contentsline {section}{\numberline {4.3}Feature Selection}{46}{section.4.3}
-\contentsline {chapter}{\numberline {5}Performance Analysis}{48}{chapter.5}
-\contentsline {section}{\numberline {5.1}Classification Results}{49}{section.5.1}
-\contentsline {section}{\numberline {5.2}Leave-One-Out Cross-Validation}{53}{section.5.2}
-\contentsline {section}{\numberline {5.3}Hierarchy Analysis}{56}{section.5.3}
-\contentsline {chapter}{\numberline {6}Future Work}{60}{chapter.6}
-\contentsline {section}{\numberline {6.1}Improving LOOCV Accuracy}{61}{section.6.1}
-\contentsline {section}{\numberline {6.2}Algorithms for Processing Larger Data}{63}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Deep Belief Networks}{64}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Collective Classification}{67}{subsection.6.2.2}
-\contentsline {chapter}{\numberline {7}Conclusions}{69}{chapter.7}
-\contentsline {chapter}{\numberline {8}Bibliography}{71}{chapter.8}
+\contentsline {section}{\numberline {2.1}Email Analysis Overview}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Commonly Used Email Datasets}{7}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Prior Email Analysis}{9}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Machine Learning Overview}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Subfields of Machine Learning}{12}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Random Forests}{13}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Occupation Classification}{14}{subsection.2.2.3}
+\contentsline {chapter}{\numberline {3}Email Dataset and Feature Extraction}{16}{chapter.3}
+\contentsline {section}{\numberline {3.1}Data Collection}{16}{section.3.1}
+\contentsline {section}{\numberline {3.2}Dataset Description and Statistics}{19}{section.3.2}
+\contentsline {section}{\numberline {3.3}Features}{23}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Traffic-Based Features}{23}{subsection.3.3.1}
+\contentsline {subsubsection}{Email Counts and Email Types}{24}{section*.9}
+\contentsline {subsubsection}{Metadata Statistics}{25}{section*.10}
+\contentsline {subsubsection}{Most Useful Traffic-Based Features}{26}{section*.11}
+\contentsline {subsection}{\numberline {3.3.2}Social Network Features}{29}{subsection.3.3.2}
+\contentsline {subsubsection}{Social Network Representation}{29}{section*.13}
+\contentsline {subsubsection}{Degree Measures}{32}{section*.17}
+\contentsline {subsubsection}{Cliques}{33}{section*.18}
+\contentsline {subsubsection}{Adapting Search Engine Algorithms}{34}{section*.19}
+\contentsline {subsubsection}{Clustering Metrics}{35}{section*.20}
+\contentsline {subsubsection}{Centrality Measures}{36}{section*.21}
+\contentsline {subsubsection}{Most Useful Social Network Features}{39}{section*.22}
+\contentsline {chapter}{\numberline {4}Algorithm Design}{42}{chapter.4}
+\contentsline {section}{\numberline {4.1}Algorithm Selection}{42}{section.4.1}
+\contentsline {section}{\numberline {4.2}Algorithm Description}{44}{section.4.2}
+\contentsline {section}{\numberline {4.3}Feature Selection}{49}{section.4.3}
+\contentsline {chapter}{\numberline {5}Performance Analysis}{51}{chapter.5}
+\contentsline {section}{\numberline {5.1}Classification Results}{52}{section.5.1}
+\contentsline {section}{\numberline {5.2}Leave-One-Out Cross-Validation}{56}{section.5.2}
+\contentsline {section}{\numberline {5.3}Hierarchy Analysis}{59}{section.5.3}
+\contentsline {chapter}{\numberline {6}Future Work}{63}{chapter.6}
+\contentsline {section}{\numberline {6.1}Improving LOOCV Accuracy}{64}{section.6.1}
+\contentsline {section}{\numberline {6.2}Algorithms for Processing Larger Data}{66}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Deep Belief Networks}{67}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Collective Classification}{70}{subsection.6.2.2}
+\contentsline {chapter}{\numberline {7}Conclusions}{72}{chapter.7}
+\contentsline {chapter}{\numberline {8}Bibliography}{74}{chapter.8}

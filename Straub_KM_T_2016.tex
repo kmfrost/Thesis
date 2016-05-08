@@ -41,6 +41,7 @@
 \usepackage[nottoc, numbib]{tocbibind}
 \graphicspath{{Pictures/}}
 \definecolor{Gray}{gray}{0.85}
+\usepackage{cite}
 
 \setlength\cftparskip{-2pt}
 \setlength\cftbeforesecskip{1pt}
@@ -204,7 +205,7 @@ For example, it could be possible to identify people of influence or potential l
 Alternatively, by recognizing behavior patterns inconsistent with a person's surrounding peers, potential insider threats could be identified.
 In a military context, this work shows the importance of protecting this metadata from adversaries who could use it to uncover information about an organization that they could use to find vulnerabilities.
 This type of work is also very important to government agencies in order to analyze large-scale data, as was made clear by the reports released by Edward Snowden in $2013$~\cite{snowden}.
-The type of analysis described in this work applied to the data Snowden reports about could produce valuable understanding of people's behavior and status. 
+The type of analysis presented in this work applied to the data Snowden describes could produce valuable understanding of people's behavior and status. 
 
 
 
@@ -213,7 +214,7 @@ This thesis addresses the problem of automatic organizational determination.
 Specifically, it considers using email analysis to perform this operation.
 However, there is a lack of modern, publicly available email datasets to use for this research.
 Out of the email datasets that do exist, namely the Enron email corpus, there is a lack of accurate job title labels for the employees.
-Labels are necessary for evaluating the results of the organic hierarchy analysis with the official organization chart.
+Labels are necessary for comparing the results of the organic hierarchy analysis with the official organization chart.
 
 The research presented in this thesis documents how a new email metadata dataset was collected and appropriately anonymized from the email records of 37 voluntary participants from an academic research organization.
 This metadata is used not only to analyze the participants, but also to what extent the non-participant members of the organization can be characterized.
@@ -228,7 +229,7 @@ Altogether, the result reveals how much information about an organization can be
 
 
 \section{Approach}
-These emails are used to calculate a high-dimensional feature set to be used with machine learning techniques.
+The collected emails are used to calculate a high-dimensional feature set to be used with machine learning techniques.
 The 114 features used in this study can be grouped into two common areas in email analytics: traffic-based and social-based.
 Using random forests, these features are used to accurately predict each employee's job title.
 Finally, a comparison is presented between relationships displayed in the data with the formal organizational chart.
@@ -255,13 +256,15 @@ The results of the analysis are presented in Chapter~\ref{Performance}.
 
 
 \chapter{Prior Work} \label{PriorWork}
-This chapter investigates the previous research performed in the area of email analysis.
+This chapter investigates the previous research performed in the areas of email analysis and occupation analysis.
 Context is established with a discussion on the importance of workplace email communication in modern society.
 A description of the benchmark in email datasets, the Enron email corpus, is provided, and the drawbacks of this dataset are highlighted.
 Section~\ref{sec:priorAnalysis} provides an overview of features typically used in email analysis and the works that address the problem of organization determination.
-A brief overview of the existing machine learning literature is presented in Section~\ref{sec:MachineLearning}.
+The second half of this chapter presents a brief overview of the relevant machine learning terminology.
+The chapter concludes by discussing prior work utilizing the relevant algorithms and approaching the problem of occupation classification.
 
-\section{Background}
+
+\section{Email Analysis Overview}
 Email is a pervasive medium for communication in modern society\textemdash{}particularly in the workplace.
 In 2015, there were over 2.6 billion email users~\cite{radicati_emails_2015}.
 It is projected that by the end of 2019, over one third of the global population will be using email.
@@ -271,10 +274,10 @@ Retention of large email archives has become common practice with decreasing phy
 Out of the 600 employees involved in that study at Microsoft, the average employee had 28,660 emails stored in 133 folders; that represents a significant increase over the past ten years.
 Such an accumulation of emails holds a considerable amount of untapped information that could be leveraged to characterize employee roles within an organization.
 
-\section{Commonly Used Datasets} \label{sec:Enron}
+\subsection{Commonly Used Email Datasets} \label{sec:Enron}
 When the Enron email corpus was released in 2004 \cite{klimt_introducing_2004}, it became the one of the largest email datasets available for public use.
 It is unique in that it included all of the email text, which lead to many studies involving text analysis and natural language processing. 
-Since then, this dataset has been extensively researched on topics including spam classification~\cite{bahgat2016mail}, \cite{shams_classifying_2013}; email categorization \cite{he_novel_2014}, \cite{keila_structure_2005}; and recipient prediction \cite{sofershtein_predicting_2015}, \cite{hu_towards_2012}.
+Since then, this dataset has been extensively researched on topics including spam classification~\cite{bahgat2016mail,shams_classifying_2013}; email categorization \cite{he_novel_2014,keila_structure_2005}; and recipient prediction \cite{sofershtein_predicting_2015,hu_towards_2012}.
 However, there are known flaws and discrepancies with even the most recent versions of this dataset\textemdash{}ranging from misspelled email addresses~\cite{nordbo_data_2014} to duplicate email addresses~\cite{waterman_big_2014}, and misfiled emails~\cite{namata_inferring_2006}.
 In one of the most popular forms of the dataset~\cite{shetty_enron_2004}, the database includes 253,735 emails sent as ``CC'' and  253,713 emails sent as ``BCC''.
 Further inspection reveals that emails sent as one type or the other were almost always mistakenly recorded as both.
@@ -284,10 +287,10 @@ Previous work by Gilbert has made use of these labels along with performing natu
 This work identified phrases more likely to be used when emailing superiors compared to phrases used when emailing peers or subordinates.
 The corpus and job title labels have also been used to explore patterns in office email gossip with respect to the organizational hierarchy~\cite{mitra_analyzing_2013}.
 There are clear issues with the job title labels, though.
-For example, Jeff Dasovic is labeled as an “Employee”, seemingly the lowest title.
+For example, Jeff Dasovic is labeled as an ``Employee'', seemingly the lowest title.
 However, he had more emails than anyone else in the dataset and is identified in records as “Director for State Government Affairs.” 
 There are similar inconsistencies for Sally Beck, Rick Buy, and Rod Hayslett~\cite{gilbert_phrases_2012}.
-Furthermore, out of the 161 employees with labels, 29 of them are listed as "N/A".
+Furthermore, out of the 161 employees with labels, 29 of them are listed as ``N/A''.
 Amidst all of these concerns about the Enron job title labels, this work proposes using a new dataset with accurate job titles generated from intimate knowledge of the organization.
 
 The other datasets for analysis are rare in this vein of behavior modeling and community analysis.
@@ -296,7 +299,7 @@ For example, the research by Tyler et al. was performed on a internal email data
 Often datasets collect communication patterns from public online sources such as Twitter~\cite{Zafarani+Liu:2009}, YouTube~\cite{mislove-2007-socialnetworks},  and Wikipedia~\cite{leskovec2010predicting}.
 However, this research focused on organizational structure in addition to the social network components, so these datasets were unsuitable for this purpose.
 
-\section{Prior Email Analysis} \label{sec:priorAnalysis}
+\subsection{Prior Email Analysis} \label{sec:priorAnalysis}
 The existing literature on analyzing social email behavior is mainly divided into two categories: traffic-based and social-based~\cite{tang_email_2013}.
 Traffic-based methods calculate statistics based only on email patterns.
 Social-based methods represent the email communications as a social graph and then extract information from this model about the inherent relationships.
@@ -329,7 +332,7 @@ The only example of this approach combined features such as number of emails, re
 Unfortunately, this work represents preliminary research and did not publish any quantifiable results.
 This thesis aims to expand on this work and quantify the results when applied to a new dataset.
 
-\subsection{Machine Learning Overview} \label{sec:MachineLearning}
+\section{Machine Learning Overview} \label{sec:MachineLearning}
 In this era of increasing computer memory for decreasing costs, modern businesses, researchers, medical facilities, and more are constantly collecting large volumes of data.
 This data may come from sources including sensors, online interactions such as social media, business transactions, and mobile devices.
 Email data is just one example of emerging trends in the collection and storage of large-scale information, dubbed ``big data''.
@@ -338,31 +341,78 @@ Machine learning has rapidly evolved to meet the demand for processing capabilit
 
 Although data mining and machine learning are very closely connected, it is important to note the difference between the two.
 Data mining involves the extraction of knowledge and patterns from large databases, often for predictive purposes.
-Machine learning focuses on designing algorithms to train a machine to identify patterns and relationships from data~\cite{furnkranz2012foundations}.
+Machine learning focuses on designing the algorithms to train a machine to identify patterns and relationships from data~\cite{furnkranz2012foundations}.
 The work presented in this thesis performs data mining tasks, making use of machine learning algorithms.
 This section will provide a brief survey of the field of machine learning before specifically examining prior work on algorithms and topics relevant to this thesis.
 
-Machine learning techniques are divided into two broad categories: unsupervised and supervised~\cite{barber2012bayesian}.
-T
+\subsection{Subfields of Machine Learning}
+Machine learning techniques are divided into two broad categories: supervised and unsupervised~\cite{barber2012bayesian}.
 The goal of all types of learning is to extract understanding of the data well enough to accurately perform a function on unseen or future data.  
 
-Unsupervised techniques are used when working with unlabeled data, and the goal is to accurately characterize the given data.
+Supervised learning is used when working with labeled data and learning the relationship between the data and the label.
+The data used in this work is labeled in that each employee considered has a ground truth job title.
+Supervised learning problems are divided into two types: classification problems have discrete outputs and regression problems have continuous outputs.
+The machine learning algorithm in this thesis solves a classification problem where the input is information extracted from employee emails and the output is one of six job titles.
+
+Typical supervised learning approaches divide the available data into three test sets.
+The first set is the training data, which is used to describe the data and build the learning model.
+Validation data, the second set, is used as psuedo-test data to estimate how well the model has been trained.
+The validation set is tested on several times to tune the parameters and maximize the accuracy of the model.
+The final portion of the data is reserved as the test set.
+This is only used on the optimized model once and the performance on this set is used as the overall accuracy of the model.
+
+Unsupervised techniques are used when working with unlabeled data, and the goal is simply to accurately characterize the given data.
 An example of an unsupervised application is anomaly detection.
 Given some amount of data, the algorithm attempts to identify samples that are significantly dissimilar to the rest of the data.
 If investigating a series of credit card transactions, an anomaly detection algorithm aims to identify the fraudulent charges.
+In this case, the fraudulent charges are not known beforehand and therefore are not labeled in the data.
 
-Supervised learning is used when working with labeled data and learning the relationship between the data and the label.
-Although labeled data is often more difficult to obtain, supervised learning 
-
-Note that there is a third type of learning: semi-supervised, which refers to working with data that is partially labeled.
+Note that there exist intermediate types of learning, between supervised and unsupervised.
+One example is semi-supervised, which refers to working with data that is partially labeled.
 This is most often relevant to cases with large amounts of data where a small percentage is able to be hand-labeled.
-This thesis will revisit this concept when discussing future work in Chapter~\ref{FutureWork}.
+This concept is revisited when discussing future work in Chapter~\ref{FutureWork}.
 
+\subsection{Random Forests}
+The classification algorithm used in this work is the random forest.
+Technical details about this algorithm are provided in Section~\ref{sec:InfoGain}, but a brief history and overview is provided below.
 
+A random tree is a simple predictive algorithm which generates a series of binary rules applied to inputs to produce outputs.
+Random tree methods typically exhibit high variance and low bias.
+This means that this type of algorithm learns the data it is given very well, but may not perform well on other data including the test set.
+To combat this issue, researchers developed ensemble methods where several trees are created and each produces a prediction.
+Predictions from the trees are used as votes, and the most common prediction is selected as the overall output.
+Each of these variations introduced additional sources of randomness to the tree-training process~\cite{breiman1996bagging,dietterich2000experimental,amit1997shape}.
+In 2001, Breiman consolidated several of these random perturbations into a single ensemble classifier called a random forest\cite{Breiman2001}.
+This new algorithm is much more robust to noise than its predecessor, and therefore has a lower variance which leads to better overall classification results.
 
+Random forests have since been widely used in a variety of applications due to their robust nature.
+In ecology, random forests have been used to classify species of plants with very high accuracy.
+They outperformed other supervised classification methods including: random trees, logistic regression, and linear discriminant analysis (LDA)\cite{cutler2007random}.
+Other applications include image classification~\cite{marin2013random}, predicting consumer behaviors~\cite{lariviere2005predicting}, and detecting malware~\cite{sami2010malware}. 
+
+\subsection{Occupation Classification}
+In Section~\ref{sec:priorAnalysis} it was discussed that the problem of occupation analysis has not been addressed in email analysis.
+However, recent studies have examined this topic using a different source of social data: social media.
+
+One study analyzed user data from Sina Weibo, a Chinese  micro-blogging platform similar to Twitter, to predict an occupation\cite{huang2015multi}.
+This dataset assigned each person a ground truth occupational title from one of $12$ classes.
+This algorithm used a combination of text-based and metadata-based features in addition to community-based metrics to produce a job title prediction.
+Support vector machines and logistic regression were the two methods that produced the most accurate predictions.  
+
+In one experiment, researchers attempted to classify a Twitter user's occupation into one of the Standard Occupational Classifications (SOC), a system developed by the government of the United Kingdom\footnote{http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/index.html, \\ accessed on 05/06/2016}.
+Any occupation can be described using one of the nine major groups and various subgroups on this scale.
+This study used a combination of metadata-based and text-based features, but found that the metadata features were not useful in predicting occupation.
+A Gaussian Process algorithm was able to achieve $52.7\%$ classification accuracy~\cite{preoctiuc2015analysis}.
+
+Another study investigated classifying Twitter users not only by occupation but also by age and social class~\cite{sloan2015tweets}.
+This work scanned for key words in a users's profile descriptions of themselves, and used those words to predict that user's occupation. 
+For labels, this study also used the SOC system described above.
+Using human validation, the algorithm was able to predict job title with 57.8\% accuracy over $1,000$ cases.
+
+The research discussed above is performed on a significantly larger scale than any of the previously discussed email analyses, but shows how the same methods have been applied to other forms of communications data.
+Additionally, the results from the work in social media analysis can serve as somewhat of a benchmark for evaluating the results from this thesis.
 
 \chapter{Email Dataset and Feature Extraction} \label{Data}
-
 This chapter details all of the steps taken to transform the raw data into the high-dimensional feature space used in the learning algorithm.
 Information is provided on the data collected and statistics about the dataset.
 There is a detailed description of all features used, both traffic-based and social-based.
@@ -952,7 +1002,7 @@ These assumptions will be reflected in the testing data.
 To use this classification algorithm, the data must be split into three groups.
 The emails in the dataset were randomly assigned to one of the following: 35\% for training, 30\% for validation, and 35\% for testing.
 The training set was used to build the random trees.
-The validation set was used in lieu of a test set to optimize the parameters of the random forest.
+The validation set was used in lieu of a test set to optimize the parameters of the random forest, such as number of trees.
 The testing set is used only once as the final evaluation of a model trained by the training set using these optimal parameters.
 
 There are several parameters that were tuned to optimize this algorithm.

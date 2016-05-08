@@ -175,6 +175,58 @@ J.~F{\"u}rnkranz, D.~Gamberger, and N.~Lavra{\v{c}}, {\em Foundations of rule
 D.~Barber, {\em Bayesian reasoning and machine learning}.
 \newblock Cambridge University Press, 2012.
 
+\bibitem{breiman1996bagging}
+L.~Breiman, ``Bagging predictors,'' {\em Machine learning}, vol.~24, no.~2,
+  pp.~123--140, 1996.
+
+\bibitem{dietterich2000experimental}
+T.~G. Dietterich, ``An experimental comparison of three methods for
+  constructing ensembles of decision trees: Bagging, boosting, and
+  randomization,'' {\em Machine learning}, vol.~40, no.~2, pp.~139--157, 2000.
+
+\bibitem{amit1997shape}
+Y.~Amit and D.~Geman, ``Shape quantization and recognition with randomized
+  trees,'' {\em Neural computation}, vol.~9, no.~7, pp.~1545--1588, 1997.
+
+\bibitem{Breiman2001}
+L.~Breiman, ``Random forests,'' {\em Machine Learning}, vol.~45, no.~1,
+  pp.~5--32, 2001.
+
+\bibitem{cutler2007random}
+D.~R. Cutler, T.~C. Edwards~Jr, K.~H. Beard, A.~Cutler, K.~T. Hess, J.~Gibson,
+  and J.~J. Lawler, ``Random forests for classification in ecology,'' {\em
+  Ecology}, vol.~88, no.~11, pp.~2783--2792, 2007.
+
+\bibitem{marin2013random}
+J.~Marin, D.~V{\'a}zquez, A.~Lopez, J.~Amores, and B.~Leibe, ``Random forests
+  of local experts for pedestrian detection,'' in {\em Proceedings of the IEEE
+  International Conference on Computer Vision}, pp.~2592--2599, 2013.
+
+\bibitem{lariviere2005predicting}
+B.~Larivi{\`e}re and D.~Van~den Poel, ``Predicting customer retention and
+  profitability by using random forests and regression forests techniques,''
+  {\em Expert Systems with Applications}, vol.~29, no.~2, pp.~472--484, 2005.
+
+\bibitem{sami2010malware}
+A.~Sami, B.~Yadegari, H.~Rahimi, N.~Peiravian, S.~Hashemi, and A.~Hamze,
+  ``Malware detection based on mining api calls,'' in {\em Proceedings of the
+  2010 ACM Symposium on Applied Computing}, pp.~1020--1025, ACM, 2010.
+
+\bibitem{huang2015multi}
+Y.~Huang, L.~Yu, X.~Wang, and B.~Cui, ``A multi-source integration framework
+  for user occupation inference in social media systems,'' {\em World Wide
+  Web}, vol.~18, no.~5, pp.~1247--1267, 2015.
+
+\bibitem{preoctiuc2015analysis}
+D.~Preo{\c{t}}iuc-Pietro, V.~Lampos, and N.~Aletras, ``An analysis of the user
+  occupational class through twitter content,'' The Association for
+  Computational Linguistics, 2015.
+
+\bibitem{sloan2015tweets}
+L.~Sloan, J.~Morgan, P.~Burnap, and M.~Williams, ``Who tweets? deriving the
+  demographic characteristics of age, occupation and social class from twitter
+  user meta-data,'' {\em PloS one}, vol.~10, no.~3, p.~e0115545, 2015.
+
 \bibitem{bulow2016distant}
 A.~M. B{\"u}low, J.~y.~H. Lee, and N.~Panteli, ``Distant relations: The
   affordances of email in interorganizational conflict,'' {\em International
@@ -246,10 +298,6 @@ E.~Estrada and N.~Hatano, ``Communicability in complex networks,'' {\em
 M.~Hall, E.~Frank, G.~Holmes, B.~Pfahringer, P.~Reutemann, and I.~H. Witten,
   ``The weka data mining software: an update,'' {\em ACM SIGKDD explorations
   newsletter}, vol.~11, no.~1, pp.~10--18, 2009.
-
-\bibitem{Breiman2001}
-L.~Breiman, ``Random forests,'' {\em Machine Learning}, vol.~45, no.~1,
-  pp.~5--32, 2001.
 
 \bibitem{hinton_fast_2006}
 G.~E. Hinton, S.~Osindero, and Y.-W. Teh, ``A fast learning algorithm for deep
