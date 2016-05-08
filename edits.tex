@@ -25,7 +25,7 @@
 
     \item Investigate big spikes in the time graph
 		\par \textit{See Section 3.2}
-        \par \textit{Spikes represent Gmail folders being ported to the Hume center using an old script, which was responsible for changing the timestamps.  A more sophisticated system was developed for transferring emails in Summer 2014, and there are no more spikes after this point.  The biggest spike (from Jan 2014) came from moving large folders from a single graduate student.  Based on the folder names, these are unrelated to the Hume center and were sent before this person was a graduate student, therefore these emails will be removed from the dataset for the purposes of this analysis.}
+        \par \textit{Spikes represent Gmail folders being ported to the Hume center using an old script, which was responsible for changing the timestamps.  A more sophisticated system was developed for transferring emails in Summer 2014, and there are no more spikes after this point.  The biggest spike (from Jan 2014) came from moving large folders from a single graduate student.  Based on the folder names, these are unrelated to the Hume center and were sent before this person was a graduate student; therefore, these emails were removed from the dataset for the purposes of this analysis.}
 
 
 	    \item Calculate measure of non-symmetry of Hume adjacency matrix
@@ -45,13 +45,13 @@
     \par \textit{See Section 4.2}
     \par \textit{I used a tool that would incorporate class priors into the random forest algorithm in R.  However, this did not seem to have any noticable effect on the classification results.}
 	\item Look into mutual information values of zero and explain 
-	\par \textit{See Section 4.3}
+
     	\par \textit{There were four significant digits available for each value, so it did not appear to be a rounding error.
     		  There seemed to be an arbitrary cutoff point around $0.22$ bits.
     		  Lack of documentation makes it difficult to pinpoint the cause or correct for it, so I developed my own script to calculate the mutual information based on the description in Section 4.2.
     		  Table 4.1 has been updated to reflect the changes.
     		  Many of the features from the table were unchanged, but some are shuffled around.}
-
+	\par \textit{See Section 4.3}
 
 
     \item Discuss a naive guess/baseline for classification
@@ -61,15 +61,17 @@
 	\par \textit{See Section 5.2}
     \begin{enumerate}
    	    \item Is there any source of data leakage? If not, explain disparity between classification and LOOCV results.
+   	    \par \textit{No, I do not believe that there is any source of data leakage.  See the answer below in part \text{(b)} for comments on the second question.}
 		\item What types of people are misclassified?
 
 
-    \end{enumerate}
-    		\par \textit{The types of people were misclassified were just what you would expect: phD students, postdoctoral researchers, new employees, etc.
+
+    		\par \textit{The types of people that were misclassified were just what you would expect: PhD students, postdoctoral researchers, new employees, etc.
     			I think the most important point is realizing that within these 5 distinct classes, there exists both a range of functions and a range of personalities.
     			I believe that the reason for the disparity between the classification and LOOCV results lies with the fact that the duties and behaviors can vary so much from person to person within a class.
     			So much so that training on a person of the same class can lead to little or no information about the person under test.
-    			Having past information on a person to predict future behaviors allows the algorithm to recognize the past behavior as a sort of nearest neighbor (a high-performing classification technique from Figure 4.1) which vastly improves the classification accuracy.}
+    			Having past information on a person to predict their future behavior allows the algorithm to recognize the past behavior as a sort of nearest neighbor to the future behavior which vastly improves the classification accuracy.}
+    		    \end{enumerate}
 	\item For hierarchy analysis:
 	\par \textit{See Section 5.3}
 	

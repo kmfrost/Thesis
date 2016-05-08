@@ -293,7 +293,7 @@ There are similar inconsistencies for Sally Beck, Rick Buy, and Rod Hayslett~\ci
 Furthermore, out of the 161 employees with labels, 29 of them are listed as ``N/A''.
 Amidst all of these concerns about the Enron job title labels, this work proposes using a new dataset with accurate job titles generated from intimate knowledge of the organization.
 
-The other datasets for analysis are rare in this vein of behavior modeling and community analysis.
+Other datasets for analysis are rare in this vein of behavior modeling and community analysis.
 Other datasets used in the literature are usually either private or different types.
 For example, the research by Tyler et al. was performed on a internal email dataset collected by HP labs that was not publicly released~\cite{tyler_email_2003}.
 Often datasets collect communication patterns from public online sources such as Twitter~\cite{Zafarani+Liu:2009}, YouTube~\cite{mislove-2007-socialnetworks},  and Wikipedia~\cite{leskovec2010predicting}.
@@ -328,13 +328,13 @@ Other research has detected the most important email users within a corporate ne
 Examples of alternative features include: degree, the number of edges connected to a node; density, the ratio of actual edges to the number of possible edges; and proximity prestige, the ratio of the number of nodes that can reach a node $i$ to the average distance from those nodes to $i$.
 
 Instead of considering exclusively traffic-based or social-based analytics, these feature types can be be used jointly.
-The only example of this approach combined features such as number of emails, response time, cliques, and degree centrality into a ``Social Score'', was used to rank Enron employees~\cite{rowe_automated_2007}.  
+The only example of this approach combined features such as number of emails, response time, cliques, and degree centrality into a ``Social Score'', which was used to rank Enron employees~\cite{rowe_automated_2007}.  
 Unfortunately, this work represents preliminary research and did not publish any quantifiable results.
 This thesis aims to expand on this work and quantify the results when applied to a new dataset.
 
 \section{Machine Learning Overview} \label{sec:MachineLearning}
 In this era of increasing computer memory for decreasing costs, modern businesses, researchers, medical facilities, and more are constantly collecting large volumes of data.
-This data may come from sources including sensors, online interactions such as social media, business transactions, and mobile devices.
+This data may come from sources including sensors, business transactions, mobile devices, and online interactions such as social media.
 Email data is just one example of emerging trends in the collection and storage of large-scale information, dubbed ``big data''.
 This term refers to datasets too large for traditional data processing techniques to handle.
 Machine learning has rapidly evolved to meet the demand for processing capabilities required to adequately analyze big data.
@@ -351,13 +351,13 @@ The goal of all types of learning is to extract understanding of the data well e
 
 Supervised learning is used when working with labeled data and learning the relationship between the data and the label.
 The data used in this work is labeled in that each employee considered has a ground truth job title.
-Supervised learning problems are divided into two types: classification problems have discrete outputs and regression problems have continuous outputs.
+Supervised learning problems are divided into two types: classification problems, which have discrete outputs, and regression problems, which have continuous outputs.
 The machine learning algorithm in this thesis solves a classification problem where the input is information extracted from employee emails and the output is one of six job titles.
 
-Typical supervised learning approaches divide the available data into three test sets.
+Typical supervised learning approaches divide the available data into three distinct sets.
 The first set is the training data, which is used to describe the data and build the learning model.
 Validation data, the second set, is used as psuedo-test data to estimate how well the model has been trained.
-The validation set is tested on several times to tune the parameters and maximize the accuracy of the model.
+The validation set is tested several times to tune the parameters and maximize the accuracy of the model.
 The final portion of the data is reserved as the test set.
 This is only used on the optimized model once and the performance on this set is used as the overall accuracy of the model.
 
@@ -387,8 +387,8 @@ This new algorithm is much more robust to noise than its predecessor, and theref
 
 Random forests have since been widely used in a variety of applications due to their robust nature.
 In ecology, random forests have been used to classify species of plants with very high accuracy.
-They outperformed other supervised classification methods including: random trees, logistic regression, and linear discriminant analysis (LDA)\cite{cutler2007random}.
-Other applications include image classification~\cite{marin2013random}, predicting consumer behaviors~\cite{lariviere2005predicting}, and detecting malware~\cite{sami2010malware}. 
+They outperformed other supervised classification methods such as random trees and linear discriminant analysis (LDA)\cite{cutler2007random}.
+Other applications include image classification~\cite{marin2013random}, consumer behavior prediction~\cite{lariviere2005predicting}, and malware detection~\cite{sami2010malware}. 
 
 \subsection{Occupation Classification}
 In Section~\ref{sec:priorAnalysis} it was discussed that the problem of occupation analysis has not been addressed in email analysis.
@@ -399,7 +399,7 @@ This dataset assigned each person a ground truth occupational title from one of 
 This algorithm used a combination of text-based and metadata-based features in addition to community-based metrics to produce a job title prediction.
 Support vector machines and logistic regression were the two methods that produced the most accurate predictions.  
 
-In one experiment, researchers attempted to classify a Twitter user's occupation into one of the Standard Occupational Classifications (SOC), a system developed by the government of the United Kingdom\footnote{http://www.ons.gov.uk/ons/guide-method/classifications/current-standard-classifications/soc2010/index.html, \\ accessed on 05/06/2016}.
+In one experiment, researchers attempted to classify a Twitter user's occupation into one of the Standard Occupational Classifications (SOC), a system developed by the government of the United Kingdom~\cite{SOC}.
 Any occupation can be described using one of the nine major groups and various subgroups on this scale.
 This study used a combination of metadata-based and text-based features, but found that the metadata features were not useful in predicting occupation.
 A Gaussian Process algorithm was able to achieve $52.7\%$ classification accuracy~\cite{preoctiuc2015analysis}.
@@ -414,7 +414,7 @@ Additionally, the results from the work in social media analysis can serve as so
 
 \chapter{Email Dataset and Feature Extraction} \label{Data}
 This chapter details all of the steps taken to transform the raw data into the high-dimensional feature space used in the learning algorithm.
-Information is provided on the data collected and statistics about the dataset.
+Information on the collected data and statistics about the dataset are provided.
 There is a detailed description of all features used, both traffic-based and social-based.
 
 \section{Data Collection}
@@ -506,7 +506,7 @@ Figure~\ref{fig:emails_over_time} shows the email traffic of the center over tim
 The growth of the center between early 2013 and late 2015 is evident by the increasing baseline email traffic.
 Note that each year before February is a dip in email activity.
 This is indicative of Virginia Tech's winter break and Christmas holidays.
-The spikes in the graph, such as in July 2013 and February 2014, and denote when email inboxes of employees were migrated from an old mail server.
+The spikes in the graph, such as in July 2013 and February 2014, denote when email inboxes of employees were migrated from an old mail server.
 For the first year of the new mail server, emails were copied over using a script which changed the timestamp of the emails to the time when they were copied.
 These emails were not removed from the database, however, because they represent important interactions between center employees.
 A more sophisticated migration process was implemented during the summer of 2014, which reduced the occurrence of such spikes.
@@ -617,9 +617,9 @@ Graduate students and lower-level employees are more likely to receive either re
 A histogram showing the different values for this metric over the different job classes is shown in Figure~\ref{fig:traffic_ex_hist}.
 The log of the raw values are plotted here for visual clarity.
 This figure demonstrates how difficult this classification problem can be.
-It is clear from the figure that graduate students received far fewer forwarded emails most any other groups.
-Some of the different personalities among the staff are reflected their in email behavior, which might explain why the middle bins contain employees from three or more groups.
-The graduate student with approximately $10^{2.5}$ forwarded emails is likley a more either more involved in office activities or at least more email-active.  
+It is clear from the figure that graduate students received far fewer forwarded emails than most other groups.
+Some of the different personalities among the staff are reflected in their email behavior, which might explain why the middle bins contain employees from three or more groups.
+The graduate student with approximately $10^{2.5}$ forwarded emails is likley either more involved in office activities or at least more email-active.  
 On the other hand, the operations employee that has less than $30$ forwarded emails is clearly less email-active than other members of that team.
 The divisions among the classes become slightly more clear when the feature values are normalized between 0 and 1, as opposed to the raw numbers shown here.
 All feature values are normalized before being used by the learning algorithm.
@@ -632,9 +632,9 @@ All feature values are normalized before being used by the learning algorithm.
 
 The second best traffic feature was the number of signed emails received, and the third most important traffic feature was the number of signed emails received with unique subjects.
 These two values clearly will be highly correlated because they both consider signed emails, which usually signal sensitive information.
-Only certain groups within the center deal with this type of information, therefore it is understandable that this feature could help divide the subjects by title.
+Only certain groups within the center deal with this type of information; therefore, it is understandable that this feature could help divide the subjects by title.
 The fourth best traffic feature was the number of emails received as copies.
-Copying a person on a email within the workplace is often used to inform them of current activity or to inform a manager of an assignment for their subordinate~\cite{skovholt2006email}.
+Copying a person on an email within the workplace is often used to inform them of current activity or to inform a manager of an assignment for their subordinate~\cite{skovholt2006email}.
 Because of these behaviors, it is reasonable to anticipate directors and PMs to receive more copied emails.
 This is similar to the case of forwarded emails.
 Notice that there are intuitive explanations behind all of the features selected by the ranker.
@@ -689,9 +689,9 @@ The scale of this value is then normalized to measure symmetry such that a perfe
 Note that the values in the matrix represent email counts, which are always positive; therefore, the minimum value is zero.
 On this scale of $0$ to $1$, the adjacency matrix in Figure~\ref{fig:adj_matrix} scored $0.7036$.
 
-Another aspect of the adjacency matrix that bears mention is that the diagonal is not zero.
+Another aspect of the adjacency matrix that bears mentioning is that the diagonal is not zero.
 This implies that some employees of the center email themselves.
-Within the dataset, $79.7\%$ sent at least one email to themselves and $52.2\%$ sent at least $10$.
+Within the dataset, $79.7\%$ of people sent at least one email to themselves and $52.2\%$ sent at least $10$.
 These self-emails are broken down by email and subject type in Figure~\ref{fig:self-emails}.
 Overwhelmingly these emails represent either replies to emails or copies to themselves.
 
@@ -871,8 +871,7 @@ In the original website ranking context, a hub is a site that links to many site
 This can be interpreted to mean that employees with a high hubs score more often communicate with many of the directors or other important employees within the center.
 The histogram of hub values in the partial graph broken down by class is shown in Figure~\ref{fig:social_ex_hist}.
 Again, the log of the raw hubs score is presented for clarity.
-This figure shows more class division than Figure~\ref{fig:traffic_ex_hist}, as graduate students are limited to only the first four bins.
-It appears that the same types of employees that had high unique subjects received counts also have large full graph hubs counts, specifically most of the Directors and PMs.
+It appears that the same types of employees that had high forwards received counts (shown in Figure~\ref{fig:traffic_ex_hist}) also have large partial graph hubs values, specifically most of the Directors and PMs.
 
 \begin{figure}[t]
     \centering
@@ -951,7 +950,6 @@ Mutual information between the class distribution and the attribute is calculate
 \begin{equation}
 I(\text{Class}; \text{Attribute}) = H(\text{Class}) - H(\text{Class} | \text{Attribute})
 \end{equation} \label{eq:info_gained}
-
 The random tree algorithm splits on the attribute value that maximizes the mutual information.
 Note that $H(\text{Class})$ is a constant, therefore the best attribute to split on, $A^*$, is:
 \begin{align}
@@ -959,7 +957,6 @@ A^* &= \arg\max_a I(\text{Class}|\text{Attribute}) \\
 &= \arg \max_a H(\text{Class})-H(\text{Class}|\text{Attribute})\\
 &= \arg\min_a H(\text{Class}|\text{Attribute})
 \end{align}
-
 Note that the feature values used in this thesis are continuous, but the process above is described for discrete attribute values.
 The feature values can be discretized by using thresholds instead.
 If the feature values are sorting in ascending order, then a threshold can be defined between each consecutive pair of points.
@@ -970,7 +967,6 @@ T^* &= \arg\min_t H(\text{Class}|\text{Threshold})\\
 &= \arg\min_t H(\text{Class}|\text{Attribute}<t\})p(\text{Attribute}<t) \notag \\
  &\qquad \qquad + H(\text{Class}|\text{Attribute}\geq t)p(\text{Attribute}\geq t)
 \end{align}
-
 A visualization of the random forest training process is shown in Fig.~\ref{fig:rand_forest}.
 Random forests build many deep random trees with imposed random variations.
 Individually these random trees overfit the data.
@@ -995,9 +991,8 @@ Random forest training reduces the variance and increases the accuracy of the mo
 
 Note that the way the training method is designed, the prior distributions of the classes are built into the training process.
 Each tree is built using a subsample of people from the dataset, and these subsamples will reflect the original class distribution.
-The trees are built using these assumptions.
-For example, the rules might be constructed to expect more graduate students than any other category, or with the knowledge that outreach employees are relatively rare.
-These assumptions will be reflected in the testing data.
+For example, the rules that are built within the trees during training might be constructed to expect more graduate students or fewer outreach personnel than any other category.
+These inclinations will be reflected when evaluating testing data on the trees.
 
 To use this classification algorithm, the data must be split into three groups.
 The emails in the dataset were randomly assigned to one of the following: 35\% for training, 30\% for validation, and 35\% for testing.
@@ -1078,14 +1073,14 @@ The training data was used as input to the random forest algorithm as described 
 The number of correct and incorrect classifications for each class are shown (below) in Figure~\ref{fig:result_hist}.
 Note that only three predictions were wrong: two people in research were misclassified as graduate students and one graduate student was misclassified as research.
 It is important to note that two out of the three misclassifications are peripheral employees.
-Therefore, the classification accuracy for the study participants is 97.3\%, correctly classified peripheral employees is 93.8\%, and the overall accuracy of this method using all features is 95.7\%
+Therefore, the classification accuracy for the study participants is 97.3\%, the classification accuracy for peripheral employees is 93.8\%, and the overall classification accuracy of this method using all participants is 95.7\%.
 The confusion matrix for this analysis is another way to visualize the results, as shown in Figure~\ref{fig:conf_matrix}.
 
 \begin{figure}[t]
     \centering
     \includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{Prediction_50_50_RF}
     \vspace{-20pt}
-    \caption[Job title classification results]{The random forest algorithm was extremely accurate even for very uneven class sizes.  Note that all members of 4 classes were labeled perfectly.  There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.}
+    \caption[Job title classification results]{The random forest algorithm was extremely accurate even for very uneven class sizes.  Note that all members of 4 classes were labeled perfectly.  There were only 2 errors out of 69 employees, both of which were for employees who did not provide emails for the study.}
     \label{fig:result_hist}
 \end{figure}
 
@@ -1104,7 +1099,7 @@ The distinction between graduate students and research faculty is likely the lea
 First, some PhD students have been at the center as long or longer than some research faculty.
 This leads to older PhD students having larger email counts than some of the newer research staff, which could trick the algorithm.
 Some research faculty are also students, which may cause their email communication patterns to more closely resemble graduate students. 
-To further complicate matters, some graduate students joined the center as staff after they graduated.
+To further complicate matters, some graduate students joined the center as research staff after they graduated.
 
 Note that this method relies on some assumptions.
 One is that employees with the same title exhibit similar email behavior.
@@ -1180,7 +1175,7 @@ There is also a wide variety of responsibilities in the research class in additi
 This may explain why at least one person from each other class was misclassified as research.
 Previous analysis showed that the boundary between graduate students and research staff can be unclear.
 This was clear again during this test in that four postdoctoral researchers and/or former students were misclassified as graduate students and three doctoral graduate students were misclassified as research staff.
-Surprisingly, when comparing the LOOCV accuracy was slightly higher for peripheral employees, $68.4\%$ compared to $62.1\%$ for direct participants.
+Surprisingly, the LOOCV accuracy was slightly higher for peripheral employees, $68.4\%$, compared to $62.1\%$ for direct participants.
 This is likely due to the fact that the peripheral set has more graduate students, which seems to be the easiest class to label correctly.
 
 Namata et al. performed the same analysis on the Enron email corpus~\cite{namata_inferring_2006}.
@@ -1195,7 +1190,7 @@ This analysis shows that integrating social-based features with the traffic-base
 \section{Hierarchy Analysis}
 The purpose of this hierarchy analysis was to compare the email relationships from the data with the official project groups of the center.
 A combination of the predicted labels from Section~\ref{ssec:classification_results} and the email patterns from the data generated the organic hierarchy for the center, shown in Fig.~\ref{fig:generated_hierarchy}.
-Although the center has a very flat structure, project information often flows from directors to project managers down to research staff and finally graduate students.
+Although the center has a very flat structure, project information often flows from directors to project managers down to research staff and finally to graduate students.
 Outreach and operations personnel are not actively involved in project work, and are therefore omitted from this chart.
 The nodes of the graph represent anonymized job titles for the employees of the center.
 The output of the classification algorithm was used as the source of these job titles.
@@ -1219,7 +1214,7 @@ Another feature of this graph is the disparity in project manager connections.
 Perhaps the various PMs perform different functions; some communicate more closely with researchers than others.
 It is also possible that some of the PMs with many researcher connections are overloaded, and the organization could benefit from redistributing projects.
 The final interesting thing to note about this graph is that the researcher outlined in red is in fact a graduate student.
-However, that person has three primary graduate student connections.
+However, that person has several secondary graduate student connections.
 If this student were to graduate and be hired on as a research staff, this figure indicates which graduate students he or she could help mentor.
 This organic organization chart reveals underlying relationships within the center.
 
