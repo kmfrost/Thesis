@@ -145,7 +145,7 @@ Kayla M. Straub
 Email correspondence has become the predominant method of communication for businesses.
 If not for the inherent privacy concerns, this electronically searchable data could be used to better understand how employees interact. 
 After the Enron dataset was made available, researchers were able to provide great insight into employee behaviors based on the available data despite the many challenges with that dataset.  
-The work in this thesis demonstrates a suite of methods to an appropriately anonymized academic email dataset created from volunteers' email metadata.  
+The work in this thesis demonstrates a suite of methods applied to an appropriately anonymized academic email dataset created from volunteers' email metadata.  
 This new dataset, from an internal email server, is first used to validate feature extraction and machine learning algorithms in order to generate insight into the interactions within the center.  
 Based solely on email metadata, a random forest approach models behavior patterns and predicts employee job titles with $96\%$ accuracy.
 This result represents classifier performance not only on participants in the study but also on other members of the center who were connected to participants through email.
@@ -158,6 +158,39 @@ The culmination of this work is an organic organizational chart, which contains 
 % GRANT INFORMATION
 
 
+\pagebreak
+
+\thispagestyle{empty}
+\begin{center}
+	
+	{\large Data Mining Academic Emails to Model Employee Behaviors and Analyze Organizational Structure}
+	
+	\vfill
+	
+	Kayla M. Straub
+	
+	\vfill
+	
+	(GENERAL AUDIENCE ABSTRACT)
+	
+	\vfill
+	
+\end{center}
+
+Email correspondence has become the predominant method of communication for businesses but is seldom the subject of research due to the inherent privacy concerns.
+This work demonstrates a suite of methods applied to an academic email dataset created from volunteers' email metadata in order to gain a better understanding of office email interactions.
+The metadata involved contains details about an email such as the timestamp, length of text, and  involved email addresses. 
+However, all email text was omitted to protect participant privacy.
+Meaningful behavior patterns are extracted from this dataset in the form of statistical features, which are used in machine learning algorithms to generate insight into the interactions within the center. 
+The algorithm predicted employee job titles with $96\%$ accuracy including participants in the study as well as other members of the center who were connected to participants through email.
+The data revealed relationships not present in the center's formal operating structure.
+The culmination of this work is an organic organizational chart, which contains a fuller understanding of the center's internal structure than can be found in the official organizational chart.
+These procedures can be applied to corporate analyses to aid in restructurings or mergers.
+Beyond this, these methods may be applied to any communications system to identify anomalous behavior, leadership structures, or cliques.
+
+
+
+\vfill
 \pagebreak
 
 % Dedication and Acknowledgments are both optional
@@ -1433,10 +1466,14 @@ This work has shown that it is possible to glean organizational information from
 % In LaTeX, each appendix is a "chapter"
 % \chapter{Program Source}
 \chapter*{Appendix A: Example Email}
+\addcontentsline{toc}{chapter}{Appendix A: Example Email}
+
 \lstinputlisting[language=email]{1439900489.txt}
 
 
 \chapter*{Appendix B: Full Feature List}
+\addcontentsline{toc}{chapter}{Appendix B: Full Feature List}
+
 \begin{multicols}{2}
 \begin{enumerate}
 	\setlength\itemsep{-1em}

@@ -1,5 +1,5 @@
-\contentsline {chapter}{List of Figures}{vi}{section*.2}
-\contentsline {chapter}{List of Tables}{viii}{section*.3}
+\contentsline {chapter}{List of Figures}{viii}{section*.2}
+\contentsline {chapter}{List of Tables}{x}{section*.3}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Problem Overview}{3}{section.1.2}
@@ -45,3 +45,5 @@
 \contentsline {subsection}{\numberline {6.2.2}Collective Classification}{70}{subsection.6.2.2}
 \contentsline {chapter}{\numberline {7}Conclusions}{72}{chapter.7}
 \contentsline {chapter}{\numberline {8}Bibliography}{74}{chapter.8}
+\contentsline {chapter}{Appendix A: Example Email}{84}{appendix*.38}
+\contentsline {chapter}{Appendix B: Full Feature List}{88}{appendix*.39}
